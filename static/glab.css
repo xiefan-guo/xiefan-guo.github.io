@@ -32,8 +32,12 @@ LI {
 	MARGIN-TOP: 0px; font-size: 16px;
 }
 UL {
-	MARGIN-TOP: 1px; MARGIN-BOTTOM: 15px
+	MARGIN-LEFT:-20px; font-size: 16px; 
 }
+OL {
+	MARGIN-LEFT:-20px; font-size: 16px; 
+}
+
 BLOCKQUOTE {
 	MARGIN-LEFT: 6em; TEXT-INDENT: -4em
 }
