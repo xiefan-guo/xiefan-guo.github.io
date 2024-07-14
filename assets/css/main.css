@@ -150,11 +150,13 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 #light-toggle:hover { color: var(--global-hover-color); }
 
-.news table td { font-size: 1rem; color: var(--global-text-color); padding: -1rem; }
+.news { margin-top: 1rem; }
 
-.news table th { font-size: 1rem; color: var(--global-text-color); width: 95px; }
+.news table td { font-size: 16px; color: var(--global-text-color); padding: -1rem; }
 
-.news table.table-sm th, table.table-sm td { padding-top: 0rem; padding-bottom: 0.2rem; }
+.news table th { font-size: 16px; color: var(--global-text-color); width: 95px; }
+
+.news table.table-sm th, table.table-sm td { padding-top: 0rem; padding-bottom: 0.1rem; }
 
 .social { text-align: left; }
 
@@ -232,7 +234,7 @@ footer.sticky-bottom { border-top: 1px solid var(--global-divider-color); paddin
 
 .projects h2.category { color: var(--global-divider-color); border-bottom: 1px solid var(--global-divider-color); padding-top: 0.5rem; margin-top: 2rem; margin-bottom: 1rem; text-align: right; }
 
-.publications { margin-top: 2rem; }
+.publications { margin-top: 1rem; }
 
 .publications h1 { color: var(--global-theme-color); font-size: 2rem; text-align: center; margin-top: 1em; margin-bottom: 1em; }
 
@@ -270,7 +272,7 @@ footer.sticky-bottom { border-top: 1px solid var(--global-divider-color); paddin
 
 .publications ol.bibliography li .author > span.more-authors:hover { color: var(--global-text-color); border-bottom: 1px dashed var(--global-text-color); }
 
-.publications ol.bibliography li .links a.btn { color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.publications ol.bibliography li .links a.btn { text-transform: none; font-size: 14px; color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.02rem; padding-bottom: 0.02rem; }
 
 .publications ol.bibliography li .links a.btn:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
 
