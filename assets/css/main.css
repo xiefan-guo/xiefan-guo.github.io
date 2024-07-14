@@ -38,6 +38,18 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 /******************************************************************************* Styles for the base elements of the theme. */
 p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong { color: var(--global-text-color); }
 
+ul { margin-left: -18px; list-style-type: square; }
+
+ul.pub li { margin-bottom: 10px; }
+
+ul li .links a.btn { color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.2rem; padding-bottom: 0.2rem; }
+
+ul li .links a.btn:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
+
+ol { margin-left: -1rem; }
+
+ol li { margin-bottom: 10px; }
+
 hr { border-top: 1px solid var(--global-divider-color); }
 
 table td, table th { color: var(--global-text-color); }
