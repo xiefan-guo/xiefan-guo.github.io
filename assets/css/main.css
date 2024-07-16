@@ -44,7 +44,7 @@ p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong { color: var(--global-text-
 
 ul { margin-left: -18px; list-style-type: square; }
 
-ul.new li { margin-bottom: 0px; }
+ul.pub li { margin-bottom: 1rem; }
 
 ul li .links a.btn { color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.2rem; padding-bottom: 0.2rem; }
 
