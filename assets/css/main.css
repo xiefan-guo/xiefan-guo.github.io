@@ -23,7 +23,7 @@ html[data-theme='dark'] .repo-img-light { display: none; }
 html[data-theme='dark'] .repo-img-dark { display: block; }
 
 /****************************************************************************** Content */
-body { font-family: Georgia, Times; font-size: 1rem; padding-bottom: 70px; color: var(--global-text-color); background-color: var(--global-bg-color); }
+body { font-family: Georgia, Times; font-size: 15px; padding-bottom: 70px; color: var(--global-text-color); background-color: var(--global-bg-color); }
 
 body h1, body h2, body h3, body h4, body h5, body h6 { scroll-margin-top: 66px; }
 
@@ -38,7 +38,7 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 /****************************************************************************** Publications */
 /***************************************************************************** Projects */
 /******************************************************************************* Styles for the base elements of the theme. */
-p { font-size: 1rem; }
+p { font-size: 1em; }
 
 p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong { color: var(--global-text-color); }
 
@@ -58,7 +58,7 @@ hr { border-top: 1px solid var(--global-divider-color); }
 
 table td, table th { color: var(--global-text-color); }
 
-table td { font-size: 1rem; }
+table td { font-size: 1em; }
 
 a, table.table a { color: var(--global-theme-color); }
 
@@ -158,9 +158,9 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .news { margin-top: 2rem; }
 
-.news table td { font-size: 1rem; color: var(--global-text-color); padding: -1rem; }
+.news table td { font-size: 1em; color: var(--global-text-color); padding: -1rem; }
 
-.news table th { font-size: 1rem; color: var(--global-text-color); width: 95px; }
+.news table th { font-size: 1em; color: var(--global-text-color); width: 95px; }
 
 .news table.table-sm th, table.table-sm td { padding-top: 0rem; padding-bottom: 0.1rem; }
 
@@ -250,15 +250,15 @@ footer.sticky-bottom { border-top: 1px solid var(--global-divider-color); paddin
 
 .publications h2.year { color: var(--global-divider-color); border-top: 1px solid var(--global-divider-color); padding-top: 1rem; margin-top: 2rem; margin-bottom: -2rem; text-align: right; }
 
-.publications ol.bibliography { margin-left: 0.5rem; list-style: none; padding: 0; margin-top: 0; }
+.publications ol.bibliography { margin-left: 0.2rem; list-style: none; padding: 0; margin-top: 0; }
 
-.publications ol.bibliography li { margin-bottom: 1rem; font-size: 1rem;}
+.publications ol.bibliography li { margin-bottom: 1.5rem; font-size: 1em;}
 
 .publications ol.bibliography li .preview { width: 100%; min-width: 80px; max-width: 200px; }
 
 .publications ol.bibliography li .abbr { height: 2rem; margin-bottom: 0.5rem; }
 
-.publications ol.bibliography li .abbr abbr { display: inline-block; background-color: var(--global-theme-color); padding-left: 1rem; padding-right: 1rem; }
+.publications ol.bibliography li .abbr abbr { display: inline-block; background-color: var(--global-theme-color); padding-left: 1rem; padding-right: 1rem; position: absolute;  top: 12px; left: 16px; }
 
 .publications ol.bibliography li .abbr abbr a { color: white; }
 
@@ -293,6 +293,39 @@ footer.sticky-bottom { border-top: 1px solid var(--global-divider-color); paddin
 .publications ol.bibliography li div.abstract.hidden { border: dashed 1px var(--global-bg-color); }
 
 .publications ol.bibliography li div.abstract.hidden.open { border-color: var(--global-text-color); }
+
+.publications ol.bibliography li .teaser {
+    border-radius: 6px;
+    box-shadow: 3px 3px 6px #888;
+    height: 90px;
+    width: 180px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+.publications ol.bibliography li .videoplayer {
+    border-radius: 8px;
+    height: 100px;
+    width: 180px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+.publications ol.bibliography li .videoplayer video {
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px #888;
+    height: 100px;
+    width: 180px;
+    object-fit: cover;
+}
+
+.publications ol.bibliography li .details {
+    font-size: 0em;
+}  
 
 figure.highlight { margin: 0 0 1rem; }
 
