@@ -112,7 +112,7 @@
 <div class="post">
 <header class="post-header">
 <h3 class="post-title text-center">
-<b>I4VGen:</b> Image as Stepping Stone for Text-to-Video Generation
+<b>I4VGen:</b> Image as Free Stepping Stone for Text-to-Video Generation
 </h3>
 <div class="row publications">
   <div class="col-md-12 text-center">
@@ -122,11 +122,12 @@
           <a href="https://xiefan-guo.github.io/">Xiefan Guo</a><sup>1</sup>&emsp;
           <a href="">Jinlin Liu</a><sup>1</sup>&emsp;
           <a href="">Miaomiao Cui</a><sup>1</sup>&emsp;
+          <a href="">Liefeng Bo</a><sup>1</sup>&emsp;
           <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a>
         </div>
         
         <div>
-          <sup>1</sup>Alibaba Group
+          <sup>1</sup>Institute for Intelligent Computing, Alibaba Group
         </div>
           
         <div class="links">
@@ -148,7 +149,8 @@
       <table border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
           <p align="center">
-            <b>Example results</b> (left: baseliens, right: ours). <b>I4VGen</b> is a <b>training-free</b> and <b>plug-and-play</b> video diffusion inference framework, which significantly enhances the generation of visually-realistic and semantically-faithful videos.
+            I4VGen is seamlessly integrated into existing pre-trained text-to-video diffusion models without additional training, significantly improving the temporal consistency, 
+            visual realism, and semantic fidelity of the synthesized videos. <br>Example results (left: baseliens, right: ours)
           </p>  
         </tr>  
         <tr>
@@ -260,16 +262,17 @@
 
 <h4>I4VGen</h4>
 <P>
-<b>I4VGen</b> is a <b>training-free</b> and <b>plug-and-play</b> video diffusion inference framework, 
-which decomposes text-to-video generation into two stages: 
-<u>anchor image synthesis</u> and <u>anchor image-guided video synthesis</u>. 
-It employs a <b>generation-selection strategy</b> for the anchor image, 
-synthesizing candidate images and selecting the most appropriate one based on a reward mechanism to ensure close alignment with the text prompt. 
-Subsequently, a novel <b>Noise-Invariant Video Score Distillation Sampling</b> is developed to animate the image to a video, 
-followed by a <b>video regeneration</b> process to refine that, thereby significantly improving the video quality.
+I4VGen is a novel video diffusion inference pipeline, 
+which enhances pre-trained text-to-video diffusion models by incorporating image reference information into the inference process. 
+Instead of the vanilla text-to-video inference pipeline, I4VGen consists of two stages: (1) anchor image synthesis and (2) anchor image-augmented text-to-video synthesis. 
 </P>
-<div class="text-center"><image width="100%" src="./assets/images/i4vgen.png" class="img-responsive" alt="overview" style="margin:auto"></image></div>
-
+<ul>
+  <li>Firstly, a simple yet effective generation-selection strategy is applied to synthesize candidate images and select the most suitable image using a reward-based mechanism, 
+    thereby obtaining high-quality anchor image.</li>
+  <li>Subsequently, an innovative noise-invariant video scoring distillation sampling (NIVSDS) is developed, 
+    which extracts motion prior from the text-to-video diffusion model to animate the anchor image into dynamic video, followed by a video regeneration process to refine the video.</li>
+</ul>
+<div class="text-center"><image width="100%" src="./assets/images/i4vgen.png" class="img-responsive" alt="overview" style="margin:auto"></image></div>    
 
 <br>
 <h4>Text-to-Video Generation (AnimateDiff)</h4>
@@ -526,8 +529,8 @@ followed by a <b>video regeneration</b> process to refine that, thereby signific
 <div>
 <font color="black" style="font-size: 14px;">
 <pre>@article{guo2024i4vgen,
-    title   = {I4VGen: Image as Stepping Stone for Text-to-Video Generation},
-    author  = {Guo, Xiefan and Liu, Jinlin and Cui, Miaomiao and Huang, Di},
+    title   = {I4VGen: Image as Free Stepping Stone for Text-to-Video Generation},
+    author  = {Guo, Xiefan and Liu, Jinlin and Cui, Miaomiao and Bo, Liefeng and Huang, Di},
     journal = {arXiv preprint arXiv:2406.02230},
     year    = {2024}
 }</pre>
@@ -540,7 +543,7 @@ followed by a <b>video regeneration</b> process to refine that, thereby signific
 <p style="font-size: 15px;">
 1. Guo <em>et al.</em>, "<a href="https://arxiv.org/abs/2307.04725">AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning</a>", <b>ICLR 2024</b><br>
 2. Wang <em>et al.</em>, "<a href="https://arxiv.org/abs/2309.15103">LaVie: High-Quality Video Generation with Cascaded Latent Diffusion Models</a>", <b>arXiv 2023</b><br>
-3. Guo <em>et al.</em>, "<a href="https://arxiv.org/abs/2311.16933">SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models</a>", <b>arXiv 2023</b>
+3. Guo <em>et al.</em>, "<a href="https://arxiv.org/abs/2311.16933">SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models</a>", <b>ECCV 2024</b>
 </p>
 
 
