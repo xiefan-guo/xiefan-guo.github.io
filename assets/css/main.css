@@ -23,7 +23,7 @@ html[data-theme='dark'] .repo-img-light { display: none; }
 html[data-theme='dark'] .repo-img-dark { display: block; }
 
 /****************************************************************************** Content */
-body { font-family: Times, Georgia; font-size: 16px; padding-bottom: 70px; color: var(--global-text-color); background-color: var(--global-bg-color); }
+body { font-family: Times, Baskerville, Didot, Georgia; font-size: 16px; padding-bottom: 70px; color: var(--global-text-color); background-color: var(--global-bg-color); }
 
 body h1, body h2, body h3, body h4, body h5, body h6 { scroll-margin-top: 66px; }
 
@@ -45,6 +45,8 @@ p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong { color: var(--global-text-
 ul { margin-left: -18px; list-style-type: square; }
 
 ul.pub li { margin-bottom: 1rem; }
+
+ul.new li { margin-bottom: 0.05rem; }
 
 ul li .links a.btn { color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.2rem; padding-bottom: 0.2rem; }
 
