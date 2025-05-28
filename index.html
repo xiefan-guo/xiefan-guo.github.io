@@ -1,0 +1,581 @@
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <title>Xiefan Guo</title>
+  <!-- <link rel="shortcut icon" href="./logo.jpg"> -->
+  <link rel="stylesheet" href="./assets/css/homepage.css">
+  <meta content="Xiefan Guo" name="keywords" />
+  <style media="screen" type="text/css">
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0pt none;
+  font-family: Times, Georgia, Palatino, Georgia, Arial, Helvetica, sans-serif, Calibri;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+  line-height: 150%;
+}
+
+a {
+  color: #0645AD;/*#01579B;*/
+  text-decoration:none;
+}
+
+a:focus, a:hover {
+  /* color: #f09228; */ /*#f09228;*/
+  color: #555; /*#f09228;*/
+  text-decoration: underline;
+}
+
+a.paper {
+  font-weight: bold;
+}
+
+#changeText {
+    cursor: pointer;
+}
+
+b.paper {
+  font-weight: bold;
+}
+
+* {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+body {
+  position: relative;
+  margin: 2em auto 2em auto;
+  width: 900px;
+  font-family: Times, Georgia, Open Sans Light, Helvetica, sans-serif;
+  font-size: 15px;
+  background: #F4F6F6;
+}
+
+h2 {
+  font-family: Times, Georgia, Open Sans Light, Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Times, Georgia, Open Sans Light, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+strong {
+  /* font-family: Open Sans Light, Helvetica, sans-serif;
+  font-size: 13px;*/
+  font-weight: bold;
+}
+
+ul { 
+  list-style: square;
+}
+
+img {
+  border: none;
+}
+
+li {
+  padding-top: 0.em;
+  padding-bottom: 0.em;
+  margin-left: 1.25em;
+}
+
+alert {
+  font-family: Times, Arial, Helvetica, sans-serif;
+  /*font-size: 13px;*/
+  color: #FF0000;
+}
+
+em, i {
+  font-style:italic;
+}
+
+div.section {
+  clear: both;
+  margin-bottom: 1.2em;
+  background: #F4F6F6;
+}
+
+div.spanner {
+  clear: both;
+}
+
+div.paper {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 0.8em;
+  border: 0px solid #ddd;
+  background: #fff;
+  padding: 0.55em .8em 0.6em .8em;
+  border-top-right-radius:10px; 
+  border-top-left-radius:10px; 
+  border-bottom-left-radius:10px; 
+  border-bottom-right-radius:10px;
+  line-height: 150%;
+  /* box-shadow: 0px 0px 3px #DFDFDF; */
+}
+div.paper2 {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 0.7em;
+  border: 0px solid #ddd;
+  background: #fff;
+  padding: 0.55em .8em 0.6em .8em;
+  border-top-right-radius:10px; 
+  border-top-left-radius:10px; 
+  border-bottom-left-radius:10px; 
+  border-bottom-right-radius:10px;
+  line-height: 150%;
+}
+
+div.paper:hover {
+    background: #fff;
+    /* background: #FFFDEE; */
+    /* background-color: #242d36 ; */
+}
+
+div.paper2:hover {
+    background: #FFFDEE;
+    /* background-color: #242d36 ; */
+}
+div.bio {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 0.7em;
+  border: 0px solid #ddd;
+  background: #fff;
+  padding: 0.55em .8em 0.6em .8em;
+  border-top-right-radius:10px; 
+  border-top-left-radius:10px; 
+  border-bottom-left-radius:10px; 
+  border-bottom-right-radius:10px;
+  line-height: 150%;
+  /* box-shadow: 0px 0px 3px #DFDFDF; */
+}
+
+div.res {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  border: 0px solid #ddd;
+  background: #fff;
+  padding: 0.65em .8em 0.15em .8em;
+  border-top-right-radius:10px; 
+  border-top-left-radius:10px; 
+  border-bottom-left-radius:10px; 
+  border-bottom-right-radius:10px;
+  line-height: 150%;
+}
+
+div.award {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  border: 0px solid #ddd;
+  background: #fff;
+  padding: 0.65em .8em 0.15em .8em;
+  border-top-right-radius:10px; 
+  border-top-left-radius:10px; 
+  border-bottom-left-radius:10px; 
+  border-bottom-right-radius:10px;
+  line-height: 150%;
+}
+
+div.paper div {
+  padding-left: 230px;
+}
+
+img.paper {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 200px;
+}
+
+span.blurb {
+  font-style:italic;
+  display:block;
+  margin-top:0.75em;
+  margin-bottom:0.5em;
+}
+
+pre, code {
+  font-family: Open Sans Light, Helvetica, sans-serif;
+  font-size: 13px;
+  margin: 1em 0;
+  padding: 0;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+    .bot {
+  font-size: 14%;
+}
+
+   .ptypej {
+    display: inline;
+    padding: .0em .2em .05em;
+    font-size: 85%;
+    font-weight: bold;
+    line-height: 1;
+  background-color: #5cb85c;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  margin-right: 6px;
+}
+   .ptypec {
+    display: inline;
+    padding: .0em .2em .05em;
+    font-size: 85%;
+    font-weight: bold;
+    line-height: 1;
+  background-color: #428bca;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  margin-right: 6px;
+}
+   .ptypep {
+    display: inline;
+    padding: .0em .2em .05em;
+    font-size: 85%;
+    font-weight: bold;
+    line-height: 1;
+  background-color: #6B6B6B;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  margin-right: 6px;
+}
+/* navigation */
+#nav {
+  /* font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',*/
+       /* Corbel, Arial, Helvetica, sans-serif; */
+  font-family: Times, Georgia, Helvetica, sans-serif;
+  position: fixed;
+  top: 40px;
+  /* left: 860px; */
+  margin-left: 900px;     /*1060*/
+  width: 94px;
+  font-size: 15px;
+}
+
+#nav li {
+    margin-bottom: 6px;
+}
+ol {
+  list-style: none;
+}
+#nav a {
+    display: block;
+    padding: 3px 8px 4px ;
+    color: #0645AD;
+    background-color: #fff;
+    text-decoration: none;
+    border-top-right-radius:4px; 
+    border-top-left-radius:4px; 
+    border-bottom-left-radius:4px; 
+    border-bottom-right-radius:4px;
+    /* border: 2px solid #e8e8e8; */
+}
+
+#nav a:hover {
+    color: #455A64;
+    /* background-color: #242d36 ; */
+}
+
+.social .contact-icons { font-size: 1.7rem; margin-top: 0rem; margin-bottom: 0rem; }
+
+.social .contact-icons a i::before { color: #000000; transition-property: all 0.2s ease-in-out; }
+
+.social .contact-icons a:hover i::before { color: #0645AD; }
+
+</style>
+
+<script type="text/javascript" async="" src="./assets/js/ga.js"></script><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7953909-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript" src="./assets/js/hidebib.js"></script>
+<script src="./assets/js/main.js"></script>
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--><!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+
+</head>
+
+
+
+<body>
+
+
+<ol id="nav">
+  <li><a href="#home" title="Home">Home</a></li>
+  <li><a href="#publications" title="Papers">Papers</a></li>
+  <li><a href="#award" title="Awards">Awards</a></li>
+  <li><a href="#professional_activities" title="professional_activities">Activities</a></li>
+  <!-- <li><a href="mailto:guoxiefan@gmail.com" title="Contact">Contact</a></li> -->
+</ol>
+
+
+<a name="home"></a>
+<div style="margin-bottom: 1em; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border: 0px solid #ddd; background-color: #fff; padding: 1em; height: 140px; /* box-shadow: 0px 0px 3px #DFDFDF; */">
+<div style="margin: 0px auto; width: 100%;">
+  <img title="" style="float: left; padding-left: 0.3em; padding-top: 0em; height: 140px; border-radius: 10px" src="./assets/img/avatar.png" />
+  <div style="padding-left: 12em; padding-top: 0.3em; vertical-align: top; height: 0px; width: 100%;">
+    <p style="margin-bottom:0.3em; line-height: 100%; font-size: 20pt; ">Xiefan Guo</p>
+    <p><span style="line-height: 150%; font-size: 15px;">
+    Ph.D. Student<br>
+    Beihang University (BUAA)<br>
+    <!-- <br>Research Intern @ Alibaba TongYi Lab -->
+    Email: guoxiefan@gmail.com<br>
+    <!-- [<a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en">Google Scholar</a>] -->
+    <!-- [<a href="https://github.com/xiefan-guo">GitHub</a>] -->
+    </span></p>
+    <div class="social">
+      <div class="contact-icons" style="line-height: 150%; ">
+        <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://github.com/xiefan-guo" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://dblp.uni-trier.de/pid/249/0970.html" title="DBLP" rel="external nofollow noopener" target="_blank"><i class="ai ai-dblp"></i></a>
+        <a href="https://twitter.com/guoxiefan" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="" title="ORCID" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
+        <a href="" title="arXiv" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div style="clear: both;" >
+<div class="section">
+<!-- <h2>About Me</h2> -->
+<div class="bio" id="biosection">
+  <p style="margin-bottom:0.6em; margin-top:0.2em">
+    I am a Ph.D. student at the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/">Beihang University</a> (BUAA), 
+    supervised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a>. 
+    My research interests focus on Computer Vision, Generative AI, and Diffusion models.
+  </p>
+  <p style="margin-bottom:0.2em">
+    Before that, I received my master degree from the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/">Beihang University</a> (BUAA), China, in Jan. 2023
+    and B.E degree from the College of Intelligence and Computing, <a href="https://www.tju.edu.cn/">Tianjin University</a> (TJU), China, in Jul. 2020.
+    I interned at <a href="">Shanghai AI Laboratory</a>, <a href="https://tongyi.aliyun.com/">Alibaba TongYi Lab</a> and <a href="https://damo.alibaba.com/">Alibaba DAMO Academy</a>.
+  </p>
+</div>
+</div>
+</div>
+
+
+<div style="clear: both;" >
+<div class="section">
+<h2>News <a href="https://xiefan-guo.github.io/news/" rel="external nofollow noopener" target="_blank"><font style="color: #555; font-size: 11pt">[more]</font></a></h2>
+<div class="bio" id="mentor">
+<div>
+  <ul class="new" style="line-height: 150%; margin-bottom:0.2em; margin-top:0.2em">
+    <!-- <li>2025.02: Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), 2025.</li> -->
+    <!-- <li>2025.02: Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li> -->
+    <!-- <li>2025.04: I start my intern at Shanghai AI Laboratory.</li> -->
+    <li>2025.02: One paper (<a href="">Diffusion-4K</a>) is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
+    <li>2024.06: We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.</li>
+    <li>2024.05: Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.</li>
+    <li>2024.02: Two papers (<a href="https://arxiv.org/abs/2404.04650">InitNO</a> and <a href="https://arxiv.org/abs/2406.02038">DRM</a>) are accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.</li>
+    <li>2023.09: I start my intern at Alibaba TongYi Lab.</li>
+    <!-- <li>2022.03: One paper (<a href="">ABPN</a>) is accepted by <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.</li> -->
+    <!-- <li>2021.09: I obtain China National Scholarship.</li> -->
+    <!-- <li>2021.07: One paper (<a href="https://arxiv.org/abs/2108.09760">CTSDG</a>) is accepted by <a href="https://iccv2021.thecvf.com/">ICCV 2021</a>.</li> -->
+  </ul> 
+</div>
+</div>
+</div>
+</div>
+
+
+
+<a name="publications"></a>
+<div style="clear: both;" >
+<div class="section">
+<h2>Publications</h2>
+
+<p style="line-height: 200%;">See the full list on my <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" rel="external nofollow noopener" target="_blank">Google Scholar</a>.</p> 
+
+<div class="paper" id="zhang2025diffusion">
+  <p>
+    <b><font style="color:#0645AD;">[CVPR'25]</font> Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models</b><br>
+    <font>Jinjin Zhang, Qiuyu Huang, Junjie Liu,</font> <b>Xiefan Guo</b><font>, Di Huang</font><br>
+    In: <em>The 43nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 11-15, 2025, Nashville, USA<br>
+    <!-- In: <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), 2025.<br> -->
+    [<a href="https://arxiv.org/abs/2503.18352"><font style="color: #555">paper</font></a>]
+    [<a href="https://github.com/zhang0jhon/diffusion-4k"><font style="color: #555">code</font></a>]
+    [<a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-4K"><font style="color: #555">dataset</font></a>]
+  </p>
+</div>
+
+<div class="paper" id="guo2025i4vgen">
+  <p>
+    <b>I4VGen: Image as Free Stepping Stone for Text-to-Video Generation</b><br>
+    <font><b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, Di Huang</font><br>
+    In: <em>arXiv:2406.02230</em>, Technical Report, 2024<br>
+    [<a href="https://arxiv.org/abs/2406.02230"><font style="color: #555">paper</font></a>]
+    [<a href="https://github.com/xiefan-guo/i4vgen"><font style="color: #555">code</font></a>]
+    [<a href="https://xiefan-guo.github.io/i4vgen/"><font style="color: #555">project</font></a>]
+  </p>
+</div>
+
+<!-- <div class="paper" id="liu2025disentangling">
+  <p>
+    <b>Disentangling Foreground and Background Motion for Enhanced Realism in Human Video Generation</b><br>
+    <font>Jinlin Liu, Kai Yu, Mengyang Feng,</font> <b>Xiefan Guo</b><font>, Miaomiao Cui</font><br>
+    In: <em>arXiv:2405.16393</em>, Technical Report, 2024<br>
+    [<a href="https://arxiv.org/abs/2405.16393"><font style="color: #555">paper</font></a>]
+    [<a href="https://liujl09.github.io/humanvideo_movingbackground/"><font style="color: #555">project</font></a>]
+  </p>
+</div> -->
+
+<div class="paper" id="guo2024initno">
+  <p>
+    <b><font style="color:#0645AD;">[CVPR'24]</font> InitNO: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization</b><br>
+    <b>Xiefan Guo</b><font>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, Di Huang</font><br>
+    In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA<br>
+    <!-- In: <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), 2024.<br> -->
+    <!-- In: <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Seattle, USA, 2024. -->
+    [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Guo_InitNO_Boosting_Text-to-Image_Diffusion_Models_via_Initial_Noise_Optimization_CVPR_2024_paper.html"><font style="color: #555">paper</font></a>]
+    [<a href="https://arxiv.org/abs/2404.04650"><font style="color: #555">arXiv</font></a>]
+    [<a href="https://github.com/xiefan-guo/initno"><font style="color: #555">code</font></a>]
+    [<a href="https://xiefan-guo.github.io/initno/"><font style="color: #555">project</font></a>]
+    [<a href="https://drive.google.com/file/d/14HfV0YYvT5P2glY5DjTEgY8Fc6WS8ThR/view"><font style="color: #555">slide</font></a>]
+    [<a href="https://drive.google.com/file/d/1epc_4LUmYba0yYzB3pXcTZuXIcuQEpim/view"><font style="color: #555">poster</font></a>]
+  </p>
+</div>
+
+<div class="paper" id="li2024leveraging">
+  <p>
+    <b><font style="color:#0645AD;">[CVPR'24]</font> Leveraging Predicate and Triplet Learning for Scene Graph Generation</b><br>
+    <font>Jiankai Li, Yunhong Wang,</font> <b>Xiefan Guo</b><font>, Ruijie Yang, Weixin Li</font><br>
+    In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA<br>
+    <!-- In: <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), 2024.<br> -->
+     <!-- In: <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Seattle, USA, 2024. -->
+    [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Li_Leveraging_Predicate_and_Triplet_Learning_for_Scene_Graph_Generation_CVPR_2024_paper.html"><font style="color: #555">paper</font></a>]
+    [<a href="https://arxiv.org/abs/2406.02038"><font style="color: #555">arXiv</font></a>]
+    [<a href="https://github.com/jkli1998/DRM"><font style="color: #555">code</font></a>]
+  </p>
+</div>
+
+<div class="paper" id="feng2024dreamoving">
+  <p>
+    <b>DreaMoving: A Human Video Generation Framework based on Diffusion Models</b><br>
+    <font>Mengyang Feng, Jinlin Liu, Kai Yu, Yuan Yao, Zheng Hui, <b><b>Xiefan Guo</b></b>, Xianhui Lin, Haolan Xue, Chen Shi, Xiaowen Li, Aojie Li, Xiaoyang Kang, Biwen Lei, Miaomiao Cui, Peiran Ren, Xuansong Xie</font><br>
+    In: <em>arXiv:2312.05107</em>, Technical Report, 2023<br>
+    [<a href="https://arxiv.org/abs/2312.05107"><font style="color: #555">paper</font></a>]
+    [<a href="https://github.com/dreamoving/dreamoving-project"><font style="color: #555">code</font></a>]
+    [<a href="https://dreamoving.github.io/dreamoving/"><font style="color: #555">project</font></a>]
+    [<a href="https://www.modelscope.cn/studios/vigen/video_generation/summary"><font style="color: #555">modelscope</font></a>]
+    [<a href="https://huggingface.co/spaces/jiayong/Dreamoving"><font style="color: #555">hugging face</font></a>]
+  </p>
+</div>
+
+<div class="paper" id="lei2022abpn">
+  <p>
+    <b><font style="color:#0645AD;">[CVPR'22]</font> ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</b><br>
+    <!-- <b>ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</b><br> -->
+    Biwen Lei, <b>Xiefan Guo</b>, Hongyu Yang, Miaomiao Cui, Xuansong Xie, Di Huang<br>
+    In: <em>The 40th IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 19-24, 2022, New Orleans, USA<br>
+    [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Lei_ABPN_Adaptive_Blend_Pyramid_Network_for_Real-Time_Local_Retouching_of_CVPR_2022_paper.html"><font style="color: #555">paper</font></a>]
+    [<a href="https://modelscope.cn/models/damo/cv_unet_skin-retouching/summary"><font style="color: #555">modelscope</font></a>]
+    [<a href="https://github.com/youngLBW/CRHD-3K"><font style="color: #555">dataset</font></a>]
+  </p>
+</div>
+
+<div class="paper" id="guo2022image">
+  <p>
+    <b><font style="color:#0645AD;">[ICCV'21]</font> Image Inpainting via Conditional Texture and Structure Dual Generation</b><br>
+    <b>Xiefan Guo</b>, Hongyu Yang, Di Huang<br>
+    In: <em>The 18th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 11-17, 2021, Montreal, Canada (Virtual)<br>
+    [<a href="https://openaccess.thecvf.com/content/ICCV2021/html/Guo_Image_Inpainting_via_Conditional_Texture_and_Structure_Dual_Generation_ICCV_2021_paper.html"><font style="color: #555">paper</font></a>]
+    [<a href="https://arxiv.org/abs/2108.09760"><font style="color: #555">arXiv</font></a>]
+    [<a href="https://github.com/xiefan-guo/ctsdg"><font style="color: #555">code</font></a>]
+    [<a href="https://drive.google.com/file/d/1HLPMJQHWC1Ac4GHnnXaRdh6ZGadjwAcL/view"><font style="color: #555">slide</font></a>]
+    [<a href="https://drive.google.com/file/d/1WN0jqh5zkc-_tiXKYx1kMI2OZPWIVx8s/view"><font style="color: #555">poster</font></a>]
+  </p>
+</div>
+
+</div>
+</div>
+
+
+
+
+<a name="award"></a>
+<div style="clear: both;" >
+<div class="section">
+<h2>Honors</h2>
+<div class="bio" id="mentor">
+<div>
+  <ul class="new" style="line-height: 150%; margin-bottom:0.2em; margin-top:0.2em">
+    <li>2023: Outstanding Freshman Scholarship for PhD Student, Beihang University</li>
+    <li>2022: Excellent Graduate Award, Beihang University</li>
+    <li>2022: Tansuo Award, Beihang University</li>
+    <li>2021: National Scholarship, Beihang University</li>
+    <li>2020: Excellent Graduate Award, Tianjin University</li>
+    <li>2019: National Scholarship, Tianjin University</li>
+    <li>2018: Silver Medal, ACM International Collegiate Programming Contest (ACM-ICPC), Asia Regional Contest</li>
+    <li>2018: Silver Medal, China Collegiate Programming Contest (CCPC), Regional Contest</li>
+    <li>2018: Weichai Power Scholarship, Tianjin University</li>
+  </ul> 
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<a name="professional_activities"></a>
+<div style="clear: both;" >
+<div class="section">
+<h2>Professional activities</h2>
+<div class="bio" id="mentor">
+<div>
+  <ul class="new" style="line-height: 150%; margin-bottom:0.2em; margin-top:0.2em">
+    <li><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, AISTATS, ACM MM, ICMR, BMVC, PRCV</li>
+    <li><b>Journal Reviewer:</b> TPAMI, TVCG, TCSVT, TMM, CVIU, FCS</li>
+  </ul> 
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
