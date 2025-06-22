@@ -1,472 +1,459 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xiefan Guo - Homepage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;700&display=swap" rel="stylesheet" /> -->
+   
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            /* --primary-color: black; */
-            /* --primary-color: #2c3e50; */
-            --primary-color: black;
-            --secondary-color: #7f8c8d;
-            --accent-color: #0645AD;
-            --light-color: #f5f7fa;
-            /* --dark-color: #34495e; */
-            --dark-color: black;
-            --border-color: #e0e7ee;
-        }
-
+        /* 优雅学术字体组合 */
         body {
-            font-family: 'Times New Roman', 'Palatino Linotype', Calibri, Helvetica, Arial, 'Times New Roman', 'Crimson Pro', 'Georgia', 'Times New Roman', Times, serif;
-            line-height: 1.5;
+            font-family: Times, 'Cardo', Georgia, Times, 'Cormorant Garamond', 'Cardo', Georgia, serif;
+            font-weight: 400;
             font-size: 16px;
+            line-height: 1.6;
+            /* color: #333; */
             color: black;
-            /* background-color: #fafafa; */
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0rem;
+            padding: 50px 40px;
+            /* background-color: #fcfaf7; */
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
-
-        header {
-            text-align: center;
-            padding: 3em 0;
-            /* border-bottom: 1px solid var(--border-color); */
-            margin-bottom: -1em;
-        }
-
-        a {
-            /* color: #0645AD; #01579B; */
-            color: var(--accent-color);
-            text-decoration:none;
-        }
-
-        ul {
-            margin-left: 2em;
-            /* list-style: square; */
-        }
-
-        .profile-container {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid var(--border-color);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; */
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-            margin-bottom: 0.4rem;
-        }
-
-        .title {
-            font-size: 1em;
-            color: var(--accent-color);
-            margin-bottom: 0em;
-            /* font-style: italic; */
-        }
-
-        .institution {
-            font-size: 1em;
-            color: var(--dark-color);
-            margin-bottom: 0.2em;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .contact-item i {
-            color: var(--accent-color);
-        }
-
-        .section {
-            margin-bottom: 2.8em;
-            padding-bottom: 0em;
-            /* border-bottom: 1px solid var(--border-color); */
-        }
-
-        h2 {
-            font-size: 1.5em;
-            color: var(--primary-color);
-            margin-bottom: 0.5em;
-            padding-bottom: 0rem;
-            /* border-bottom: 1px solid var(--border-color); */
-            font-weight: 600;
-        }
-
-        .research-list {
-            list-style-type: none;
-        }
-
-        .research-item {
-            margin-bottom: 1.3rem;
-            padding-left: 1.3rem;
-            position: relative;
-        }
-
-        .research-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .research-title {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.3rem;
-        }
-
-        .publications {
-            counter-reset: publication;
-        }
-
-        .publication {
-            margin-bottom: 1em;
-            padding-left: 2em;
-            position: relative;
-            /* text-align: justify; */
-        }
-
-        .publication:before {
-            counter-increment: publication;
-            content: "[" counter(publication) "]";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-
-        .publication-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0rem;
-        }
-
-        .publication-authors {
-            /* font-style: italic; */
-            color: var(--dark-color);
-            margin-bottom: 0em;
-        }
-
-        .publication-journal {
-            color: var(--primary-color);
-            margin-bottom: 0em;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 1.8rem;
-            margin-left: 0.7rem;
-        }
-
-        .timeline:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            height: calc(100% - 10px);
-            width: 1px;
-            background: var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item:before {
-            content: "";
-            position: absolute;
-            left: -2.3rem;
-            top: 7px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--accent-color);
-        }
-
-        .timeline-date {
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.2rem;
-        }
-
-        .footer {
-            text-align: center;
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-            padding: 1.5rem 0;
-            margin-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .nav-links a {
+     
+        h1, h2, h3, h4 {
+            font-family: Times, 'Cardo', 'Cormorant', Garamond, serif;
             font-weight: 500;
-            font-size: 15px;
-            color: #5d6d7e;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            margin: 0;
+            color: #222;
+            letter-spacing: 0.4px;
+        }
+     
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
             position: relative;
-            margin-left: 10px;
-            margin-right: 10px;
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 0.8px;
         }
-
-        .nav-links a:hover {
-            color: #2c3e50;
-        }
-        
-        .nav-links a::after {
-            content: '';
+     
+        h1:after {
+            content: "";
             position: absolute;
-            bottom: -5px;
+            bottom: -10px;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #2c3e50;
-            transition: width 0.3s ease;
-        }
-      
-        .nav-links a:hover::after {
             width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #8d6e63, #c0b3a8, #8d6e63);
+            opacity: 0.7;
+        }
+     
+        h2 {
+            font-size: 1.5rem;
+            margin: 75px 0 0px;
+            padding-bottom: 1rem;
+            /* border-bottom: 1px solid #d7ccc8; */
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+     
+        h3 {
+            font-size: 1.25rem;
+            margin: 0px 0 15px;
+            color: #444;
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+     
+        .position {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 28px;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            font-family: 'Cormorant', serif;
+        }
+     
+        .contact {
+            font-size: 1rem;
+            color: #666;
+            margin: 32px 0;
+            line-height: 1.85;
+            padding-left: 24px;
+            /* border-left: 3px solid #d7ccc8; */
+            border-left: 3px solid lightgrey;
+            font-variant: small-caps;
+            letter-spacing: 0.8px;
+        }
+     
+        section {
+            margin-bottom: 0px;
+        }
+     
+        p {
+            margin: 0 0 1rem 0;
+            text-align: left;
+            letter-spacing: 0.2px;
+        }
+     
+        ul {
+            padding-left: 2rem;
+            margin: 0 0 42px 0;
+            /* list-style-type: square; */
+        }
+     
+        li {
+            /* margin-bottom: 18px; */
+            position: relative;
+            line-height: 1.75;
         }
 
-        @media (max-width: 768px) {
+        .publication, .experience {
+            margin-left: 0.5rem;
+            margin-bottom: 0px;
+            padding: 0 0 0 24px;
+            /* border-left: 2px solid #e0d6c9; */
+            border-left: 2px solid lightgrey;
+        }
+     
+        .date {
+            font-style: italic;
+            color: #777;
+            font-size: 1.12rem;
+            display: block;
+            margin-top: 8px;
+            letter-spacing: 0.4px;
+        }
+     
+        footer {
+            text-align: center;
+            margin-top: 90px;
+            padding-top: 48px;
+            border-top: 1px solid #d7ccc8;
+            font-size: 1.08rem;
+            color: #777;
+            font-family: 'Cormorant', serif;
+            letter-spacing: 0.8px;
+        }
+     
+        a {
+            /* color: #5d4037; */
+            color: #0645AD;
+            text-decoration: none;
+            /* transition: all 0.35s ease; */
+            /* border-bottom: 1px solid rgba(93, 64, 55, 0.3); */
+            /* padding-bottom: 1px; */
+        }
+     
+        /* a:hover {
+            color: #3e2723;
+            border-bottom: 1px solid rgba(62, 39, 35, 0.7);
+        } */
+     
+        .content {
+            padding: 0 35px;
+        }
+     
+        .institution {
+            font-style: italic;
+            color: #5d4037;
+            font-weight: 600;
+            font-variant: normal;
+        }
+     
+        /* .publication em {
+            font-style: normal;
+            color: #5d4037;
+            font-weight: 600;
+        } */
+     
+        .highlight {
+            position: relative;
+            font-weight: 500;
+            padding: 0 4px;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 65%, rgba(141, 110, 99, 0.2) 65%);
+            font-style: italic;
+        }
+     
+        .name-decoration {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0px;
+        }
+     
+        /* 响应式设计 */
+        @media (max-width: 850px) {
             body {
-                padding: 1.5rem;
+                padding: 45px 30px;
+                max-width: 95%;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 2.8rem;
             }
-            .profile-container {
-                width: 150px;
-                height: 150px;
+            h2 {
+                font-size: 1.85rem;
             }
-            .contact-info {
-                flex-direction: column;
-                gap: 0.8rem;
-                align-items: center;
+        }
+     
+        @media (max-width: 600px) {
+            body {
+                padding: 38px 22px;
             }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+                margin: 60px 0 35px;
+            }
+            .contact {
+                padding-left: 22px;
+                font-variant: normal;
+            }
+        }
+     
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 18px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .position {
+                font-size: 1.3rem;
+            }
+            .content {
+                padding: 0 25px;
+            }
+        }
+     
+        /* 打印优化 */
+        @media print {
+            body {
+                background: white;
+                padding: 20px;
+                max-width: 100%;
+                font-size: 12pt;
+            }
+            a {
+                border: none;
+            }
+            .highlight {
+                background: none;
+                font-weight: bold;
+                font-style: normal;
+            }
+        }
+     
+        /* 优雅的装饰元素 */
+        .ornament {
+            text-align: center;
+            margin: 45px 0;
+            color: #8d6e63;
+            opacity: 0.4;
+            font-size: 1.5rem;
+            letter-spacing: 8px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <!-- <div class="profile-container">
-            <img src="./assets/img/avatar.png" 
-                 alt="Xiefan Guo" class="profile-img">
-        </div> -->
-        
-        <h2 style="margin-bottom:0.3em; line-height: 150%; font-size: 26px; ">Xiefan Guo</h2>
-        <p class="title">Ph.D. Student @ Beihang University (BUAA)</p>
-        <p class="institution">Email: guoxiefan@gmail.com</p>
-
-        <p style="margin-top:0.5em; margin-bottom:0.5em; line-height: 150%; font-size: 15px; ">
-            [<a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en">Google Scholar</a>]
-            [<a href="https://github.com/xiefan-guo">Github</a>]
-            <!-- [<a href="https://dblp.uni-trier.de/pid/249/0970.html">DBLP</a>] -->
-            [<a href="https://twitter.com/guoxiefan">Twitter</a>]
-        </p>
-        
-        <!-- <div class="nav-links">
-            <a href="#about" class="active">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#contact">Contact</a>
-        </div> -->
-        
-    </header>
-    
-    <section class="section">
-        <h2>Biography</h2>
-        <p style="margin-left:1em; margin-bottom:1em; margin-top:0em">
-                I am a Ph.D. student at the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/">Beihang University</a> (BUAA), 
-                supervised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a>. 
-                My research interests focus on Computer Vision, Generative AI, and Diffusion models.
-        </p>
-        <p style="margin-left:1em; margin-bottom:0em">
+    <div class="content">
+        <header>
+            <h1 style="line-height: 1.25;"><span class="name-decoration">Xiefan Guo</span></h1>
+            <p class="position">Ph.D. Student @ Beihang University (BUAA)</p>
+            <!-- <p class="institution">Institute for Advanced Study, Princeton</p> -->
+            <p class="contact">
+                Email: <a href="mailto:guoxiefan@gmail.com">guoxiefan@gmail.com</a> <br>
+                <!-- Office: <br> -->
+                <!-- Phone: <br> -->
+                [<a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en">Google Scholar</a>]
+                [<a href="https://github.com/xiefan-guo">Github</a>]
+                [<a href="https://dblp.uni-trier.de/pid/249/0970.html">DBLP</a>]
+                [<a href="https://twitter.com/guoxiefan">Twitter</a>]
+            </p>
+        </header>
+     
+        <section id="about">
+            <!-- <h2>About</h2> -->
+            <p>
+                I am a Ph.D. student at the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/">Beihang University</a> (BUAA),
+                supervised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a>.
+                My research interests focus on <span class="highlight">Computer Vision</span>, <span class="highlight">Generative AI</span>, and <span class="highlight">Diffusion models</span>.
+            </p>
+            <p>
                 Before that, I received my master degree from the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/">Beihang University</a> (BUAA), China, in Jan. 2023
                 and B.E degree from the College of Intelligence and Computing, <a href="https://www.tju.edu.cn/">Tianjin University</a> (TJU), China, in Jul. 2020.
                 I interned at <a href="">Shanghai AI Laboratory</a>, <a href="https://tongyi.aliyun.com/">Alibaba TongYi Lab</a> and <a href="https://damo.alibaba.com/">Alibaba DAMO Academy</a>.
-        </p>
-    </section>
-    
-    <!-- <section class="section">
-        <h2>Education</h2>
+            </p>
+        </section>
+     
+        <!-- <section id="research">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>Quantum gravity and holographic duality</li>
+                <li>Entanglement structure in quantum field theories</li>
+                <li>Quantum information dynamics in black hole physics</li>
+                <li>Emergent spacetime from quantum entanglement</li>
+                <li>Tensor networks as models of holography</li>
+                <li>Quantum complexity and chaos in gravitational systems</li>
+            </ul>
+        </section> -->
+     
 
-        <ul>
-            <li>2023.09 - Now: PhD student in computer science, Beihang University, Advisor: Prof. Di Huang</li>
-            <li>2020.09 - 2023.01: Master student in computer science, Beihang University, Advisor: Prof. Di Huang</li>
-            <li>2016.09 - 2020.06: Bachelor diploma of computer science, Tianjin University</li>
-        </ul>
-        
-    </section> -->
-    
-    <section class="section">
-        <h2>Publications</h2>
-        <div class="publications">
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">Ultra-High-Resolution Image Synthesis: Data, Method and Evaluation</span><br>
-                <span class="publication-authors">Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, Di Huang</span><br>
-                <span class="publication-journal">In: <em>arXiv:2506.01331</em>, Technical Report, 2025</span><br>
-                <span class="publication-journal">
+        <!-- <section id="news">
+            <h2>News</h2>
+            <ul class="new">
+                <li><b>2025.04:</b> I start my intern at Shanghai AI Laboratory.</li>
+                <li><b>2025.02:</b> One paper (<a href="">Diffusion-4K</a>) is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
+                <li><b>2024.06:</b> We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.</li>
+                <li><b>2024.05:</b> Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.</li>
+                <li><b>2024.02:</b> Two papers (<a href="https://arxiv.org/abs/2404.04650">InitNO</a> and <a href="https://arxiv.org/abs/2406.02038">DRM</a>) are accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.</li>
+                <li><b>2023.09:</b> I start my intern at Alibaba TongYi Lab.</li>
+                <li><b>2022.03:</b> One paper (<a href="">ABPN</a>) is accepted by <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.</li>
+                <li><b>2021.09:</b> I obtain China National Scholarship.</li>
+                <li><b>2021.07:</b> One paper (<a href="https://arxiv.org/abs/2108.09760">CTSDG</a>) is accepted by <a href="https://iccv2021.thecvf.com/">ICCV 2021</a>.</li>
+            </ul> 
+        </section> -->
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p>See the full list on my <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" rel="external nofollow noopener" target="_blank">Google Scholar</a>.</p>
+            <!-- <h3>Preprints</h3> -->
+
+            <div class="publication">
+                <p>
+                    <b>Ultra-High-Resolution Image Synthesis: Data, Method and Evaluation</b> <br>
+                    Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, and Di Huang <br>
+                    In: <em>arXiv:2506.01331</em>, Technical Report, 2025 <br>
                     [<a href="https://arxiv.org/abs/2506.01331">Paper</a>]
                     [<a href="https://github.com/zhang0jhon/diffusion-4k">Code</a>]
-                    [<a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-Train-V2">Dataset: Aesthetic-Train-V2</a>]
-                </span>
+                    [<a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-Train-V2">Dataset</a>]
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models</span><br>
-                <span class="publication-authors">Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, Di Huang</span><br>
-                <span class="publication-journal">In: <em>The 43nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 11-15, 2025, Nashville, USA</span><br>
-                <span class="publication-journal">
+           
+            <div class="publication">
+                <p>
+                    <b>Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models</b> <br>
+                    Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, and Di Huang <br>
+                    In: <em>The 43nd IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), Jun. 11-15, 2025, Nashville, USA <br>
                     [<a href="https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html">Paper</a>]
                     [<a href="https://arxiv.org/abs/2503.18352">arXiv</a>]
                     [<a href="https://github.com/zhang0jhon/diffusion-4k">Code</a>]
-                    [<a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-4K">Dataset: Aesthetic-4K</a>]
-                </span>
+                    [<a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-4K">Dataset</a>]
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">I4VGen: Image as Free Stepping Stone for Text-to-Video Generation</span><br>
-                <span class="publication-authors"><b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, Di Huang</span><br>
-                <span class="publication-journal">In: <em>arXiv:2406.02230</em>, Technical Report, 2024</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b><font style="font-variant: small-caps;">I4VGen</font>: Image as Free Stepping Stone for Text-to-Video Generation</b> <br>
+                    <b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
+                    In: <em>arXiv:2406.02230</em>, Technical Report, 2024 <br>
                     [<a href="https://arxiv.org/abs/2406.02230">Paper</a>]
                     [<a href="https://github.com/xiefan-guo/i4vgen">Code</a>]
                     [<a href="https://xiefan-guo.github.io/i4vgen/">Project</a>]
-                </span>
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">InitNO: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization</span><br>
-                <span class="publication-authors"><b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, Di Huang</span><br>
-                <span class="publication-journal">In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b><font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization</b> <br>
+                    <b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, and Di Huang <br>
+                    In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), Jun. 17-21, 2024, Seattle, USA <br>
                     [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Guo_InitNO_Boosting_Text-to-Image_Diffusion_Models_via_Initial_Noise_Optimization_CVPR_2024_paper.html">Paper</a>]
                     [<a href="https://arxiv.org/abs/2404.04650">arXiv</a>]
                     [<a href="https://github.com/xiefan-guo/initno">Code</a>]
                     [<a href="https://xiefan-guo.github.io/initno/">Project</a>]
                     [<a href="https://drive.google.com/file/d/14HfV0YYvT5P2glY5DjTEgY8Fc6WS8ThR/view">Slide</a>]
                     [<a href="https://drive.google.com/file/d/1epc_4LUmYba0yYzB3pXcTZuXIcuQEpim/view">Poster</a>]
-                </span>
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">Leveraging Predicate and Triplet Learning for Scene Graph Generation</span><br>
-                <span class="publication-authors">Jiankai Li, Yunhong Wang, <b>Xiefan Guo</b>, Ruijie Yang, Weixin Li</span><br>
-                <span class="publication-journal">In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b>Leveraging Predicate and Triplet Learning for Scene Graph Generation</b> <br>
+                    Jiankai Li, Yunhong Wang, <b>Xiefan Guo</b>, Ruijie Yang, and Weixin Li <br>
+                    In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), Jun. 17-21, 2024, Seattle, USA <br>
                     [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Li_Leveraging_Predicate_and_Triplet_Learning_for_Scene_Graph_Generation_CVPR_2024_paper.html">Paper</a>]
                     [<a href="https://arxiv.org/abs/2406.02038">arXiv</a>]
                     [<a href="https://github.com/jkli1998/DRM">Code</a>]
-                </span>
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">DreaMoving: A Human Video Generation Framework based on Diffusion Models</span><br>
-                <span class="publication-authors">DreaMoving Team: Mengyang Feng, Jinlin Liu, Kai Yu, Yuan Yao, Zheng Hui, <b><b>Xiefan Guo</b></b>, Xianhui Lin, <em>et al.</em></span><br>
-                <span class="publication-journal">In: <em>arXiv:2312.05107</em>, Technical Report, 2023</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b>DreaMoving: A Human Video Generation Framework based on Diffusion Models</b> <br>
+                    DreaMoving Team: Mengyang Feng, Jinlin Liu, Kai Yu, Yuan Yao, Zheng Hui, <b><b>Xiefan Guo</b></b>, Xianhui Lin, <em>et al.</em> <br>
+                    In: <em>arXiv:2312.05107</em>, Technical Report, 2023 <br>
                     [<a href="https://arxiv.org/abs/2312.05107">Paper</a>]
                     [<a href="https://github.com/dreamoving/dreamoving-project">Code</a>]
                     [<a href="https://dreamoving.github.io/dreamoving/">Project</a>]
                     [<a href="https://www.modelscope.cn/studios/vigen/video_generation/summary">ModelScope</a>]
                     [<a href="https://huggingface.co/spaces/jiayong/Dreamoving">Hugging Face</a>]
-                </span>
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</span><br>
-                <span class="publication-authors">Biwen Lei, <b>Xiefan Guo</b>, Hongyu Yang, Miaomiao Cui, Xuansong Xie, Di Huang</span><br>
-                <span class="publication-journal">In: <em>The 40th IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 19-24, 2022, New Orleans, USA</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b>ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</b> <br>
+                    Biwen Lei, <b>Xiefan Guo</b>, Hongyu Yang, Miaomiao Cui, Xuansong Xie, and Di Huang <br>
+                    In: <em>The 40th IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), Jun. 19-24, 2022, New Orleans, USA <br>
                     [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Lei_ABPN_Adaptive_Blend_Pyramid_Network_for_Real-Time_Local_Retouching_of_CVPR_2022_paper.html">Paper</a>]
                     [<a href="https://modelscope.cn/models/damo/cv_unet_skin-retouching/summary">ModelScope</a>]
-                    [<a href="https://github.com/youngLBW/CRHD-3K">Dataset: CRHD-3K</a>]
-                </span>
+                    [<a href="https://github.com/youngLBW/CRHD-3K">Dataset</a>]
+                </p>
             </div>
-            <div class="publication" style="margin-left:1em;">
-                <span class="publication-title">Image Inpainting via Conditional Texture and Structure Dual Generation</span><br>
-                <span class="publication-authors"><b>Xiefan Guo</b>, Hongyu Yang, Di Huang</span><br>
-                <span class="publication-journal">In: <em>The 18th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 11-17, 2021, Montreal, Canada (Virtual)</span><br>
-                <span class="publication-journal">
+
+            <div class="publication">
+                <p>
+                    <b>Image Inpainting via Conditional Texture and Structure Dual Generation</b> <br>
+                    <b>Xiefan Guo</b>, Hongyu Yang, and Di Huang <br>
+                    In: <em>The 18th IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), Oct. 11-17, 2021, Montreal, Canada (Virtual) <br>
                     [<a href="https://openaccess.thecvf.com/content/ICCV2021/html/Guo_Image_Inpainting_via_Conditional_Texture_and_Structure_Dual_Generation_ICCV_2021_paper.html">Paper</a>]
                     [<a href="https://arxiv.org/abs/2108.09760">arXiv</a>]
                     [<a href="https://github.com/xiefan-guo/ctsdg">Code</a>]
                     [<a href="https://drive.google.com/file/d/1HLPMJQHWC1Ac4GHnnXaRdh6ZGadjwAcL/view">Slide</a>]
                     [<a href="https://drive.google.com/file/d/1WN0jqh5zkc-_tiXKYx1kMI2OZPWIVx8s/view">Poster</a>]
-                </span>
+                </p>
             </div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>Honors</h2>
 
-        <ul>
-            <li>2023: Outstanding Freshman Scholarship for PhD Student, Beihang University</li>
-            <li>2022: Excellent Graduate Award, Beihang University</li>
-            <li>2022: Tansuo Award, Beihang University</li>
-            <li>2021: National Scholarship, Beihang University</li>
-            <li>2020: Excellent Graduate Award, Tianjin University</li>
-            <li>2019: National Scholarship, Tianjin University</li>
-            <li>2018: Silver Medal, ACM International Collegiate Programming Contest (ACM-ICPC), Asia Regional Contest</li>
-            <li>2018: Silver Medal, China Collegiate Programming Contest (CCPC), Regional Contest</li>
-            <li>2018: Weichai Power Scholarship, Tianjin University</li>
-        </ul>
-        
-    </section>
-    
-    <section class="section">
-        <h2>Professional activities</h2>
+        </section>
+     
 
-        <ul>
-            <li><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, AISTATS, ACM MM, ICMR, ECAI, BMVC, PRCV</li>
-            <li><b>Journal Reviewer:</b> TPAMI, TVCG, TCSVT, TMM, CVIU, FCS</li>
-        </ul>
-        
-    </section>
-    
-    <br>
+        <section id="honors">
+            <h2>Honors</h2>
+            <ul>
+                <li>2023: Outstanding Freshman Scholarship for PhD Student, Beihang University</li>
+                <li>2022: Excellent Graduate Award, Beihang University</li>
+                <li>2022: Tansuo Award, Beihang University</li>
+                <li>2021: National Scholarship, Beihang University</li>
+                <li>2020: Excellent Graduate Award, Tianjin University</li>
+                <li>2019: National Scholarship, Tianjin University</li>
+                <li>2018: Silver Medal, ACM International Collegiate Programming Contest (ACM-ICPC), Asia Regional Contest</li>
+                <li>2018: Silver Medal, China Collegiate Programming Contest (CCPC), Regional Contest</li>
+                <li>2018: Weichai Power Scholarship, Tianjin University</li>
+            </ul>
+        </section>
+     
 
-    <!-- <footer class="footer">
-        <p>© 2025 Xiefan Guo | Beihang University | Last updated: June 2025</p>
+        <section id="activities">
+            <h2>Professional Activities</h2>
+            <ul>
+                <li><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, AISTATS, ACM MM, ICMR, ECAI, BMVC, PRCV</li>
+                <li><b>Journal Reviewer:</b> TPAMI, TVCG, TCSVT, TMM, CVIU, FCS</li>
+            </ul>
+        </section>
+     
+    </div>
+ 
+    <!-- <footer>
+        <p>Xiefan Guo | Beihang University</p>
+        <p>Beijing | Last updated: June 21, 2025</p>
     </footer> -->
 </body>
 </html>
