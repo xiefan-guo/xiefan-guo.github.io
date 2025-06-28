@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiefan Guo - Homepage</title>
+    <title>Xiefan Guo's Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet"> -->
    
     <style>
         /* 优雅学术字体组合 */
         body {
-            font-family: 'Cardo', Georgia, Times, 'Cormorant Garamond', 'Cardo', Georgia, serif;
+            font-family: 'Times New Roman', 'Cardo', Georgia, Times, 'Cormorant Garamond', 'Cardo', Georgia, serif;
             font-weight: 400;
             font-size: 16px;
             line-height: 1.6;
             /* color: #333; */
             color: black;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 50px 40px;
             /* background-color: #fcfaf7; */
@@ -25,7 +25,7 @@
         }
      
         h1, h2, h3, h4 {
-            font-family: 'Cardo', 'Cormorant', Garamond, serif;
+            font-family: 'Times New Roman', 'Cardo', 'Cormorant', Garamond, serif;
             font-weight: 500;
             margin: 0;
             color: #222;
@@ -48,22 +48,24 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, #8d6e63, #c0b3a8, #8d6e63);
+            /* background: linear-gradient(90deg, #8d6e63, #c0b3a8, #8d6e63); */
+            /* background: linear-gradient(90deg, rgba(6, 69, 173, 0.2), rgba(6, 69, 173, 0.2), rgba(6, 69, 173, 0.2)); */
+            background: linear-gradient(90deg, black, black, black);
             opacity: 0.7;
         }
      
         h2 {
             font-size: 1.5rem;
-            margin: 75px 0 0px;
+            margin: 0px 0 0px;
             padding-bottom: 1rem;
-            /* border-bottom: 1px solid #d7ccc8; */
+            /* border-bottom: 2px solid #d7ccc8; */
             font-weight: 600;
             letter-spacing: 0.6px;
         }
-     
+       
         h3 {
             font-size: 1.25rem;
-            margin: 0px 0 15px;
+            margin: 0px 0 0px;
             color: #444;
             font-weight: 500;
             font-style: italic;
@@ -87,13 +89,13 @@
             line-height: 1.85;
             padding-left: 24px;
             /* border-left: 3px solid #d7ccc8; */
-            border-left: 3px solid lightgrey;
-            font-variant: small-caps;
+            border-left: 3px solid rgba(6, 69, 173, 0.2);
+            /* font-variant: small-caps; */
             letter-spacing: 0.8px;
         }
      
         section {
-            margin-bottom: 0px;
+            margin-bottom: 3rem;
         }
      
         p {
@@ -104,22 +106,31 @@
      
         ul {
             padding-left: 2rem;
-            margin: 0 0 42px 0;
+            margin: 0 0 1rem 0;
             /* list-style-type: square; */
         }
      
         li {
             /* margin-bottom: 18px; */
             position: relative;
-            line-height: 1.75;
+            line-height: 1.6;
         }
 
-        .publication, .experience {
+        .experience {
             margin-left: 0.5rem;
             margin-bottom: 0px;
             padding: 0 0 0 24px;
             /* border-left: 2px solid #e0d6c9; */
-            border-left: 2px solid lightgrey;
+            border-left: 2px solid rgba(6, 69, 173, 0.2);
+        }
+
+        .publication {
+            margin-left: 0.5rem;
+            margin-bottom: 0px;
+            padding: 0 0 0 22px;
+            /* border-left: 2px solid #e0d6c9; */
+            /* border-left: 2px solid rgba(6, 69, 173, 0.2); */
+            border-left: 2px solid rgba(0, 0, 0, 1);
         }
      
         .date {
@@ -176,8 +187,10 @@
         .highlight {
             position: relative;
             font-weight: 500;
-            padding: 0 4px;
-            background: linear-gradient(180deg, rgba(255,255,255,0) 65%, rgba(141, 110, 99, 0.2) 65%);
+            padding: 0 2px;
+            /* background: linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(141, 110, 99, 0.2) 65%); */
+            background: linear-gradient(180deg, rgba(255,255,255,0) 75%, rgba(6, 69, 173, 0.1) 65%);
+            /* background: linear-gradient(180deg, rgba(255,255,255,0) 75%, rgba(0, 0, 0, 0.1) 65%); */
             font-style: italic;
         }
      
@@ -291,6 +304,7 @@
                 and B.E degree from the College of Intelligence and Computing, <a href="https://www.tju.edu.cn/">Tianjin University</a> (TJU), China, in Jul. 2020.
                 I interned at <a href="">Shanghai AI Laboratory</a>, <a href="https://tongyi.aliyun.com/">Alibaba TongYi Lab</a> and <a href="https://damo.alibaba.com/">Alibaba DAMO Academy</a>.
             </p>
+           
         </section>
      
         <!-- <section id="research">
@@ -304,27 +318,40 @@
                 <li>Quantum complexity and chaos in gravitational systems</li>
             </ul>
         </section> -->
-     
 
-        <!-- <section id="news">
-            <h2>News</h2>
-            <ul class="new">
-                <li><b>2025.04:</b> I start my intern at Shanghai AI Laboratory.</li>
-                <li><b>2025.02:</b> One paper (<a href="">Diffusion-4K</a>) is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
-                <li><b>2024.06:</b> We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.</li>
-                <li><b>2024.05:</b> Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.</li>
-                <li><b>2024.02:</b> Two papers (<a href="https://arxiv.org/abs/2404.04650">InitNO</a> and <a href="https://arxiv.org/abs/2406.02038">DRM</a>) are accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.</li>
-                <li><b>2023.09:</b> I start my intern at Alibaba TongYi Lab.</li>
-                <li><b>2022.03:</b> One paper (<a href="">ABPN</a>) is accepted by <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.</li>
-                <li><b>2021.09:</b> I obtain China National Scholarship.</li>
-                <li><b>2021.07:</b> One paper (<a href="https://arxiv.org/abs/2108.09760">CTSDG</a>) is accepted by <a href="https://iccv2021.thecvf.com/">ICCV 2021</a>.</li>
-            </ul> 
-        </section> -->
+        <section id="news">
+            <h2>News <a href="./news/index.html" rel="external nofollow noopener" target="_blank"><font style="font-size: 16px;">[more]</font></a></h2>
+            <ul>
+                <li><font class="highlight">2025.06:</font> Our paper, titled “<font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning” is accepted by <a href="https://iccv.thecvf.com/">ICCV 2025</a>.</li>
+                <!-- <li>2025.04: I start my intern at Shanghai AI Laboratory.</li> -->
+                <li><font class="highlight">2025.02:</font> Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
+               
+                <!-- <li>2024.06: We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.</li>
+                <li>2024.05: Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.</li>
+                <li>2024.02: Our paper, titled “<font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization” is accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.</li>
+                <li>2024.02: Our paper, titled “Leveraging Predicate and Triplet Learning for Scene Graph Generation” is accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.</li>
+                <li>2023.09: I start my intern at Alibaba TongYi Lab.</li>
+                <li>2022.03: Our paper, titled “ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo” is accepted by <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.</li>
+                <li>2021.09: I obtain China National Scholarship.</li>
+                <li>2021.07: Our paper, titled “Image Inpainting via Conditional Texture and Structure Dual Generation” is accepted by <a href="https://iccv2021.thecvf.com/">ICCV 2021</a>.</li> -->
+            </ul>
+        </section>
+       
 
         <section id="publications">
             <h2>Selected Publications</h2>
             <p>See the full list on my <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" rel="external nofollow noopener" target="_blank">Google Scholar</a>.</p>
             <!-- <h3>Preprints</h3> -->
+
+            <div class="publication">
+                <p>
+                    <b><font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br>
+                    <b>Xiefan Guo</b>, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
+                    In: <em>The 20th IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), Oct. 19-23, 2025, Hawaii, USA <br>
+                    [<a href="">Paper</a>]
+                    [<a href="">Code</a>]
+                </p>
+            </div>
 
             <div class="publication">
                 <p>
@@ -384,6 +411,16 @@
                     [<a href="https://github.com/jkli1998/DRM">Code</a>]
                 </p>
             </div>
+           
+            <!-- <div class="publication">
+                <p>
+                    <b>Disentangling Foreground and Background Motion for Enhanced Realism in Human Video Generation</b> <br>
+                    Jinlin Liu, Kai Yu, Mengyang Feng, <b>Xiefan Guo</b>, and Miaomiao Cui <br>
+                    In: <em>arXiv:2405.16393</em>, Technical Report, 2024 <br>
+                    [<a href="https://arxiv.org/abs/2405.16393">Paper</a>]
+                    [<a href="https://liujl09.github.io/humanvideo_movingbackground/">Project</a>]
+                </p>
+            </div> -->
 
             <div class="publication">
                 <p>
@@ -444,11 +481,11 @@
         <section id="activities">
             <h2>Professional Activities</h2>
             <ul>
-                <li><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, AISTATS, ACM MM, ICMR, ECAI, BMVC, PRCV</li>
-                <li><b>Journal Reviewer:</b> TPAMI, TVCG, TCSVT, TMM, CVIU, FCS, J-STSP</li>
+                <li style="line-height: 1.75"><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, AISTATS, ACM MM, ICMR, ECAI, BMVC, PRCV</li>
+                <li style="line-height: 1.75"><b>Journal Reviewer:</b> TPAMI, TVCG, TCSVT, TMM, CVIU, FCS, J-STSP</li>
             </ul>
         </section>
-     
+   
     </div>
  
     <!-- <footer>
