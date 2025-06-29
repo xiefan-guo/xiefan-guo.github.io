@@ -23,14 +23,14 @@ html[data-theme='dark'] .repo-img-light { display: none; }
 html[data-theme='dark'] .repo-img-dark { display: block; }
 
 /****************************************************************************** Content */
-body { 
-    font-family: 'Times New Roman', Palatino, Times, Baskerville, Didot, Georgia, Palatino; 
-    font-size: 16px; 
+body {
+    font-family: 'Times New Roman', Palatino, Times, Baskerville, Didot, Georgia, Palatino;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
-    padding-bottom: 70px; 
-    color: var(--global-text-color); 
-    background-color: var(--global-bg-color); 
+    padding-bottom: 70px;
+    color: var(--global-text-color);
+    background-color: var(--global-bg-color);
     /* letter-spacing: 0.2px; */
 }
 
@@ -40,11 +40,46 @@ body.fixed-top-nav { padding-top: 56px; }
 
 body.sticky-bottom-footer { padding-bottom: 0; }
 
-.container { max-width: 1050px; }
+.container { max-width: 1000px; }
 
 .profile img { width: 100%; }
 
+/****************************************************************************** News */
+
+.new-item {
+    margin-left: 4px;
+    margin-bottom: 0px;
+    /* padding: 1rem; */
+    padding: 0px 0 0px 16px;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 3px solid #e9eff7;
+    transition: all 0.3s ease;
+}
+     
+.new-item:hover {
+    border-left-color: #4a6fa5;
+    background-color: #f0f3f7;
+}
+
 /****************************************************************************** Publications */
+
+.pub-item {
+    margin-left: 4px;
+    margin-bottom: 6px;
+    /* padding: 1rem; */
+    padding: 6px 0 6px 16px;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 3px solid #e9eff7;
+    transition: all 0.3s ease;
+}
+     
+.pub-item:hover {
+    border-left-color: #4a6fa5;
+    background-color: #f0f3f7;
+}
+
 /***************************************************************************** Projects */
 /******************************************************************************* Styles for the base elements of the theme. */
 p { font-size: 1em; }
@@ -52,29 +87,29 @@ p { font-size: 1em; }
 p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong { color: var(--global-text-color); }
 
 h1 {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
-h5.new { 
-    margin-bottom: 0rem; 
-    margin-top: 2rem; 
-    line-height: 2.5; 
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-h5.pub { 
-    margin-bottom: 0rem; 
-    margin-top: 2rem; 
+h5.new {
+    margin-bottom: 0rem;
+    margin-top: 2rem;
     line-height: 2.5;
     font-weight: 400;
     font-size: 1.5rem;
 }
 
-h6 { 
-    margin-top: 1.5rem; 
-    margin-bottom: 1rem; 
-    margin-left: 1rem; 
+h5.pub {
+    margin-bottom: 0rem;
+    margin-top: 2rem;
+    line-height: 2.5;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .publication {
@@ -115,8 +150,8 @@ h6 {
     background-color: #d9edf7;
 }
 
-ul { 
-    margin-left: -0.5rem; 
+ul {
+    margin-left: -0.5rem;
     /* list-style-type: square;  */
 }
 
