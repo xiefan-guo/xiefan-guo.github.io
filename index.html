@@ -36,9 +36,12 @@
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
 
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
     <script src="./assets/js/theme.js"></script>
     <script src="./assets/js/dark_mode.js"></script>
-   
 
   </head>
 
@@ -64,15 +67,27 @@
             <ul class="navbar-nav ml-auto flex-nowrap">
 
               <!-- About -->
-              <!-- <li class="nav-item active">
-                <a class="nav-link" href="/" style="font-size: 1rem;">About<span class="sr-only">(current)</span></a>
-              </li> -->
-              
+              <li class="nav-item active">
+                <a class="nav-link" href="#about" style="font-size: 1rem;">About<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item active">
+                <a class="nav-link" href="#publications" style="font-size: 1rem;">Publications<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item active">
+                <a class="nav-link" href="#honors" style="font-size: 1rem;">Honors<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item active">
+                <a class="nav-link" href="#activities" style="font-size: 1rem;">Activities<span class="sr-only">(current)</span></a>
+              </li>
+             
               <!-- About -->
               <!-- <li class="nav-item active">
                 <a class="nav-link" href="/" style="font-size: 1rem;">About<span class="sr-only">(current)</span></a>
               </li> -->
-              
+             
               <!-- Toogle theme mode -->
               <!-- <li class="toggle-container">
                 <button id="light-toggle" title="Change theme" style="font-size: 1rem;">
@@ -98,27 +113,34 @@
     <div class="post">
 
     <article>
+
+    <a name="about"></a>
+
     <div class="row">
         <!-- <div class="col-sm-2">
             <img style="width: 145px;border-radius: 10px" src="./assets/img/avatar.png">
         </div> -->
-   
+       
         <div class="col-sm-10">
-            <h1>
+            <h1 style="font-size: 2rem;">
+            <!-- <b><b>Xiefan Guo</b></b> -->
             Xiefan Guo
             </h1>
-            <p style="letter-spacing: 0.4px; line-height: 1.75;">
-                Ph.D. Student @ Beihang University (BUAA)<br>
+            <p style="font-size: 16px; letter-spacing: 0.4px; line-height: 1.75; margin-bottom: 1.2rem;">
+              Ph.D. Student @ Beihang University (BUAA) <br>
+              Email: <a href="mailto:guoxiefan@gmail.com">guoxiefan@gmail.com</a>
+            </p>
+            <!-- <p style="letter-spacing: 0.4px; line-height: 1.75;">
                 Email: <a href="mailto:guoxiefan@gmail.com">guoxiefan@gmail.com</a> <br>
-                <!-- Office: <br> -->
-                <!-- Phone: <br> -->
+                Office: <br>
+                Phone: <br>
                 [<a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en">Google Scholar</a>]
                 [<a href="https://github.com/xiefan-guo">Github</a>]
                 [<a href="https://dblp.uni-trier.de/pid/249/0970.html">DBLP</a>]
                 [<a href="https://twitter.com/guoxiefan">Twitter</a>]
-            </p>
+            </p> -->
 
-            <!-- <div class="social">
+            <div class="social">
                 <div class="contact-icons">
                 <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
                 <a href="https://github.com/xiefan-guo" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fab fa-github"></i></a>
@@ -128,7 +150,7 @@
                 <a href="" title="ORCID" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
                 <a href="" title="arXiv" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i></a>
                 </div>
-            </div> -->
+            </div>
    
         </div>
     </div>
@@ -168,9 +190,9 @@
 <div style="border: 2px solid black; border-radius: 8px; ">
 <!-- <div> -->
   <ul class="new">
-    <li><font class="highlight" style="font-style: italic;">2025.06:</font> Our paper, titled “<font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning” is accepted by <a href="https://iccv.thecvf.com/">ICCV 2025</a>.</li>
-    <!-- <li>2025.04: I start my intern at Shanghai AI Laboratory.</li> -->
-    <li><font class="highlight" style="font-style: italic;">2025.02:</font> Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
+    <li><font class="highlight">2025.06:</font> Our paper, titled “<font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning” is accepted by <a href="https://iccv.thecvf.com/">ICCV 2025</a>.</li>
+    <!-- <li><font class="highlight" style="font-style: italic;">2025.04:</font> I start my intern at Shanghai AI Laboratory.</li> -->
+    <li><font class="highlight">2025.02:</font> Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.</li>
                
     <!-- <li>2024.06: We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.</li>
     <li>2024.05: Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.</li>
@@ -185,12 +207,33 @@
 
 </div>
 
+<a name="publications"></a>
+
 <div class="publications">
 <h5 class="pub">Selected Publications</h5>
 
 <p>See the full list on my <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" rel="external nofollow noopener" target="_blank">Google Scholar</a>.</p>
            
 <!-- <h6><b><b>Conference Papers</b></b></h6> -->
+
+<!-- <div>
+  <ul>
+    <li>
+      <div class="pub-item">
+      <div>
+        <b><font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br>
+        <b>Xiefan Guo</b>, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
+        In: <em>The 20th IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), Oct. 19-23, 2025, Hawaii, USA <br>
+        [<a href=""><font style="color: grey;">Paper</font></a>]
+        [<a href=""><font style="color: grey;">arXiv</font></a>]
+        [<a href=""><font style="color: grey;">Code</font></a>]
+        [<a href=""><font style="color: grey;">Project</font></a>]
+        [<a href=""><font style="color: grey;">Slide</font></a>]
+        [<a href=""><font style="color: grey;">Poster</font></a>]
+    </div>
+    </li>
+  </ul>    
+</div> -->
 
 <div class="pub-item">
     <b><font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br>
@@ -294,6 +337,8 @@
 
 </div>  
 
+<a name="honors"></a>
+
 <div class="honors">
 <h5 class="pub">Honors</h5>
 <div>
@@ -330,6 +375,7 @@
 </div>
 </div> -->
  
+<a name="activities"></a>
 
 <div class="professional-activities">
 <h5 class="pub">Professional Activities</h5>

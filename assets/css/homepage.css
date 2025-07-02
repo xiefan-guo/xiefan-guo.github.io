@@ -24,7 +24,7 @@ html[data-theme='dark'] .repo-img-dark { display: block; }
 
 /****************************************************************************** Content */
 body {
-    font-family: 'Times New Roman', Palatino, Times, Baskerville, Didot, Georgia, Palatino;
+    font-family: 'Times New Roman', Georgia, 'Palatino Linotype', 'Palatino Linotype', 'Cormorant Garamond', 'Times New Roman', Palatino, Times, Baskerville, Didot, Georgia, Palatino, 'Nunito';
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
@@ -155,6 +155,11 @@ ul {
     /* list-style-type: square;  */
 }
 
+ol {
+    margin-left: -0.8rem;
+    /* list-style-type: square;  */
+}
+
 ul.pub li { margin-top: 1rem; margin-bottom: 1rem; }
 
 ol.pub li { margin-top: 1rem; margin-bottom: 1rem; }
@@ -166,8 +171,6 @@ ul.new li { line-height: 1.6;}
 ul li .links a.btn { color: var(--global-text-color); border: 1px solid var(--global-text-color); padding-left: 1rem; padding-right: 1rem; padding-top: 0.2rem; padding-bottom: 0.2rem; }
 
 ul li .links a.btn:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
-
-ol { margin-left: -1rem; }
 
 ol li { margin-bottom: 10px; }
 
