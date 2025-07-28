@@ -10,21 +10,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
-   
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> -->
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a365d',
+                        /* primary: '#1a365d', */
+                        primary: '#191970',
                         secondary: '#2a4365',
                         accent: '#4a5568',
                         light: '#f7fafc',
                         dark: '#1a202c',
-                        href: '#483D8B',
+                        /* href: '#483D8B', */
+                        href: '#191970',
                     },
                     fontFamily: {
-                        serif: ['Times', 'Georgia', '"Libre Baskerville"', 'serif'],
+                        serif: ['Cardo', '"EB Garamond"', '"Crimson Pro"', '"Crimson Text"', 'Times', 'Georgia', '"Libre Baskerville"', 'serif'],
                         sans: ['Inter', 'sans-serif', 'sans-serif']
                     },
                 }
@@ -98,7 +105,7 @@
                 </div>
                
                 <div class="mt-0 pt-0">
-                    <p class="text-gray-900" style="font-size: 15px; ">
+                    <p class="text-gray-900" style="font-size: 11pt; ">
                         I am a Ph.D. student at the School of Computer Science and Engineering, <a href="https://www.buaa.edu.cn/" target="_blank" class="text-primary hover:text-primary/80 transition-colorsflex items-center">Beihang University</a> (BUAA),
                         supervised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html" target="_blank" class="text-primary hover:text-primary/80 transition-colorsflex items-center">Di Huang</a>. My research interests focus on <span class="highlight">Computer Vision</span>, <span class="highlight">Generative AI</span>, and <span class="highlight">Diffusion models</span>.
                        
@@ -132,7 +139,7 @@
                    
                     <div class="space-y-2">
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
                                 <b>Ultra-High-Resolution Image Synthesis: Data, Method and Evaluation</b> <br>
                                 Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, and Di Huang <br>
                                 In: <em>arXiv:2506.01331</em>, Technical Report, 2025 <br>
@@ -143,7 +150,7 @@
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
                                 <b><font style="font-variant: small-caps;">I4VGen</font>: Image as Free Stepping Stone for Text-to-Video Generation</b> <br>
                                 <b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
                                 In: <em>arXiv:2406.02230</em>, Technical Report, 2024 <br>
@@ -154,7 +161,7 @@
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
                                 <b>DreaMoving: A Human Video Generation Framework based on Diffusion Models</b> <br>
                                 DreaMoving Team: Mengyang Feng, Jinlin Liu, Kai Yu, Yuan Yao, Zheng Hui, <b><b>Xiefan Guo</b></b>, Xianhui Lin, <em>et al.</em> <br>
                                 In: <em>arXiv:2312.05107</em>, Technical Report, 2023 <br>
@@ -180,20 +187,25 @@
                    
                     <div class="space-y-2">
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[ICCV'25]</font> <font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b><font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br>
+                                <!-- <b><font class="text-href">[ICCV'25]</font> <font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning</b> <br> -->
                                 <b>Xiefan Guo</b>, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
                                 In: <em>The 20th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 19-23, 2025, Hawaii, USA <br>
                                 [<a href="" class="text-href"><font>Paper</font></a>]
                                 [<a href="" class="text-href"><font>arXiv</font></a>]
                                 [<a href="" class="text-href"><font>Code</font></a>]
                                 [<a href="" class="text-href"><font>Project</font></a>]
+                                <!-- <a href="" class="text-href"><font>Paper</font></a> /
+                                <a href="" class="text-href"><font>arXiv</font></a> /
+                                <a href="" class="text-href"><font>Code</font></a> /
+                                <a href="" class="text-href"><font>Project</font></a> -->
                             </p>
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[CVPR'25]</font> Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models</b> <br>
                                 Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, and Di Huang <br>
                                 In: <em>The 43nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 11-15, 2025, Nashville, USA <br>
                                 [<a href="https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html" class="text-href">Paper</a>]
@@ -204,8 +216,8 @@
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[CVPR'24]</font> <font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b><font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization</b> <br>
                                 <b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, and Di Huang <br>
                                 In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA <br>
                                 [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Guo_InitNO_Boosting_Text-to-Image_Diffusion_Models_via_Initial_Noise_Optimization_CVPR_2024_paper.html" class="text-href">Paper</a>]
@@ -218,8 +230,8 @@
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[CVPR'24]</font> Leveraging Predicate and Triplet Learning for Scene Graph Generation</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>Leveraging Predicate and Triplet Learning for Scene Graph Generation</b> <br>
                                 Jiankai Li, Yunhong Wang, <b>Xiefan Guo</b>, Ruijie Yang, and Weixin Li <br>
                                 In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA <br>
                                 [<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Li_Leveraging_Predicate_and_Triplet_Learning_for_Scene_Graph_Generation_CVPR_2024_paper.html" class="text-href">Paper</a>]
@@ -229,8 +241,8 @@
                         </div>
                        
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[CVPR'22]</font>  ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo</b> <br>
                                 Biwen Lei, <b>Xiefan Guo</b>, Hongyu Yang, Miaomiao Cui, Xuansong Xie, and Di Huang <br>
                                 In: <em>The 40th IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 19-24, 2022, New Orleans, USA <br>
                                 [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Lei_ABPN_Adaptive_Blend_Pyramid_Network_for_Real-Time_Local_Retouching_of_CVPR_2022_paper.html" class="text-href">Paper</a>]
@@ -240,8 +252,8 @@
                         </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
-                            <p class="text-gray-900 text-sm mb-0" style="font-size: 11pt;">
-                                <b><font class="text-href">[ICCV'21]</font> Image Inpainting via Conditional Texture and Structure Dual Generation</b> <br>
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>Image Inpainting via Conditional Texture and Structure Dual Generation</b> <br>
                                 <b>Xiefan Guo</b>, Hongyu Yang, and Di Huang <br>
                                 In: <em>The 18th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 11-17, 2021, Montreal, Canada (Virtual) <br>
                                 [<a href="https://openaccess.thecvf.com/content/ICCV2021/html/Guo_Image_Inpainting_via_Conditional_Texture_and_Structure_Dual_Generation_ICCV_2021_paper.html" class="text-href">Paper</a>]
@@ -375,8 +387,8 @@
                                     <span class="inline-block bg-primary text-white text-xs font-bold px-1.5 py-0.5 rounded">NEW</span>
                                 </div> -->
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b><font style="color: red;">(New)</font> Jun. 2025</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b><font style="color: red;">(New)</font> Jun. 2025</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Our paper, titled “<font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning” is accepted by <a href="https://iccv.thecvf.com/">ICCV 2025</a>.
                                     </p>
                                 </div>
@@ -384,8 +396,8 @@
                            
                             <!-- <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Apr. 2025</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Apr. 2025</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         I start my intern at Shanghai AI Laboratory.
                                     </p>
                                 </div>
@@ -393,8 +405,8 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Feb. 2025</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Feb. 2025</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Our paper, titled “Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models” is accepted by <a href="https://cvpr2025.thecvf.com/">CVPR 2025</a>.
                                     </p>
                                 </div>
@@ -402,8 +414,8 @@
                            
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Jun. 2024</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Jun. 2024</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         We release the official PyTorch implementation of <a href="https://github.com/xiefan-guo/i4vgen">I4VGen</a>.
                                     </p>
                                 </div>
@@ -411,8 +423,8 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>May 2024</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>May 2024</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Invited talk at Alibaba Cloud on <a href="https://arxiv.org/abs/2404.04650">InitNO</a>, CVPR 2024.
                                     </p>
                                 </div>
@@ -420,11 +432,11 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Feb. 2024</b></p>
-                                    <p class="text-gray-900 text-sm pb-1" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Feb. 2024</b></p>
+                                    <p class="text-gray-900 text-sm pb-1" style="font-size: 14px;">
                                         Our paper, titled “<font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization” is accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>. <br>
                                     </p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Our paper, titled “Leveraging Predicate and Triplet Learning for Scene Graph Generation” is accepted by <a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>.
                                     </p>
                                 </div>
@@ -432,8 +444,8 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Sep. 2023</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Sep. 2023</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         I start my intern at Alibaba TongYi Lab.
                                     </p>
                                 </div>
@@ -441,8 +453,8 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Mar. 2022</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Mar. 2022</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Our paper, titled “ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo” is accepted by <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.
                                     </p>
                                 </div>
@@ -450,8 +462,8 @@
                            
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Sep. 2021</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Sep. 2021</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         I obtain China National Scholarship.
                                     </p>
                                 </div>
@@ -459,8 +471,8 @@
 
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
-                                    <p class="font-medium text-sm" style="font-size: 11pt;"><b>Jul. 2021</b></p>
-                                    <p class="text-gray-900 text-sm" style="font-size: 11pt;">
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>Jul. 2021</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
                                         Our paper, titled “Image Inpainting via Conditional Texture and Structure Dual Generation” is accepted by <a href="https://iccv2021.thecvf.com/">ICCV 2021</a>.
                                     </p>
                                 </div>
