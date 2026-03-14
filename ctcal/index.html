@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> -->
+    <meta name="description" content="Xiefan Guo&lt;p&gt; Ph.D. Student&lt;br&gt; Beihang University (Beijing University of Aeronautics and Astronautics, BUAA)&lt;br&gt; Email: guoxiefan@gmail.com&lt;/p&gt;">
+    <meta name="keywords" content="Xiefan Guo">
+    <title>CTCal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"> -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* primary: '#1a365d', */
+                        primary: '#191970',
+                        secondary: '#2a4365',
+                        accent: '#4a5568',
+                        light: '#f7fafc',
+                        dark: '#1a202c',
+                        /* href: '#483D8B', */
+                        href: '#191970',
+                    },
+                    fontFamily: {
+                        serif: ['Cardo', '"EB Garamond"', 'Palatino', '"Crimson Pro"', '"Crimson Text"', 'Times', 'Georgia', '"Libre Baskerville"', 'serif'],
+                        sans: ['Lato', 'Calibri', 'Open Sans', 'Verdana', 'Geneva', 'Tahoma', 'Arial', 'Inter', 'sans-serif', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+   
+    <style type="text/tailwindcss">
+
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .sidebar-shadow {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            .hover-lift {
+                transition: transform 0.1s, box-shadow 0.1s;
+            }
+            .hover-lift:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            }
+            .section-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: theme('colors.primary');
+                margin-bottom: 0.5rem;
+            }
+            .section-project-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: theme('colors.primary');
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-serif text-dark pt-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Main Content -->
+        <main class="flex flex-col lg:flex-row gap-6">
+            <!-- Left Column: Publications, Honors, Professional Activities -->
+            <div class="lg:w-3/4 space-y-8">
+                
+                <section id="main">
+
+                    <h2 class="section-project-title">
+                        <b><font style="font-variant: small-caps;">CTCal</font>: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration</b>
+                    </h2>
+                    <p class="text-gray-900" style="font-size: 12pt; ">
+                        <!-- Xiefan Guo<sup>1</sup>, Xinzhu Ma, Haiyu Zhang, and Di Huang -->
+                         Xiefan Guo, Xinzhu Ma, Haiyu Zhang, Di Huang
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <a href="" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
+                            Paper 
+                        </a> / 
+                        <a href="" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
+                            Code  
+                        </a> /
+                        <a href="" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
+                            Project 
+                        </a>
+                    </div>
+
+                    <div class="mt-0 pt-5">
+                    
+                        <p class="text-gray-900" style="font-size: 11pt; ">
+                            Recent advancements in text-to-image synthesis have been largely propelled by diffusion-based models, yet achieving precise alignment between text prompts and generated images remains a persistent challenge. We find that this difficulty arises primarily from the limitations of conventional diffusion loss, which provides only implicit supervision for modeling fine-grained text-image correspondence. In this paper, we introduce Cross-Timestep Self-Calibration (<font style="font-variant: small-caps;">CTCal</font>), founded on the supporting observation that establishing accurate text-image alignment within diffusion models becomes progressively more difficult as the timestep increases. <font style="font-variant: small-caps;">CTCal</font> leverages the reliable text-image alignment (<em>i.e.</em>, cross-attention maps) formed at smaller timesteps with less noise to calibrate the representation learning at larger timesteps with more noise, thereby providing explicit supervision during training. We further propose a timestep-aware adaptive weighting to achieve a harmonious integration of <font style="font-variant: small-caps;">CTCal</font> and diffusion loss. <font style="font-variant: small-caps;">CTCal</font> is model-agnostic and can be seamlessly integrated into existing text-to-image diffusion models, encompassing both diffusion-based (<em>e.g.</em>, Stable Diffusion 2.1) and flow-based approaches (<em>e.g.</em>, Stable Diffusion 3). Extensive experiments on T2I-Compbench++ and GenEval benchmarks demonstrate the effectiveness and generalizability of the proposed <font style="font-variant: small-caps;">CTCal</font>.
+                        </p>
+
+                    </div>
+                    
+
+                </section>
+                
+            </div>
+           
+            <!-- Right Column: News -->
+            <div class="lg:w-1/4">
+                <section id="news">
+                    <div class="bg-white rounded-lg sidebar-shadow p-4">
+                        <!-- <h2 class="section-project-title">CVPR 2026</h2> -->
+                        <div class="space-y-4">
+                            
+                            <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
+                                <div>
+                                    <p class="font-medium text-sm pb-2" style="font-size: 12pt;"><b>CVPR 2026</b></p>
+                                    <p class="text-gray-900 text-sm pb-1" style="font-size: 14px;">
+                                        <em>IEEE Conference on Computer Vision and Pattern Recognition</em>
+                                    </p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
+                                        June 3-7, 2026, Denver, USA
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+       
+        <!-- Footer -->
+        <!-- <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-xs">
+            <p>© 2025 Xiefan Guo. All rights reserved.</p>
+            <p class="mt-1">Last updated: July 6, 2025</p>
+        </footer> -->
+
+        <br><br>
+        <!-- <a href='https://clustrmaps.com/site/1c6zb'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=h43YVVIa6XhAkxFb0QtN4qAqjQD0sVfwDKeL9wNbbxo&co=2d78ad&ct=ffffff'/></a> -->
+    </div>
+   
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+               
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+       
+        // Add subtle hover effects
+        document.querySelectorAll('.hover-lift').forEach(entry => {
+            entry.addEventListener('mouseenter', function() {
+                this.classList.add('shadow-sm');
+            });
+           
+            entry.addEventListener('mouseleave', function() {
+                this.classList.remove('shadow-sm');
+            });
+        });
+    </script>
+</body>
+</html>
