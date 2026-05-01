@@ -24,6 +24,7 @@
                 extend: {
                     colors: {
                         /* primary: '#1a365d', */
+                        // primary: '#191970',
                         primary: '#191970',
                         secondary: '#2a4365',
                         accent: '#4a5568',
@@ -61,9 +62,10 @@
                 box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             }
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 font-weight: 700;
-                color: theme('colors.primary');
+                /* color: theme('colors.primary'); */
+                color: text-gray-900;
                 margin-bottom: 0.5rem;
             }
         }
@@ -81,10 +83,11 @@
                         <img src="./assets/img/avatar.png" alt="Xiefan Guo Portrait" class="w-full h-full object-cover">
                     </div>
                     <div>
-                        <h1 class="text-3xl text-secondary font-bold text-primary mb-3 ml-6">Xiefan Guo</h1>
-                        <p class="text-base text-secondary font-light mb-1 ml-6" style="font-size: 16px;">Ph.D. Candidate</p>
-                        <p class="text-base text-accent mb-2 ml-6" style="font-size: 16px;">Beihang University (BUAA)</p>
-                        <p class="text-gray-900 mb-2 ml-6" style="font-size: 16px;">Email: guoxiefan@gmail.com</p>
+                        <!-- <h1 class="text-3xl text-secondary font-bold text-primary mb-3 ml-6">Xiefan Guo</h1> -->
+                        <h1 class="text-3xl font-bold text-gray-900 mb-3 ml-6">Xiefan Guo</h1>
+                        <p class="text-base text-gray-900 font-light mb-1 ml-6" style="font-size: 16px;">Ph.D. Candidate</p>
+                        <p class="text-base text-gray-900 mb-2 ml-6" style="font-size: 16px;">Beihang University (BUAA)</p>
+                        <p class="text-base text-gray-900 mb-2 ml-6" style="font-size: 16px;">Email: guoxiefan@gmail.com</p>
                         <div class="flex flex-wrap gap-3 mt-1 ml-6">
                             <!-- icon: https://fontawesome.com/v4/icons/ -->
                             <!-- <a href="mailto:guoxiefan@gmail.com" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
@@ -139,7 +142,7 @@
                         </a>
                     </div> -->
 
-                    <div class="flex flex-wrap gap-2 mt-3">
+                    <!-- <div class="flex flex-wrap gap-2 mt-3">
                         <a href="#preprints" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
                             Preprints 
                         </a> / 
@@ -155,7 +158,7 @@
                         <a href="#activities" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center" style="font-size: 11pt;">
                             Professional Activities
                         </a>
-                    </div>
+                    </div> -->
                     
                 </div>
 
@@ -168,14 +171,15 @@
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
                             <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
                                 <b><font style="font-variant: small-caps;">EruDiff</font>: Refactoring Knowledge in Diffusion Models for Advanced Text-to-Image Synthesis</b> <br>
-                                <b>Xiefan Guo</b>, Xinzhu Ma, Haoxiang Ma, Zihao Zhou, Di Huang <br>
+                                <b>Xiefan Guo</b>, Xinzhu Ma, Haoxiang Ma, Zihao Zhou, and Di Huang <br>
                                 In: <em>arXiv:2603.20828</em>, Technical Report, 2026 <br>
                                 <a href="https://arxiv.org/abs/2603.20828" class="text-href">Paper</a> /
+                                <a href="https://arxiv.org/abs/2603.20828" class="text-href">arXiv</a> /
                                 <a href="https://github.com/xiefan-guo/erudiff" class="text-href">Code</a> 
                             </p>
                         </div>
 
-                        <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
+                        <!-- <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
                             <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
                                 <b>Ultra-High-Resolution Image Synthesis: Data, Method and Evaluation</b> <br>
                                 Jinjin Zhang, Qiuyu Huang, Junjie Liu, <b>Xiefan Guo</b>, and Di Huang <br>
@@ -184,7 +188,7 @@
                                 <a href="https://github.com/zhang0jhon/diffusion-4k" class="text-href">Code</a> /
                                 <a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-Train-V2" class="text-href">Dataset</a>
                             </p>
-                        </div>
+                        </div> -->
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
                             <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
@@ -192,10 +196,20 @@
                                 <b>Xiefan Guo</b>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, and Di Huang <br>
                                 In: <em>arXiv:2406.02230</em>, Technical Report, 2024 <br>
                                 <a href="https://arxiv.org/abs/2406.02230" class="text-href">Paper</a> /
+                                <a href="https://arxiv.org/abs/2406.02230" class="text-href">arXiv</a> /
                                 <a href="https://github.com/xiefan-guo/i4vgen" class="text-href">Code</a> /
                                 <a href="https://xiefan-guo.github.io/i4vgen/" class="text-href">Project</a>
                             </p>
                         </div>
+
+                        <!-- <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>From Idea to Script to Screen: Towards Training-Friendly Long Video Generation</b> <br>
+                                <b>Xiefan Guo</b>, Hongyu Yang, and Di Huang <br>
+                                In: Technical Report, 2023 <br>
+                                <a href="" class="text-href">Paper</a>
+                            </p>
+                        </div> -->
 
                     </div>
                    
@@ -208,9 +222,23 @@
 
                 <!-- Publications Section -->
                 <section id="publications">
-                    <h2 class="section-title">Selected Publications</h2>
-                   
+                    <h2 class="section-title">
+                        Selected Publications
+                        <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" class="text-primary hover:text-primary/80 transition-colors text-sm">
+                            [Google Scholar]
+                        </a>
+                    </h2>
+                    
                     <div class="space-y-2">
+
+                        <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
+                            <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
+                                <b>What Makes Synthetic Data Effective in Image Segmentation</b> <br>
+                                Jinjin Zhang, <b>Xiefan Guo</b>, Yizhou Jin, Nan Zhou, and Di Huang <br>
+                                In: <em>43rd International Conference on Machine Learning</em> (<b>ICML</b>), July 6-11, 2026, Seoul, South Korea <br>
+                                <a href="" class="text-href">Paper</a> 
+                            </p>
+                        </div>
 
                         <div class="bg-white pt-1 pb-1 pl-2 rounded-lg sidebar-shadow">
                             <p class="text-gray-900 text-sm mb-0" style="font-size: 14px;">
@@ -218,6 +246,7 @@
                                 <b>Xiefan Guo</b>, Xinzhu Ma, Haiyu Zhang, and Di Huang <br>
                                 In: <em>The 44th IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), June 3-7, 2026, Denver, USA <br>
                                 <a href="https://arxiv.org/abs/2603.20741" class="text-href">Paper</a> /
+                                <a href="https://arxiv.org/abs/2603.20741" class="text-href">arXiv</a> /
                                 <a href="https://github.com/xiefan-guo/ctcal" class="text-href">Code</a>
                             </p>
                         </div>
@@ -228,12 +257,7 @@
                                 <b>Towards Accurate Quantization for Large Vision-Language Models via Zeroth-Order Gradient Optimization and<br> Sectioned Logarithmic Quantizer</b> <br>
                                 Jiayi Zhang, Jiaxin Chen, <b>Xiefan Guo</b>, Xin Tong, and Di Huang <br>
                                 In: <em>The 51st IEEE International Conference on Acoustics, Speech, and Signal Processing</em> (<b>ICASSP</b>), May 4-8, 2026, Barcelona, Spain <br>
-                                <!-- [<a href="https://arxiv.org/abs/2507.22604" class="text-href"><font>Paper</font></a>]
-                                [<a href="https://arxiv.org/abs/2507.22604" class="text-href"><font>arXiv</font></a>]
-                                [<a href="https://github.com/xiefan-guo/shortft" class="text-href"><font>Code</font></a>]
-                                [<a href="http://xiefan-guo.github.io/shortft" class="text-href"><font>Project</font></a>] -->
-
-                                <a href="" class="text-href"><font>Paper</font></a>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11460568" class="text-href"><font>Paper</font></a>
                             </p>
                         </div>
 
@@ -248,7 +272,7 @@
                                 [<a href="https://github.com/xiefan-guo/shortft" class="text-href"><font>Code</font></a>]
                                 [<a href="http://xiefan-guo.github.io/shortft" class="text-href"><font>Project</font></a>] -->
 
-                                <a href="https://arxiv.org/abs/2507.22604" class="text-href"><font>Paper</font></a> /
+                                <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Guo_ShortFT_Diffusion_Model_Alignment_via_Shortcut-based_Fine-Tuning_ICCV_2025_paper.html" class="text-href"><font>Paper</font></a> /
                                 <a href="https://arxiv.org/abs/2507.22604" class="text-href"><font>arXiv</font></a> /
                                 <a href="https://github.com/xiefan-guo/shortft" class="text-href"><font>Code</font></a> /
                                 <a href="http://xiefan-guo.github.io/shortft" class="text-href"><font>Project</font></a> /
@@ -333,11 +357,11 @@
                         </div> -->
                     </div>
                    
-                    <div class="mt-4 text-left">
+                    <!-- <div class="mt-4 text-left">
                         <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" class="text-primary hover:text-primary/80 transition-colors text-sm">
                             View all publications <i class="fa fa-arrow-right ml-1"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </section>
                 
                 <!-- Projects Section -->
@@ -504,8 +528,18 @@
                 <section id="news">
                     <div class="bg-white rounded-lg sidebar-shadow p-4">
                         <h2 class="section-title">News</h2>
+
                         <div class="space-y-4">
                             
+                            <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
+                                <div>
+                                    <p class="font-medium text-sm" style="font-size: 14px;"><b>May 2026</b></p>
+                                    <p class="text-gray-900 text-sm" style="font-size: 14px;">
+                                        Our paper, titled “What Makes Synthetic Data Effective in Image Segmentation” is accepted by <a href="https://icml.cc/Conferences/2026">ICML 2026</a>.
+                                    </p>
+                                </div>
+                            </div>
+
                             <div class="flex border-l-3 border-gray-300 pl-2 py-0.5">
                                 <div>
                                     <p class="font-medium text-sm" style="font-size: 14px;"><b>Feb. 2026</b></p>
