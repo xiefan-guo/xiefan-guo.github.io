@@ -15,15 +15,27 @@
             --bg: white;
             --text: #000000;
             --muted: #2f2b28;
-            --link: #43497f;
-            /* --accent: #2f77c4; */
-            --accent: #43497f;
+            --link: #191970;
+            --accent: #191970;
+            --link-hover: #333399;
             --page-width: 1380px;
             --hero-image: 258px;
             --hero-gap: 70px;
             --content-width: 800px;
             --label-font: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", serif;
+
+            /* Type scale — semantic steps, rationalized from ad-hoc values */
+            --fs-h1: 30px;        /* site title            */
+            --fs-h2: 27px;        /* section titles        */
+            --fs-lead: 16px;      /* intro / body base     */
+            --fs-body-lg: 15.5px; /* publication titles    */
+            --fs-body: 15px;      /* timeline body, links  */
+            --fs-body-sm: 14.5px; /* authors, news body    */
+            --fs-meta: 13.5px;    /* dates, notes, labels  */
+            --fs-micro: 12.5px;   /* small-caps labels     */
+            --fs-caption: 12px;   /* footer                */
         }
+        
         * {
             box-sizing: border-box;
         }
@@ -40,8 +52,8 @@
         }
 
         body {
-            font-family: "Cardo", Georgia, serif;
-            font-size: 16.05px;
+            font-family: Palatino, Georgia, "Cardo", Georgia, serif;
+            font-size: var(--fs-lead);
             line-height: 1.54;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
@@ -53,7 +65,7 @@
             text-decoration: none;
             text-decoration-thickness: 1px;
             text-underline-offset: 2px;
-            text-decoration-color: rgba(95, 98, 143, 0.55);
+            text-decoration-color: rgba(25, 25, 112, 0.5);
         }
 
         a:hover {
@@ -76,7 +88,7 @@
         .site-title {
             color: var(--text);
             text-decoration: none;
-            font-size: 29.72px;
+            font-size: var(--fs-h1);
             line-height: 1;
             font-weight: 400;
             letter-spacing: -0.01em;
@@ -87,7 +99,7 @@
             align-items: center;
             gap: 22px;
             flex-wrap: wrap;
-            font-size: 13.62px;
+            font-size: var(--fs-meta);
             line-height: 1.35;
         }
 
@@ -131,7 +143,7 @@
 
         .side-links {
             margin: 14px 0 0;
-            font-size: 14.77px;
+            font-size: var(--fs-body-sm);
             line-height: 1.5;
             display: flex;
             flex-direction: column;
@@ -148,9 +160,18 @@
 
         .side-links a {
             color: var(--text);
-            text-decoration-color: rgba(67, 73, 127, 0.34);
+            text-decoration-color: rgba(25, 25, 112, 0.32);
             white-space: nowrap;
             flex: 0 0 auto;
+        }
+
+        /* Underlined external links in the sidebar */
+        .side-link-ext {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            text-decoration-color: rgba(25, 25, 112, 0.5);
         }
 
         .intro {
@@ -160,7 +181,7 @@
 
         .intro p {
             margin: 0 0 16px;
-            font-size: 16.35px;
+            font-size: var(--fs-lead);
         }
 
         .side-links,
@@ -179,14 +200,14 @@
             margin-top: 22px;
             padding: 12px 16px 12px 17px;
             background: rgba(255, 255, 255, 0.32);
-            border-left: 2px solid rgba(95, 98, 143, 0.34);
-            box-shadow: inset 0 0 0 1px rgba(95, 98, 143, 0.05);
+            border-left: 2px solid rgba(25, 25, 112, 0.34);
+            box-shadow: inset 0 0 0 1px rgba(25, 25, 112, 0.05);
         }
 
         .status-label {
             display: inline-block;
             margin: 0 6px 0 0;
-            font-size: 12.85px;
+            font-size: var(--fs-micro);
             line-height: 1.15;
             font-variant: small-caps;
             letter-spacing: 0.045em;
@@ -197,7 +218,7 @@
 
         .intro .status {
             margin: 0;
-            font-size: 16.05px;
+            font-size: var(--fs-lead);
             line-height: 1.56;
         }
 
@@ -208,7 +229,7 @@
 
         .intro .links {
             margin-top: 26px;
-            font-size: 15.29px;
+            font-size: var(--fs-body);
         }
 
         .content,
@@ -218,11 +239,11 @@
         }
 
         .content {
-            margin-top: 16px;
+            margin-top: 20px;
         }
 
         .section-block {
-            margin-top: 48px;
+            margin-top: 44px;
             scroll-margin-top: 28px;
         }
 
@@ -231,8 +252,8 @@
         }
 
         .section-title {
-            margin: 0 0 14px;
-            font-size: 26.85px;
+            margin: 0 0 13px;
+            font-size: var(--fs-h2);
             line-height: 1.14;
             font-weight: 400;
             letter-spacing: -0.01em;
@@ -248,7 +269,7 @@
         }
 
         .section-title-note {
-            font-size: 13.23px;
+            font-size: var(--fs-meta);
             line-height: 1.3;
             font-weight: 400;
             /* font-style: italic; */
@@ -259,7 +280,7 @@
 
         .section-note {
             margin: -2px 0 18px;
-            font-size: 13.23px;
+            font-size: var(--fs-meta);
             color: var(--muted);
             font-style: italic;
         }
@@ -280,7 +301,7 @@
 
         .timeline-date {
             font-family: var(--label-font);
-            font-size: 13.81px;
+            font-size: var(--fs-meta);
             line-height: 1.4;
             color: var(--muted);
             white-space: nowrap;
@@ -291,15 +312,15 @@
 
         .timeline-body {
             min-width: 0;
-            font-size: 15.25px;
+            font-size: var(--fs-body);
         }
 
         #news .timeline-date {
-            font-size: 13.81px;
+            font-size: var(--fs-meta);
         }
 
         #news .timeline-body {
-            font-size: 14.52px;
+            font-size: var(--fs-body-sm);
         }
 
         .publication-list {
@@ -307,12 +328,12 @@
             margin: 0;
             padding: 0;
             display: grid;
-            gap: 18px;
+            gap: 17px;
         }
 
         .publication {
             display: grid;
-            grid-template-columns: 62px minmax(0, 1fr);
+            grid-template-columns: 56px minmax(0, 1fr);
             column-gap: 12px;
             align-items: start;
         }
@@ -320,7 +341,7 @@
         .pub-label {
             padding-top: 2px;
             font-family: var(--label-font);
-            font-size: 13.81px;
+            font-size: var(--fs-meta);
             line-height: 1.38;
             color: var(--muted);
             white-space: nowrap;
@@ -335,7 +356,7 @@
         .pub-main {
             min-width: 0;
             display: grid;
-            row-gap: 1px;
+            row-gap: 2px;
             width: 100%;
             text-align: left;
             justify-self: start;
@@ -343,8 +364,8 @@
 
         .pub-title {
             margin: 0;
-            font-size: 15.58px;
-            line-height: 1.3;
+            font-size: var(--fs-body-lg);
+            line-height: 1.36;
             font-weight: 500;
             color: var(--text);
         }
@@ -356,13 +377,13 @@
         }
 
         .pub-title a:hover {
-            color: #353c72;
+            color: var(--link-hover);
             text-decoration: none;
             opacity: 1;
         }
 
         .pub-authors {
-            font-size: 14.91px;
+            font-size: var(--fs-body-sm);
             line-height: 1.3;
             color: var(--text);
         }
@@ -373,7 +394,7 @@
 
         .pub-note {
             margin-top: 0;
-            font-size: 13.71px;
+            font-size: var(--fs-meta);
             line-height: 1.3;
             color: var(--muted);
             font-style: italic;
@@ -384,7 +405,7 @@
             /* display: flex; */
             flex-wrap: wrap;
             gap: 0;
-            font-size: 14.91px;
+            font-size: var(--fs-body-sm);
             line-height: 1.3;
         }
 
@@ -409,7 +430,7 @@
 
         .project-title {
             margin: 0;
-            font-size: 15.58px;
+            font-size: var(--fs-body-lg);
             line-height: 1.3;
             font-weight: 500;
             color: var(--text);
@@ -422,7 +443,7 @@
         }
 
         .project-title a:hover {
-            color: #353c72;
+            color: var(--link-hover);
             text-decoration: none;
             opacity: 1;
         }
@@ -433,14 +454,14 @@
         }
 
         .project-meta {
-            font-size: 13.71px;
+            font-size: var(--fs-meta);
             line-height: 1.3;
             /* font-style: italic; */
             color: var(--muted);
         }
 
         .project-desc {
-            font-size: 14.91px;
+            font-size: var(--fs-body-sm);
             line-height: 1.3;
             color: var(--text);
         }
@@ -450,7 +471,7 @@
             /* display: flex; */
             flex-wrap: wrap;
             gap: 0;
-            font-size: 14.91px;
+            font-size: var(--fs-body-sm);
             line-height: 1.3;
         }
 
@@ -461,13 +482,13 @@
 
         .activity-group p {
             margin: 0 0 12px;
-            font-size: 15.25px;
+            font-size: var(--fs-body);
         }
 
         .activity-label {
             display: block;
             margin-bottom: 4px;
-            font-size: 12.56px;
+            font-size: var(--fs-micro);
             line-height: 1.45;
             font-variant: small-caps;
             letter-spacing: 0.05em;
@@ -475,13 +496,13 @@
         }
 
         .more {
-            margin-top: 8px;
+            margin-top: 10px;
             padding: 0;
             background: none;
             border: 0;
             color: var(--accent);
             font: inherit;
-            font-size: 12.75px;
+            font-size: var(--fs-micro);
             cursor: pointer;
             text-decoration: underline;
             text-underline-offset: 2px;
@@ -494,7 +515,7 @@
 
         .footer {
             margin-top: 74px;
-            font-size: 11.98px;
+            font-size: var(--fs-caption);
             color: var(--muted);
         }
 
@@ -505,6 +526,17 @@
 
         .hidden {
             display: none;
+        }
+
+        /* Small-caps for method names in titles (replaces deprecated <font>) */
+        .sc {
+            font-variant: small-caps;
+        }
+
+        .status-alert {
+            /* color: #d21f1f; */
+            color: red;
+            font-weight: 700;
         }
 
         @media (max-width: 1080px) {
@@ -534,8 +566,16 @@
         }
 
         @media (max-width: 780px) {
+            :root {
+                /* Nudge the whole scale for small screens in one place */
+                --fs-h2: 25px;
+                --fs-lead: 15.5px;
+                --fs-body: 14.8px;
+                --fs-body-sm: 14.5px;
+                --fs-meta: 13.75px;
+            }
+
             body {
-                font-size: 15.29px;
                 line-height: 1.58;
             }
 
@@ -551,7 +591,6 @@
 
             .nav {
                 gap: 16px;
-                font-size: 13.23px;
             }
 
             .hero {
@@ -570,7 +609,6 @@
 
             .side-links {
                 margin-top: 12px;
-                font-size: 14.29px;
                 gap: 2px;
             }
 
@@ -579,22 +617,13 @@
                 padding-top: 0;
             }
 
-            .intro p {
-                font-size: 15.49px;
-            }
-
             .status-callout {
                 margin-top: 18px;
                 padding: 12px 13px 12px 14px;
             }
 
-            .intro .status {
-                font-size: 15.15px;
-            }
-
             .intro .links {
                 margin-top: 22px;
-                font-size: 14.67px;
             }
 
             .content,
@@ -605,10 +634,6 @@
 
             .section-block {
                 margin-top: 50px;
-            }
-
-            .section-title {
-                font-size: 25.12px;
             }
 
             .section-title.with-note {
@@ -624,62 +649,9 @@
                 column-gap: 8px;
             }
 
-            .timeline-date {
-                font-size: 14.58px;
-            }
-
-            .timeline-body {
-                font-size: 14.81px;
-            }
-
-            #news .timeline-date {
-                font-size: 14.58px;
-            }
-
-            #news .timeline-body {
-                font-size: 14.19px;
-            }
-
             .publication {
                 grid-template-columns: 66px minmax(0, 1fr);
                 column-gap: 8px;
-            }
-
-            .pub-label {
-                font-size: 14.58px;
-            }
-
-            .pub-title {
-                font-size: 15.25px;
-            }
-
-            .project-title {
-                font-size: 15.25px;
-            }
-
-            .pub-authors {
-                font-size: 14.62px;
-            }
-
-            .activity-group p {
-                font-size: 14.81px;
-            }
-
-            .project-meta {
-                font-size: 13.71px;
-            }
-
-            .project-desc {
-                font-size: 14.62px;
-            }
-
-            .pub-links,
-            .project-links {
-                font-size: 14.62px;
-            }
-
-            .pub-note {
-                font-size: 13.71px;
             }
         }
     </style>
@@ -707,25 +679,25 @@
                             Email: guoxiefan@gmail.com
                         </div>
                         <div class="side-link-row">
-                            <a href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en" style="color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: rgba(95, 98, 143, 0.55);">Google Scholar</a >
+                            <a class="side-link-ext" href="https://scholar.google.com/citations?user=X4MKw-wAAAAJ&hl=en">Google Scholar</a >
                         </div>
                         <div class="side-link-row">
-                            <a href="https://github.com/xiefan-guo" style="color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: rgba(95, 98, 143, 0.55);">GitHub</a >
+                            <a class="side-link-ext" href="https://github.com/xiefan-guo">GitHub</a >
                         </div>
                         <div class="side-link-row">
-                            <a href="https://twitter.com/guoxiefan" style="color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: rgba(95, 98, 143, 0.55);">Twitter</a >
+                            <a class="side-link-ext" href="https://twitter.com/guoxiefan">Twitter</a >
                         </div>
                     </div>
                 </div>
                 <div class="intro">
-                    <p>I am a Ph.D. student in Computer Science at <a href="https://www.buaa.edu.cn/">Beihang University</a > (BUAA), <br>where I am advised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a >.</p >
+                    <p>I am a Ph.D. student in Computer Science at <a href="https://www.buaa.edu.cn/">Beihang University</a > (BUAA), <br>advised by Prof. <a href="https://irip.buaa.edu.cn/dihuang/index.html">Di Huang</a >.</p >
 
-                    <p>My research interests are in computer vision and generative models, especially diffusion-based image and video generation.</p >
+                    <p>My research interests lie in computer vision and generative models, with an emphasis on diffusion-based image and video generation.</p >
 
-                    <p>I received my M.S. from <a href="https://www.buaa.edu.cn/">Beihang University</a > in 2023 and my B.E. from <a href="https://www.tju.edu.cn/">Tianjin University</a > in 2020. I have interned at <a href="">Tencent Hunyuan</a >, <a href="">Shanghai AI Laboratory</a >, <a href="https://tongyi.aliyun.com/">Alibaba TongYi Lab</a >, and <a href="https://damo.alibaba.com/">Alibaba DAMO Academy</a >.</p >
+                    <p>Prior to my Ph.D., I received my M.S. from <a href="https://www.buaa.edu.cn/">Beihang University</a > in 2023 and my B.E. from <a href="https://www.tju.edu.cn/">Tianjin University</a > in 2020. I have also interned at <a href="">Tencent Hunyuan</a >, <a href="">Shanghai AI Laboratory</a >, <a href="https://tongyi.aliyun.com/">Alibaba TongYi Lab</a >, and <a href="https://damo.alibaba.com/">Alibaba DAMO Academy</a >.</p >
 
                     <div class="status-callout">
-                        <p class="status"><span class="status-label"><b><font style="color: red;">Open to Opportunities:</font></b></span>I expect to graduate in December 2026 and am currently on the job market for research positions in academia and industry, particularly in image/video generation and world models.</p >
+                        <p class="status"><span class="status-label"><span class="status-alert">Open to Opportunities:</span></span>I expect to graduate in December 2026 and am on the job market for research positions in both academia and industry, particularly in image/video generation and world models.</p >
                     </div>
                 </div>
             </section>
@@ -756,7 +728,7 @@
                         <li class="publication">
                             <div class="pub-label">arXiv'24</div>
                             <div class="pub-main">
-                                <p class="pub-title"><font style="font-variant: small-caps;">I4VGen</font>: Image as Free Stepping Stone for Text-to-Video Generation.</p >
+                                <p class="pub-title"><span class="sc">I4VGen</span>: Image as Free Stepping Stone for Text-to-Video Generation.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, and Di Huang.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2406.02230">Paper</a > / 
@@ -775,7 +747,7 @@
                         <li class="publication">
                             <div class="pub-label">ECCV'26</div>
                             <div class="pub-main">
-                                <p class="pub-title"><font style="font-variant: small-caps;">EruDiff</font>: Refactoring Knowledge in Diffusion Models for Advanced Text-to-Image Synthesis.</p >
+                                <p class="pub-title"><span class="sc">EruDiff</span>: Refactoring Knowledge in Diffusion Models for Advanced Text-to-Image Synthesis.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Xinzhu Ma, Haoxiang Ma, Zihao Zhou, and Di Huang.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2603.20828">Paper</a > /
@@ -810,7 +782,7 @@
                         <li class="publication">
                             <div class="pub-label">CVPR'26</div>
                             <div class="pub-main">
-                                <p class="pub-title"><font style="font-variant: small-caps;">CTCal</font>: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration.</p >
+                                <p class="pub-title"><span class="sc">CTCal</span>: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Xinzhu Ma, Haiyu Zhang, and Di Huang.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2603.20741">Paper</a > /
@@ -822,7 +794,7 @@
                         <li class="publication">
                             <div class="pub-label">ICCV'25</div>
                             <div class="pub-main">
-                                <p class="pub-title"><font style="font-variant: small-caps;">ShortFT</font>: Diffusion Model Alignment via Shortcut-based Fine-Tuning.</p >
+                                <p class="pub-title"><span class="sc">ShortFT</span>: Diffusion Model Alignment via Shortcut-based Fine-Tuning.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Miaomiao Cui, Liefeng Bo, and Di Huang.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Guo_ShortFT_Diffusion_Model_Alignment_via_Shortcut-based_Fine-Tuning_ICCV_2025_paper.html">Paper</a > /
@@ -849,7 +821,7 @@
                         <li class="publication">
                             <div class="pub-label">CVPR'24</div>
                             <div class="pub-main">
-                                <p class="pub-title"><font style="font-variant: small-caps;">InitNO</font>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization.</p >
+                                <p class="pub-title"><span class="sc">InitNO</span>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, and Di Huang.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Guo_InitNO_Boosting_Text-to-Image_Diffusion_Models_via_Initial_Noise_Optimization_CVPR_2024_paper.html">Paper</a > /
