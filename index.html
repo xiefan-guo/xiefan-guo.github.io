@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,12 +53,13 @@
         }
 
         body {
-            font-family: Palatino, Georgia, "Cardo", Georgia, serif;
+            font-family: Palatino, Georgia, "Adobe Garamond Pro", Garamond, Palatino, Cardo, serif;
             font-size: var(--fs-lead);
             line-height: 1.54;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         a {
@@ -189,6 +191,7 @@
         .intro .status,
         .timeline-body,
         .pub-authors,
+        .pub-venue,
         .pub-note,
         .project-meta,
         .project-desc,
@@ -294,7 +297,7 @@
         .timeline-item {
             display: grid;
             grid-template-columns: 60px minmax(0, 1fr);
-            column-gap: 8px;
+            column-gap: 6px;
             align-items: baseline;
             margin-bottom: 4px;
         }
@@ -328,12 +331,12 @@
             margin: 0;
             padding: 0;
             display: grid;
-            gap: 17px;
+            gap: 14px;
         }
 
         .publication {
             display: grid;
-            grid-template-columns: 56px minmax(0, 1fr);
+            grid-template-columns: 54px minmax(0, 1fr);
             column-gap: 12px;
             align-items: start;
         }
@@ -341,7 +344,7 @@
         .pub-label {
             padding-top: 2px;
             font-family: var(--label-font);
-            font-size: var(--fs-meta);
+            font-size: 13px;
             line-height: 1.38;
             color: var(--muted);
             white-space: nowrap;
@@ -364,9 +367,9 @@
 
         .pub-title {
             margin: 0;
-            font-size: var(--fs-body-lg);
+            font-size: 15px;
             line-height: 1.36;
-            font-weight: 500;
+            font-weight: 700;
             color: var(--text);
         }
 
@@ -383,7 +386,7 @@
         }
 
         .pub-authors {
-            font-size: var(--fs-body-sm);
+            font-size: 14px;
             line-height: 1.3;
             color: var(--text);
         }
@@ -392,9 +395,19 @@
             font-weight: 700;
         }
 
+        .pub-venue {
+            font-size: 14px;
+            line-height: 1.3;
+            color: var(--text);
+        }
+
+        .pub-venue em {
+            font-style: italic;
+        }
+
         .pub-note {
             margin-top: 0;
-            font-size: var(--fs-meta);
+            font-size: 13px;
             line-height: 1.3;
             color: var(--muted);
             font-style: italic;
@@ -405,7 +418,7 @@
             /* display: flex; */
             flex-wrap: wrap;
             gap: 0;
-            font-size: var(--fs-body-sm);
+            font-size: 14px;
             line-height: 1.3;
         }
 
@@ -730,8 +743,9 @@
                             <div class="pub-main">
                                 <p class="pub-title"><span class="sc">I4VGen</span>: Image as Free Stepping Stone for Text-to-Video Generation.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Jinlin Liu, Miaomiao Cui, Liefeng Bo, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>arXiv preprint</em> arXiv:2406.02230, 2024.</div>
                                 <div class="pub-links">
-                                    <a href="https://arxiv.org/abs/2406.02230">Paper</a > / 
+                                    <a href="https://arxiv.org/abs/2406.02230">Paper</a > /
                                     <a href="https://arxiv.org/abs/2406.02230">arXiv</a > / 
                                     <a href="https://github.com/xiefan-guo/i4vgen">Code</a > / 
                                     <a href="https://xiefan-guo.github.io/i4vgen/">Project</a >
@@ -749,6 +763,7 @@
                             <div class="pub-main">
                                 <p class="pub-title"><span class="sc">EruDiff</span>: Refactoring Knowledge in Diffusion Models for Advanced Text-to-Image Synthesis.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Xinzhu Ma, Haoxiang Ma, Zihao Zhou, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 19th European Conference on Computer Vision</em> (ECCV), Sep. 8-13, 2026, Malmo, Sweden.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2603.20828">Paper</a > /
                                     <a href="https://arxiv.org/abs/2603.20828">arXiv</a > /
@@ -761,6 +776,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">G3AFT: Glance Guided Gradient Aligned Fine-Tuning for Visual Autoregressive Models.</p >
                                 <div class="pub-authors">Jiayi Zhang, <span class="me">Xiefan Guo</span>, Xinzhu Ma, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 19th European Conference on Computer Vision</em> (ECCV), Sep. 8-13, 2026, Malmo, Sweden.</div>
                                 <div class="pub-links">
                                     <a href="">Paper</a > / 
                                     <a href="https://github.com/Wotoosh/G3AFT">Code</a >
@@ -772,6 +788,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">What Makes Synthetic Data Effective in Image Segmentation.</p >
                                 <div class="pub-authors">Jinjin Zhang, <span class="me">Xiefan Guo</span>, Yizhou Jin, Nan Zhou, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 43rd International Conference on Machine Learning</em> (ICML), Jul. 6-11, 2026, Seoul, South Korea.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2605.19289">Paper</a > / 
                                     <a href="https://arxiv.org/abs/2605.19289">arXiv</a > / 
@@ -784,6 +801,7 @@
                             <div class="pub-main">
                                 <p class="pub-title"><span class="sc">CTCal</span>: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Xinzhu Ma, Haiyu Zhang, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 44th IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 3-7, 2026, Denver, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://arxiv.org/abs/2603.20741">Paper</a > /
                                     <a href="https://arxiv.org/abs/2603.20741">arXiv</a > /
@@ -796,6 +814,7 @@
                             <div class="pub-main">
                                 <p class="pub-title"><span class="sc">ShortFT</span>: Diffusion Model Alignment via Shortcut-based Fine-Tuning.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Miaomiao Cui, Liefeng Bo, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 20th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 19-23, 2025, Hawaii, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Guo_ShortFT_Diffusion_Model_Alignment_via_Shortcut-based_Fine-Tuning_ICCV_2025_paper.html">Paper</a > /
                                     <a href="https://arxiv.org/abs/2507.22604">arXiv</a > /
@@ -810,6 +829,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models.</p >
                                 <div class="pub-authors">Jinjin Zhang, Qiuyu Huang, Junjie Liu, <span class="me">Xiefan Guo</span>, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 43rd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 11-15, 2025, Nashville, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html">Paper</a > /
                         <a href="https://arxiv.org/abs/2503.18352">arXiv</a > /
@@ -823,6 +843,7 @@
                             <div class="pub-main">
                                 <p class="pub-title"><span class="sc">InitNO</span>: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Jinlin Liu, Miaomiao Cui, Jiankai Li, Hongyu Yang, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Guo_InitNO_Boosting_Text-to-Image_Diffusion_Models_via_Initial_Noise_Optimization_CVPR_2024_paper.html">Paper</a > /
                                     <a href="https://arxiv.org/abs/2404.04650">arXiv</a > /
@@ -838,6 +859,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">Leveraging Predicate and Triplet Learning for Scene Graph Generation.</p >
                                 <div class="pub-authors">Jiankai Li, Yunhong Wang, <span class="me">Xiefan Guo</span>, Ruijie Yang, Weixin Li.</div>
+                                <div class="pub-venue">In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Li_Leveraging_Predicate_and_Triplet_Learning_for_Scene_Graph_Generation_CVPR_2024_paper.html">Paper</a > / 
                                     <a href="https://arxiv.org/abs/2406.02038">arXiv</a > / 
@@ -850,6 +872,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">ABPN: Adaptive Blend Pyramid Network for Real-Time Local Retouching of Ultra High-Resolution Photo.</p >
                                 <div class="pub-authors">Biwen Lei, <span class="me">Xiefan Guo</span>, Hongyu Yang, Miaomiao Cui, Xuansong Xie, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 40th IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 19-24, 2022, New Orleans, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Lei_ABPN_Adaptive_Blend_Pyramid_Network_for_Real-Time_Local_Retouching_of_CVPR_2022_paper.html">Paper</a > / 
                                     <a href="https://github.com/youngLBW/CRHD-3K">Dataset</a >
@@ -861,6 +884,7 @@
                             <div class="pub-main">
                                 <p class="pub-title">Image Inpainting via Conditional Texture and Structure Dual Generation.</p >
                                 <div class="pub-authors"><span class="me">Xiefan Guo</span>, Hongyu Yang, and Di Huang.</div>
+                                <div class="pub-venue">In: <em>The 18th IEEE International Conference on Computer Vision</em> (ICCV), Oct. 11-17, 2021, Montreal, Canada (Virtual).</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/ICCV2021/html/Guo_Image_Inpainting_via_Conditional_Texture_and_Structure_Dual_Generation_ICCV_2021_paper.html">Paper</a > /
                                     <a href="https://arxiv.org/abs/2108.09760">arXiv</a > /
