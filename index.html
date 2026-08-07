@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +8,12 @@
     <title>Xiefan Guo's Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             /* --bg: #f5f4f1; */
             --bg: white;
-            --text: #000000;
+            --text: #262626;
             --muted: #2f2b28;
             --link: #191970;
             --accent: #191970;
@@ -53,13 +52,17 @@
         }
 
         body {
-            font-family: Georgia, "Adobe Garamond Pro", Garamond, Palatino, Cardo, serif;
+            font-family: "Cardo", Georgia, "Adobe Garamond Pro", Garamond, Palatino, serif;
             font-size: var(--fs-lead);
             line-height: 1.54;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
+            /* antialiased alone reads too thin; a hairline same-color stroke
+               adds back just enough weight to land between thin and solid.
+               currentColor keeps colored links stroked in their own color. */
+            -webkit-text-stroke: 0.1px currentColor;
         }
 
         a {
@@ -367,7 +370,7 @@
 
         .pub-title {
             margin: 0;
-            font-size: 14.5px;
+            font-size: 15px;
             line-height: 1.36;
             font-weight: 700;
             color: var(--text);
@@ -386,7 +389,7 @@
         }
 
         .pub-authors {
-            font-size: 14px;
+            font-size: 14.5px;
             line-height: 1.3;
             color: var(--text);
         }
@@ -396,7 +399,7 @@
         }
 
         .pub-venue {
-            font-size: 14px;
+            font-size: 14.5px;
             line-height: 1.3;
             color: var(--text);
         }
@@ -407,7 +410,7 @@
 
         .pub-note {
             margin-top: 0;
-            font-size: 13px;
+            font-size: 13.5px;
             line-height: 1.3;
             color: var(--muted);
             font-style: italic;
@@ -418,7 +421,7 @@
             /* display: flex; */
             flex-wrap: wrap;
             gap: 0;
-            font-size: 14px;
+            font-size: 14.5px;
             line-height: 1.3;
         }
 
@@ -858,7 +861,7 @@
                             <div class="pub-label">CVPR'24</div>
                             <div class="pub-main">
                                 <p class="pub-title">Leveraging Predicate and Triplet Learning for Scene Graph Generation.</p >
-                                <div class="pub-authors">Jiankai Li, Yunhong Wang, <span class="me">Xiefan Guo</span>, Ruijie Yang, Weixin Li.</div>
+                                <div class="pub-authors">Jiankai Li, Yunhong Wang, <span class="me">Xiefan Guo</span>, Ruijie Yang, and Weixin Li.</div>
                                 <div class="pub-venue">In: <em>The 42nd IEEE Conference on Computer Vision and Pattern Recognition</em> (CVPR), Jun. 17-21, 2024, Seattle, USA.</div>
                                 <div class="pub-links">
                                     <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Li_Leveraging_Predicate_and_Triplet_Learning_for_Scene_Graph_Generation_CVPR_2024_paper.html">Paper</a > / 
