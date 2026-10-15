@@ -1,0 +1,572 @@
+/* ============================================================
+   Xiefan Guo — personal site
+   Shared stylesheet for: index / papers / activities / blog.
+
+   Layout & type scale:
+     · Two-column hero — left photo + side links, right intro
+     · Content column offset to align under the intro
+     · Body & headings → EB Garamond (hierarchy by size, not typeface)
+     · Cormorant Garamond → date / label small-caps accents only
+     · Link color → #191970 (midnight blue)
+   Fonts are self-hosted (assets/fonts/) so the page never depends
+   on any external font service being reachable.
+   ============================================================ */
+
+/* ---------- Self-hosted fonts ---------- */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal; font-weight: 500 600; font-display: block;
+  src: url("../fonts/cormorant-garamond-latin-500-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 400; font-style: normal; font-display: block;
+  src: url("../fonts/EBGaramond12-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 400; font-style: italic; font-display: block;
+  src: url("../fonts/EBGaramond12-Italic.woff") format("woff");
+}
+/* Medium (500) is what `b, strong` asks for. Before it was registered, that
+   request had no 500 face to match and CSS font matching resolved it down to
+   Regular — bold text rendered identical to body copy. Real face, not a
+   synthesised one, so the cupped foot serifs stay intact. */
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 500; font-style: normal; font-display: block;
+  src: url("../fonts/EBGaramond12-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 500; font-style: italic; font-display: block;
+  src: url("../fonts/EBGaramond12-MediumItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 600; font-style: normal; font-display: block;
+  src: url("../fonts/EBGaramond12-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 600; font-style: italic; font-display: block;
+  src: url("../fonts/EBGaramond12-SemiboldItalic.woff") format("woff");
+}
+/* 700/800 complete the specimen's 400–800 range. Nothing requests them today,
+   so the browser never downloads them — an unmatched @font-face costs no
+   bytes. They exist so any future `font-weight: bold` resolves to a drawn
+   face instead of a synthetic smear. */
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 700; font-style: normal; font-display: block;
+  src: url("../fonts/EBGaramond12-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 700; font-style: italic; font-display: block;
+  src: url("../fonts/EBGaramond12-BoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 800; font-style: normal; font-display: block;
+  src: url("../fonts/EBGaramond12-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-weight: 800; font-style: italic; font-display: block;
+  src: url("../fonts/EBGaramond12-ExtraBoldItalic.woff") format("woff");
+}
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #2f2b28;
+  --link: #191970;
+  --accent: #191970;
+  --link-hover: #333399;
+
+  --body-font: "EB Garamond", Georgia, Garamond, serif;
+  --label-font: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", serif;
+
+  --page-width: 1380px;
+  --hero-image: 258px;
+  --hero-gap: 70px;
+  --content-width: 800px;
+
+  /* Type scale — tuned for EB Garamond, larger & tighter (specimen feel).
+     Names are historical; the comment on each line is the authoritative
+     list of what actually consumes it. */
+  --fs-h1: 33px;        /* .wordmark                                   */
+  --fs-h2: 29px;        /* .section-title                              */
+  --fs-lead: 19px;      /* body default, .callout                      */
+  --fs-intro: 19.5px;   /* .intro p, .opp-list li, .opt-callout        */
+  --fs-paper: 19.5px;   /* .paper entries (title, authors, venue, link)*/
+  --fs-body-lg: 19px;   /* .article-body — blog post body              */
+  --fs-body: 17px;      /* .side-links, .linkrow, .tbody, .paper .venue,
+                           .post-list-summary                          */
+  --fs-meta: 15.5px;    /* .nav, .tdate, .article-meta, .article-foot,
+                           .section-title .note, .more                 */
+  --fs-micro: 13.5px;   /* .callout-label, .opt-callout .tag           */
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  /* Always reserve room for the vertical scrollbar so toggling long content
+     (e.g. "Show earlier news") never shifts the centered layout sideways.
+     overflow-y:scroll is the broadly-supported fallback for scrollbar-gutter. */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  font-weight: 400;
+  /* Rendering matched to googlefonts.github.io/ebgaramond-specimen, which
+     serves the byte-identical EBGaramond12 woffs. It sets only grayscale
+     smoothing — no text-shadow, no text-rendering, no feature overrides.
+     EB Garamond 12's foot serifs are cupped by design (the `n` foot runs
+     y=-3 at the tips to y=+2 at the stem, ~5/1000 em). At 19px that arch is
+     sub-pixel, so it only ever surfaces as antialiasing at the baseline —
+     a blur-radius text-shadow spread it into a visible bowed edge, and
+     optimizeLegibility nudged the same pixels. Dropping both restores the
+     flat-looking baseline the specimen shows. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(25, 25, 112, 0.5);
+}
+a:hover { opacity: 0.82; }
+
+b, strong { font-weight: 500; }
+
+/* ---------- Page frame ---------- */
+.wrap {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 42px 56px 96px;
+}
+
+/* ---------- Top bar: wordmark + nav ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.wordmark {
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--fs-h1);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.wordmark:hover { opacity: 1; }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  line-height: 1.35;
+}
+.nav a { color: var(--text); text-decoration: none; opacity: 0.88; }
+.nav a.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(31, 27, 24, 0.7);
+}
+
+/* ---------- Hero: two-column (photo/side-links + intro) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: var(--hero-image) minmax(0, 680px);
+  gap: var(--hero-gap);
+  align-items: start;
+  margin-top: 92px;
+  margin-left: 64px;
+  margin-bottom: 0;
+}
+.hero-side { width: var(--hero-image); }
+.portrait {
+  width: var(--hero-image);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+  background: #d8d4ce;
+}
+.side-links {
+  margin: 14px 0 0;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.side-links a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(25, 25, 112, 0.5);
+  white-space: nowrap;
+}
+.side-plain { color: var(--text); white-space: nowrap; }
+
+.intro { max-width: 680px; padding-top: 6px; }
+.intro p { margin: 0 0 16px; font-size: var(--fs-intro); font-weight: 400; }
+.intro p:last-child { margin-bottom: 0; }
+.intro .linkrow { margin-top: 26px; font-size: var(--fs-body); }
+
+/* Open-to-opportunities callout */
+.callout {
+  margin-top: 22px;
+  padding: 12px 16px 12px 17px;
+  border-left: 2px solid rgba(25, 25, 112, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(25, 25, 112, 0.05);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.callout-label {
+  font-variant: small-caps;
+  letter-spacing: 0.045em;
+  font-size: var(--fs-micro);
+  color: red;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Open-to-opportunities list */
+.opp-list {
+  margin: 0;
+  padding-left: 1.15em;
+}
+.opp-list li {
+  font-size: var(--fs-intro);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.opp-list li:last-child { margin-bottom: 0; }
+.opp-list li::marker { color: var(--muted); }
+
+/* ===== TEMP: four Open-to-Opportunities style options (for comparison) ===== */
+.opt-callout {
+  margin-top: 24px;
+  padding: 7px 14px 7px 15px;
+  background: rgba(255, 255, 255, 0.32);
+  border-left: 2px solid rgba(25, 25, 112, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(25, 25, 112, 0.05);
+  font-size: var(--fs-intro);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.opt-callout .lbl {
+  font-variant: small-caps; letter-spacing: 0.045em;
+  font-size: var(--fs-micro); color: red; font-weight: 600; margin-right: 4px;
+}
+.opt-banner {
+  margin: 22px 0 0;
+  padding: 16px 20px;
+  background: rgba(25, 25, 112, 0.06);
+  border: 1px solid rgba(25, 25, 112, 0.18);
+  border-radius: 6px;
+}
+.opt-banner .head {
+  display: block;
+  font-family: var(--label-font);
+  font-variant: small-caps; letter-spacing: 0.05em;
+  font-size: 16px; font-weight: 600; color: red;
+  margin-bottom: 5px;
+}
+.opt-banner .body { font-size: var(--fs-intro); font-weight: 400; line-height: 1.5; }
+/* ===== END TEMP ===== */
+
+/* ---------- Content column: offset to align under intro ---------- */
+.content {
+  max-width: var(--content-width);
+  margin-left: calc(64px + var(--hero-image) + var(--hero-gap));
+  margin-top: 20px;
+}
+
+/* Standalone pages (Papers / Activities / Blog) are single-column with no
+   hero, so they keep the home page's right-shifted feel but with a smaller
+   offset than home (which must clear the 258px portrait column). */
+.content.page {
+  margin-left: 264px;
+}
+
+/* ---------- Section heading ---------- */
+.section {
+  margin-top: 48px;
+  scroll-margin-top: 28px;
+}
+.section:first-child { margin-top: 0; }
+.section-title {
+  margin: 0 0 16px;
+  font-size: var(--fs-h2);
+  line-height: 1.14;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.section-title .note {
+  font-size: var(--fs-meta);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+  margin-left: 8px;
+}
+/* Larger page-level heading (Papers page), set apart from the list */
+.section-title.page-title {
+  font-size: 36px;
+  margin-bottom: 44px;
+}
+
+/* ---------- Timeline (date gutter + content) ---------- */
+.timeline { display: grid; row-gap: 5px; }
+.trow {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: baseline;
+}
+.tdate {
+  font-family: var(--label-font);
+  font-size: var(--fs-meta);
+  line-height: 1.4;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+.tbody { min-width: 0; font-size: var(--fs-body); font-weight: 400; line-height: 1.4; }
+.tbody .sub { color: var(--muted); font-size: var(--fs-meta); }
+
+/* ---------- Papers page ---------- */
+.paper {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+.paper .venue {
+  padding-top: 4px;
+  font-family: var(--label-font);
+  font-size: var(--fs-body);
+  line-height: 1.3;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-align: right;
+  justify-self: end;
+}
+.paper-main { min-width: 0; display: grid; row-gap: 0; }
+.paper .ptitle {
+  font-size: var(--fs-paper);
+  line-height: 1.3;
+  color: var(--link);
+  font-weight: 400;
+}
+.paper .ptitle a { color: var(--link); text-decoration: none; }
+.paper .ptitle a:hover { color: var(--link-hover); opacity: 1; }
+.paper .authors { font-size: var(--fs-paper); line-height: 1.3; color: var(--text); font-weight: 400; }
+.paper .authors .me { font-weight: 600; }
+.paper .venue-full { font-size: var(--fs-paper); line-height: 1.3; color: var(--text); font-weight: 400; }
+.paper .venue-full em { font-style: italic; }
+.paper .plink { font-size: var(--fs-paper); line-height: 1.3; }
+.paper .plink a { color: var(--link); text-decoration: none; }
+.paper .plink a:hover { text-decoration: underline; text-underline-offset: 2px; opacity: 1; }
+
+/* Small-caps method names in titles */
+.sc { font-variant: small-caps; }
+
+/* When a paper has no venue label, keep the main column aligned */
+.paper.no-venue { grid-template-columns: 78px minmax(0, 1fr); }
+
+/* ---------- Blog: table of contents (blog.html) ---------- */
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list-item {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  column-gap: 22px;
+  align-items: baseline;
+  margin-bottom: 30px;
+}
+.post-list-date {
+  font-family: var(--label-font);
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.post-list-main { min-width: 0; }
+.post-list-title {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.3;
+  color: var(--link);
+  text-decoration: none;
+}
+.post-list-title:hover { color: var(--link-hover); opacity: 1; }
+.post-list-summary {
+  margin: 6px 0 0;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- Blog: single article (posts/*.html) ---------- */
+.article-head { margin-bottom: 30px; }
+.article-title {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.article-meta {
+  font-family: var(--label-font);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--muted);
+}
+.article-body { font-size: var(--fs-body-lg); font-weight: 400; line-height: 1.35; }
+.article-body p { margin: 0 0 18px; }
+
+/* MathJax — keep formulas in scale with the body text. mjx-container renders
+   relative to the surrounding font-size, so these are body-relative; the
+   global MathJax `scale` in each post's config trims the rest. */
+.article-body mjx-container { font-size: 1.06em; }
+.article-body mjx-container[display="true"] {
+  font-size: 1.12em;
+  margin: 16px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.article-body h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 34px 0 12px;
+  color: var(--text);
+}
+.article-body blockquote {
+  margin: 22px 0;
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid rgba(25, 25, 112, 0.34);
+  font-style: italic;
+  color: var(--muted);
+}
+.article-body ul,
+.article-body ol { margin: 0 0 18px; padding-left: 1.3em; }
+.article-body li { margin-bottom: 6px; }
+.article-body code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: rgba(25, 25, 112, 0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.article-foot {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-meta);
+}
+
+/* ---------- Professional activities ---------- */
+.activity-group p { margin: 0 0 12px; font-size: 17px; font-weight: 400; }
+.activity-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+/* ---------- News "show earlier" toggle ---------- */
+.more {
+  margin-top: 12px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: var(--fs-meta);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.hidden { display: none; }
+
+/* ---------- Empty-page placeholder (Blog / Thoughts) ---------- */
+.placeholder { color: var(--muted); font-size: 17px; font-style: italic; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .wrap { padding: 40px 34px 84px; }
+  .hero {
+    margin-left: 0;
+    grid-template-columns: 222px minmax(0, 1fr);
+    gap: 42px;
+  }
+  .portrait, .hero-side { width: 222px; }
+  .content { margin-left: calc(222px + 42px); max-width: none; }
+  .content.page { margin-left: 0; }
+}
+
+@media (max-width: 780px) {
+  :root {
+    --fs-h2: 25px;
+    --fs-lead: 15.5px;
+    --fs-intro: 16.5px;
+    --fs-body: 14.8px;
+    --fs-meta: 13.75px;
+    /* Note: --fs-body-lg and --fs-paper are intentionally not scaled down
+       here, so blog body text and paper entries keep their desktop size. */
+  }
+  body { line-height: 1.5; }
+  .wrap { padding: 30px 20px 60px; }
+  .topbar { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .nav { gap: 16px; }
+  .hero {
+    margin-top: 48px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .portrait, .hero-side { width: min(244px, 100%); }
+  .intro { max-width: none; padding-top: 0; }
+  .content { margin-left: 0; margin-top: 50px; }
+  .section { margin-top: 50px; }
+  .trow { grid-template-columns: 58px minmax(0, 1fr); column-gap: 10px; }
+  .paper { grid-template-columns: 90px minmax(0, 1fr); column-gap: 10px; }
+}

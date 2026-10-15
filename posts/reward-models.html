@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A survey of reward models - Xiefan Guo</title>
+  <link rel="preload" href="../assets/fonts/EBGaramond12-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { scale: 0.95 },
+      svg: { fontCache: 'global', scale: 0.95 }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="wordmark" href="../index.html">Xiefan Guo</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../papers.html">Papers</a>
+        <a href="../activities.html">Activities</a>
+        <a class="active" href="../blog.html">Blog</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content page" style="margin-top:80px">
+        <article class="article">
+          <header class="article-head">
+            <h1 class="article-title">A survey of reward models</h1>
+            <div class="article-meta">Sep 2026 · Xiefan Guo</div>
+          </header>
+
+          <div class="article-body">
+            <p>A reward model is a function that scores how good an output is. That sounds trivial, but it turns out to be the load-bearing component of modern alignment: RLHF, best-of-<em>n</em> sampling, rejection sampling, and preference optimization all rest on having a model that can tell better outputs from worse ones. This post surveys the classical ways to build one — Bradley–Terry preference models, scalar regression, ranking models, and the more recent generative reward models — with an eye on what each one actually optimizes.</p>
+
+            <p>Throughout, write $x$ for a prompt (or context), $y$ for a response, and $r_\theta(x, y) \in \mathbb{R}$ for the scalar the reward model assigns to the pair. The whole game is choosing what data we fit $r_\theta$ to, and what loss we use.</p>
+
+            <h2>Why not just regress "quality"?</h2>
+            <p>The obvious idea is to collect absolute quality ratings and regress against them. The trouble is that humans are notoriously inconsistent at absolute scores — one annotator's 7/10 is another's 5/10, and the same annotator drifts over a day. Relative judgments ("is A better than B?") are far more stable and are the foundation of most reward models. So before the regression view, we start with the preference view.</p>
+
+            <h2>Bradley–Terry: the preference model</h2>
+            <p>The <a href="https://en.wikipedia.org/wiki/Bradley%E2%80%93Terry_model">Bradley–Terry</a> model (1952) is the workhorse. Given two responses to the same prompt, a "winner" $y_w$ and a "loser" $y_l$, it posits that the probability of preferring one is a sigmoid of the reward difference:</p>
+
+            <p>$$ P(y_w \succ y_l \mid x) = \sigma\!\big(r_\theta(x, y_w) - r_\theta(x, y_l)\big) = \frac{1}{1 + e^{-(r_\theta(x,y_w) - r_\theta(x,y_l))}}. $$</p>
+
+            <p>We fit $r_\theta$ by maximum likelihood on a dataset of human comparisons, which gives the familiar pairwise logistic loss:</p>
+
+            <p>$$ \mathcal{L}_{\text{BT}}(\theta) = -\,\mathbb{E}_{(x,\,y_w,\,y_l)\sim\mathcal{D}} \Big[ \log \sigma\big(r_\theta(x, y_w) - r_\theta(x, y_l)\big) \Big]. $$</p>
+
+            <p>A few things are worth noticing. First, only reward <em>differences</em> are identified — the model is invariant to adding a constant to $r_\theta$, so the scale is arbitrary and needs to be pinned down (e.g. by normalization) if you care about absolute values. Second, this is exactly binary classification on the difference, so everything you know about logistic regression transfers. Third, in the standard RLHF recipe the reward model is a language model with the final unembedding replaced by a scalar head, trained with precisely this loss; the resulting $r_\theta$ is then frozen and used as the reward in PPO. This is the setup from InstructGPT and the line of work after it.</p>
+
+            <h2>Scalar regression reward models</h2>
+            <p>When you <em>do</em> have reliable numerical labels — say a 1–5 rating, an aggregated preference rate, or a verifiable score — you can regress directly. With a target $s(x,y)$ the loss is just mean squared error:</p>
+
+            <p>$$ \mathcal{L}_{\text{reg}}(\theta) = \mathbb{E}_{(x,y,s)\sim\mathcal{D}} \big[\big(r_\theta(x, y) - s\big)^2 \big]. $$</p>
+
+            <p>Regression is attractive when the signal is dense and calibrated — for instance a Likert scale collected under a tight rubric, or a continuous metric like an aesthetic score. It gives you an absolute, calibrated number rather than the arbitrary-scale output of Bradley–Terry. The catch is that it inherits all the annotator-inconsistency problems above, so in practice it is used where the target is genuinely well-defined. A common middle ground is to bin ratings and treat it as ordinal classification, or to convert ratings into pairwise comparisons and fall back to the BT loss.</p>
+
+            <h2>Beyond pairs: ranking models</h2>
+            <p>Preferences often come as full rankings of $K$ responses, not just pairs. The <a href="https://en.wikipedia.org/wiki/Discrete_choice">Plackett–Luce</a> model generalizes Bradley–Terry to a ranking $y_1 \succ y_2 \succ \cdots \succ y_K$ as a product of "pick-the-best-of-the-rest" softmaxes:</p>
+
+            <p>$$ P(y_1 \succ \cdots \succ y_K \mid x) = \prod_{k=1}^{K} \frac{\exp\big(r_\theta(x, y_k)\big)}{\sum_{j=k}^{K} \exp\big(r_\theta(x, y_j)\big)}. $$</p>
+
+            <p>InstructGPT used a simple special case of this: from $K$ ranked responses it formed all $\binom{K}{2}$ pairs and averaged the BT loss over them, which both reuses the data efficiently and avoids overfitting from correlated comparisons within a batch.</p>
+
+            <h2>Generative reward models</h2>
+            <p>A scalar head throws away the thing language models are best at — generating text. <strong>Generative reward models</strong> (GRMs) instead keep the LM head and cast reward modeling as a generation problem. There are two broad flavors.</p>
+
+            <p><strong>LLM-as-a-judge.</strong> Prompt a capable LM to compare two responses and emit a verdict. The "reward" is then the probability the judge assigns to the preferred answer,</p>
+
+            <p>$$ \mathcal{L}_{\text{GRM}}(\theta) = -\,\mathbb{E}_{(x,\,y_w,\,y_l)}\Big[\log p_\theta\big(\texttt{"A"} \mid x, y_w, y_l\big)\Big], $$</p>
+
+            <p>where <code>"A"</code> is the token naming the better response. Because the output is a token distribution, this is trained with the ordinary next-token cross-entropy — no separate scalar head, no separate loss.</p>
+
+            <p><strong>Critique-then-judge.</strong> The more interesting variant has the model generate a written rationale before its verdict, so the reward is grounded in an explicit chain of reasoning. This is the reward-model analogue of chain-of-thought: it improves accuracy on hard comparisons and, as a bonus, makes the reward <em>interpretable</em> — you can read why an output scored low. Recent work pushes this further by training the critique itself with RL (letting the reward model "think" before scoring), which has become one of the more active directions.</p>
+
+            <p>The trade-offs are clear. Scalar BT models are cheap to evaluate (one forward pass, one number) and easy to plug into RL, but they are opaque and brittle. Generative reward models are slower and need careful decoding, but they are more accurate on hard cases, more interpretable, and they scale with inference-time compute — you can spend more tokens of reasoning to get a better judgment.</p>
+
+            <h2>The problem that outlives every method: reward hacking</h2>
+            <p>Whatever the parameterization, a reward model is a <em>proxy</em>, and optimizing a proxy hard enough breaks it — Goodhart's law. A policy trained against $r_\theta$ will find and exploit the regions where $r_\theta$ is wrong: verbosity, sycophancy, formatting tricks, or whatever spurious feature happened to correlate with reward in the training data. The standard defenses are all forms of restraint: a KL penalty keeping the policy close to the reference model,</p>
+
+            <p>$$ \max_\pi \; \mathbb{E}_{y\sim\pi}\big[r_\theta(x,y)\big] - \beta\, \mathrm{KL}\big(\pi(\cdot\mid x)\,\|\,\pi_{\text{ref}}(\cdot\mid x)\big), $$</p>
+
+            <p>plus reward-model ensembling, early stopping, and periodically refreshing the reward model on fresh on-policy data. Underneath is a subtle point worth repeating: a reward model can be an excellent <em>evaluator</em> (high accuracy on held-out preferences) yet a poor <em>optimization target</em>, because optimization actively hunts for its blind spots. Robustness under optimization, not just accuracy on a test set, is the property we actually want — and the one we are worst at measuring.</p>
+
+            <h2>Takeaways</h2>
+            <ul>
+              <li>Bradley–Terry turns pairwise preferences into a logistic loss on reward differences; it is the default and identifies reward only up to an additive constant.</li>
+              <li>Scalar regression fits absolute, calibrated scores with MSE — good when the target is genuinely well-defined, otherwise it inherits annotator noise.</li>
+              <li>Plackett–Luce extends preferences from pairs to full rankings; the common trick is to decompose a ranking into averaged pairwise BT losses.</li>
+              <li>Generative reward models recast scoring as generation, trained with ordinary cross-entropy; critique-then-judge trades compute for accuracy and interpretability.</li>
+              <li>Reward hacking is structural: the honest goal is a reward that is robust <em>as a target</em>, not merely accurate <em>as an evaluator</em>.</li>
+            </ul>
+          </div>
+
+          <footer class="article-foot">
+            <a href="../blog.html">← Back to Blog</a>
+          </footer>
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
