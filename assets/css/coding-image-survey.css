@@ -1,0 +1,17 @@
+/* Image companion: reuse the video survey's journal layout and citation system. */
+.coding-image-survey .method-atlas { min-width: 980px; table-layout: fixed; }
+.coding-image-survey .method-atlas th:nth-child(1) { width: 19%; }
+.coding-image-survey .method-atlas th:nth-child(2) { width: 20%; }
+.coding-image-survey .method-atlas th:nth-child(3) { width: 28%; }
+.coding-image-survey .method-atlas th:nth-child(4) { width: 33%; }
+.coding-image-survey .method-atlas small { color: var(--muted); }
+.coding-image-survey .method-atlas td { overflow-wrap: anywhere; }
+.coding-image-survey .reference-id { white-space: normal; }
+.coding-image-survey .atlas-group { margin-bottom: 16px; }
+.coding-image-survey .atlas-group summary { line-height: 1.5; }
+.coding-image-survey :target { scroll-margin-top: 24px; }
+@media print {
+  .coding-image-survey .method-atlas { min-width: 0; font-size: 10pt; }
+  .coding-image-survey .table-wrap { overflow: visible; }
+  .coding-image-survey .method-atlas tr { break-inside: avoid; }
+}

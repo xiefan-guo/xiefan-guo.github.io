@@ -1,0 +1,3828 @@
+{
+  "title": "LLM video-agent scope review",
+  "reviewed_on": "2026-10-30",
+  "screening_universe": "The original 295-record corpus, plus five early LLM-video or demonstration-programming works identified by the reviewer pass. Scope decisions record both false exclusions and bounded supporting comparisons.",
+  "record_count": 428,
+  "retained_count": 232,
+  "counts": {
+    "core": 196,
+    "support": 34,
+    "exclude": 196,
+    "background": 2
+  },
+  "criteria": {
+    "core": "A substantive LLM/VLM stage constructs or revises temporal media, executable visual or procedural world artifacts, or the work directly evaluates that stage. Downstream domain alone does not determine scope.",
+    "support": "A directly relevant component, diagnostic or bounded comparison, including policy-program predecessors and symbolic-world or rendering interfaces; its results are not treated as end-to-end video-agent evidence.",
+    "background": "Selected historical mechanism context only.",
+    "exclude": "Outside the focused LLM video-agent task or redundant peripheral lineage; absence from this survey is not a judgment of research quality."
+  },
+  "records": [
+    {
+      "catalog_id": "A01",
+      "tier": "core",
+      "reason": "Qwen-VL 直接生成可编辑的 Lottie 时序程序，是专门化 code-video model；保留但与运行时自主 agent harness 区分。",
+      "title": "LottieGPT: Tokenizing Vector Animation for Autoregressive Generation",
+      "url": "https://arxiv.org/abs/2604.11792",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A02",
+      "tier": "core",
+      "reason": "LLM 规划视觉实体并生成持久 SVG DOM 的稀疏时序更新，直接回答代码如何表示与学习动画，而非普通视频 backbone。",
+      "title": "VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation",
+      "url": "https://arxiv.org/abs/2605.01517",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A03",
+      "tier": "core",
+      "reason": "语言模型根据视觉反馈创建和编辑动画源码，属于可执行动画的生成—检查—修正主线。",
+      "title": "LogoMotion: Visually-Grounded Code Synthesis for Creating and Editing Animation",
+      "url": "https://arxiv.org/abs/2405.07065",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A04",
+      "tier": "core",
+      "reason": "LLM 将定理分解为可执行解释动画并生成视频，是代码驱动视频 agent 的直接方法。",
+      "title": "TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding",
+      "url": "https://aclanthology.org/2025.acl-long.332/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A05",
+      "tier": "support",
+      "reason": "教学推理分解与可视化规划为视频教学 agent 提供组件比较；原文评测静态 SVG/HTML 与交互网页截图，并不直接评测视频生成。",
+      "title": "From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization",
+      "url": "https://arxiv.org/abs/2505.16832",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "core",
+        "reason": "多智能体通过代码生成教学可视化并配套 EduVisBench，直接研究可执行视觉表达的推理与验证。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2505.16832",
+          "locator": "Section 2.3; Section 4.1",
+          "fact": "Outputs are standardized to images for scoring; interactive pages are navigated and screenshots evaluated. This is not a temporal video benchmark."
+        }
+      ]
+    },
+    {
+      "catalog_id": "A06",
+      "tier": "core",
+      "reason": "多模态 agent 规划幻灯片、讲述和持续时间并组合演示视频，保留为工具编排式视频 agent 的紧凑对照。",
+      "title": "PresentAgent: Multimodal Agent for Presentation Video Generation",
+      "url": "https://arxiv.org/abs/2507.04036",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A07",
+      "tier": "core",
+      "reason": "agent 将科学论文规划为由 Manim 等代码渲染器和视频工具执行的场景，直接覆盖异构 Code2Video 工作流。",
+      "title": "Preacher: Paper-to-Video Agentic System",
+      "url": "https://arxiv.org/abs/2508.09632",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A08",
+      "tier": "core",
+      "reason": "以代码为视频生成的中间表示并组织规划、执行及优化，是本 Survey 的核心 Code2Video 方法。",
+      "title": "Code2Video: A Code-centric Paradigm for Educational Video Generation",
+      "url": "https://arxiv.org/abs/2510.01174",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A09",
+      "tier": "core",
+      "reason": "agent 编写、编译并视觉修订 Beamer 来源，再同步字幕、光标和语音，直接构成可复现的视频生产程序。",
+      "title": "Paper2Video: Automatic Video Generation from Scientific Papers",
+      "url": "https://arxiv.org/abs/2510.05096",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A10",
+      "tier": "core",
+      "reason": "InternSVG 的动态 SVG 生成与编辑任务直接输出动画源码，应保留动画子集并省略与本范围无关的静态图标任务展开。",
+      "title": "InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models",
+      "url": "https://arxiv.org/abs/2510.11341",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A11",
+      "tier": "core",
+      "reason": "其 benchmark 直接测试模型通过代码生成教育解题视频的能力，是核心方法所需的任务级评测。",
+      "title": "VisualEDU: A Benchmark for Assessing Coding and Visual Comprehension through Educational Problem-Solving Video Generation",
+      "url": "https://aclanthology.org/2025.findings-emnlp.889/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A12",
+      "tier": "core",
+      "reason": "通过生成代码组织教学动画与视频，直接研究高级 LLM 的程序化视频表达能力。",
+      "title": "TeachMaster: Generative Teaching via Code",
+      "url": "https://arxiv.org/abs/2601.04204v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A13",
+      "tier": "core",
+      "reason": "LLM 多智能体规划并调用可执行视频制作环节，直接属于教学 Code2Video agent。",
+      "title": "Beyond End-to-End Video Models: An LLM-Based Multi-Agent System for Educational Video Generation",
+      "url": "https://arxiv.org/abs/2602.11790v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A14",
+      "tier": "core",
+      "reason": "LLM 通过 Manim 代码生成 STEM 动画，保留其人类参与边界而不因非全自主而移出核心。",
+      "title": "LLM2Manim: Pedagogy-Aware AI Generation of STEM Animations",
+      "url": "https://arxiv.org/abs/2604.05266",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A15",
+      "tier": "core",
+      "reason": "多模态 agent 检索、规划和组合演示或讨论视频，保留生产流程但不把独立问答模式算作导出视频的交互性。",
+      "title": "PresentAgent-2: Towards Generalist Multimodal Presentation Agents",
+      "url": "https://arxiv.org/abs/2605.11363",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A16",
+      "tier": "core",
+      "reason": "planner、reviewer 和 coder 共同生成并修订可执行 Beamer 演示视频，直接覆盖代码制作与内容核验。",
+      "title": "mPresenter: An Agentic Framework for Generating Multilingual Presentation Videos from Scientific Papers",
+      "url": "https://aclanthology.org/2026.findings-acl.805/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A17",
+      "tier": "core",
+      "reason": "开放代码模型在 Claude Code harness 中写代码、渲染、检查帧并修复，是用户指定的工业核心案例。",
+      "title": "SenseNova 6.8 Code2Video",
+      "url": "https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "A18",
+      "tier": "core",
+      "reason": "LLM 在设计者反馈下生成和修改动画代码，提供早期直接动画 authoring 证据而非外围通用工具。",
+      "title": "Keyframer: Empowering Animation Design Using Large Language Models",
+      "url": "https://arxiv.org/abs/2402.06071",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B01",
+      "tier": "core",
+      "reason": "GPT 规划并编写 Blender 运动脚本以约束视频生成，是程序控制与神经渲染结合的直接早期工作。",
+      "title": "GPT4Motion: Scripting Physical Motions in Text-to-Video Generation via Blender-Oriented GPT Planning",
+      "url": "https://arxiv.org/abs/2311.12631",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B02",
+      "tier": "exclude",
+      "reason": "核心贡献是用模拟光流约束扩散生成，没有 LLM/VLM 构造或恢复时序程序的 agent 机制，继续展开会变成一般物理视频综述。",
+      "title": "MotionCraft: Physics-based Zero-Shot Video Generation",
+      "url": "https://arxiv.org/abs/2405.13557",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B03",
+      "tier": "support",
+      "reason": "物理参数推断、刚体模拟和神经渲染构成可接入 agent 的执行后端，保留一条组件对照而不作为代码规划方法。",
+      "title": "PhysGen: Rigid-Body Physics-Grounded Image-to-Video Generation",
+      "url": "https://arxiv.org/abs/2409.18964",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B04",
+      "tier": "core",
+      "reason": "SIMS 的 GPT-4/RAG 规划器生成可执行关键帧脚本，驱动物理角色动画；不能把该时序创作贡献误归为仅机器人策略。",
+      "title": "SIMS: Simulating Stylized Human-Scene Interactions with Retrieval-Augmented Script Generation",
+      "url": "https://arxiv.org/abs/2411.19921",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "生成脚本主要控制既有场景中的人体运动和学习控制器，并非恢复或构造视频程序或世界机制。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_SIMS_Simulating_Stylized_Human-Scene_Interactions_with_Retrieval-Augmented_Script_Generation_ICCV_2025_paper.pdf"
+    },
+    {
+      "catalog_id": "B05",
+      "tier": "exclude",
+      "reason": "主要研究动态三维重建与生成视频之间的迭代，没有已核实的 LLM 代码构造主贡献。",
+      "title": "WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions",
+      "url": "https://arxiv.org/abs/2505.18151",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B06",
+      "tier": "exclude",
+      "reason": "主要贡献是学习物理条件点轨迹的生成模型，不能代表高级 LLM 的程序化视频规划或世界编程。",
+      "title": "PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation",
+      "url": "https://arxiv.org/abs/2509.20358",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B07",
+      "tier": "core",
+      "reason": "多智能体进行运动推理并生成代码驱动的视频，直接研究 agent 的规划与可执行表达。",
+      "title": "MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis",
+      "url": "https://arxiv.org/abs/2512.04221v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B08",
+      "tier": "core",
+      "reason": "LLM 合成对象和相机运动 DSL 并确定性执行为轨迹，直接属于程序化视频控制。",
+      "title": "LAMP: Language-Assisted Motion Planning for Controllable Video Generation",
+      "url": "https://arxiv.org/abs/2512.03619",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B09",
+      "tier": "exclude",
+      "reason": "其重点是重建、模拟与视频扩散之间的校正流水线，未确立 LLM/VLM 生成或修订程序的核心机制。",
+      "title": "Physical Simulator In-the-Loop Video Generation",
+      "url": "https://arxiv.org/abs/2603.06408",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B10",
+      "tier": "core",
+      "reason": "脚本、场景、行为与相机 agent 共同编排可编辑引擎预演，直接构造可执行时间场景。",
+      "title": "Mind-of-Director: Multi-modal Agent-Driven Film Previsualization via Collaborative Decision-Making",
+      "url": "https://arxiv.org/abs/2603.14790",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B11",
+      "tier": "core",
+      "reason": "scene agent 通过资产、布局、灯光及相机工具构造可渲染视频条件，符合 agent 世界编排范围但不声称任意源码合成。",
+      "title": "Lighting-grounded Video Generation with Renderer-based Agent Reasoning",
+      "url": "https://arxiv.org/abs/2604.07966",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B12",
+      "tier": "core",
+      "reason": "协作 agent 构造可编辑的布局、骨骼、轨迹、相机和灯光时序表示，直接研究从世界编排到视频生成。",
+      "title": "World Narrative Model for Highly Controllable Video Generation: A Paradigm Shift from Pixel Sampling to Physical World Orchestration",
+      "url": "https://arxiv.org/abs/2606.31946",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B13",
+      "tier": "exclude",
+      "reason": "No LLM/VLM stage: training-free proxy-conditioned noising of a video diffusion model; proxies come from simulation or recordings. Excluded on 2026-10-30.",
+      "title": "ProxyUp: Training-Free Proxy-Conditioned Video Generation for Controllable Dynamics",
+      "url": "https://arxiv.org/abs/2607.03732",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B14",
+      "tier": "core",
+      "reason": "LLM Director 用经状态后端验证的工具调用构造时空事件图并执行成视频，是直接 agent 程序编排而非普通游戏开发。",
+      "title": "The GEST-Engine: From Event Graphs to Synthetic Video. A Full Technical Report",
+      "url": "https://arxiv.org/abs/2607.12231",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B15",
+      "tier": "core",
+      "reason": "agent 利用反思与物理控制调整视频生成过程，直接覆盖可执行物理约束下的 agent 规划与修正。",
+      "title": "PhysAgent: Reflective Agentic Physics Control for Physically Plausible Video Generation",
+      "url": "https://arxiv.org/abs/2607.16355",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B16",
+      "tier": "core",
+      "reason": "agent 以代码作为物理推理中间表示并耦合模拟和视频引擎，直接研究代码状态到视频外观的闭环。",
+      "title": "VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System",
+      "url": "https://arxiv.org/abs/2607.27380v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "B17",
+      "tier": "core",
+      "reason": "VLM 根据意图和模拟 rollout 规划生成片段并引导流体视频，是直接 agent 工具编排案例但不是已发布通用 coding harness。",
+      "title": "Fluid-Gen-Zero: Grounding Pretrained Video Generators in Physics without Training",
+      "url": "https://arxiv.org/abs/2610.10984",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C01",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "3D-GPT: Procedural 3D Modeling with Large Language Models",
+      "url": "https://arxiv.org/abs/2310.12945",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C02",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "SceneCraft: An LLM Agent for Synthesizing 3D Scene as Blender Code",
+      "url": "https://arxiv.org/abs/2403.01248",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C03",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "BlenderAlchemy: Editing 3D Graphics with Vision-Language Models",
+      "url": "https://arxiv.org/abs/2404.17672",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C04",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Real2Code: Reconstruct Articulated Objects via Code Generation",
+      "url": "https://arxiv.org/abs/2406.08474",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C05",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "FactorSim: Generative Simulation via Factorized Representation",
+      "url": "https://arxiv.org/abs/2409.17652",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C06",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+      "url": "https://arxiv.org/abs/2410.13882",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C07",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "LLMPhy: Parameter-Identifiable Physical Reasoning Combining Large Language Models and Physics Engines",
+      "url": "https://arxiv.org/abs/2411.08027",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C08",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Video2Policy: Scaling up Manipulation Tasks in Simulation through Internet Videos",
+      "url": "https://arxiv.org/abs/2502.09886",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C09",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "LL3M: Large Language 3D Modelers",
+      "url": "https://arxiv.org/abs/2508.08228",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C10",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "WebVIA: A Web-based Vision-Language Agentic Framework for Interactive and Verifiable UI-to-Code Generation",
+      "url": "https://arxiv.org/abs/2511.06251",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C11",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Vision-as-Inverse-Graphics Agent via Interleaved Multimodal Reasoning",
+      "url": "https://arxiv.org/abs/2601.11109v3",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C12",
+      "tier": "core",
+      "reason": "模型按屏幕与动作生成下一观察的可渲染 HTML，直接属于 code-mediated GUI world prediction，但不是持久转移函数恢复。",
+      "title": "Code2World: A GUI World Model via Renderable Code Generation",
+      "url": "https://arxiv.org/abs/2602.09856",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C13",
+      "tier": "core",
+      "reason": "coding LLM 与运动 critic 共同构造可编辑四维场景代码，是直接的时序世界 authoring 方法。",
+      "title": "Code2Worlds: Empowering Coding LLMs for 4D World Generation",
+      "url": "https://arxiv.org/abs/2602.11757",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C14",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Video2Code: Generating Interactive Webpages from UI Videos via Action-Aware Revisit",
+      "url": "https://arxiv.org/abs/2606.20711",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C15",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Checked Program Recovery from Execution Video: A Sound Oracle for Untrusted Generators",
+      "url": "https://arxiv.org/abs/2607.00635",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C16",
+      "tier": "core",
+      "reason": "planner、coder 和 reviewer 构造动态 Blender 场景并检查模拟机制，直接研究时序世界代码的生成和修正。",
+      "title": "SimWorlds: A Multi-Agent System for Dynamic 3D Scene Creation",
+      "url": "https://arxiv.org/abs/2607.01766",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C17",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
+      "url": "https://arxiv.org/abs/2607.19190",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C18",
+      "tier": "core",
+      "reason": "以状态转移约束生成下一屏可执行 HTML delta，直接研究代码媒介的交互观察预测并需保留其非完整 app 边界。",
+      "title": "AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents",
+      "url": "https://arxiv.org/abs/2608.05891",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C19",
+      "tier": "core",
+      "reason": "agent 根据运动线索和视觉反馈编辑关节网格动画程序，直接构造时间行为与可执行部件交互。",
+      "title": "ArtiMo: Agent-Driven Articulated Mesh Animation",
+      "url": "https://arxiv.org/abs/2608.20699",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C20",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning",
+      "url": "https://arxiv.org/abs/2608.27549",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C21",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Rendering-in-the-Loop: An Execution-Driven Agent for Interactive Web Development",
+      "url": "https://arxiv.org/abs/2609.02088",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C22",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Recursive Code World Models: Building Complex Worlds through Recursive Scene Programs",
+      "url": "https://arxiv.org/abs/2609.11499",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C23",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Real2Gym: Building Gyms from Videos, Bringing Skills to Robots",
+      "url": "https://arxiv.org/abs/2609.37089",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C24",
+      "tier": "core",
+      "reason": "benchmark 直接检验程序状态与渲染视频的一致性，是 code-world agent 必须面对的核心评测接口而不是另一类生成模型。",
+      "title": "PROWBench: Do Video Models Render What the Program Specifies?",
+      "url": "https://arxiv.org/abs/2610.02205",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C25",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Code2Games: Enabling Coding Agents for Gaming World Generation",
+      "url": "https://arxiv.org/abs/2610.05033",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C26",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies",
+      "url": "https://arxiv.org/abs/2610.10479",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C27",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "USDCraft: Geometrically Grounded Programmatic Modeling of Articulated 3D Assets for Simulation",
+      "url": "https://arxiv.org/abs/2610.11322",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C28",
+      "tier": "core",
+      "reason": "agent 将场景代码编译为物理 simulator 并据接触、稳定和关节诊断修订，直接补足世界程序的执行反馈。",
+      "title": "Code2Worlds-2: Physically Plausible Agent Harness for Embodied World Simulation",
+      "url": "https://arxiv.org/abs/2610.17651",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C29",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "RoboSimStudio: An Interactive Toolkit for Human and Agent Rapid Real2Sim of Robot Manipulation Tasks",
+      "url": "https://arxiv.org/abs/2610.18835",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C30",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "InterWebCoder: Learning Interactive Webpage Generation from Executable Tests via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2610.28610",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C31",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "NeoWorld-3: From Pixels to Code-Defined Physical Worlds",
+      "url": "https://arxiv.org/abs/2610.27690",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C32",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations",
+      "url": "https://arxiv.org/abs/2610.31834",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C33",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Trace2World: Reconstructing App Worlds from Real Interaction Traces for Scalable GUI Agent Training",
+      "url": "https://arxiv.org/abs/2610.30792",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C34",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "ZCode video2code plugin",
+      "url": "https://github.com/zai-org/zcode-plugins/blob/main/plugins/video2code/README.md",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C35",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Motion2Code: video-to-SVG/GSAP skills for coding agents",
+      "url": "https://github.com/lovisdotio/motion2code",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C36",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "fal Motion to Code: GSAP and GLSL endpoints",
+      "url": "https://fal.ai/models/fal-ai/motion-to-code/gsap",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C37",
+      "tier": "exclude",
+      "reason": "一般家庭任务程序与机器人任务生成不直接研究视频交付、视频程序恢复或视觉世界维护；从当前主动目录移除。",
+      "title": "VirtualHome: Simulating Household Activities via Programs",
+      "url": "https://arxiv.org/abs/1806.07011",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C38",
+      "tier": "exclude",
+      "reason": "传统点云关节重建没有 LLM 或代码编辑 agent，且不属于当前主线所需的少量历史程序合成工作。",
+      "title": "Ditto: Building Digital Twins of Articulated Objects from Interaction",
+      "url": "https://arxiv.org/abs/2202.08227",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C39",
+      "tier": "exclude",
+      "reason": "传统多视角两状态重建依赖几何优化而非 LLM 代码规划，进一步展开会偏向一般 real-to-sim 综述。",
+      "title": "PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects",
+      "url": "https://arxiv.org/abs/2308.07391",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C40",
+      "tier": "exclude",
+      "reason": "静态图像到 URDF 的监督结构预测没有 coding-agent loop，当前核心资产 agents 已足以说明所需背景。",
+      "title": "URDFormer: A Pipeline for Constructing Articulated Simulation Environments from Real-World Images",
+      "url": "https://arxiv.org/abs/2405.11656",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C41",
+      "tier": "exclude",
+      "reason": "重点是为机器人学习生成资产、任务和奖励，LLM 主要参与奖励构造而非本文关注的视频程序或世界恢复。",
+      "title": "Gen2Sim: Scaling up Robot Learning in Simulation with Generative Models",
+      "url": "https://arxiv.org/abs/2310.18308",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "C45",
+      "tier": "core",
+      "reason": "LLM 在 Unity 中分析场景并运行编译 C# 完成持久交互世界编辑，是直接早期 world-authoring agent 而非泛代码工具。",
+      "title": "LLMR: Real-time Prompting of Interactive Worlds using Large Language Models",
+      "url": "https://arxiv.org/abs/2309.12276",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D01",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Game Engine Learning from Video",
+      "url": "https://www.ijcai.org/proceedings/2017/518",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D02",
+      "tier": "exclude",
+      "reason": "传统VGDL规则设计既无现代LLM代理闭环也非视频恢复，已超出新范围。",
+      "title": "General Video Game Rule Generation",
+      "url": "https://arxiv.org/abs/1906.05160",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D03",
+      "tier": "exclude",
+      "reason": "现有收录重点是通用多角色游戏软件开发，缺少足以区别于保留工作的时序视觉证据或世界模型机制。",
+      "title": "GameGPT: Multi-agent Collaborative Framework for Game Development",
+      "url": "https://arxiv.org/abs/2310.08067",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D04",
+      "tier": "exclude",
+      "reason": "Purely symbolic code world model without a video interface; removed on 2026-11-01 because this version excludes symbolic code world models.",
+      "title": "WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment",
+      "url": "https://arxiv.org/abs/2402.12275",
+      "reviewed_on": "2026-11-01",
+      "previous_scope_decision": [
+        {
+          "tier": "support",
+          "reason": "保留为代码世界规则归纳、搜索与组合机制的代表性对照；其证据不直接证明从任意原始视频构建视觉世界。",
+          "reviewed_on": "2026-10-30"
+        },
+        {
+          "tier": "core",
+          "reason": "直接研究 LLM 构建、搜索或交互修订可执行转移模型，与 Agent2World 使用同一机制标准；结构化或符号输入需明确标注，不等同于原始视频反演。",
+          "reviewed_on": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "catalog_id": "D05",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "url": "https://arxiv.org/abs/2405.15383",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "support",
+        "reason": "保留为代码世界规则归纳、搜索与组合机制的代表性对照；其证据不直接证明从任意原始视频构建视觉世界。",
+        "reviewed_on": "2026-10-30"
+      }
+    },
+    {
+      "catalog_id": "D06",
+      "tier": "exclude",
+      "reason": "以一般游戏开发或软件工程为主要目标，缺少本综述需要单独比较的视频或世界机制；删除而非扩展为外围目录。",
+      "title": "Open Role-Playing with Delta-Engines",
+      "url": "https://arxiv.org/abs/2408.05842",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D07",
+      "tier": "exclude",
+      "reason": "以一般游戏开发或软件工程为主要目标，缺少本综述需要单独比较的视频或世界机制；删除而非扩展为外围目录。",
+      "title": "DreamGarden: A Designer Assistant for Growing Games from a Single Prompt",
+      "url": "https://arxiv.org/abs/2410.01791",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D08",
+      "tier": "exclude",
+      "reason": "这是非LLM有限自动机视频学习路线的演示版本，不再与极少量历史背景并列成独立方法。",
+      "title": "Learning Finite State Machines with Gameplay Video",
+      "url": "https://ojs.aaai.org/index.php/AIIDE/article/download/36843/38981/40920",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D09",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Synthesizing world models for bilevel planning",
+      "url": "https://arxiv.org/abs/2503.20124",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "符号规划、机器人规划或通用游戏基准与当前视觉视频 Agent 主线距离较远；相关机制以 WorldCoder、GIF-MCTS、PoE-World 的代表性比较覆盖。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://arxiv.org/abs/2503.20124"
+    },
+    {
+      "catalog_id": "D10",
+      "tier": "exclude",
+      "reason": "概率POMDP程序估计主要覆盖结构化或机器人规划，概率机制已有PoE-World代表，无需继续扩展此支线。",
+      "title": "LLM-Guided Probabilistic Program Induction for POMDP Model Estimation",
+      "url": "https://proceedings.mlr.press/v305/curtis25a.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D11",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PoE-World: Compositional World Modeling with Products of Programmatic Experts",
+      "url": "https://arxiv.org/abs/2505.10819",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "support",
+        "reason": "保留为代码世界规则归纳、搜索与组合机制的代表性对照；其证据不直接证明从任意原始视频构建视觉世界。",
+        "reviewed_on": "2026-10-30"
+      }
+    },
+    {
+      "catalog_id": "D12",
+      "tier": "exclude",
+      "reason": "其主要可修订产物是自然语言理论而非构建或恢复时序视觉世界的可执行程序。",
+      "title": "WorldLLM: Improving LLMs’ world modeling using curiosity-driven theory-making",
+      "url": "https://arxiv.org/abs/2506.06725",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D13",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Multi-Agent Game Generation and Evaluation via Audio-Visual Recordings",
+      "url": "https://arxiv.org/abs/2508.00632",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D14",
+      "tier": "exclude",
+      "reason": "这是非LLM的精灵分解与行为程序搜索，保留极少历史前史后不再单列这一完整技术路线。",
+      "title": "Finite Automata Extraction: Low-data World Model Learning as Programs from Gameplay Video",
+      "url": "https://arxiv.org/abs/2508.11836",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D15",
+      "tier": "exclude",
+      "reason": "结构化规划中的外部世界模型建设与测试机制已由WorldCoder和Agent2World代表，单列会扩展为一般规划综述。",
+      "title": "Enhancing the Planning Capabilities of Large Language Models by Building External World Models",
+      "url": "https://aclanthology.org/2025.agentscen-1.2/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D16",
+      "tier": "exclude",
+      "reason": "Meta CWM建模软件执行并评测代码推理和软件修复，消歧后应退出Video Agent与视觉代码世界范围。",
+      "title": "CWM: An Open-Weights LLM for Research on Code Generation with World Models",
+      "url": "https://arxiv.org/abs/2510.02387",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D17",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "90% Faster, 100% Code-Free: MLLM-Driven Zero-Code 3D Game Development",
+      "url": "https://arxiv.org/abs/2509.26161",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "以一般游戏开发或软件工程为主要目标，缺少本综述需要单独比较的视频或世界机制；删除而非扩展为外围目录。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/abs/2509.26161",
+        "locator": "Official abstract, paragraphs 2–3",
+        "finding": "Planning, C# generation, Unity binding/scene construction and debugging agents build runnable games; evaluation covers three prototypes."
+      }
+    },
+    {
+      "catalog_id": "D18",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Code World Models for General Game Playing",
+      "url": "https://arxiv.org/abs/2510.04542",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "support",
+        "reason": "Agent2World的推理时Developer/Testing Team本身就是代码世界代理，不能因也生成训练数据而删除；GGP补充被当前WorldCoder/GIF-MCTS段落遗漏的隐藏状态推断代码。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2510.04542",
+        "locator": "Abstract; §4.1–4.4; §5",
+        "finding": "LLM translates rules and trajectories into transition/legal/termination code plus hidden-state inference; ten games separate information conditions."
+      }
+    },
+    {
+      "catalog_id": "D20",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback",
+      "url": "https://arxiv.org/abs/2512.22336",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "符号规划、机器人规划或通用游戏基准与当前视觉视频 Agent 主线距离较远；相关机制以 WorldCoder、GIF-MCTS、PoE-World 的代表性比较覆盖。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2512.22336",
+        "locator": "Abstract; §3.1; §4.4–4.6",
+        "finding": "Deep Researcher, Model Developer and Testing Team perform executable-world synthesis with adaptive unit/simulation checks; training is a second use of that inference loop."
+      }
+    },
+    {
+      "catalog_id": "D21",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Learning Abstractions for Hierarchical Planning in Program-Synthesis Agents",
+      "url": "https://arxiv.org/abs/2602.00929",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "符号规划、机器人规划或通用游戏基准与当前视觉视频 Agent 主线距离较远；相关机制以 WorldCoder、GIF-MCTS、PoE-World 的代表性比较覆盖。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://arxiv.org/abs/2602.00929"
+    },
+    {
+      "catalog_id": "D22",
+      "tier": "exclude",
+      "reason": "联合学习神经选项与抽象世界模型的重点偏向层级策略学习，并非Video Agent生成或恢复视觉世界程序。",
+      "title": "Joint Learning of Hierarchical Neural Options and Abstract World Model",
+      "url": "https://arxiv.org/abs/2602.02799",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D23",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "AutoUE: Automated Generation of 3D Games in Unreal Engine via Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2603.07106",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "以一般游戏开发或软件工程为主要目标，缺少本综述需要单独比较的视频或世界机制；删除而非扩展为外围目录。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2603.07106v2",
+        "locator": "§3.4–3.7; §4.1.1; §4.2–4.5",
+        "finding": "LLM agents generate PCG graphs and gameplay/interaction C++; runtime MCP tests assess dynamic behavior; the introduced suite is PlayGen-20."
+      }
+    },
+    {
+      "catalog_id": "D24",
+      "tier": "exclude",
+      "reason": "叙事到Unity模板及人机共创主要属于游戏应用开发，缺少需要本Survey单列的Video2Code或代码世界机制。",
+      "title": "RPGAgent: Driving Coherent Story-to-Play Generation with an LLM-Based Multi-Agent System",
+      "url": "https://doi.org/10.1145/3772318.3790326",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D27",
+      "tier": "exclude",
+      "reason": "以一般游戏开发或软件工程为主要目标，缺少本综述需要单独比较的视频或世界机制；删除而非扩展为外围目录。",
+      "title": "PlayCoder: Making LLM-Generated GUI Code Playable",
+      "url": "https://arxiv.org/abs/2604.19742",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D28",
+      "tier": "exclude",
+      "reason": "面向教师需求的教育游戏模板和机制合约属于应用型游戏软件生成，不应扩大Video Agent主线。",
+      "title": "GamED.AI: A Hierarchical Multi-Agent Framework for Automated Educational Game Generation",
+      "url": "https://arxiv.org/abs/2604.23947",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D31",
+      "tier": "exclude",
+      "reason": "轻量游戏世界模型生成器蒸馏主要是一般规则模型训练支线，已偏离本篇LLM Video Agent闭环的重点。",
+      "title": "Distilling Game Code World Model Generation into Lightweight Large Language Models",
+      "url": "https://arxiv.org/abs/2605.24375",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D32",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "GUI Agents for Continual Game Generation",
+      "url": "https://arxiv.org/abs/2605.28258",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D33",
+      "tier": "exclude",
+      "reason": "其输入和目标主要是文本代理环境的观测转移，缺少视觉时序程序或可视世界恢复的直接任务。",
+      "title": "PatchWorld: Gradient-Free Optimization of Executable World Models for Agent Environments",
+      "url": "https://arxiv.org/abs/2605.30880",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D34",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Mind-Studio: Executable World Models with Lookahead Evaluation for Partially Observable Games",
+      "url": "https://arxiv.org/abs/2606.16070",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D37",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Twin: Playing an Unknown Game with a Test-Time Digital Twin",
+      "url": "https://arxiv.org/abs/2608.14490",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D38",
+      "tier": "core",
+      "reason": "coding agent维护世界程序并将执行结果编译为代理视频供神经模型实现，是Code World Model与Video Generation的直接交汇。",
+      "title": "Code World Model: Coding Agent as World Brain",
+      "url": "https://arxiv.org/abs/2608.25927",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D39",
+      "tier": "core",
+      "reason": "coding agent编写实体和规则并通过持久状态及确定性投影控制视频，直接符合代码世界到视觉输出闭环。",
+      "title": "Programmable World Model",
+      "url": "https://arxiv.org/abs/2609.10540",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D40",
+      "tier": "core",
+      "reason": "LLM编码Executors与生成Artists通过世界蓝图和视觉注册协作，直接建立并维护可视交互世界。",
+      "title": "Code Plans, Diffusion Renders: Open-Ended Generative World Modeling",
+      "url": "https://arxiv.org/abs/2609.26458",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D41",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "EMPIRIC: Experiment-Driven Learning of Residual World Models for Robot Planning",
+      "url": "https://arxiv.org/abs/2609.35047",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "符号规划、机器人规划或通用游戏基准与当前视觉视频 Agent 主线距离较远；相关机制以 WorldCoder、GIF-MCTS、PoE-World 的代表性比较覆盖。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2609.35047",
+        "locator": "Abstract; §3.1–3.4; §4.1; Appendix B.1 and D working files",
+        "finding": "Claude Opus 5 writes and revises simulator.py: forces, constraints and hidden state; experiments test the resulting residual simulator."
+      }
+    },
+    {
+      "catalog_id": "D43",
+      "tier": "core",
+      "reason": "coding agent把生成观察中的新实体注册到可执行世界状态并提交交互结果，是视频观测回流代码状态的核心方法。",
+      "title": "Oneira: From Open-Ended Generation to Open-World Interaction in Video World Models",
+      "url": "https://arxiv.org/abs/2610.01614",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D44",
+      "tier": "exclude",
+      "reason": "通用游戏开发代理的合成训练轨迹是独立agent-training主题，本次不继续扩展。",
+      "title": "GAMEGO: Training Game-Dev Agents with Synthetic Trajectories Anchored in Real-World Assets",
+      "url": "https://arxiv.org/abs/2610.06910",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D45",
+      "tier": "core",
+      "reason": "World-builder 实际生成并通过多相机 rollout 和接触/碰撞/遮挡探针修订世界代码；组件渲染或下游训练结果不等同于完整 builder 评测。",
+      "title": "AgentGarten: Code Worlds for Evolving Agents",
+      "url": "https://arxiv.org/abs/2610.12374",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "support",
+        "reason": "只保留代码世界连接共享神经渲染器的具体集成，不展开playbook训练、agent进化或与强化学习的比较。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://arxiv.org/html/2610.12374"
+    },
+    {
+      "catalog_id": "D46",
+      "tier": "exclude",
+      "reason": "规则书编译与ARC自我改进属于已被代表工作覆盖的程序世界机制，不再延伸为自我提升代理综述。",
+      "title": "Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks",
+      "url": "https://arxiv.org/abs/2610.11794",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D47",
+      "tier": "exclude",
+      "reason": "角色参数迁移和固定DSL转移规律的跨世界适应偏离Video Agent的时序程序构建与恢复主线。",
+      "title": "RoleWorld: Knowledge Transfer in World Modeling with Functional Role Abstractions",
+      "url": "https://arxiv.org/abs/2610.13172",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D48",
+      "tier": "core",
+      "reason": "coding agent在运行中扩展对象行为并约束纹理记忆，直接研究可编辑代码状态与视频外观的协同。",
+      "title": "Mallea: Building, Steering, and Memorizing Worlds with Coding Agent",
+      "url": "https://arxiv.org/abs/2610.21283",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D49",
+      "tier": "support",
+      "reason": "其执行指定规则并控制冻结视频模型可验证隐藏状态一致性，但现有证据不应升级为LLM自主合成转移程序。",
+      "title": "State World Models: Execute the Rules, Generate the Pixels",
+      "url": "https://arxiv.org/abs/2610.26811",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D50",
+      "tier": "core",
+      "reason": "coding agent修改游戏代码和描述，由引擎执行机制再经因果渲染器生成可玩视频，直接满足核心范围。",
+      "title": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds",
+      "url": "https://arxiv.org/abs/2610.27999",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D51",
+      "tier": "support",
+      "reason": "它直接接收agent生成游戏的粗糙视频并评测实体对应，可作为核心代码世界的一个渲染组件组而非独立编码方法。",
+      "title": "AnyGameRenderer: Entity-Consistent Generative Rendering Across Games and an Entity-Level Benchmark",
+      "url": "https://arxiv.org/abs/2610.31466",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D52",
+      "tier": "core",
+      "reason": "coding agent从用户规则构造引擎并输出持久对象状态驱动视频，直接覆盖可视交互代码世界。",
+      "title": "BoxWorld: Let World Engines Control and Video Generators Render",
+      "url": "https://arxiv.org/abs/2610.36371",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D53",
+      "tier": "exclude",
+      "reason": "非LLM符号操作符学习依赖已有控制器和模拟器，不属于现代Video Agent编码闭环。",
+      "title": "Learning Symbolic Operators for Task and Motion Planning",
+      "url": "https://arxiv.org/abs/2103.00589",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D54",
+      "tier": "exclude",
+      "reason": "SAT式感知和逻辑动力学归纳是非LLM历史路线，收窄后无需单列。",
+      "title": "Making Sense of Raw Input",
+      "url": "https://doi.org/10.1016/j.artint.2021.103521",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D55",
+      "tier": "exclude",
+      "reason": "非LLM理论学习和规划虽是重要前史，但不再展开一般模型式强化学习的历史目录。",
+      "title": "Human-Level Reinforcement Learning through Theory-Based Modeling, Exploration, and Planning",
+      "url": "https://arxiv.org/abs/2107.12544",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D56",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+      "url": "https://doi.org/10.1145/3571249",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D57",
+      "tier": "exclude",
+      "reason": "自然语言到PDDL规划域的生成偏向一般符号规划，未直接构造或恢复时序视觉世界。",
+      "title": "Leveraging Pre-trained Large Language Models to Construct and Utilize World Models for Model-based Task Planning",
+      "url": "https://arxiv.org/abs/2305.14909",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D58",
+      "tier": "exclude",
+      "reason": "语言到概率程序的通用推理架构与Video Agent的视觉时序代码任务距离较远。",
+      "title": "From Word Models to World Models: Translating from Natural Language to the Probabilistic Language of Thought",
+      "url": "https://arxiv.org/abs/2306.12672",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "D59",
+      "tier": "exclude",
+      "reason": "其主要输出是动作抽象和控制器，继续展开会将Survey带向机器人或具身策略学习。",
+      "title": "Learning Grounded Action Abstractions from Language",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/99dec5837aae1a7459960c6121b9e3b8-Abstract-Conference.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E01",
+      "tier": "exclude",
+      "reason": "显式状态游戏视频数据集本身未建立LLM编码代理闭环，不能因world-model关键词纳入。",
+      "title": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG",
+      "url": "https://arxiv.org/abs/2603.23497",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E03",
+      "tier": "exclude",
+      "reason": "视觉语言相机轨迹预测是控制组件，现有证据未证明其写修时序视频或世界程序。",
+      "title": "CT-1: Vision-Language-Camera Models Transfer Spatial Reasoning Knowledge to Camera-Controllable Video Generation",
+      "url": "https://arxiv.org/abs/2604.09201",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E04",
+      "tier": "exclude",
+      "reason": "多实体神经控制token与NPC反应接口不构成LLM编码代理。",
+      "title": "ReactiveGWM: Flexible Control and NPC Reactivity in Game World Models",
+      "url": "https://arxiv.org/abs/2605.15256",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E05",
+      "tier": "exclude",
+      "reason": "自然语言动作条件化视频本身不是LLM写修程序的代理闭环。",
+      "title": "Incantation: Natural Language as the Action Interface for Multi-Entity Video World Models",
+      "url": "https://arxiv.org/abs/2605.18601",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E06",
+      "tier": "exclude",
+      "reason": "FPS控制信号的时空条件化是纯神经接口研究，不属于本篇代码代理方法。",
+      "title": "SCOPE: Simulating Cross-game Operations in Playable Environments for FPS World Models",
+      "url": "https://arxiv.org/abs/2605.23345",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E07",
+      "tier": "exclude",
+      "reason": "几何噪声变换只研究相机控制，没有LLM程序构建或修订机制。",
+      "title": "CameraNoise: Enabling Faithful Camera Control in Video Diffusion through Geometry-Flow-Guided Noise Warping",
+      "url": "https://arxiv.org/abs/2605.30774",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E08",
+      "tier": "exclude",
+      "reason": "主要贡献是神经世界模拟、渲染或角色控制，不是 LLM 对视频项目或可执行世界的构建与修订；由视频模型综述覆盖。",
+      "title": "Infinite Worlds with Versatile Interactions",
+      "url": "https://arxiv.org/abs/2607.07534",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E10",
+      "tier": "exclude",
+      "reason": "状态与视频联合预测缺少LLM程序修改闭环，状态感知不自动满足本次核心范围。",
+      "title": "StatePlay: State-Aware Game World Models for Mechanics-Consistent Generation",
+      "url": "https://arxiv.org/abs/2607.26754",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E11",
+      "tier": "exclude",
+      "reason": "学习式三维状态和图形桥接没有已确立的LLM编码流程，属于独立神经世界模型综述范围。",
+      "title": "Marionette: Predicting World States, Rendering Geometry, Painting Appearance",
+      "url": "https://arxiv.org/abs/2608.14530",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E12",
+      "tier": "exclude",
+      "reason": "主要贡献是神经世界模拟、渲染或角色控制，不是 LLM 对视频项目或可执行世界的构建与修订；由视频模型综述覆盖。",
+      "title": "WorldMind: Decoupled Game World Model for State-Aware NPC Behavior",
+      "url": "https://arxiv.org/abs/2608.21439",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E14",
+      "tier": "exclude",
+      "reason": "语义动作到潜在时间段的神经控制接口未形成程序构造或纠错闭环。",
+      "title": "H3-World: Turning Language Understanding into World Control",
+      "url": "https://arxiv.org/abs/2609.01560",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E16",
+      "tier": "exclude",
+      "reason": "相机坐标与旋转位置编码是神经控制研究，没有LLM源码生成或世界程序修复。",
+      "title": "ActionRoPE: Action as Coordinates for Spatially Consistent Control in Planar-Camera Game World Models",
+      "url": "https://arxiv.org/abs/2610.25861",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E18",
+      "tier": "support",
+      "reason": "保留为实时视觉实现的公开工程接口，不将渲染演示视作上游 LLM 世界构建的独立评测。",
+      "title": "EdenLive: Real-Time Generative Rendering from Any Visual Reference",
+      "url": "https://github.com/VAST-AI-Research/EdenLive",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E19",
+      "tier": "support",
+      "reason": "这是核心Code World Model的直接流式渲染扩展，可保留实现边界和延迟信息但不称新的编码agent方法。",
+      "title": "Streaming Code World Model",
+      "url": "https://github.com/TingtingLiao/streaming-code-world-model",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E20",
+      "tier": "support",
+      "reason": "直接实现可执行代码世界的语义状态流到视频的实时接口，与保留的 Streaming Code World Model 和 AnyGameRenderer 属同类支撑组件；不据此宣称 LLM 在线生成世界规则。",
+      "title": "StreamRender-H3: Interactive Coding Worlds with Real-time Streaming Diffusion Render",
+      "url": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "赛车语义流到视频的工程渲染记录未独立建立LLM写修世界程序闭环，收窄后不再列为方法。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/"
+    },
+    {
+      "catalog_id": "E21",
+      "tier": "exclude",
+      "reason": "主要贡献是神经世界模拟、渲染或角色控制，不是 LLM 对视频项目或可执行世界的构建与修订；由视频模型综述覆盖。",
+      "title": "Genie 4: A New Generation of World Simulation",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E22",
+      "tier": "exclude",
+      "reason": "动作条件化神经世界公告未给出LLM编写或修改程序的agent闭环。",
+      "title": "Genie 3: A New Frontier for World Models",
+      "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "E23",
+      "tier": "exclude",
+      "reason": "空间条件视频生成是可替换backend，保留模型名作为核心系统的组成即可，不需要独立研究条目。",
+      "title": "Cosmos-Transfer1: Conditional World Generation with Adaptive Multimodal Control",
+      "url": "https://arxiv.org/abs/2503.14492",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F01",
+      "tier": "core",
+      "reason": "完整视频编辑与交付任务，比较编辑目标、规划与执行复杂度；属于视频 agent 主线，不因缺少自由代码输出降级。",
+      "title": "Unified Agentic Video Editing Across Levels of Complexity and Creativity",
+      "url": "https://arxiv.org/abs/2609.12769",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F02",
+      "tier": "core",
+      "reason": "VLM agent 通过检索、掩码与指令补全实际调用视频编辑工具；直接体现 backbone–tool–video 接口。",
+      "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
+      "url": "https://arxiv.org/abs/2605.18748",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F03",
+      "tier": "core",
+      "reason": "基于持久编辑项目的原子操作、执行与局部修复；保留为工业系统证据，明确技术报告和小规模比较的边界。",
+      "title": "Cassette-Editor: A Video Editing Agent That Edits the Way You Do",
+      "url": "https://zenodo.org/records/23491353",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F04",
+      "tier": "exclude",
+      "reason": "仅音频生成与组合；本轮实际删除外围音频谱系，不作为视频 agent 的独立文献条目。",
+      "title": "WavJourney: Compositional Audio Creation with Large Language Models",
+      "url": "https://arxiv.org/abs/2307.14335",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F05",
+      "tier": "core",
+      "reason": "早期 LLM 规划和执行视频剪辑，人与 agent 共同操作时间线；是直接视频编辑工作，必须标注人工参与。",
+      "title": "LAVE: LLM-Powered Agent Assistance and Language Augmentation for Video Editing",
+      "url": "https://arxiv.org/abs/2402.10294",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F06",
+      "tier": "exclude",
+      "reason": "仅音频编辑与生成，未提供完整视频任务证据；从本 Survey 删除。",
+      "title": "WavCraft: Audio Editing and Generation with Large Language Models",
+      "url": "https://arxiv.org/abs/2403.09527",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F07",
+      "tier": "core",
+      "reason": "早期可执行视频生成/编辑模块组合与 MLLM 评审；保留机制历史位置，但区分固定模块协同训练与开放式 LLM 工具规划。",
+      "title": "Mora: Enabling Generalist Video Generation via A Multi-Agent Framework",
+      "url": "https://arxiv.org/abs/2403.13248",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F08",
+      "tier": "core",
+      "reason": "LMM 实际承担故事扩展、角色/场景设计及视频生成控制，是直接视频 authoring agent。",
+      "title": "Anim-Director: A Large Multimodal Model Powered Agent for Controllable Animation Video Generation",
+      "url": "https://arxiv.org/abs/2408.09787",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F09",
+      "tier": "core",
+      "reason": "多镜头视频的规划、关键帧迭代与一致性控制；直接覆盖长视频生成 harness。",
+      "title": "DreamFactory: Pioneering Multi-Scene Long Video Generation with a Multi-Agent Framework",
+      "url": "https://arxiv.org/abs/2408.11788",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F10",
+      "tier": "core",
+      "reason": "围绕主体、分镜、生成与评价的真实多 agent 叙事流程；属于 authoring，不要求输出源代码。",
+      "title": "StoryAgent: Customized Storytelling Video Generation via Multi-Agent Collaboration",
+      "url": "https://arxiv.org/abs/2411.04925",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F11",
+      "tier": "core",
+      "reason": "意图分解、路线规划和模型选择驱动视频生成与编辑工具调用；直接覆盖 tool orchestration。",
+      "title": "SPAgent: Adaptive Task Decomposition and Model Selection for General Video Generation and Editing",
+      "url": "https://arxiv.org/abs/2411.18983",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F12",
+      "tier": "core",
+      "reason": "对生成结果进行验证、建议与重设计，修改提示和空间/时间控制；直接视频 feedback loop。",
+      "title": "GenMAC: Compositional Text-to-Video Generation with Multi-Agent Collaboration",
+      "url": "https://arxiv.org/abs/2412.04440",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F13",
+      "tier": "core",
+      "reason": "故事书视频生产结合图像、旁白、音乐和合成；是完整视听交付，不能与 audio-only 工作一起排除。",
+      "title": "MM-StoryAgent: Immersive Narrated Storybook Video Generation with a Multi-Agent Paradigm across Text, Image and Audio",
+      "url": "https://arxiv.org/abs/2503.05242",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F14",
+      "tier": "core",
+      "reason": "LLM 分层导演/场景/镜头规划并组织视频与音频生成；直接覆盖长程 authoring。",
+      "title": "Automated Movie Generation via Multi-Agent CoT Planning (MovieAgent)",
+      "url": "https://arxiv.org/abs/2503.07314",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F15",
+      "tier": "core",
+      "reason": "MCTS 风格候选片段搜索、上下文评价与后期执行；为 agent search–feedback 机制提供直接视频证据。",
+      "title": "AniMaker: Multi-Agent Animated Storytelling with MCTS-Driven Clip Generation",
+      "url": "https://arxiv.org/abs/2506.10540",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F16",
+      "tier": "core",
+      "reason": "电影语言检索、粗剪/精剪和视听节奏控制组成实际电影生成流程；作为 authoring/editing 核心。",
+      "title": "FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation",
+      "url": "https://arxiv.org/abs/2506.18899",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F17",
+      "tier": "core",
+      "reason": "多 agent 协调剧本、镜头、角色、关键帧、动画和音频，直接研究长视频生产。",
+      "title": "MAViS: A Multi-Agent Framework for Long-Sequence Video Storytelling",
+      "url": "https://arxiv.org/abs/2508.08487",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F18",
+      "tier": "core",
+      "reason": "根据视频、音频及语境批评进行测试时提示修订和候选选择；直接研究闭环视频反馈。",
+      "title": "VISTA: A Test-Time Self-Improving Video Generation Agent",
+      "url": "https://arxiv.org/abs/2510.15831",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F19",
+      "tier": "core",
+      "reason": "LLM 生成并执行 FFmpeg/VVenC 命令，检索和反思帮助修复实际媒体处理任务；属于工具/代码执行机制。",
+      "title": "ELLMPEG: An Edge-based Agentic LLM Video Processing Tool",
+      "url": "https://arxiv.org/abs/2602.00028",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F20",
+      "tier": "core",
+      "reason": "全局任务图、局部编辑、冲突诊断与协商修复构成实际音乐引导剪辑 agent；MVEBench 提供直接评测。",
+      "title": "GLANCE: A Global-Local Coordination Multi-Agent Framework for Music-Grounded Non-Linear Video Editing",
+      "url": "https://arxiv.org/abs/2604.05076",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F21",
+      "tier": "core",
+      "reason": "创作方向搜索与局部多模态改进直接服务视频生成；核心机制是搜索资源分配，而非仅视频质量模型。",
+      "title": "Co-Director: Agentic Generative Video Storytelling",
+      "url": "https://arxiv.org/abs/2604.24842",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F22",
+      "tier": "core",
+      "reason": "MLLM 驱动检索、生成模式选择、视频反馈与多模态记忆更新；直接长视频 agent，不能仅因 diffusion 标题降级。",
+      "title": "A²RD: Agentic Autoregressive Diffusion for Long Video Consistency",
+      "url": "https://arxiv.org/abs/2605.06924",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F23",
+      "tier": "core",
+      "reason": "可训练 LLM planner 调用关键帧、Python 计算和生成工具，verifier 反馈再规划；是三条主线之间的重要连接。",
+      "title": "NEWTON: Agentic Planning for Physically Grounded Video Generation",
+      "url": "https://arxiv.org/abs/2605.18396",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F24",
+      "tier": "core",
+      "reason": "检索增强叙事规划、依赖关系和视觉状态跟踪协调实际生成及 VLM review；直接视频 agent。",
+      "title": "ViMax: Agentic Video Generation",
+      "url": "https://arxiv.org/abs/2606.07649",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F25",
+      "tier": "core",
+      "reason": "通用 coding harness 调用媒体技能并利用执行轨迹/视频反馈演化工作流；直接体现先进 LLM 的视频生产潜力。",
+      "title": "VideoWeaver: Evaluating and Evolving Skills for Agentic Long Video Generation",
+      "url": "https://arxiv.org/abs/2606.08091",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F26",
+      "tier": "core",
+      "reason": "小说到影片的规划、实体状态传播与跨镜头验证；直接长视频 agent，明确它的叙事状态而非物理 transition 程序。",
+      "title": "FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling",
+      "url": "https://arxiv.org/abs/2607.19038",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F27",
+      "tier": "core",
+      "reason": "在多轮工具交互中训练共享视频生成 policy，覆盖检索、仿真、生成及验证；是核心 agent learning 路线。",
+      "title": "VideoGen-Agent: Reinforcing Video Generation Agents",
+      "url": "https://arxiv.org/abs/2609.24997",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F28",
+      "tier": "core",
+      "reason": "状态计划、可执行渲染约束与连续性验证/修复直接组织多镜头视频；连接叙事状态与可执行世界接口。",
+      "title": "StoryEngine: A State-Grounded Agentic Framework for Video Storytelling",
+      "url": "https://arxiv.org/abs/2609.33627",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F29",
+      "tier": "core",
+      "reason": "PreQA 的规划/评价/改进 agents 检查预览并指导缓存轨迹编辑；直接闭环视频纠错，而非单独像素生成骨干。",
+      "title": "PreCoG: Preview-Edit for Efficient Video Correction in Generation-Time",
+      "url": "https://arxiv.org/abs/2610.13174",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F30",
+      "tier": "core",
+      "reason": "镜头规划、跨模态素材检索与专业编辑工具编排提供端到端视频编辑 agent。",
+      "title": "VideoAgent: All-in-One Framework for Video Understanding and Editing",
+      "url": "https://arxiv.org/abs/2606.23327",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F31",
+      "tier": "core",
+      "reason": "层次视听分析、剪辑和 reviewer 协作完成长素材音乐同步任务；直接视频 agent 主线。",
+      "title": "CutClaw: Agentic Hours-Long Video Editing via Music Synchronization",
+      "url": "https://arxiv.org/abs/2603.29664",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F32",
+      "tier": "core",
+      "reason": "长视频编辑含显式工具调用、蓝图、中间渲染和可恢复状态；提供 harness 可观测性证据。",
+      "title": "Crayotter: Traceable Multi-Agent Workflows for Long-Form Video Editing",
+      "url": "https://arxiv.org/abs/2606.07636",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F33",
+      "tier": "core",
+      "reason": "Editor 使用常规时间线工具、Critic 提供反馈或结束渲染；结构化工具执行本身就是核心 agent 机制。",
+      "title": "EditDuet: A Multi-Agent System for Video Non-Linear Editing",
+      "url": "https://arxiv.org/abs/2509.10761",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "F34",
+      "tier": "core",
+      "reason": "直接研究 GPT-4 场景计划如何控制 Layout2Vid 多场景生成；属于视频生产规划机制。",
+      "title": "VideoDirectorGPT: Consistent Multi-Scene Video Generation via LLM-Guided Planning",
+      "url": "https://arxiv.org/abs/2309.15091",
+      "reviewed_on": "2026-10-30",
+      "record_origin": "Added in reviewer omission audit"
+    },
+    {
+      "catalog_id": "F35",
+      "tier": "core",
+      "reason": "GPT-4 导演组织剧本、角色参考、视频与语音生成，属于直接 LLM 视频生产流程。",
+      "title": "Vlogger: Make Your Dream A Vlog",
+      "url": "https://arxiv.org/abs/2401.09414",
+      "reviewed_on": "2026-10-30",
+      "record_origin": "Added in reviewer omission audit"
+    },
+    {
+      "catalog_id": "F36",
+      "tier": "core",
+      "reason": "LLM 生成时空布局并调用布局条件生成，分别检验规划与视频实现，补足早期规划接口。",
+      "title": "LLM-grounded Video Diffusion Models",
+      "url": "https://arxiv.org/abs/2309.17444",
+      "reviewed_on": "2026-10-30",
+      "record_origin": "Added in reviewer omission audit"
+    },
+    {
+      "catalog_id": "F37",
+      "tier": "core",
+      "reason": "多场景脚本与角色参考规划直接驱动视频生成；VideoDrafter 是同一论文早期版本，不能重复计数。",
+      "title": "VideoStudio: Generating Consistent-Content and Multi-Scene Videos",
+      "url": "https://arxiv.org/abs/2401.01256",
+      "reviewed_on": "2026-10-30",
+      "record_origin": "Added in reviewer omission audit"
+    },
+    {
+      "catalog_id": "M01",
+      "tier": "support",
+      "reason": "仅作为核心方法实际使用的输出评价工具保留：Mora、PreCoG，以及 BoxWorld 的 VBench 协议；不再单列一般视频质量综述。",
+      "title": "VBench: Comprehensive Benchmark Suite for Video Generative Models",
+      "url": "https://arxiv.org/abs/2311.17982",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M02",
+      "tier": "exclude",
+      "reason": "当前核验记录未建立 TC-Bench 与保留核心 agent 的直接实验关系；纯生成时间组合评测不独立扩充目录。",
+      "title": "TC-Bench: Benchmarking Temporal Compositionality in Text-to-Video and Image-to-Video Generation",
+      "url": "https://arxiv.org/abs/2406.08656",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M03",
+      "tier": "support",
+      "reason": "PreCoG 明确使用 T2V-CompBench 检查纠错结果；放在该 agent 的评价关系内，不列为独立 agent benchmark。",
+      "title": "T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation",
+      "url": "https://arxiv.org/abs/2407.14505",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M04",
+      "tier": "support",
+      "reason": "NEWTON 明确以 PhyGenBench 做跨 benchmark 泛化；只保留该实际关系和物理视频判断边界。",
+      "title": "Towards World Simulator: Crafting Physical Commonsense-Based Benchmark for Video Generation",
+      "url": "https://arxiv.org/abs/2410.05363",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M05",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping",
+      "url": "https://arxiv.org/abs/2411.03292",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M06",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Text2World: Benchmarking Large Language Models for Symbolic World Model Generation",
+      "url": "https://arxiv.org/abs/2502.13092",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M07",
+      "tier": "support",
+      "reason": "NEWTON 明确在 VideoPhy-2 上训练/评测物理工具规划；限于此直接 agent 关系，训练与测试分母分开。",
+      "title": "VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation",
+      "url": "https://arxiv.org/abs/2503.06800",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M08",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "BlenderGym: Benchmarking Foundational Model Systems for Graphics Editing",
+      "url": "https://arxiv.org/abs/2504.01786",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "一般 graphics editing benchmark；当前记录未确立其对保留视频或 world agent 的具体评测关系，删除外围图形目录项。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2601.11109v3",
+          "locator": "§4.3, Table 3; Appendix A.1, BlenderGym and SlideBench",
+          "finding": "VIGA and its BlenderAlchemy comparison are evaluated on BlenderGym under standard single-step editing protocols."
+        },
+        {
+          "url": "https://arxiv.org/html/2504.01786",
+          "locator": "§3.1; Fig. 1",
+          "finding": "245 start-goal pairs across five graphics-editing categories."
+        }
+      ]
+    },
+    {
+      "catalog_id": "M10",
+      "tier": "support",
+      "reason": "ChronoAgentic v3 直接使用 PhyWorldBench 的 80-demo 子集；保留这一实际 simulation-agent 关系，不泛列像素物理质量测试。",
+      "title": "\"PhyWorldBench\": A Comprehensive Evaluation of Physical Realism in Text-to-Video Models",
+      "url": "https://arxiv.org/abs/2507.13428",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M12",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "IWR-Bench: Can LVLMs reconstruct interactive webpage from a user interaction video?",
+      "url": "https://arxiv.org/abs/2509.24709",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M13",
+      "tier": "exclude",
+      "reason": "科学交互演示的通用 code artifact 评价；没有本轮核心方法实际使用关系，不为可视化相关性保留外围目录。",
+      "title": "InteractScience: Programmatic and Visually-Grounded Evaluation of Interactive Scientific Demonstration Code Generation",
+      "url": "https://arxiv.org/abs/2510.09724",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M14",
+      "tier": "exclude",
+      "reason": "闭环 world-model/控制评价，不评测视频 agent 的生成/编辑或 LLM 恢复/构建世界程序；删除广义 world-model 背景。",
+      "title": "World-in-World: World Models in a Closed-Loop World",
+      "url": "https://world-in-world.github.io/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M15",
+      "tier": "exclude",
+      "reason": "社区动画工具诊断补充，当前主要用于同名澄清，未建立核心方法评测关系；研究型 Manim 评测已覆盖相关合同。",
+      "title": "ManiBench (Oli)",
+      "url": "https://github.com/nabin2004/ManiBench",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M16",
+      "tier": "exclude",
+      "reason": "lesson/content planning 数据，不直接测视频交付、时间行为或 executable-world 能力。",
+      "title": "LessonBench-V1: A Benchmark Dataset for Evaluating AI Lesson Generation Agents",
+      "url": "https://arxiv.org/abs/2607.13041",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M17",
+      "tier": "exclude",
+      "reason": "六题社区动画 suite，目前无官方排名且主要为同名工具补充；不再凭同领域名称保留目录。",
+      "title": "ManimBench v0.6 (NtrpyDev)",
+      "url": "https://www.manimbench.site/faq",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M18",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "VisPhyWorld: Probing Physical Reasoning via Code-Driven Video Reconstruction",
+      "url": "https://arxiv.org/abs/2602.13294",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M19",
+      "tier": "exclude",
+      "reason": "一般游戏软件维护任务；不是视频 agent 或世界机制恢复/构建专门评价。",
+      "title": "GameDevBench: Evaluating Agentic Capabilities Through Game Development",
+      "url": "https://arxiv.org/abs/2602.11103v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M20",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "WebVR: Benchmarking Multimodal LLMs for WebPage Recreation from Videos via Human-Aligned Visual Rubrics",
+      "url": "https://arxiv.org/abs/2603.13391",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M21",
+      "tier": "core",
+      "reason": "从数据、意图等生成动画代码与数据故事视频，直接覆盖数值忠实的 authoring；应兼标 method/benchmark，勿当纯评测资源。",
+      "title": "DATAREEL: Automated Data-Driven Video Story Generation with Animations",
+      "url": "https://arxiv.org/abs/2604.25220",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M22",
+      "tier": "exclude",
+      "reason": "通用 browser-game application delivery，删除泛软件/游戏 benchmark 扩张。",
+      "title": "WebGameBench: Requirement-to-Application Evaluation for Coding Agents via Browser-Native Games",
+      "url": "https://arxiv.org/abs/2605.17637",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M23",
+      "tier": "support",
+      "reason": "Stateful Harness 在主文及附录 D.1 使用官方 WBench 流程直接评价渲染视频质量与控制；支持这一已保留方法的外部评测，不等同 WorldState-Bench 隐状态规则合规。",
+      "title": "WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation",
+      "url": "https://arxiv.org/abs/2605.25874",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "多轮 neural-video world-model 输出测试，当前没有与保留 LLM world-construction agent 的直接实验关系。",
+        "reviewed_on": "2026-10-30"
+      }
+    },
+    {
+      "catalog_id": "M24",
+      "tier": "core",
+      "reason": "真实后期生产任务，明确评测 frontier VLM×native/open harness；核心视频 agent benchmark。",
+      "title": "AgenticVBench: Can AI Agents Complete Real-World Post-Production Tasks?",
+      "url": "https://arxiv.org/abs/2605.27705",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M25",
+      "tier": "exclude",
+      "reason": "主要是截图序列/动作条件的通用交互网页生成；并非 raw-video，已有核心视频重建和直接 RILA 对照足以覆盖界面主线。",
+      "title": "Benchmarking Multimodal LLMs on Code Generation for Complex Interactive Webpages (WebIGBench)",
+      "url": "https://arxiv.org/abs/2606.00154",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M26",
+      "tier": "core",
+      "reason": "LLM 构建可交互 3D 程序并用 StateProbe 验证隐藏行为合同，直接 executable-world 构建/验证。",
+      "title": "WorldCoder-Bench: Benchmarking Physically Grounded 3D World Synthesis",
+      "url": "https://arxiv.org/abs/2606.01869",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M28",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Animation2Code: Evaluating Temporal Visual Reasoning in Video-to-Code Generation",
+      "url": "https://arxiv.org/abs/2606.28593",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M29",
+      "tier": "exclude",
+      "reason": "C++ 游戏引擎软件维护；删除通用软件工程 benchmark 扩张。",
+      "title": "GameEngineBench: Evaluating Coding Agents on Real C++ Runtime Environments",
+      "url": "https://arxiv.org/abs/2607.03525",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M30",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "VideoVIBE: A Video-Grounded Diagnostic Benchmark for One-Shot Interactive Website Generation",
+      "url": "https://arxiv.org/abs/2608.09573",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M31",
+      "tier": "exclude",
+      "reason": "用玩家测试一般 neural world model 的长程目标表现；不是本轮视频生产或程序世界构建 benchmark。",
+      "title": "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives",
+      "url": "https://arxiv.org/abs/2608.13552",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M32",
+      "tier": "exclude",
+      "reason": "一般游戏专家开发 lifecycle；删去与视频 agent/显式世界机制无直接实验对应的目录。",
+      "title": "GameXpert-Bench: How Far Are Coding Agents from Expert Game Development?",
+      "url": "https://arxiv.org/abs/2608.21833",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M33",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender",
+      "url": "https://arxiv.org/abs/2609.15478",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M34",
+      "tier": "core",
+      "reason": "直接代码驱动视频输出评价，作为工业单次/短视频合同保留；与 full-harness agent runs 分开。",
+      "title": "HeyGen Code2Video Bench",
+      "url": "https://www.heygen.com/research/introducing-code2video-benchmark",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M35",
+      "tier": "exclude",
+      "reason": "通用游戏软件生成/行为合同 benchmark；不因有可执行游戏就与 world-model 机制证据合并。",
+      "title": "GameASG-Bench: Benchmarking Autonomous Software Generation for Game Development",
+      "url": "https://arxiv.org/abs/2609.21293",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M36",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "World Agent: Can Language Models Keep a World Running?",
+      "url": "https://arxiv.org/abs/2609.32692",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "运行和维护已给定世界，不测生成/恢复 simulator source，也无当前核心 method 的实际关系；删除相邻世界操作目录。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": "https://arxiv.org/html/2609.32692v1"
+    },
+    {
+      "catalog_id": "M37",
+      "tier": "exclude",
+      "reason": "通用游戏开发/软件 portability 评价；外围任务会稀释三条视频 agent 主线。",
+      "title": "SWE-Game: Can Coding Agents Build the Games We Want?",
+      "url": "https://arxiv.org/abs/2609.33678",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M38",
+      "tier": "core",
+      "reason": "对可执行世界的属性、实体、动力学和系统规则做局部编辑并检查行为保持；直接 world-agent revision 证据。",
+      "title": "World Editing: Intervening on Executable Worlds at Increasing Depth",
+      "url": "https://arxiv.org/abs/2610.02331",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M39",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
+      "url": "https://arxiv.org/abs/2610.03715",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M40",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Ego2World: Compiling Egocentric Cooking Videos into Executable Worlds for Belief-State Planning",
+      "url": "https://arxiv.org/abs/2610.02715",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "经人工活动标注编译世界后评测 belief-state planners；既不测原始视频到代码，也不测 agent 生成世界程序。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.02715",
+          "locator": "§3; Appendix A.1–A.3",
+          "finding": "LLMs group/reconcile annotations and assist semantic review; a manually defined vocabulary and curated precondition/effect semantics supply execution."
+        }
+      ]
+    },
+    {
+      "catalog_id": "M41",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Video2World: Benchmarking Coding Agents for Interactive World Modeling from Embodied Videos",
+      "url": "https://arxiv.org/abs/2610.04432",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M42",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+      "url": "https://arxiv.org/abs/2610.08720",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M43",
+      "tier": "core",
+      "reason": "要求生成可执行机械/组合世界并验证机制与意图实现；直接 executable-world benchmark。",
+      "title": "ExeWorldBench: Benchmarking Code-Based Executable 3D World Modeling",
+      "url": "https://arxiv.org/abs/2610.15166",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M44",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PhySimCode: A Benchmark and Evaluation Method for Physics Video to Code Generation",
+      "url": "https://arxiv.org/abs/2610.15722",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M45",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PhysCodeGym: Benchmarking Coding Agents for Physically Verifiable 4D Reconstruction",
+      "url": "https://arxiv.org/abs/2610.17288",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M46",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "BlenderWorld: Benchmarking Visual Agents for 3D Creation from Real-World References",
+      "url": "https://arxiv.org/abs/2610.23986",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M48",
+      "tier": "core",
+      "reason": "文本/图像/视频条件的通用 code-video 生成合同，直接连接 authoring 与 Video2Code。",
+      "title": "Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V",
+      "url": "https://arxiv.org/html/2610.28416v1",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M49",
+      "tier": "core",
+      "reason": "单次 HTML 视频程序生成的明确 coder setting；用作 backbone 能力对照，不能冒称自主 agent repair。",
+      "title": "Code2Video-AA",
+      "url": "https://artificialanalysis.ai/evaluations/code2video-aa",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M50",
+      "tier": "core",
+      "reason": "原生 harness 的完整 code-driven 视频交付，直接测 frontier agent 的工具使用、成本及完成质量。",
+      "title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+      "url": "https://arxiv.org/html/2610.35864v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M51",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "CodeCap-Bench: Can Code Serve as a Good Video Caption?",
+      "url": "https://arxiv.org/abs/2610.37341",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M52",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "VidCode: Benchmarking Multimodal Code Generation for Video Animation",
+      "url": "https://openreview.net/pdf/af519bec3825aee9059f5580f85e682316617428.pdf",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "M53",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "ByteSized32: A Corpus and Challenge Task for Generating Task-Specific World Models Expressed as Text Games",
+      "url": "https://aclanthology.org/2023.emnlp-main.830/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "S01",
+      "tier": "exclude",
+      "reason": "广义 agentic world-model 综述，仅提供定位背景；本轮删除外围背景简述，保留相关核心原始论文。",
+      "title": "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond",
+      "url": "https://arxiv.org/abs/2604.22748",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "S02",
+      "tier": "exclude",
+      "reason": "广义 multimodal code survey，不是视频 agent 方法或评测证据；删除背景综述项。",
+      "title": "Beyond NL2Code: A Structured Survey of Multimodal Code Intelligence",
+      "url": "https://arxiv.org/abs/2606.15932",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "S03",
+      "tier": "exclude",
+      "reason": "游戏状态/视频数据与概念综述，未直接给出本轮 LLM video-agent 或 world-program 构建证据。",
+      "title": "From Pixels to States: Rethinking Interactive World Models as Game Engines",
+      "url": "https://arxiv.org/abs/2607.14076",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "S04",
+      "tier": "exclude",
+      "reason": "foundation-model games 的广义综述；删除泛游戏背景入口，完整性由三任务×agent机制覆盖实现。",
+      "title": "AI for Games in the Foundation Model Era",
+      "url": "https://arxiv.org/abs/2609.16679",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X01",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Neural Program Synthesis from Diverse Demonstration Videos",
+      "url": "https://proceedings.mlr.press/v80/sun18a.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X02",
+      "tier": "exclude",
+      "reason": "该早期神经视频程序表示未形成现代LLM编码代理闭环。",
+      "title": "Watch, Reason and Code: Learning to Represent Videos Using Program",
+      "url": "https://research.ibm.com/publications/watch-reason-and-code-learning-to-represent-videos-using-program",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X03",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PLANS: Neuro-Symbolic Program Learning from Videos",
+      "url": "https://papers.neurips.cc/paper_files/paper/2020/hash/fe131d7f5a6b38b23cc967316c13dae2-Abstract.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X04",
+      "tier": "exclude",
+      "reason": "LLM程序化机器人策略改变动作选择而非视频或世界状态实现，本篇不扩展机器人policy综述。",
+      "title": "Code as Policies: Language Model Programs for Embodied Control",
+      "url": "https://arxiv.org/abs/2209.07753",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X05",
+      "tier": "exclude",
+      "reason": "Minecraft技能与探索代理主要学习操作既有环境的策略，不构造或恢复视觉世界程序。",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X06",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Demo2Code: From Summarizing Demonstrations to Synthesizing Code via Extended Chain-of-Thought",
+      "url": "https://arxiv.org/abs/2305.16744",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "演示到任务策略代码在当前范围中只需一句边界说明，不应继续展开机器人执行程序谱系。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/abs/2305.16744",
+          "locator": "Abstract",
+          "finding": "Two stages: recursive demonstration summarization and recursive function expansion."
+        },
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/30699996ff411d48903c9752b782a5c1-Paper-Conference.pdf",
+          "locator": "§5.1; Table 3; Appendix EPIC-Kitchens pipeline (primary indexed excerpts)",
+          "finding": "The seven selected dishwashing videos have dense state annotations; this is not direct pixel-to-code inference."
+        }
+      ]
+    },
+    {
+      "catalog_id": "X07",
+      "tier": "exclude",
+      "reason": "VLM从人类演示提取机器人计划与硬件执行不属于视频生成或可视世界程序恢复。",
+      "title": "GPT-4V(ision) for Robotics: Multimodal Task Planning from Human Demonstration",
+      "url": "https://arxiv.org/abs/2311.12015",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X08",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Robotic Programmer: Video Instructed Policy Code Generation for Robotic Manipulation",
+      "url": "https://arxiv.org/abs/2501.04268",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "视频指导的机器人操作policy代码属于被明确收窄掉的策略执行支线。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2501.04268",
+          "locator": "§III-A–C; §IV-A",
+          "finding": "Video2Code builds image–instruction–code training pairs; RoboPro deployment takes image, instruction and API definitions."
+        }
+      ]
+    },
+    {
+      "catalog_id": "X09",
+      "tier": "core",
+      "reason": "MoVer将运动图形的时间和运动要求转为可执行验证并反馈动画生成，直接服务LLM Video Agent的程序纠错。",
+      "title": "MoVer: Motion Verification for Motion Graphics Animations",
+      "url": "https://doi.org/10.1145/3731209",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X10",
+      "tier": "exclude",
+      "reason": "通用多模态代码模型及静态视觉任务没有足够直接的时序Video Agent证据，不以可作backbone为由扩目录。",
+      "title": "VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models",
+      "url": "https://arxiv.org/abs/2508.09945",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X11",
+      "tier": "support",
+      "reason": "可执行可视化代码代理的迭代调试可作一组通用实现支持，但只突出与动画程序修复有关的接口。",
+      "title": "VisCoder2: Building Multi-Language Visualization Coding Agents",
+      "url": "https://arxiv.org/abs/2510.23642",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X12",
+      "tier": "support",
+      "reason": "视觉与程序统一模型可作所选动画编码agent的可替换backbone背景，须与完整时序代理方法分开。",
+      "title": "JanusCoder: Towards a Foundational Visual-Programmatic Interface for Code Intelligence",
+      "url": "https://arxiv.org/abs/2510.23538",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X13",
+      "tier": "exclude",
+      "reason": "广泛多模态代码生成与视觉RL不足以单独建立Video Agent任务，删除可避免扩大为通用编码模型综述。",
+      "title": "VinciCoder: Unifying Multimodal Code Generation via Coarse-to-fine Visual Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2511.00391",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X14",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning",
+      "url": "https://arxiv.org/abs/2603.18495",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "跨域演示转策略程序的输出重点是任务执行policy，当前范围不再沿该机器人支线扩展。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.18495",
+          "locator": "§3.1–3.2; Algorithm 1; Appendix B.4",
+          "finding": "Action operators are predicted from state differences; symbolic execution checks them and triggers reprediction on inconsistency."
+        }
+      ]
+    },
+    {
+      "catalog_id": "X15",
+      "tier": "core",
+      "reason": "该工作直接训练并组织LLM Manim动画代码生成与agentic推理，是核心Code2Video方法。",
+      "title": "Training and Agentic Inference Strategies for LLM-based Manim Animation Generation",
+      "url": "https://arxiv.org/abs/2604.18364v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X16",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "GameGen-Verifier: Parallel Keypoint-Based Verification for LLM-Generated Games via Runtime State Injection",
+      "url": "https://arxiv.org/abs/2605.07442",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X17",
+      "tier": "core",
+      "reason": "工具产生可验证算法轨迹再生成可执行动画直接约束时间过程，符合Video Agent的计划、工具与编码链。",
+      "title": "ALGOGEN: Tool-Generated Verifiable Traces for Reliable Algorithm Visualization",
+      "url": "https://arxiv.org/abs/2605.12159",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X18",
+      "tier": "core",
+      "reason": "LLM动画代理利用视觉先验改善教育动画程序的空间安排，直接属于时序代码生成。",
+      "title": "See Before You Code: Learning Visual Priors for Spatially Aware Educational Animation Generation",
+      "url": "https://arxiv.org/abs/2605.15585",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X19",
+      "tier": "core",
+      "reason": "多模态Manim代理生成并迭代教育动画程序，直接满足先进LLM作为video coder的范围。",
+      "title": "ManimAgent: Self-Evolving Multimodal Agents for Visual Education",
+      "url": "https://arxiv.org/abs/2606.30296v3",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X20",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "World-Time Compute with Verified Code World Models",
+      "url": "https://arxiv.org/abs/2609.09163",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "已验证世界用于训练下游符号推理属于agent-training用途，不是本篇视频程序构建与恢复任务。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2609.09163",
+        "locator": "§2 lines 154–167; §3 Worlds with ground truth; §4.11 and §4.14",
+        "finding": "LLM synthesizes a transition from declared schemas/rules, checked on invariant probes; verification is explicitly not proof of equivalence to true dynamics."
+      }
+    },
+    {
+      "catalog_id": "X21",
+      "tier": "core",
+      "reason": "几何验证器面向LLM教育视频合成提供可定位的程序反馈，直接进入Video Agent闭环。",
+      "title": "SGA: Plug&Play Geometric Verification for Educational Video Synthesis",
+      "url": "https://arxiv.org/abs/2607.18116v2",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X22",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "RAPID: Robot Agentic Programming from Demonstrations",
+      "url": "https://arxiv.org/abs/2609.30249",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "机器人演示到行动代码生成不应继续扩展为robot-policy综述。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.30249",
+          "locator": "§V-A–V-C; Algorithm 1",
+          "finding": "VLM identifies scene objects/properties; perception tools assemble MuJoCo; the coding agent writes feasibility filters and executes/revises primitives and strategies."
+        }
+      ]
+    },
+    {
+      "catalog_id": "X23",
+      "tier": "exclude",
+      "reason": "参数化反应控制器的代码合成改变机器人控制策略而非视频或视觉世界程序。",
+      "title": "Code to Control: Synthesizing Parameterized Reactive Controllers",
+      "url": "https://arxiv.org/abs/2609.38733",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X24",
+      "tier": "exclude",
+      "reason": "实验选择和科学机制辨识虽可启发验证设计，但没有直接Video Agent任务，不再单列。",
+      "title": "LLM-IDEA: Identifiability-Driven Experimental Agent for Autonomous Discovery of Mechanistic World Models",
+      "url": "https://arxiv.org/abs/2610.11253",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X25",
+      "tier": "core",
+      "reason": "以可渲染解释视频程序的源码修订和评判审计驱动自我改进，直接保持代码到视频及反馈的完整链。",
+      "title": "Reels-RSI: Program-Level Self-Improvement for Code-Rendered Explainer Videos",
+      "url": "https://arxiv.org/abs/2610.14495",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X26",
+      "tier": "exclude",
+      "reason": "被动人类视频驱动移动操作policy是机器人执行任务，超出收窄后的三条主线。",
+      "title": "MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos",
+      "url": "https://arxiv.org/abs/2610.20998",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X27",
+      "tier": "core",
+      "reason": "该受控研究直接比较LLM生成时间解释动画时的声明式规格与自由代码，提供Video Agent表示和总成本证据。",
+      "title": "Shorter Is Not Cheaper: A Controlled Comparison of Declarative Animation Specifications and Free-Form Code for LLM-Generated Explanations",
+      "url": "https://arxiv.org/abs/2610.32129",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X28",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Tempo-Zero: Recursive Self-Play in Executable Worlds for Video Reasoning",
+      "url": "https://arxiv.org/abs/2610.32433",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "可执行世界为问答自博弈提供标签的主要贡献是下游视频推理训练，不是coding Video Agent的产物质量。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2610.32433",
+        "locator": "§3.1 and §3.3; Appendix B.5; §4.1",
+        "finding": "The policy selects rule-menu entries and can edit the Shell-game operation graph; arbitrary source rewriting is explicitly disallowed."
+      }
+    },
+    {
+      "catalog_id": "X29",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PhysEvolve: Verifier-grounded Self-evolution for Physical Reasoning with Executable Worlds",
+      "url": "https://arxiv.org/abs/2610.34921",
+      "reviewed_on": "2026-10-30",
+      "previous_scope_decision": {
+        "tier": "exclude",
+        "reason": "模拟世界产生物理推理训练任务的重点是solver自进化，当前不延伸为agent-training综述。",
+        "reviewed_on": "2026-10-30"
+      },
+      "reviewer_evidence": {
+        "url": "https://arxiv.org/html/2610.34921",
+        "locator": "§3.3–3.5; Appendix A.1, D, F.1; §4.1–4.2",
+        "finding": "The VLM outputs Python build_scene(api) and SCENE_MANIFEST; deterministic executor validates/repairs/freezes it, renders matched branches, and drives shared-policy learning."
+      }
+    },
+    {
+      "catalog_id": "X30",
+      "tier": "exclude",
+      "reason": "早期视频动作谓词识别没有LLM编码或视觉世界程序恢复闭环。",
+      "title": "Robot Learning Manipulation Action Plans by Watching Unconstrained Videos from the World Wide Web",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9671",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X31",
+      "tier": "exclude",
+      "reason": "语言到机器人任务计划的断言和恢复机制属于policy执行支线。",
+      "title": "ProgPrompt: Generating Situated Robot Task Plans using Large Language Models",
+      "url": "https://arxiv.org/abs/2209.11302",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X32",
+      "tier": "exclude",
+      "reason": "非LLM层级神经策略既非生成源码也非视觉世界动力学程序，本次移除。",
+      "title": "Neural Task Programming: Learning to Generalize Across Hierarchical Tasks",
+      "url": "https://arxiv.org/abs/1710.01813",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X33",
+      "tier": "exclude",
+      "reason": "非LLM视频到ViZDoom策略DSL不是当前LLM Video Agent或世界转移程序。",
+      "title": "VT4: Program Generation from Diverse Video Demonstrations",
+      "url": "https://arxiv.org/abs/2302.00178",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X34",
+      "tier": "exclude",
+      "reason": "静态图形程序归纳既无时间过程也无现代LLM代理，收窄后无需保留。",
+      "title": "Learning to Infer Graphics Programs from Hand-Drawn Images",
+      "url": "https://arxiv.org/abs/1707.09627",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X35",
+      "tier": "exclude",
+      "reason": "静态三维形状程序推断没有视频时间机制或LLM源码编辑代理。",
+      "title": "Learning to Infer and Execute 3D Shape Programs",
+      "url": "https://arxiv.org/abs/1901.02875",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X36",
+      "tier": "exclude",
+      "reason": "LLM奖励代码定义控制目标而非视觉世界转移或视频程序，避免延伸为机器人强化学习综述。",
+      "title": "Eureka: Human-Level Reward Design via Coding Large Language Models",
+      "url": "https://arxiv.org/abs/2310.12931",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X37",
+      "tier": "exclude",
+      "reason": "语言奖励塑形属于策略训练目标生成，不是Video2Code、Code2Video或视觉Code World。",
+      "title": "Text2Reward: Reward Shaping with Language Models for Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2309.11489",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X38",
+      "tier": "exclude",
+      "reason": "机器人奖励API组合没有视频或世界程序恢复任务，本次排除。",
+      "title": "Language to Rewards for Robotic Skill Synthesis",
+      "url": "https://arxiv.org/abs/2306.08647",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X39",
+      "tier": "exclude",
+      "reason": "非LLM因果因子图只是广义世界模型前史，已有极少直接程序前史足够。",
+      "title": "Schema Networks: Zero-shot Transfer with a Generative Causal Model of Intuitive Physics",
+      "url": "https://proceedings.mlr.press/v70/kansky17a.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X40",
+      "tier": "exclude",
+      "reason": "供给技能下的符号抽象属于传统规划表示学习，无现代视频编码代理。",
+      "title": "From Skills to Symbols: Learning Symbolic Representations for Abstract High-Level Planning",
+      "url": "https://doi.org/10.1613/jair.5575",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X41",
+      "tier": "exclude",
+      "reason": "通用归纳程序合成及库学习没有直接LLM视频代理任务，不能因program关键词泛化纳入。",
+      "title": "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning",
+      "url": "https://doi.org/10.1145/3453483.3454080",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X42",
+      "tier": "exclude",
+      "reason": "人写领域骨架内的神经模块学习既非LLM源码构造也非视频程序恢复。",
+      "title": "PDSketch: Integrated Domain Programming, Learning, and Planning",
+      "url": "https://pdsketch.csail.mit.edu/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X43",
+      "tier": "exclude",
+      "reason": "语言引导子目标图和Minecraft策略学习操作既有世界，不生成该世界的转移或视频程序。",
+      "title": "Do Embodied Agents Dream of Pixelated Sheep: Embodied Decision Making using Language Guided World Modelling",
+      "url": "https://proceedings.mlr.press/v202/nottingham23a.html",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X44",
+      "tier": "exclude",
+      "reason": "LLM生成的Python产生式选择动作和子任务，属于知识或policy获取而非视觉世界模型合成。",
+      "title": "Bootstrapping Cognitive Agents with a Large Language Model",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/27822",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "X45",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Chain-of-Modality: Learning Manipulation Programs from Multimodal Human Videos with Vision-Language-Models",
+      "url": "https://arxiv.org/abs/2504.13351",
+      "reviewed_on": "2026-10-30",
+      "record_origin": "Added in reviewer omission audit"
+    },
+    {
+      "catalog_id": "N01",
+      "tier": "core",
+      "reason": "Director, programmer and reviewer agents revise Blender Python after VLM inspection of renders.",
+      "title": "Kubrick: Multimodal Agent Collaborations for Synthetic Video Generation",
+      "url": "https://arxiv.org/abs/2408.10453",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N02",
+      "tier": "core",
+      "reason": "A scene-description stage precedes Manim code generation; no reported render-driven repair.",
+      "title": "Manimator: Transforming Research Papers into Visual Explanations",
+      "url": "https://arxiv.org/abs/2507.14306",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N03",
+      "tier": "core",
+      "reason": "Long Manim explanations with automated quantitative checks and VLM feedback.",
+      "title": "PhysicsSolutionAgent: Towards Multimodal Explanations for Numerical Physics Problem Solving",
+      "url": "https://arxiv.org/abs/2601.13453",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N04",
+      "tier": "core",
+      "reason": "A fine-tuned VLM decodes parameterized Lottie tokens directly; concurrent with LottieGPT.",
+      "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
+      "url": "https://arxiv.org/abs/2603.02138",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N05",
+      "tier": "core",
+      "reason": "Layer decomposition precedes LLM-written per-layer animation code.",
+      "title": "MG-Gen: Single Image to Motion Graphics Generation",
+      "url": "https://arxiv.org/abs/2504.02361",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N06",
+      "tier": "core",
+      "reason": "Recovering semantic SVG groups, between VLM motion planning and code generation, is the prerequisite for VLM-written animation code.",
+      "title": "Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure",
+      "url": "https://arxiv.org/abs/2512.14336",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N07",
+      "tier": "core",
+      "reason": "Designer feedback steers per-part motion code; human-assisted revision.",
+      "title": "Decomate: Leveraging Generative Models for Co-Creative SVG Animation",
+      "url": "https://arxiv.org/abs/2511.06297",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N08",
+      "tier": "core",
+      "reason": "LLM links narration to visual elements and schedules animation; no critic loop.",
+      "title": "Data Player: Automatic Generation of Data Videos with Narration-Animation Interplay",
+      "url": "https://arxiv.org/abs/2308.04703",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N09",
+      "tier": "core",
+      "reason": "Staged analysis, script and animation planning for chart videos.",
+      "title": "From Data to Story: Towards Automatic Animated Data Video Creation with LLM-based Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2408.03876",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N10",
+      "tier": "core",
+      "reason": "Agents compose one declarative chart–narration–timing specification before rendering.",
+      "title": "DataMagic: Authoring Data Videos through Declarative Multi-Agent Orchestration",
+      "url": "https://arxiv.org/abs/2609.33403",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N11",
+      "tier": "core",
+      "reason": "LLM writes frame-level prompt schedules for a diffusion generator.",
+      "title": "DirecT2V: Large Language Models are Frame-Level Directors for Zero-Shot Text-to-Video Generation",
+      "url": "https://arxiv.org/abs/2305.14330",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N12",
+      "tier": "core",
+      "reason": "LLM director produces temporally ordered frame prompts.",
+      "title": "Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator",
+      "url": "https://arxiv.org/abs/2309.14494",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N13",
+      "tier": "core",
+      "reason": "LLM builds and enriches a dynamic scene graph that conditions diffusion.",
+      "title": "Dysen-VDM: Empowering Dynamics-aware Text-to-Video Diffusion with LLMs",
+      "url": "https://arxiv.org/abs/2308.13812",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N14",
+      "tier": "core",
+      "reason": "Iterative self-refinement revises LLM layouts before generation; plan-level feedback.",
+      "title": "FlowZero: Zero-Shot Text-to-Video Synthesis with LLM-Driven Dynamic Scene Syntax",
+      "url": "https://arxiv.org/abs/2311.15813",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N15",
+      "tier": "core",
+      "reason": "MLLM detects misalignment in the generated video and plans localized regeneration.",
+      "title": "Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement",
+      "url": "https://arxiv.org/abs/2411.15115",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N16",
+      "tier": "core",
+      "reason": "Early script-expansion baseline driving video generation and audio retrieval.",
+      "title": "MovieFactory: Automatic Movie Creation from Text using Large Generative Models for Language and Images",
+      "url": "https://arxiv.org/abs/2306.07257",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N17",
+      "tier": "core",
+      "reason": "Storyline, shot specifications and identity references are planned before per-shot generation.",
+      "title": "VideoGen-of-Thought: Step-by-step generating multi-shot video with minimal manual intervention",
+      "url": "https://arxiv.org/abs/2412.02259",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N18",
+      "tier": "core",
+      "reason": "Hierarchical LLM story and motion planning with motion retrieval.",
+      "title": "DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation",
+      "url": "https://arxiv.org/abs/2411.16657",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N19",
+      "tier": "core",
+      "reason": "Prompt and workflow evolution from feedback; qualified because adaptation spans runs.",
+      "title": "AesopAgent: Agent-driven Evolutionary System on Story-to-Video Production",
+      "url": "https://arxiv.org/abs/2403.07952",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N20",
+      "tier": "core",
+      "reason": "Crew agents critique and revise scripts and camera setups executed in a 3D engine.",
+      "title": "FilmAgent: A Multi-Agent Framework for End-to-End Film Automation in Virtual 3D Spaces",
+      "url": "https://arxiv.org/abs/2501.12909",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N21",
+      "tier": "core",
+      "reason": "A verifier agent checks planned and generated music-video content.",
+      "title": "AutoMV: An Automatic Multi-Agent System for Music Video Generation",
+      "url": "https://arxiv.org/abs/2512.12196",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N22",
+      "tier": "core",
+      "reason": "Per-story revision plus cross-story policy evolution; the latter is an adaptation attribute, not W4.",
+      "title": "CineForge: Self-Improving Agents for Long-Horizon Video Generation",
+      "url": "https://arxiv.org/abs/2608.29621",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N23",
+      "tier": "core",
+      "reason": "LLM writes programs against neural-scene, simulation and Blender modules to insert effects.",
+      "title": "AutoVFX: Physically Realistic Video Editing from Natural Language Instructions",
+      "url": "https://arxiv.org/abs/2411.02394",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N24",
+      "tier": "core",
+      "reason": "Plan-and-act agent over MCP tool servers for generation, editing and tracking; qualified.",
+      "title": "UniVA: Universal Video Agent towards Open-Source Next-Generation Video Generalist",
+      "url": "https://arxiv.org/abs/2511.08521",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N25",
+      "tier": "core",
+      "reason": "LLM agent calls vision tools for reframing.",
+      "title": "Reframe Anything: LLM Agent for Open World Video Reframing",
+      "url": "https://arxiv.org/abs/2403.06070",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N26",
+      "tier": "core",
+      "reason": "Segment selection followed by an arrangement agent.",
+      "title": "Agent-based Video Trimming",
+      "url": "https://arxiv.org/abs/2412.09513",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N27",
+      "tier": "core",
+      "reason": "Human-assisted: users revise LLM-interpreted edit commands.",
+      "title": "ExpressEdit: Video Editing with Natural Language and Sketching",
+      "url": "https://arxiv.org/abs/2403.17693",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N28",
+      "tier": "core",
+      "reason": "An RL-trained aesthetic critic (PresAesth) drives iterative revision of slide design; narration and presenter video are synthesized without critic feedback.",
+      "title": "Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations",
+      "url": "https://arxiv.org/abs/2510.05571",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N29",
+      "tier": "support",
+      "reason": "Deterministic HTML/GSAP-to-MP4 renderer with agent skills; the composition format used by Code2Video-AA.",
+      "title": "HyperFrames: Write HTML. Render video. Built for agents.",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N40",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Programmatic Video Prediction Using Large Language Models",
+      "url": "https://arxiv.org/abs/2505.14948",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N41",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "PhysMind: From Video to Executable Worlds for Training-Free Physical Reasoning",
+      "url": "https://arxiv.org/abs/2608.04575",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N42",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Asking the World: Generalist Physical Reasoning through Agentic World Modeling and Probing",
+      "url": "https://arxiv.org/abs/2609.39135",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N43",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "SceneAgent: An Agentic Pipeline from 3D and 4D Captures to Simulation Environments",
+      "url": "https://arxiv.org/abs/2610.34745",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N44",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "GRS: Generating Robotic Simulation Tasks from Real-World Images",
+      "url": "https://arxiv.org/abs/2410.15536",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N50",
+      "tier": "core",
+      "reason": "A VLM predicts the next GUI state as renderable web code; a concurrent, independent counterpart to Code2World.",
+      "title": "Generative Visual Code Mobile World Models",
+      "url": "https://arxiv.org/abs/2602.01576",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N51",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "RoboGen: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation",
+      "url": "https://arxiv.org/abs/2311.01455",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N52",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "GenSim: Generating Robotic Simulation Tasks via Large Language Models",
+      "url": "https://arxiv.org/abs/2310.01361",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N53",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments",
+      "url": "https://arxiv.org/abs/2312.09067",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N54",
+      "tier": "core",
+      "reason": "Visual-analysis and physics checks drive repair of PyChrono programs.",
+      "title": "ChronoAgentic: A Code-based Multi-Agent World Simulator for Physically Grounded Simulation Construction",
+      "url": "https://arxiv.org/abs/2605.14398",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N55",
+      "tier": "core",
+      "reason": "Planner, writers and an independent critic repair Genesis cases using distilled debug cards.",
+      "title": "Text2Sim: Agentic Physics-Based Simulation Generation with Distilled Expertise",
+      "url": "https://arxiv.org/abs/2609.36593",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N56",
+      "tier": "core",
+      "reason": "Verification after each step revises the specification; distinct from the WorldAgent benchmark.",
+      "title": "WorldAgent: Verification-Guided Agentic Physical World Construction",
+      "url": "https://arxiv.org/abs/2609.33208",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N57",
+      "tier": "core",
+      "reason": "Agents drive a physics engine through code with multimodal feedback.",
+      "title": "GS-Agent: Creating 4D Physical Worlds With Generative Simulation",
+      "url": "https://arxiv.org/abs/2607.21522",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N58",
+      "tier": "core",
+      "reason": "SimCoder repairs engine code from compile, physics and VLM checks and evolves skills across tasks.",
+      "title": "SimWorld Studio: Automatic Environment Generation with Evolving Coding Agent for Embodied Agent Learning",
+      "url": "https://arxiv.org/abs/2605.09423",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N59",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "OpenGame: Open Agentic Coding for Games",
+      "url": "https://arxiv.org/abs/2604.18394",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N60",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "CreativeGame: Toward Mechanic-Aware Creative Game Generation",
+      "url": "https://arxiv.org/abs/2604.19926",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N61",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
+      "url": "https://arxiv.org/abs/2608.25518",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N62",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "OMNI-EPIC: Open-endedness via Models of human Notions of Interestingness with Environments Programmed in Code",
+      "url": "https://arxiv.org/abs/2405.15568",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N63",
+      "tier": "exclude",
+      "reason": "Purely symbolic code world model without a video interface; removed on 2026-11-01 because this version excludes symbolic code world models.",
+      "title": "One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration",
+      "url": "https://arxiv.org/abs/2510.12088",
+      "reviewed_on": "2026-11-01",
+      "previous_scope_decision": {
+        "tier": "core",
+        "reason": "Conditionally activated programmatic laws are inferred from one unguided episode; structured state input.",
+        "reviewed_on": "2026-10-30"
+      }
+    },
+    {
+      "catalog_id": "N64",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Executable World Models for ARC-AGI-3 in the Era of Coding Agents",
+      "url": "https://arxiv.org/abs/2605.05138",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N65",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration for ARC-AGI-3",
+      "url": "https://arxiv.org/abs/2607.01531",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N66",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3",
+      "url": "https://arxiv.org/abs/2607.28287",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N67",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Kepler: Auditable World Models for ARC-AGI-3",
+      "url": "https://arxiv.org/abs/2610.00834",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N68",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Baba in Wonderland: Online Self-Supervised Dynamics Discovery for Executable World Models",
+      "url": "https://arxiv.org/abs/2605.16725",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N69",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Web World Models",
+      "url": "https://arxiv.org/abs/2512.23676",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N70",
+      "tier": "core",
+      "reason": "An agentic director updates explicit game state and rules, then prompts a video world model as renderer.",
+      "title": "GameDirector: Decoupling Gameplay Logic from Rendering for Player-Configurable Game World Models",
+      "url": "https://arxiv.org/abs/2609.25652",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N71",
+      "tier": "core",
+      "reason": "LLM plans are compiled into a persistent world record as the user moves and edits.",
+      "title": "WorldStream: Streaming Interactive 3D Worlds with Hierarchical Planning and Persistent State",
+      "url": "https://arxiv.org/abs/2610.28827",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N30",
+      "tier": "core",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "ManiBench: A benchmark for testing visual-logic drift and syntactic hallucinations in Manim code generation",
+      "url": "https://arxiv.org/abs/2603.13251",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N31",
+      "tier": "core",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "Training and benchmarking code generation for physics-inspired animations",
+      "url": "https://arxiv.org/abs/2602.10840",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N32",
+      "tier": "core",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "Timeline-Bench: Evaluating agents on realistic video-editing tasks, from raw footage to final cut",
+      "url": "https://arxiv.org/abs/2609.35143",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N45",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "MPMWorlds: Material-point-method simulations for inferring and extrapolating physical dynamics",
+      "url": "https://arxiv.org/abs/2606.01538",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N72",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Benchmarking world-model learning with environment-level queries",
+      "url": "https://arxiv.org/abs/2510.19788",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N73",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "V-GameGym: Visual game generation for code large language models",
+      "url": "https://arxiv.org/abs/2509.20136",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N74",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "ArtifactsBench: Bridging the visual-interactive gap in LLM code generation evaluation",
+      "url": "https://arxiv.org/abs/2507.04952",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N75",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "GameCraft-Bench: Can agents build playable games end-to-end in a real game engine?",
+      "url": "https://arxiv.org/abs/2606.17861",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N76",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "From code to playable systems: CEGame-Bench for long-horizon game creation agents",
+      "url": "https://arxiv.org/abs/2610.26098",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N77",
+      "tier": "core",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "VibeWorlding: Can multimodal agents construct 3D open worlds end-to-end?",
+      "url": "https://arxiv.org/abs/2608.15265",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N78",
+      "tier": "exclude",
+      "reason": "Outside the focused scope (video generation, editing and video world models) adopted on 2026-10-30; retained in the full-version backup.",
+      "title": "Code4Scene: Benchmarking coding agents for constructing and editing 3D scenes",
+      "url": "https://arxiv.org/abs/2609.36777",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N33",
+      "tier": "background",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "Video generation meets agent harness: Agentic video generation, agentic world modeling and recursive self-improvement",
+      "url": "https://arxiv.org/abs/2610.40191",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "N34",
+      "tier": "background",
+      "reason": "Benchmark or related survey for the reviewed agent stages.",
+      "title": "Agentic visual generation: From generative models to agentic control",
+      "url": "https://arxiv.org/abs/2609.06758",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G01",
+      "tier": "core",
+      "reason": "Director and Scene Builder LLM agents build event graphs through tool operations checked against simulator state, which a simulation engine renders into narrative videos.",
+      "title": "Authoring for Living Worlds: Tool-Constrained LLM Agents for Executable Multi-Actor Scenarios",
+      "url": "https://arxiv.org/abs/2604.10383",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G02",
+      "tier": "support",
+      "reason": "A distilled streaming renderer converts physics-engine G-buffer world states and text prompts into frames at 30 FPS; no LLM decision role.",
+      "title": "Generative World Renderer at the Speed of Play",
+      "url": "https://arxiv.org/abs/2607.18703",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G03",
+      "tier": "support",
+      "reason": "A neural renderer turns coarse 3D simulation/CG/game renderings plus text prompts into realistic crowd videos; no LLM decision role.",
+      "title": "Coarse-to-Real: Generative Rendering for Populated Dynamic Scenes",
+      "url": "https://arxiv.org/abs/2601.22301",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G04",
+      "tier": "support",
+      "reason": "Mainly an AAA-game G-buffer dataset; trains a G-buffer-conditioned forward video renderer with text-prompt style editing; a VLM serves only in the evaluation protocol.",
+      "title": "Generative World Renderer",
+      "url": "https://arxiv.org/abs/2604.02329",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G05",
+      "tier": "support",
+      "reason": "A game engine resolves actions and world state; a separate generative Render Server turns white-box engine frames into visuals in real time; no LLM role.",
+      "title": "Magpie: Real-Time World Renderer for Interactive Games",
+      "url": "https://arxiv.org/abs/2608.27168",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G06",
+      "tier": "support",
+      "reason": "A structure-conditioned video renderer turns layout, motion and camera from game engines or coding agents into realistic video in four steps; no LLM role.",
+      "title": "SolarRenderer: Few-Step Generative Reference Rendering",
+      "url": "https://arxiv.org/abs/2610.28630",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G07",
+      "tier": "core",
+      "reason": "An RL-trained 7B LLM rewrites user prompts with physics details in a single pass before T2V generation; no inference-time feedback.",
+      "title": "PhyPrompt: RL-based Prompt Refinement for Physically Plausible Text-to-Video Generation",
+      "url": "https://arxiv.org/abs/2603.03505",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G08",
+      "tier": "core",
+      "reason": "An MLLM maps raw footage and user text directly to editing decisions for short-video ads in a single pass; no feedback loop.",
+      "title": "Text-to-Edit: Controllable End-to-End Video Ad Creation via Multimodal LLMs",
+      "url": "https://arxiv.org/abs/2501.05884",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G09",
+      "tier": "core",
+      "reason": "A multimodal LLM reads a compact timeline and natural-language instruction and directly outputs the edited visual timeline; no feedback loop.",
+      "title": "Generative Timelines for Instructed Visual Assembly",
+      "url": "https://arxiv.org/abs/2411.12293",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G10",
+      "tier": "core",
+      "reason": "Agentic policies select an ad strategy then generate a draft; online business feedback trains reward models for DPO/GRPO, not inference-time revision.",
+      "title": "AgenticGen: Reward-Guided Agentic Video Generation for Advertising",
+      "url": "https://arxiv.org/abs/2609.09187",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G11",
+      "tier": "core",
+      "reason": "Agents for music perception, scripting, assets, segment realization and assembly share a persistent state; a knapsack solver allocates generation budget; no critique loop is described.",
+      "title": "AgentMV: A State-Guided Multi-Agent Framework for Budget-Aware Music Video Generation",
+      "url": "https://arxiv.org/abs/2605.10723",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G12",
+      "tier": "core",
+      "reason": "A Cinematography Shot Agent recursively generates storyboards and injects cinematic language into shot designs within a filmmaking pipeline; no feedback loop is described.",
+      "title": "Camera Artist: A Multi-Agent Framework for Cinematic Language Storytelling Video Generation",
+      "url": "https://arxiv.org/abs/2604.09195",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G13",
+      "tier": "core",
+      "reason": "GRPO-trained agents plan camera angle, motion and focal behavior across shots for camera-controlled generation; the abstract does not specify a feedback-driven revision loop.",
+      "title": "CamPilot: A Multi-Agent Cinematic Assistant for Camera-Controlled Movie Generation",
+      "url": "https://arxiv.org/abs/2609.10943",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G14",
+      "tier": "core",
+      "reason": "Agents reverse-engineer scripts into hierarchical narrative memory and iteratively plan a blueprint into a compiled script for compilation; no external feedback is described.",
+      "title": "A Benchmark and Multi-Agent System for Instruction-driven Cinematic Video Compilation",
+      "url": "https://arxiv.org/abs/2604.10456",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G15",
+      "tier": "core",
+      "reason": "LLM agents write cinematic blueprints (characters, scenes, cross-modal specs) that drive character-centric video, dialogue and music generation; no feedback loop is described.",
+      "title": "CineAGI: Character-Consistent Movie Creation through LLM-Orchestrated Multi-Modal Generation and Cross-Scene Integration",
+      "url": "https://arxiv.org/abs/2604.23579",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G16",
+      "tier": "support",
+      "reason": "Four agents generate ComfyUI node connections from task descriptions (including video tasks) with retrieval-based refinement; self-optimization is RL training, not inference-time execution feedback.",
+      "title": "ComfyGPT: A Self-Optimizing Multi-Agent System for Comprehensive ComfyUI Workflow Generation",
+      "url": "https://arxiv.org/abs/2503.17671",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G17",
+      "tier": "core",
+      "reason": "An LLM writes a Three.js program for scene, motion, camera and dynamics; its rendered proxy video and reference image condition a pretrained video model; no feedback loop.",
+      "title": "Code Video Model: Conditioning Video Generation on Code",
+      "url": "https://code-video-model.github.io/",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G18",
+      "tier": "core",
+      "reason": "Screenwriter, Director and Editor agents cascade from global structure to intent to shot-sequence editing of existing footage; an MLLM validator rejects candidate shot sequences and the Director relaxes or alters its query in response (closed-loop validation); introduces Mashup-Bench.",
+      "title": "DIRECT: Video Mashup Creation via Hierarchical Multi-Agent Planning and Intent-Guided Editing",
+      "url": "https://arxiv.org/abs/2604.04875",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G19",
+      "tier": "core",
+      "reason": "An SFT+GRPO-trained planner writes per-shot conditions and retrieves depth-pose references for first-frame and image-to-video synthesis; no inference-time revision; introduces DramaBoard.",
+      "title": "DramaDirector: Geometry-Guided Short Drama Generation",
+      "url": "https://arxiv.org/abs/2606.24107",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G20",
+      "tier": "core",
+      "reason": "An LLM performs shot classification, next-shot selection and ordering over language storyboards; StoryFlow converts multi-path outputs into a convergent selection, without feedback.",
+      "title": "From Shots to Stories: LLM-Assisted Video Editing with Unified Language Representations",
+      "url": "https://arxiv.org/abs/2505.12237",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G21",
+      "tier": "core",
+      "reason": "LLMs and VLMs decouple long videos into shots and parse multiple instructions to drive shot-level editing; in a Pos-Neg Editing Feedback loop, VLM QA agents check image- and video-level edit results and iteratively refine corrective prompts.",
+      "title": "Thinking on Shots: Consistent Multi-Shot Video Editing with Agentic Reasoning",
+      "url": "https://arxiv.org/abs/2608.26809",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G22",
+      "tier": "core",
+      "reason": "An LLM agent converts text-described object and camera motion into trajectories and camera extrinsics, composed into optical flow that conditions an I2V model; no feedback loop.",
+      "title": "MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent",
+      "url": "https://arxiv.org/abs/2502.03207",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G23",
+      "tier": "core",
+      "reason": "A trained agent plans tool calls from a content-creation tool library to produce multimodal video outputs; plan correlation and preference optimization act at training, not inference.",
+      "title": "A Versatile Multimodal Agent for Multimedia Content Generation",
+      "url": "https://arxiv.org/abs/2601.03250",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G24",
+      "tier": "core",
+      "reason": "A LoRA-fine-tuned LLM predicts song-to-visual bridges that guide hierarchical shot plans rendered by image and video models; no feedback loop.",
+      "title": "MVWeaver: A Hierarchical Music Video Generation Agent with a Learned Song-to-Visual Bridge",
+      "url": "https://arxiv.org/abs/2609.06478",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G25",
+      "tier": "core",
+      "reason": "Qwen2.5-VL Director and Cartographer agents turn intent into a WorldScript and layout tokens for multi-view driving video; Auditor critiques serve only as training supervision.",
+      "title": "OmniDrive: An LLM-Choreographed Multi-Agent World Model with Unified Latent Co-Compression for Multi-View Driving Video Generation",
+      "url": "https://arxiv.org/abs/2606.17536",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G26",
+      "tier": "core",
+      "reason": "A trained ScripterAgent turns dialogue into a cinematic script that DirectorAgent uses to orchestrate video models scene by scene; CriticAgent is used for evaluation only.",
+      "title": "The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation",
+      "url": "https://arxiv.org/abs/2601.17737",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G27",
+      "tier": "core",
+      "reason": "An LLM routes and applies evolved cinematic skills to rewrite T2V prompts; video-based skill assessment builds the library offline, not per-prompt revision.",
+      "title": "SkillPE: Creativity-Oriented Cinematic Skill Evolution for Text-to-Video Prompt Engineering",
+      "url": "https://arxiv.org/abs/2609.34335",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G28",
+      "tier": "core",
+      "reason": "An LLM produces structured text representations with animated layout trajectories in a three-stage ad-video pipeline; no feedback-driven revision is described.",
+      "title": "Generating Animated Layouts as Structured Text Representations",
+      "url": "https://arxiv.org/abs/2505.00975",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G29",
+      "tier": "core",
+      "reason": "Communicative LLM agents handle scriptwriting, scene creation and audio design in a sequential chat-tower workflow producing slideshow videos; no feedback revision described.",
+      "title": "Communicative Agents for Slideshow Storytelling Video Generation based on LLMs",
+      "url": "https://arxiv.org/abs/2509.01277",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G30",
+      "tier": "core",
+      "reason": "An LLM selects video models, refines prompts through iterative validation and keeps cross-task memory to generate navigation goal videos that a policy converts to robot actions.",
+      "title": "Action Agent: Agentic Video Generation Meets Flow-Constrained Diffusion",
+      "url": "https://arxiv.org/abs/2605.01477",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G31",
+      "tier": "core",
+      "reason": "An agentic loop builds a prompt playbook; a VLM locates erroneous segments in generated videos and designs repair instructions for an editing model.",
+      "title": "Identity-Preserving Text-to-Video Generation via Agentic Enhancement and Semantic Repair",
+      "url": "https://arxiv.org/abs/2608.20749",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G32",
+      "tier": "core",
+      "reason": "An MLLM iteratively refines I2V prompts using DSG adherence and common-mistake evaluations of outputs, followed by Bayesian optimization of seeds and CFG.",
+      "title": "Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence",
+      "url": "https://arxiv.org/abs/2608.12290",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G33",
+      "tier": "core",
+      "reason": "Multi-agent storyboard generation via image-to-video models; a mixed subjective-objective reviewer drives iterative refinement of missing attributes and prompt adherence.",
+      "title": "AnimeAgent: Is the Multi-Agent via Image-to-Video models a Good Disney Storytelling Artist?",
+      "url": "https://arxiv.org/abs/2602.20664",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G34",
+      "tier": "core",
+      "reason": "Agents write retrieval-grounded scripts, index footage and assemble clips; a Critic Agent's reflect-and-revise loop checks alignment and pacing to revise the edit.",
+      "title": "Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing",
+      "url": "https://arxiv.org/abs/2610.28346",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G35",
+      "tier": "core",
+      "reason": "A refiner agent applies creator revisions each iteration, informed by persona-conditioned MLLM critiques of generated videos; human and audience-style feedback drive the next version.",
+      "title": "Bridging Creative Intent and Visual Quality: Creator-Driven Recurrent Video Generation with Agentic Feedback Loops",
+      "url": "https://arxiv.org/abs/2606.18591",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G36",
+      "tier": "core",
+      "reason": "Agents plan through a FilmDSL specification, build assets and keyframes, and a critic agent's structured QA signals trigger targeted clip refinement.",
+      "title": "Better Call CineCrew: Consistent Ultra-Long Narrative-to-Film Generation",
+      "url": "https://arxiv.org/abs/2609.07720",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G37",
+      "tier": "core",
+      "reason": "Generator-critic agent pairs at argument, storyboard, asset and post-editing stages refine outputs via persuasion-theory-grounded critique.",
+      "title": "CogenPVG: Cognitive-Enhanced Reflective Multi-Agent Framework for Persuasive Video Generation",
+      "url": "https://arxiv.org/abs/2609.25821",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G38",
+      "tier": "support",
+      "reason": "An LLM composes ComfyUI workflows via semantic modules and search-tree planning; localized execution feedback triggers adaptive correction at each stage (general-purpose, not video-specific).",
+      "title": "ComfyMind: Toward General-Purpose Generation via Tree-Based Planning and Reactive Feedback",
+      "url": "https://arxiv.org/abs/2505.17908",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G39",
+      "tier": "core",
+      "reason": "An RL-trained 9B agent calls editing tools to inspect footage, build timelines, render and revise, using tool diagnostics and earlier renders with feedback.",
+      "title": "Crayotter: Learning Long-Horizon Video Editing Agents via Group-Relative Preference Backpropagation",
+      "url": "https://arxiv.org/abs/2608.02694",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G40",
+      "tier": "core",
+      "reason": "A director agent and specialist subagents invoke game-engine operations via MCP, observe scene state, and refine assets through a visual reasoning feedback loop.",
+      "title": "Cutscene Agent: An LLM Agent Framework for Automated 3D Cutscene Generation",
+      "url": "https://arxiv.org/abs/2604.25318",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G41",
+      "tier": "core",
+      "reason": "A Visual State Analyzer observes generated shots, updates entity state memory and generation conditions, and propagates state changes into future shot prompts.",
+      "title": "EvoState: Closed-Loop Visual State Management for Long-Form Video Generation",
+      "url": "https://arxiv.org/abs/2606.16184",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G42",
+      "tier": "core",
+      "reason": "Navigator and planning agents decompose goals into paths and atomic actions; a critic agent measures deviation from the planned path to correct trajectory drift.",
+      "title": "FantasyHSI: Video-Generation-Centric 4D Human Synthesis In Any Scene through A Graph-based Multi-Agent Framework",
+      "url": "https://arxiv.org/abs/2509.01232",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G43",
+      "tier": "core",
+      "reason": "A Director agent composes executable Blender camera plans; a Critic evaluates rendered results and returns visual feedback for iterative plan refinement; introduces CinemaBench.",
+      "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+      "url": "https://arxiv.org/abs/2610.30753",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G44",
+      "tier": "core",
+      "reason": "An RL-tuned Director edits a task stack choosing subtasks and sub-agents; execution states and runtime failures update the stack for recovery.",
+      "title": "FRAMEWORKERS: A Dynamic Multi-Agent Framework for AI-Generated Video Production",
+      "url": "https://arxiv.org/abs/2608.29814",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G45",
+      "tier": "core",
+      "reason": "Retrieved brand parameters condition generation; evaluator agents critique generated frames against them and prompt generators to refine outputs until consensus.",
+      "title": "Genflow Ad Studio: A Compound AI Architecture for Brand-Aligned, Self-Correcting Video Generation",
+      "url": "https://arxiv.org/abs/2605.16748",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G46",
+      "tier": "core",
+      "reason": "An agent schedules shot order, grounds and verifies entities in generated shots, and retrieves verified references from memory to condition later shots.",
+      "title": "GroundShot: Visually Consistent Multi-Shot Long Video Generation via Entity-Grounded Shot Scheduling",
+      "url": "https://arxiv.org/abs/2606.20799",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G47",
+      "tier": "core",
+      "reason": "An LLM agent maps user intent to text-animation parameters via inline suggestions and chat; user feedback after synchronized previews drives further edits.",
+      "title": "Integrating Large Language Models into Text Animation: An Intelligent Editing System with Inline and Chat Interaction",
+      "url": "https://arxiv.org/abs/2506.10762",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G48",
+      "tier": "core",
+      "reason": "Creator agents produce an animation script and visual storyboard; paired reviewer agents check them against source panels and give feedback that refines both before synthesis.",
+      "title": "Manga2Animate: An Agentic Framework for Faithful Manga Animation with Script and Storyboard Planning",
+      "url": "https://arxiv.org/abs/2610.26851",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G49",
+      "tier": "core",
+      "reason": "Agents translate narrative intent into executable identity, composition and continuity controls in a plan-execute-verify-revise loop where multimodal feedback corrects violations; introduces MUSEBench.",
+      "title": "MUSE: A Multi-agent Framework for Unconstrained Story Envisioning via Closed-Loop Cognitive Orchestration",
+      "url": "https://arxiv.org/abs/2602.03028",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G50",
+      "tier": "core",
+      "reason": "Agents build per-shot conditioning; an Observer records how each rendered shot ends, and a Transition agent uses it to build the next shot's references; Orchestrator RL-trained.",
+      "title": "MVAgent: Multi-Agent Video Generation via Consistent Condition Construction and Shot-Level Policy Optimization",
+      "url": "https://arxiv.org/abs/2609.30609",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G51",
+      "tier": "core",
+      "reason": "Hierarchical graph-based film-crew agents produce long videos; cyclic graphs with limited retries let later-node feedback refine earlier stage outputs.",
+      "title": "Hollywood Town: Long-Video Generation via Cross-Modal Multi-Agent Orchestration",
+      "url": "https://arxiv.org/abs/2510.22431",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G52",
+      "tier": "core",
+      "reason": "Debating agents write the drama script, 3D-grounded first frames anchor clips, and reviewer loops detect errors and trigger targeted revision across script, visual and video stages.",
+      "title": "One Sentence, One Drama: Personalized Short-Form Drama Generation via Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2605.22144",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G53",
+      "tier": "core",
+      "reason": "MLLM agents write prompts for video, music and speech; an MLLM evaluates generated results and triggers feedback and rollback for iterative self-correction.",
+      "title": "PersonaVlog: Personalized Multimodal Vlog Generation with Multi-Agent Collaboration and Iterative Self-Correction",
+      "url": "https://arxiv.org/abs/2508.13602",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G54",
+      "tier": "core",
+      "reason": "A VLM turns a physical phenomenon into state-graph edits; deterministic check violations return to the VLM for retries; keyframes guide test-time optimization of a frozen VDM.",
+      "title": "PhysPlan: Grounded Physical State Reasoning and Graph-Guided Optimization for Physically Plausible Video Generation",
+      "url": "https://arxiv.org/abs/2609.13006",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G55",
+      "tier": "core",
+      "reason": "An LLM uses chain-of-thought and step-back reasoning over generated videos to iteratively refine the T2V prompt for physical-rule adherence.",
+      "title": "PhyT2V: LLM-Guided Iterative Self-Refinement for Physics-Grounded Text-to-Video Generation",
+      "url": "https://arxiv.org/abs/2412.00596",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G56",
+      "tier": "core",
+      "reason": "Agents route prompts to scenario strategies, rewrite them, and run semantic verification that triggers conditional revision of the prompt; introduces T2V-Complexity.",
+      "title": "SCMAPR: Self-Correcting Multi-Agent Prompt Refinement for Complex-Scenario Text-to-Video Generation",
+      "url": "https://arxiv.org/abs/2604.05489",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G57",
+      "tier": "core",
+      "reason": "Proposers (VLM feedback, Director modules, tools) update typed prompt, sampler and selector state from development evidence; the policy is frozen before held-out evaluation.",
+      "title": "SCOPE: Score-Isolated Agentic Optimization for Video World Models",
+      "url": "https://arxiv.org/abs/2608.15043",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G58",
+      "tier": "core",
+      "reason": "Agents build a JSON screenplay and visual reference anchors for episode remaking; a verification agent audits identity, stability and alignment to trigger selective regeneration.",
+      "title": "Soap2Soap: Long Cinematic Video Remaking via Multi-Agent Collaboration",
+      "url": "https://arxiv.org/abs/2605.17423",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G59",
+      "tier": "core",
+      "reason": "A PlanAgent decomposes goals into sub-actions that condition segment generation; a CriticAgent evaluates segments and its corrective feedback drives iterative refinement.",
+      "title": "SPIRAL: Self-Evolving Action-Conditioned Video Generation via Reflective Planning Agents",
+      "url": "https://arxiv.org/abs/2603.08403",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G60",
+      "tier": "support",
+      "reason": "Video plans for robots are iteratively refined via self-conditioning consistency; a VLM (GPT-4 Turbo) critic decides when refinement stops; environment rollouts later fine-tune the model.",
+      "title": "VideoAgent: Self-Improving Video Generation",
+      "url": "https://arxiv.org/abs/2410.10076",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G61",
+      "tier": "core",
+      "reason": "Agents generate visual questions about generated videos; VLM critiques act as semantic gradients for closed-loop black-box prompt optimization.",
+      "title": "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement",
+      "url": "https://arxiv.org/abs/2603.12310",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G62",
+      "tier": "support",
+      "reason": "Benchmark of 200 ComfyUI tasks including T2V/I2V/V2V; companion ComfyAgent writes workflows as code open-loop, with no execution feedback.",
+      "title": "ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems",
+      "url": "https://arxiv.org/abs/2409.01392",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G63",
+      "tier": "support",
+      "reason": "Benchmark with tool-grounded multimodal judging of editing-technique execution; includes an agentic baseline that plans, synthesizes shots and composes cuts (J/L-cuts, transitions).",
+      "title": "Beyond Coherence: Benchmarking Professional Editing-Technique Execution in Multi-Shot Audio-Video Generation",
+      "url": "https://arxiv.org/abs/2609.08275",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G64",
+      "tier": "support",
+      "reason": "Benchmarks GUI agents on 186 long-horizon editing tasks across seven professional applications such as Premiere Pro, using expert-derived action trajectories.",
+      "title": "CutVerse: A Compositional GUI Agents Benchmark for Media Post-Production Editing",
+      "url": "https://arxiv.org/abs/2605.19484",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G65",
+      "tier": "support",
+      "reason": "A multi-agent, profile-aware benchmark scoring long-form generation workflows on 40 checkpoints across script, visual, audio, cross-modal and stability.",
+      "title": "DirectorBench: Diagnosing Long-Form Video Generation with Personalized Multi-Agent Evaluation",
+      "url": "https://arxiv.org/abs/2605.30090",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G66",
+      "tier": "support",
+      "reason": "Shows that execution traces shown to VLM judges in agentic video-generation repair loops inflate acceptances, capping true pass rates achievable by any repair policy.",
+      "title": "Don't Read the Log: Execution Traces Contaminate Verifiers in Video-Generation Agents",
+      "url": "https://arxiv.org/abs/2609.28564",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G67",
+      "tier": "support",
+      "reason": "An LLM agent plans multi-round, few-sample evaluations of image and video generators, choosing tools and prompts per user query; it does not generate.",
+      "title": "Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models",
+      "url": "https://arxiv.org/abs/2412.09645",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G68",
+      "tier": "support",
+      "reason": "An LLM agent decomposes evaluation requests, generates prompts, samples videos, invokes evaluation tools and updates its plan from evidence; it evaluates models rather than generating content.",
+      "title": "Open Evaluation Agent: Efficient and Promptable Evaluation of Visual Generative Models",
+      "url": "https://arxiv.org/abs/2608.09666",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G69",
+      "tier": "support",
+      "reason": "A VLM generates sample-specific rubrics and evidence plans, then uses criterion-specific QA and visual tools to score generated or edited videos.",
+      "title": "VideoArgus: Agentic Rubric-Grounded Unified Evaluation for Video Generation and Editing",
+      "url": "https://arxiv.org/abs/2608.05485",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "G70",
+      "tier": "support",
+      "reason": "An LLM structures prompt content and an MLLM judges generated videos with patch tools for temporal dimensions; evaluates generators but does not generate.",
+      "title": "VideoGen-Eval: Agent-based System for Video Generation Evaluation",
+      "url": "https://arxiv.org/abs/2503.23452",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "catalog_id": "I01",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial harness: structured story, script and production plan; text review, then visual review of references, clips and full film; only failing parts are redone. Auto Mode is stated to deliver about ten-minute films unattended; interactive editing optional.",
+      "title": "HyCreator: An agent harness for long video generation",
+      "url": "https://hycreator.tencent.com/",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I02",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial agent: LLM tool invocation from ideation and storyboarding to editing and voice-over; launched with templates, autonomy on a roadmap; no automatic review stated.",
+      "title": "Introducing Hailuo Video Agent in beta",
+      "url": "https://www.minimax.io/news/video-agent",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I03",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial agent: simple idea to a complete short film with storyboard, script and music; the product page describes no review or shot-regeneration loop.",
+      "title": "Vidu Agent",
+      "url": "https://www.vidu.cn/vidu-claw",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I04",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial co-pilot: Gemini plans, suggests plot and dialogue and batch-edits assets under user control; human-steered.",
+      "title": "Introducing Gemini Omni for Google Flow and Flow Music (Google Flow Agent)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I05",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial agent: keyframe storyboard approved by the user before rendering; changing a scene re-renders only that scene.",
+      "title": "Introducing Luma Scenes",
+      "url": "https://lumalabs.ai/news/introducing-luma-scenes",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I06",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial studio: script to scenes, storyboards and consistent elements, then a human-operated timeline.",
+      "title": "LTX Studio: The creative studio for AI video production",
+      "url": "https://ltx.io/studio",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "I07",
+      "tier": "core",
+      "reason": "Multi-shot narrative and generative productionIndustrial agent: selects among generation models and diagnoses and rebuilds underperforming marketing content that the user shares, with the user directing edits in plain language.",
+      "title": "Runway Agent",
+      "url": "https://runwayml.com/product/agent",
+      "reviewed_on": "2026-10-31"
+    },
+    {
+      "catalog_id": "M90",
+      "tier": "support",
+      "reason": "Stage-wise benchmark for short-drama production chains.",
+      "title": "DramaChain Bench: An end-to-end benchmark for short-drama generation",
+      "url": "https://arxiv.org/abs/2609.00646",
+      "reviewed_on": "2026-10-31"
+    }
+  ],
+  "scope_revision_evidence": [
+    {
+      "url": "https://arxiv.org/html/2610.35864v2",
+      "purpose": "Native model–harness motivation and code-only complete-video evaluation."
+    },
+    {
+      "url": "https://artificialanalysis.ai/evaluations/code2video-aa",
+      "purpose": "Single-call HTML composition protocol; no volatile leaderboard ranking copied."
+    },
+    {
+      "url": "https://arxiv.org/html/2610.28416v1",
+      "purpose": "Code2Video-Compass corpus versus fixed evaluation subset."
+    },
+    {
+      "url": "https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video",
+      "purpose": "Open model, production skill, recommended harness and stated qualitative evaluation status."
+    },
+    {
+      "url": "https://arxiv.org/html/2606.08091v2",
+      "purpose": "§3.1; §4.1 metrics/protocol; §5.1 and Tables 3–4; Appendix F split counts"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.24997v1",
+      "purpose": "§1 benchmark definition; §3 results; §3.5 human evaluation and judge-validation protocol"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.33627v1",
+      "purpose": "§4.1; Appendix C.2 Table 4; Appendix D.1 aggregation and missing outputs"
+    },
+    {
+      "url": "https://arxiv.org/html/2604.05076v1",
+      "purpose": "§4 and Table 2 (45+35+35+44+37+45+34+44); §5; §6.3"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.18748v1",
+      "purpose": "§5.2 and Tables 2/4; Appendix G"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.27705v1",
+      "purpose": "§3; Appendix A.1–A.4 and Table 3 model–harness pairs"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.18396v1",
+      "purpose": "§5.1 training/test specification; §5.2 Table 1"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.18396v1",
+      "purpose": "§5.1; §5.3 and Table 2"
+    }
+  ],
+  "reviewer_revision": {
+    "restored_ids": [
+      "B04",
+      "E20",
+      "M36",
+      "X22",
+      "X14",
+      "X08",
+      "X06",
+      "M08",
+      "M40",
+      "D41",
+      "D20",
+      "D18",
+      "X29",
+      "X28",
+      "X20",
+      "D23",
+      "D17",
+      "M23",
+      "D09",
+      "D21"
+    ],
+    "reclassified": [
+      {
+        "catalog_id": "A05",
+        "from": "core",
+        "to": "support",
+        "reason": "教学推理分解与可视化规划为视频教学 agent 提供组件比较；原文评测静态 SVG/HTML 与交互网页截图，并不直接评测视频生成。"
+      },
+      {
+        "catalog_id": "D45",
+        "from": "support",
+        "to": "core",
+        "reason": "World-builder 实际生成并通过多相机 rollout 和接触/碰撞/遮挡探针修订世界代码；组件渲染或下游训练结果不等同于完整 builder 评测。"
+      },
+      {
+        "catalog_id": "D04",
+        "from": "support",
+        "to": "core",
+        "reason": "直接研究 LLM 构建、搜索或交互修订可执行转移模型，与 Agent2World 使用同一机制标准；结构化或符号输入需明确标注，不等同于原始视频反演。"
+      },
+      {
+        "catalog_id": "D05",
+        "from": "support",
+        "to": "core",
+        "reason": "直接研究 LLM 构建、搜索或交互修订可执行转移模型，与 Agent2World 使用同一机制标准；结构化或符号输入需明确标注，不等同于原始视频反演。"
+      },
+      {
+        "catalog_id": "D11",
+        "from": "support",
+        "to": "core",
+        "reason": "直接研究 LLM 构建、搜索或交互修订可执行转移模型，与 Agent2World 使用同一机制标准；结构化或符号输入需明确标注，不等同于原始视频反演。"
+      },
+      {
+        "catalog_id": "D18",
+        "from": "support",
+        "to": "core",
+        "reason": "直接研究 LLM 构建、搜索或交互修订可执行转移模型，与 Agent2World 使用同一机制标准；结构化或符号输入需明确标注，不等同于原始视频反演。"
+      }
+    ],
+    "new_ids": [
+      "X45",
+      "F34",
+      "F35",
+      "F36",
+      "F37"
+    ],
+    "principle": "Judge the documented LLM stage and executable artifact, rather than excluding a work solely because the downstream application is robotics, games or model training. Runtime engine updates are distinct from online LLM decisions.",
+    "qualification": "Targeted primary-source reviewer audit, not experimental reproduction or a claim of exhaustive literature coverage."
+  },
+  "verification": {
+    "unique_html_ids": true,
+    "internal_anchors": "all resolve",
+    "local_assets": "all exist",
+    "references": 188,
+    "method_workflow_assignments": 149,
+    "method_evaluation_relationships": 112,
+    "csv_json_consistency": "passed",
+    "reference_style": "Sentence case; proper model names and acronyms preserved",
+    "figure_typography": "EB Garamond regular and bold, subset and embedded in all four SVGs",
+    "desktop_review": "Figure and reference list inspected; figure text shortened to prevent overflow",
+    "mobile_review": "390px viewport; atlas opens and table scrolling stays within page; no document-width overflow"
+  },
+  "workflow_taxonomy": "coding-video-task-workflows.json",
+  "reviewer_revision_2026_10_30": "Primary-source re-check of workflow labels and claims; ProxyUp excluded (no LLM stage); gap search added verified works, including previously excluded ARC-AGI-3 code world models, OneLife, game-construction agents and benchmarks, because they author or induce executable visual worlds."
+}

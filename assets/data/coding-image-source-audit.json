@@ -1,0 +1,2124 @@
+{
+  "checked_on": "2026-10-31",
+  "record_count": 192,
+  "method": "Task-based discovery, named-method expansion, backward/related citation checks and primary-source inspection. No experimental reproduction.",
+  "limitations": [
+    "Not a preregistered systematic review or guaranteed exhaustive census.",
+    "Evidence depth varies; abstract-only records are not full protocol audits.",
+    "Workflow and scope labels are editorial analysis, not necessarily author terminology.",
+    "Remote availability and publication revisions can change after the checked date."
+  ],
+  "searches": {
+    "root": [
+      "\"image generation\" \"coding agents\" benchmark",
+      "\"image\" \"code\" \"agent\" \"2026\" SVG survey",
+      "\"MaLiang-Harness\"",
+      "\"image\" \"coding agent\" \"benchmark\" \"2026\" arxiv"
+    ],
+    "code": [
+      "LLM SVG generation agent visual feedback StarVector Chat2SVG OmniSVG",
+      "LLM scientific figure diagram agent Paper2Fig DiagramAgent",
+      "ChartMimic Plot2Code Design2Code arxiv",
+      "SVG agent 2026 generation",
+      "diagram generation agent 2026",
+      "poster design agent coding 2025 2026",
+      "TikZ DaTikZ DeTikZify",
+      "SVGAgent DiagramAgent PosterAgent DesignAgent",
+      "MatPlotAgent LIDA Data Formulator PlotGen",
+      "Render-in-the-Loop EdiTikZ VectorGym SciTikZer ChartEditBench VisEditBench",
+      "Paper2Figure LiveFigure PaperVizAgent PosterAgent Stage-Aware",
+      "InternSVG Sketch2Code Web2Code VisCoder VisCoder2",
+      "SVGenius agentic artifact creation",
+      "COLE OpenCOLE Graphic Design with Large Multimodal Model LayoutNUWA",
+      "Backward lead check: agentic-creation.github.io/papers.html",
+      "AutoFigure AutoFigure-Edit Crafter DrawAI SciFig ReDesign AutoDesign MultiVis-Agent DV-World; primary-source follow-up from artifact index",
+      "Final coverage sweep: PosterMELD, P2P, BannerAgency, AMACE, DataWink, TikZero, SciFlow-Bench, AutoPP; primary abstracts and selected method sections checked."
+    ],
+    "generation": [
+      "LLM image generation agents layout Ranni RPG Idea2Img GenArtist AgentT2I paper",
+      "2026 image generation coding agent paper image agent code generation",
+      "LLM grounded diffusion LayoutGPT VPGen LLM Blueprint arxiv",
+      "Qwen-Image-Agent coDrawAgents T2I-Copilot",
+      "Exact-title and identifier primary arXiv checks for all records",
+      "Backward reference checks from GenClaw, Editable Visual Design, MUSES and ComfyClaw",
+      "ComfyAgent ComfyBench ComfyMind ComfyGPT ComfyClaw workflow generation",
+      "OmniHarness symbolic policies visual generation; SymbOmni",
+      "Agentic-AIGC survey PAPERS.md used only for discovery, not factual evidence"
+    ],
+    "edit-eval": [
+      "image editing agent survey AgenticIR RestoreAgent EditAgent AgentEdit EditWorld",
+      "image editing agent benchmark ImgEdit GEdit-Bench PIE-Bench EditBench",
+      "AgenticIR; EditThinker; AgentEdit image editing; CoSTA Toolpath",
+      "Visual Programming; ControlLLM; Visual ChatGPT; HuggingGPT; MM-REACT",
+      "FaSTA; JarvisIR; 4KAgent; HybridAgent; AutoDIR",
+      "VisionDirector; Agent Banana; MIRA; RISE-Agent",
+      "GenEval; T2I-CompBench; EditBench; MagicBrush; EdiVal-Agent",
+      "Complex-Edit; ComplexBench-Edit; KRIS-Bench",
+      "Parent-provided primary identifiers for VAO-Bench, StructBench, WISE, T2I-ReasonBench, OneIG-Bench",
+      "TIFA; Davidsonian Scene Graph; ConceptMix",
+      "Trust Your Critic; InterleaveThinker",
+      "IntentEdit; RefineEdit-Agent; EditScore; CompBench; MIRA full-text evaluation; Agent Banana rollback verification"
+    ]
+  },
+  "coverage_notes": {
+    "root": "Primary source checks completed 2026-10-31. No experiments reproduced; dates denote first arXiv publication. Scene reconstruction is contextual.",
+    "code": "SVG and TikZ generation/reconstruction/editing; diagrams; charts; scientific figures; layered graphic/poster design; webpage visual-code work retained only as adjacent context.",
+    "generation": [
+      "Broad generation coverage rather than a claim of exhaustive literature retrieval. Bibliographic years use first arXiv submission year; conference years may differ.",
+      "All records were checked through primary arXiv abstracts or full text; exact quantitative claims were deliberately omitted unless needed to identify evaluation scope.",
+      "AgentT2I was not positively identified and was not invented.",
+      "DraCo, PSP-DiT, MetaPoint and simplified vector graphics are component/context contrasts, not coding agents.",
+      "Pure foundation image models, adversarial/safety attack generation, domain-specific synthetic-data systems, and image-understanding-only agents are outside this branch.",
+      "AgentDrawBench/MaLiang are owned by parent; diagram/SVG/chart/COLE design lineage by code-image researcher; editing/restoration and generic evaluation by editing researcher."
+    ],
+    "edit-eval": [
+      "Years are first public preprint years, not inferred conference years.",
+      "Workflow labels describe inspected mechanisms; W4 is not assigned merely because multiple user turns occur.",
+      "Broad inclusion of orchestration is deliberate but each record caveat distinguishes code generation from prompt/control-only agents.",
+      "Pure visual QA agents (ViperGPT/IMAgent multi-image QA), unrelated AgentEdit tools, and the 2026 video-world EditWorld are excluded.",
+      "Sources were checked at abstract level unless explicitly labeled full paper/project; no experiments were reproduced.",
+      "Selected benchmark crosswalks below record only explicit primary-source correspondences, not recommended evaluations."
+    ]
+  },
+  "exclusions": [
+    {
+      "name": "VisCode (IEEE VIS 2020)",
+      "reason": "Information embedding into visualization images, not LLM visualization coding; do not confuse with VisCoder/VisCode-200K."
+    },
+    {
+      "name": "General frontend engineering",
+      "reason": "Retained only where visual reconstruction/edit preservation informs static image-code tasks; full application functionality outside scope."
+    },
+    {
+      "name": "PosterVerse",
+      "reason": "Verified but assigned to generation researcher to avoid duplicate records."
+    }
+  ],
+  "alias_decisions": [
+    [
+      "PaperVizAgent",
+      "PaperBanana",
+      "same framework"
+    ],
+    [
+      "EvoDesign",
+      "EvoDiagram",
+      "same arXiv work; changed title"
+    ],
+    [
+      "Paper2Poster / PosterAgent",
+      "PosterAgent (SARL)",
+      "distinct works"
+    ],
+    [
+      "SketchAgent (Vinker et al.)",
+      "SketchAgent (Tan et al.)",
+      "distinct works"
+    ],
+    [
+      "ComfyBench",
+      "ComfyAgent",
+      "benchmark and method in one paper"
+    ],
+    [
+      "VPGen",
+      "VPEval",
+      "two frameworks in one paper"
+    ],
+    [
+      "AutoFigure",
+      "AutoFigure-Edit",
+      "distinct works"
+    ],
+    [
+      "ImAgent",
+      "IMAGAgent",
+      "distinct works"
+    ],
+    [
+      "CompBench",
+      "T2I-CompBench",
+      "distinct works"
+    ]
+  ],
+  "review_notes": [
+    "Scientific-figure output formats made explicit; native code, generated assets and mixed SVG containers distinguished.",
+    "Training rewards not conflated with inference loops; human feedback identified.",
+    "Tool-only editing/restoration controllers labeled related agents, not core coding.",
+    "GenClaw benchmark names checked against full text; Editable Visual Design labeled qualitative.",
+    "MIRA subset protocol, FaSTA* qualitative MagicBrush evidence, and EditAgent modified baselines preserved."
+  ],
+  "records": [
+    {
+      "id": "root-agentdraw",
+      "url": "https://arxiv.org/abs/2610.19025",
+      "checked_source_urls": [
+        "https://arxiv.org/html/2610.19025v1"
+      ],
+      "evidence_level": "full text",
+      "scope_tier": "benchmark",
+      "caveat": "Zero-shot permits multiple execution turns. Structural fidelity and perceptual quality differ; GUI is a comparison, not coding."
+    },
+    {
+      "id": "root-maliang",
+      "url": "https://arxiv.org/abs/2609.34309",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.34309",
+        "https://arxiv.org/html/2609.34309v1"
+      ],
+      "evidence_level": "full text §§3–4",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Only its image track is surveyed here; runnable output is distinct from satisfying visual requirements."
+    },
+    {
+      "id": "gen-genclaw",
+      "url": "https://arxiv.org/abs/2605.30248",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.30248"
+      ],
+      "evidence_level": "full-text §§3–4",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "A correct draft does not guarantee neural final pixels preserve every relation; report generator and agent backbone separately."
+    },
+    {
+      "id": "gen-coco",
+      "url": "https://arxiv.org/abs/2603.08652",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.08652"
+      ],
+      "evidence_level": "primary abstract and full-text method",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "A staged learned pipeline; image refinement is not evidence of a repeated external code-repair loop."
+    },
+    {
+      "id": "gen-editable",
+      "url": "https://arxiv.org/abs/2609.04034",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.04034"
+      ],
+      "evidence_level": "full-text §§2–3",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Evidence is qualitative case study/showcase; there is no named quantitative benchmark in §3. Do not assert universal production-grade success."
+    },
+    {
+      "id": "edit-visprog",
+      "url": "https://arxiv.org/abs/2211.11559",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2211.11559",
+        "https://openaccess.thecvf.com/content/CVPR2023/papers/Gupta_Visual_Programming_Compositional_Visual_Reasoning_Without_Training_CVPR_2023_paper.pdf"
+      ],
+      "evidence_level": "primary abstract and CVPR paper",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "The 2022 preprint precedes CVPR 2023; its VQA results are not image-editing evidence."
+    },
+    {
+      "id": "edit-visualchatgpt",
+      "url": "https://arxiv.org/abs/2303.04671",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2303.04671"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A tool-using precursor; do not equate every conversation with autonomous source-code repair."
+    },
+    {
+      "id": "edit-hugginggpt",
+      "url": "https://arxiv.org/abs/2303.17580",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2303.17580"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "General multimodal task orchestration; not a dedicated image-coding benchmark."
+    },
+    {
+      "id": "edit-mmreact",
+      "url": "https://arxiv.org/abs/2303.11381",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2303.11381"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Included as interface background, not evidence that the system generates editable image source."
+    },
+    {
+      "id": "gen-lmd",
+      "url": "https://arxiv.org/abs/2305.13655",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2305.13655"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Layout planning and user interaction do not by themselves establish autonomous coding-agent feedback."
+    },
+    {
+      "id": "gen-layoutgpt",
+      "url": "https://arxiv.org/abs/2305.15393",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2305.15393"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Style-sheet-like representation is structured planning; do not equate it with an executing browser agent."
+    },
+    {
+      "id": "gen-vpgen",
+      "url": "https://arxiv.org/abs/2305.15328",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2305.15328"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "VPGen and VPEval are two frameworks in one paper, not two independent publications; VPEval is an evaluator, not a generator."
+    },
+    {
+      "id": "gen-blueprint",
+      "url": "https://arxiv.org/abs/2310.10640",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.10640"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "The feedback loop operates on scene/object content, not an arbitrary maintained codebase."
+    },
+    {
+      "id": "gen-ranni",
+      "url": "https://arxiv.org/abs/2311.17002",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2311.17002"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Human adjustment is an interaction attribute, not W4 autonomous environmental operation."
+    },
+    {
+      "id": "gen-control-gpt",
+      "url": "https://arxiv.org/abs/2305.18583",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2305.18583"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "A staged program-to-image method; not evidence of a persistent autonomous code-repair loop."
+    },
+    {
+      "id": "gen-idea2img",
+      "url": "https://arxiv.org/abs/2310.08541",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.08541"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A visual feedback baseline; the editable optimization variable is primarily the prompt, not renderer source."
+    },
+    {
+      "id": "gen-genartist",
+      "url": "https://arxiv.org/abs/2407.05600",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2407.05600"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Tool orchestration is core to image agents broadly; source-code generation is not established by the checked abstract."
+    },
+    {
+      "id": "gen-comfyagent",
+      "url": "https://arxiv.org/abs/2409.01392",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2409.01392"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "ComfyBench includes modalities beyond images; use its image-relevant tasks and do not interpret execution success as instruction satisfaction."
+    },
+    {
+      "id": "code-starvector",
+      "url": "https://arxiv.org/abs/2312.11556",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2312.11556"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "First preprint is 2023; CVPR publication is 2025. Single-pass model is not a full repair harness."
+    },
+    {
+      "id": "code-automatikz",
+      "url": "https://arxiv.org/abs/2310.00367",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.00367"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Direct conditional generation is not by itself an execution-feedback agent."
+    },
+    {
+      "id": "code-matplotagent",
+      "url": "https://arxiv.org/abs/2402.11453",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2402.11453"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Model-based visual ratings do not by themselves guarantee correct data transformation."
+    },
+    {
+      "id": "code-diagramagent",
+      "url": "https://arxiv.org/abs/2411.11916",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2411.11916"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "A multi-agent label alone does not imply human-free operation across every supported editing mode."
+    },
+    {
+      "id": "gen-posterverse",
+      "url": "https://arxiv.org/abs/2601.03993",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.03993"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Commercial-grade is the authors label, not an independently verified guarantee; HTML text can still have layout errors."
+    },
+    {
+      "id": "gen-comfymind",
+      "url": "https://arxiv.org/abs/2505.17908",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.17908"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "General-purpose generation spans multiple tasks; the graph/module interface is more constrained than arbitrary source-code synthesis."
+    },
+    {
+      "id": "gen-comfyclaw",
+      "url": "https://arxiv.org/abs/2607.01709",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.01709"
+      ],
+      "evidence_level": "full-text §§3–4 and appendix",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "The paper uses a particular VLM judge implementation; prompt and sampler edits dominate many runs, so graph-editing availability is not identical to frequent structural edits."
+    },
+    {
+      "id": "root-instructpix2pix",
+      "url": "https://arxiv.org/abs/2211.09800",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2211.09800"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "A language model helps construct training examples; deployment is not thereby an autonomous coding agent."
+    },
+    {
+      "id": "edit-agenticir",
+      "url": "https://arxiv.org/abs/2410.17809",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2410.17809",
+        "https://arxiv.org/html/2410.17809",
+        "https://kaiwen-zhu.github.io/research/agenticir"
+      ],
+      "evidence_level": "primary abstract, project and paper §4",
+      "scope_tier": "related agent / context",
+      "caveat": "Restoration operates specialist tools rather than synthesizing arbitrary renderer code."
+    },
+    {
+      "id": "edit-visiondirector",
+      "url": "https://arxiv.org/abs/2512.19243",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2512.19243"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Separate the training-free supervisor from the fine-tuned planner variant."
+    },
+    {
+      "id": "edit-riseagent",
+      "url": "https://arxiv.org/abs/2610.12343",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2610.12343",
+        "https://arxiv.org/html/2610.12343",
+        "https://github.com/VisionXLab/RISEBench"
+      ],
+      "evidence_level": "primary paper §3.4, §4 and Appendix B",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "RISEBench++ extends the earlier RISE benchmark; distinguish benchmark evidence from the proposed agent."
+    },
+    {
+      "id": "code-omnisvg",
+      "url": "https://arxiv.org/abs/2504.06263",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2504.06263",
+        "https://github.com/OmniSVG/OmniSVG"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Do not infer render-inspect-repair inference from its training pipeline."
+    },
+    {
+      "id": "root-scenelanguage",
+      "url": "https://arxiv.org/abs/2410.16770",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2410.16770"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Representation and rendering framework; no generic inference repair loop inferred here."
+    },
+    {
+      "id": "code-detikzify",
+      "url": "https://arxiv.org/abs/2405.15306",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2405.15306"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Distinguish inference-time program search from dialogue with human editors."
+    },
+    {
+      "id": "root-viga",
+      "url": "https://arxiv.org/abs/2601.11109",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.11109"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Only image/document reconstruction and the render-inspect mechanism are in scope."
+    },
+    {
+      "id": "code-internsvg",
+      "url": "https://arxiv.org/abs/2510.11341",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2510.11341"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Static tasks are in scope; the presence of animation tasks does not turn the model into a persistent interactive agent."
+    },
+    {
+      "id": "code-svgenius",
+      "url": "https://arxiv.org/abs/2506.03139",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2506.03139"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "This is a task suite, not a single aggregate measure of autonomous visual delivery."
+    },
+    {
+      "id": "code-lida",
+      "url": "https://arxiv.org/abs/2303.02927",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2303.02927"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Image stylization needs separate data-fidelity checks; a code-correct chart does not certify subsequent raster changes."
+    },
+    {
+      "id": "code-chat2svg",
+      "url": "https://arxiv.org/abs/2411.16602",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2411.16602",
+        "https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_Chat2SVG_Vector_Graphics_Generation_with_Large_Language_Models_and_Image_CVPR_2025_paper.pdf"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "The later geometric optimization is distinct from the LLM visual feedback loop."
+    },
+    {
+      "id": "code-renderloop",
+      "url": "https://arxiv.org/abs/2604.20730",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2604.20730"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Incremental feedback is a trained capability; naive visual prompting is not claimed sufficient."
+    },
+    {
+      "id": "code-refinesvg",
+      "url": "https://arxiv.org/abs/2607.27699",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.27699"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Single-step closed-loop correction should not be presented as unrestricted multi-step planning."
+    },
+    {
+      "id": "code-viscoder",
+      "url": "https://arxiv.org/abs/2506.03930",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2506.03930"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Execution pass rate measures whether a visual is produced, not whether all scientific semantics are correct."
+    },
+    {
+      "id": "code-feynman",
+      "url": "https://arxiv.org/abs/2603.12597",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.12597"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Diagramma measures visual reasoning over generated diagrams; it is not itself a code-agent delivery benchmark."
+    },
+    {
+      "id": "code-autofigure",
+      "url": "https://arxiv.org/abs/2602.03828",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.03828",
+        "https://arxiv.org/html/2602.03828v1"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "The original system does not make every synthesized icon editable; AutoFigure-Edit is a distinct extension."
+    },
+    {
+      "id": "code-papervizagent",
+      "url": "https://arxiv.org/abs/2601.23265",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.23265",
+        "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/",
+        "https://github.com/google-research/papervizagent"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Do not describe all outputs as editable code; PaperBanana and PaperVizAgent are one framework, not two works."
+    },
+    {
+      "id": "code-paper2poster",
+      "url": "https://arxiv.org/abs/2505.21497",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.21497"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Its PosterAgent is distinct from Yu et al. 2026 PosterAgent trained with SARL."
+    },
+    {
+      "id": "code-evodesign",
+      "url": "https://arxiv.org/abs/2604.09568",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2604.09568"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "No independent new work should be created for the title change; detailed visual feedback cadence was not verified."
+    },
+    {
+      "id": "code-designerrsi",
+      "url": "https://arxiv.org/abs/2609.22086",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.22086"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "No model weight updates; improvements concern a particular software/tool harness and evaluation protocol."
+    },
+    {
+      "id": "gen-rpg",
+      "url": "https://arxiv.org/abs/2401.11708",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2401.11708"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A region planning framework, not automatically a general-purpose source-code agent."
+    },
+    {
+      "id": "gen-draco",
+      "url": "https://arxiv.org/abs/2512.05112",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2512.05112"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "DraCo generates neural image drafts; it does not generate executable code. Keep separate from CoCo."
+    },
+    {
+      "id": "gen-pspdit",
+      "url": "https://arxiv.org/abs/2609.31780",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.31780"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "A scene program latent is not executable code and the method is not an autonomous coding agent."
+    },
+    {
+      "id": "gen-comfygpt",
+      "url": "https://arxiv.org/abs/2503.17671",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.17671"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Graph and execution metrics measure distinct properties; a valid workflow may generate a semantically wrong image."
+    },
+    {
+      "id": "gen-symbomni",
+      "url": "https://arxiv.org/abs/2607.12042",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.12042"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Symbolic workflows are reusable procedural knowledge; do not describe this as neural image-model weight training."
+    },
+    {
+      "id": "gen-omniharness",
+      "url": "https://arxiv.org/abs/2609.16057",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.16057"
+      ],
+      "evidence_level": "primary abstract and official repository",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Generated Python-like text is compiled, not directly executed as Python. Frozen and online evolving memory are different evaluation protocols."
+    },
+    {
+      "id": "gen-genagent",
+      "url": "https://arxiv.org/abs/2601.18543",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.18543"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "This is an agent policy over tools; no arbitrary source-code generation is established by the abstract."
+    },
+    {
+      "id": "gen-qwenagent",
+      "url": "https://arxiv.org/abs/2606.26907",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.26907"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "An agent layer around image generation; source-code or typed-graph construction is not established in the abstract."
+    },
+    {
+      "id": "gen-toolartist",
+      "url": "https://arxiv.org/abs/2608.04436",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.04436"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Native image generation replaces the exposed image tool in the student; it is not synonymous with code-rendered output."
+    },
+    {
+      "id": "gen-canvasagent",
+      "url": "https://arxiv.org/abs/2607.05465",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.05465"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Executable tool trajectories are not necessarily arbitrary source code; track tool validity and image success independently."
+    },
+    {
+      "id": "gen-t2icopilot",
+      "url": "https://arxiv.org/abs/2507.20536",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2507.20536"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Human feedback must be reported separately when comparing autonomous quality or cost."
+    },
+    {
+      "id": "gen-ranger",
+      "url": "https://arxiv.org/abs/2610.23269",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2610.23269"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A search score measures reference retrieval; it is not interchangeable with final image quality or general agent competence."
+    },
+    {
+      "id": "root-autoref",
+      "url": "https://arxiv.org/abs/2609.35530",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.35530"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Cross-task harness search is distinct from revising one image; prevent selection/test leakage."
+    },
+    {
+      "id": "edit-mgie",
+      "url": "https://arxiv.org/abs/2309.17102",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2309.17102"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "End-to-end editing model, not an autonomous code-execution agent."
+    },
+    {
+      "id": "edit-editworld",
+      "url": "https://arxiv.org/abs/2405.14785",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2405.14785"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "Not the unrelated 2026 video-world model also named EditWorld; no evidence of a general-purpose coding harness."
+    },
+    {
+      "id": "root-controlnet",
+      "url": "https://arxiv.org/abs/2302.05543",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2302.05543"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "A conditioning mechanism, not a planner or coding-agent policy."
+    },
+    {
+      "id": "edit-controlllm",
+      "url": "https://arxiv.org/abs/2310.17796",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.17796",
+        "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/01838.pdf"
+      ],
+      "evidence_level": "primary abstract and ECCV paper",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Do not confuse with the unrelated 2025 Control LLM model-retention paper."
+    },
+    {
+      "id": "edit-clova",
+      "url": "https://arxiv.org/abs/2312.10908",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2312.10908"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Human feedback and tool learning are part of the design; not a fully autonomous frozen-tool baseline."
+    },
+    {
+      "id": "edit-costa",
+      "url": "https://arxiv.org/abs/2503.10613",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.10613",
+        "https://arxiv.org/html/2506.20911v1"
+      ],
+      "evidence_level": "primary abstract and related primary full text",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "The released benchmark mixes image and text operations; report its own cost-quality protocol rather than comparing raw scores to unrelated editing benchmarks."
+    },
+    {
+      "id": "edit-fasta",
+      "url": "https://arxiv.org/abs/2506.20911",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2506.20911",
+        "https://arxiv.org/html/2506.20911v1"
+      ],
+      "evidence_level": "primary paper §5.1 and Appendix A",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "MagicBrush examples are qualitative in the inspected version, not its principal quantitative benchmark."
+    },
+    {
+      "id": "edit-mira",
+      "url": "https://arxiv.org/abs/2511.21087",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2511.21087",
+        "https://arxiv.org/html/2511.21087"
+      ],
+      "evidence_level": "primary abstract and paper §5.1",
+      "scope_tier": "related agent / context",
+      "caveat": "Calling an editor via refined instructions is agentic control, not evidence that MIRA writes renderer source."
+    },
+    {
+      "id": "edit-editthinker",
+      "url": "https://arxiv.org/abs/2512.05965",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2512.05965",
+        "https://github.com/appletea233/EditThinker"
+      ],
+      "evidence_level": "primary abstract and official repository",
+      "scope_tier": "related agent / context",
+      "caveat": "This is instruction refinement around external editors; do not describe it as free-form code repair."
+    },
+    {
+      "id": "edit-imagagent",
+      "url": "https://arxiv.org/abs/2603.29602",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.29602",
+        "https://arxiv.org/html/2603.29602"
+      ],
+      "evidence_level": "primary abstract and paper §IV",
+      "scope_tier": "related agent / context",
+      "caveat": "Multi-expert critique does not establish independent critic errors; qualify evidence by the tested tools and judges."
+    },
+    {
+      "id": "edit-refineedit",
+      "url": "https://arxiv.org/abs/2508.17435",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2508.17435"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Source-level claims checked; numerical results and benchmark release were not independently reproduced."
+    },
+    {
+      "id": "edit-intentedit",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_IntentEdit_Multi-Agent_Reasoning_for_Intent-Driven_Complex_Image_Editing_CVPRF_2026_paper.html",
+      "checked_source_urls": [
+        "https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_IntentEdit_Multi-Agent_Reasoning_for_Intent-Driven_Complex_Image_Editing_CVPRF_2026_paper.html",
+        "https://github.com/LaVi-Lab/IntentEdit"
+      ],
+      "evidence_level": "official proceedings abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A training-free agent framework; no evidence of free-form generated image code."
+    },
+    {
+      "id": "edit-editagent",
+      "url": "https://arxiv.org/abs/2610.39664",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2610.39664",
+        "https://arxiv.org/html/2610.39664v1"
+      ],
+      "evidence_level": "primary paper §§3–5 and Appendix G",
+      "scope_tier": "related agent / context",
+      "caveat": "Some comparison agents are reimplemented with changed backbones/judges; the paper also reports substantial inference overhead."
+    },
+    {
+      "id": "edit-agentbanana",
+      "url": "https://arxiv.org/abs/2602.09084",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.09084",
+        "https://arxiv.org/html/2602.09084"
+      ],
+      "evidence_level": "primary abstract and paper planner-executor section",
+      "scope_tier": "related agent / context",
+      "caveat": "Layer localization and preservation are the key claims; ordinary low-resolution benchmark results do not certify native-resolution behavior."
+    },
+    {
+      "id": "edit-restoreagent",
+      "url": "https://arxiv.org/abs/2407.18035",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2407.18035"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Tool composition is established; free-form source generation and visual rollback are not inferred from the abstract."
+    },
+    {
+      "id": "edit-mair",
+      "url": "https://arxiv.org/abs/2503.09403",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.09403"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "The degradation-order prior narrows planning; it is not a proof that all image corruptions follow that ordering."
+    },
+    {
+      "id": "edit-hybridagent",
+      "url": "https://arxiv.org/abs/2503.10120",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.10120"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Distinguish the routing controller from the jointly trained restoration toolbox."
+    },
+    {
+      "id": "edit-jarvisir",
+      "url": "https://arxiv.org/abs/2504.04158",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2504.04158"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Driving-perception evidence does not establish fidelity for arbitrary creative edits."
+    },
+    {
+      "id": "edit-4kagent",
+      "url": "https://arxiv.org/abs/2507.07105",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2507.07105"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Photorealistic detail is not evidence of recovered ground-truth detail; native high-resolution validation matters."
+    },
+    {
+      "id": "edit-autodir",
+      "url": "https://arxiv.org/abs/2310.10123",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.10123"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "An automatic restoration system is not by itself evidence of LLM-generated executable programs."
+    },
+    {
+      "id": "code-plot2code",
+      "url": "https://arxiv.org/abs/2405.07990",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2405.07990"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "Reconstruction benchmarks do not test open-ended visualization goal selection."
+    },
+    {
+      "id": "code-chartmimic",
+      "url": "https://arxiv.org/abs/2406.09961",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2406.09961"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "Dataset size and model results changed between versions; cite version if using counts."
+    },
+    {
+      "id": "code-design2code",
+      "url": "https://arxiv.org/abs/2403.03163",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2403.03163"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "Relevant as visual-code reconstruction evidence; general website behavior is outside static-image authoring scope."
+    },
+    {
+      "id": "code-drawai",
+      "url": "https://arxiv.org/abs/2608.00548",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.00548"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Visual reconstruction and usable editability must be evaluated separately; they can trade off."
+    },
+    {
+      "id": "root-seig",
+      "url": "https://arxiv.org/abs/2606.02580",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.02580"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Staging is verified; the full runtime feedback contract is not assigned from the abstract alone."
+    },
+    {
+      "id": "root-lego",
+      "url": "https://arxiv.org/abs/2609.36380",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.36380"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Single-view reconstruction cannot establish correctness of hidden geometry; broader vision readouts are contextual."
+    },
+    {
+      "id": "root-scenecraft",
+      "url": "https://arxiv.org/abs/2403.01248",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2403.01248"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Included for image-producing scene programs; broader 3D/video applications remain outside this survey."
+    },
+    {
+      "id": "root-blenderalchemy",
+      "url": "https://arxiv.org/abs/2404.17672",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2404.17672"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Included as render-guided editing context; does not establish general natural-image restoration."
+    },
+    {
+      "id": "code-cole",
+      "url": "https://arxiv.org/abs/2311.16974",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2311.16974"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "A staged design pipeline is not automatically a source-writing execution-feedback coding agent."
+    },
+    {
+      "id": "code-opencole",
+      "url": "https://arxiv.org/abs/2406.08232",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2406.08232"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "Workshop extended abstract; evaluator-based comparison is not a complete autonomous-agent assessment."
+    },
+    {
+      "id": "code-layoutnuwa",
+      "url": "https://arxiv.org/abs/2309.09506",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2309.09506"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Three fixed processing stages do not establish agent planning or feedback-driven execution."
+    },
+    {
+      "id": "code-graphist",
+      "url": "https://arxiv.org/abs/2404.14368",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2404.14368"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "This is a layout-generation model, not a demonstrated execute-inspect-revise design agent."
+    },
+    {
+      "id": "gen-transanytext",
+      "url": "https://arxiv.org/abs/2608.16284",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.16284"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Do not imply free-form autonomous editing loops; this is a specialized structured image-to-code translation pipeline."
+    },
+    {
+      "id": "code-redesign",
+      "url": "https://arxiv.org/abs/2607.25565",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.25565"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / structured authoring",
+      "caveat": "Editable decomposition is not equivalent to recovering the original authoring program."
+    },
+    {
+      "id": "code-autodesign",
+      "url": "https://arxiv.org/abs/2608.13560",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.13560"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Reported timing/cost describe specific runs; harness gains should not be generalized across unrestricted design tasks."
+    },
+    {
+      "id": "code-posteragent-sarl",
+      "url": "https://proceedings.mlr.press/v306/yu26br.html",
+      "checked_source_urls": [
+        "https://proceedings.mlr.press/v306/yu26br.html"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / structured authoring",
+      "caveat": "Do not conflate with the PosterAgent system in Paper2Poster. Specific execution syntax is not established by the inspected abstract."
+    },
+    {
+      "id": "code-postergen",
+      "url": "https://arxiv.org/abs/2508.17188",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2508.17188"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / structured authoring",
+      "caveat": "Do not infer autonomous visual revision solely from aesthetic evaluation or a multi-agent label."
+    },
+    {
+      "id": "code-posterforest",
+      "url": "https://arxiv.org/abs/2508.21720",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2508.21720"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / structured authoring",
+      "caveat": "Inspect-render feedback is not specified in the inspected abstract, so do not automatically assign autonomous W3."
+    },
+    {
+      "id": "code-livefigure",
+      "url": "https://arxiv.org/abs/2605.23527",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.23527",
+        "https://proceedings.mlr.press/v306/shao26f.html"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Publication-readiness results involve manual edits in the reported protocol; do not characterize them as zero-edit autonomous success."
+    },
+    {
+      "id": "code-scifig",
+      "url": "https://arxiv.org/abs/2601.04390",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.04390"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Title, authors and evaluation changed since v1; current version should govern claims."
+    },
+    {
+      "id": "code-crafter",
+      "url": "https://arxiv.org/abs/2605.30611",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.30611",
+        "https://arxiv.org/html/2605.30611v1"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Crafter itself delegates rendering to an image generator; CraftEditor supplies the SVG reconstruction stage."
+    },
+    {
+      "id": "code-autofigure-edit",
+      "url": "https://arxiv.org/abs/2603.06674",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.06674",
+        "https://arxiv.org/html/2603.06674v1"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "An editable SVG container can contain extracted assets; assess which components remain raster rather than assuming all geometry is vectorized."
+    },
+    {
+      "id": "code-banneragency",
+      "url": "https://arxiv.org/abs/2503.11060",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.11060",
+        "https://arxiv.org/html/2503.11060v1"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Foreground element editability does not make a generated raster background internally vector-editable. The reviewer is a model, and production-ready is its stopping judgment."
+    },
+    {
+      "id": "code-p2p",
+      "url": "https://arxiv.org/abs/2505.17104",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.17104",
+        "https://github.com/multimodal-art-projection/P2P"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "This is distinct from Paper2Poster/PosterAgent. LLM judging and human-authored checklists evaluate different aspects and are not guarantees that every source fact is preserved."
+    },
+    {
+      "id": "code-postermeld",
+      "url": "https://arxiv.org/abs/2608.02218",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.02218",
+        "https://github.com/Shannon4Science/PosterMELD/blob/main/poster_generation/README.md"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Print-ready rate is defined by the paper-specific checks; conditional aesthetics must not conceal failed requests or establish universal production readiness."
+    },
+    {
+      "id": "code-dataformulator",
+      "url": "https://arxiv.org/abs/2309.10094",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2309.10094"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Human decisions specify concepts and channels; this is assisted authoring rather than fully autonomous chart planning."
+    },
+    {
+      "id": "code-dataformulator2",
+      "url": "https://arxiv.org/abs/2408.16119",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2408.16119"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Human iteration should be recorded separately from an autonomous visual critic."
+    },
+    {
+      "id": "code-visinteract",
+      "url": "https://arxiv.org/abs/2609.15182",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.15182"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / structured authoring",
+      "caveat": "User Agent simulation and imperfect queries define the evaluated protocol; not evidence of general human dialogue reliability."
+    },
+    {
+      "id": "code-rsiv",
+      "url": "https://arxiv.org/abs/2610.35316",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2610.35316"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Very recent preprint; reported gains are within ODAC-Vis and a specified seed harness."
+    },
+    {
+      "id": "code-sketchagent",
+      "url": "https://arxiv.org/abs/2411.17673",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2411.17673",
+        "https://yael-vinker.github.io/sketch-agent/",
+        "https://openaccess.thecvf.com/content/CVPR2025/papers/Vinker_SketchAgent_Language-Driven_Sequential_Sketch_Generation_CVPR_2025_paper.pdf"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Distinct from Tan et al. SketchAgent for sketch-to-diagram conversion."
+    },
+    {
+      "id": "code-sketchagent-diagram",
+      "url": "https://arxiv.org/abs/2508.01237",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2508.01237"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Distinct from Vinker et al. language-driven sketch generation; output syntax is not specified in the inspected abstract."
+    },
+    {
+      "id": "root-rlrf",
+      "url": "https://arxiv.org/abs/2505.20793",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.20793"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "Training feedback alone does not establish an inference-time inspect–revise agent."
+    },
+    {
+      "id": "root-vincicoder",
+      "url": "https://arxiv.org/abs/2511.00391",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2511.00391"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "A trained model and a complete deployment harness are different experimental units."
+    },
+    {
+      "id": "root-tikzilla",
+      "url": "https://arxiv.org/abs/2603.03072",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.03072"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "Text-to-TikZ model training is not evidence of autonomous current-task repair."
+    },
+    {
+      "id": "code-scitikzer",
+      "url": "https://arxiv.org/abs/2604.06079",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2604.06079"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Closed-loop data/training terminology should not be conflated with a general inference agent."
+    },
+    {
+      "id": "root-ctrls",
+      "url": "https://arxiv.org/abs/2603.16189",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.16189"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "Explicit textual reasoning and training rewards do not by themselves imply a closed-loop runtime."
+    },
+    {
+      "id": "root-geosvg",
+      "url": "https://arxiv.org/abs/2605.25447",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.25447"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "The layout contract and reward design are task-specific, not a universal image-quality guarantee."
+    },
+    {
+      "id": "root-ruler",
+      "url": "https://arxiv.org/abs/2609.25270",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.25270"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "Rubric optimization must be distinguished from independent validation of the final artifact."
+    },
+    {
+      "id": "root-visualerm",
+      "url": "https://arxiv.org/abs/2603.13224",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.13224"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "A critic benchmark evaluates the judge; it is not an image-generation benchmark."
+    },
+    {
+      "id": "root-ir4rl",
+      "url": "https://arxiv.org/abs/2609.34587",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.34587"
+      ],
+      "evidence_level": "abstract",
+      "scope_tier": "component",
+      "caveat": "The method exploits renderable prefixes; it does not imply that arbitrary incomplete programs execute."
+    },
+    {
+      "id": "code-vectorgym",
+      "url": "https://arxiv.org/abs/2603.29852",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.29852"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "Benchmark task diversity and RL training do not establish a multi-step autonomous inference loop."
+    },
+    {
+      "id": "code-charteditbench",
+      "url": "https://arxiv.org/abs/2602.15758",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.15758"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "Multi-turn test cases do not imply a free-running agent autonomously selects the edits."
+    },
+    {
+      "id": "code-viseditbench",
+      "url": "https://arxiv.org/abs/2608.10408",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.10408"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "Benchmark and method share a paper; count once and distinguish their roles."
+    },
+    {
+      "id": "eval-geneval",
+      "url": "https://arxiv.org/abs/2310.11513",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.11513"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "The detector and supported vocabulary bound validity; it is not a general aesthetic or code-quality score."
+    },
+    {
+      "id": "eval-t2icompbench",
+      "url": "https://arxiv.org/abs/2307.06350",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2307.06350"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Prompt-composition scores do not measure artifact editability, code correctness or delivery cost."
+    },
+    {
+      "id": "eval-conceptmix",
+      "url": "https://arxiv.org/abs/2408.14339",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2408.14339"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Scores depend on the concept count and judge protocol; report both."
+    },
+    {
+      "id": "eval-wise",
+      "url": "https://arxiv.org/abs/2503.07265",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.07265"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Record the benchmark version; later WISE_Verified updates should not be silently mixed with original results."
+    },
+    {
+      "id": "eval-t2ireasonbench",
+      "url": "https://arxiv.org/abs/2508.17472",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2508.17472"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Reasoning correctness cannot be substituted with an aesthetic score."
+    },
+    {
+      "id": "eval-oneig",
+      "url": "https://arxiv.org/abs/2506.07977",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2506.07977"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "A subset result is not the full benchmark result; diversity requires more than a single selected sample."
+    },
+    {
+      "id": "eval-tifa",
+      "url": "https://arxiv.org/abs/2303.11897",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2303.11897"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Question-generation and VQA errors remain distinct from generator failure."
+    },
+    {
+      "id": "eval-dsg",
+      "url": "https://arxiv.org/abs/2310.18235",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.18235"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Dependency-aware questions improve diagnostic structure but do not make VQA infallible."
+    },
+    {
+      "id": "eval-structbench",
+      "url": "https://arxiv.org/abs/2510.05091",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2510.05091"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "The evaluated visual model is not automatically a coding agent; rendered factuality and source-program validity are separate."
+    },
+    {
+      "id": "code-sciflow",
+      "url": "https://arxiv.org/abs/2602.09809",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.09809",
+        "https://aclanthology.org/2026.acl-long.807/"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "The multi-agent inverse parser is an evaluator, not evidence that the evaluated image generators are coding agents. Parsing errors can affect recovered structure."
+    },
+    {
+      "id": "eval-vao",
+      "url": "https://arxiv.org/abs/2610.16444",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2610.16444"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Do not give code systems original source when reporting the paper’s image-only comparison; this changes the task."
+    },
+    {
+      "id": "eval-editbench",
+      "url": "https://arxiv.org/abs/2212.06909",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2212.06909",
+        "https://imagen.research.google/editor/"
+      ],
+      "evidence_level": "primary abstract and official project",
+      "scope_tier": "benchmark",
+      "caveat": "This is an inpainting protocol, not unrestricted editing or a coding-agent benchmark."
+    },
+    {
+      "id": "eval-magicbrush",
+      "url": "https://arxiv.org/abs/2306.10012",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2306.10012"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Its released train/test splits and single/multi-turn settings must be specified."
+    },
+    {
+      "id": "eval-piebench",
+      "url": "https://arxiv.org/abs/2310.01506",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2310.01506"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "The inversion method’s short code change does not make it a language-model coding agent."
+    },
+    {
+      "id": "eval-imgedit",
+      "url": "https://arxiv.org/abs/2505.20275",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.20275"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Training-pair count is not benchmark size; different suites should not be merged into one score without protocol details."
+    },
+    {
+      "id": "eval-gedit",
+      "url": "https://arxiv.org/abs/2504.17761",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2504.17761"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Step1X-Edit is an editing backbone; its MLLM does not by itself establish an agent loop. Do not confuse original GEdit-Bench with v2."
+    },
+    {
+      "id": "eval-compbench",
+      "url": "https://arxiv.org/abs/2505.12200",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.12200"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Different from T2I-CompBench, Complex-Edit and ComplexBench-Edit. Name and source identifier must stay paired."
+    },
+    {
+      "id": "eval-complexedit",
+      "url": "https://arxiv.org/abs/2504.13143",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2504.13143"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Do not generalize that negative result to every feedback-controlled planner; the execution policy matters."
+    },
+    {
+      "id": "eval-complexbenchedit",
+      "url": "https://arxiv.org/abs/2506.12830",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2506.12830"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Unlike Complex-Edit, this is a different benchmark with a different composition protocol."
+    },
+    {
+      "id": "eval-kris",
+      "url": "https://arxiv.org/abs/2505.16707",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.16707"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Knowledge hints and judge configuration are part of the evaluation contract."
+    },
+    {
+      "id": "eval-inedit",
+      "url": "https://arxiv.org/abs/2603.03657",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.03657"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Intermediate-image evaluation is not a full interactive video-world benchmark."
+    },
+    {
+      "id": "eval-edival",
+      "url": "https://arxiv.org/abs/2509.13399",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2509.13399",
+        "https://github.com/TianyuCodings/EdiVal"
+      ],
+      "evidence_level": "primary abstract and official repository",
+      "scope_tier": "benchmark",
+      "caveat": "The evaluator is agentic, but it is not an image-creation agent; benchmark judges and generator controllers play different roles."
+    },
+    {
+      "id": "eval-gedit2",
+      "url": "https://arxiv.org/abs/2603.28547",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.28547"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "A consistency judge assesses preservation; it is not a complete measure of instruction success or visual quality."
+    },
+    {
+      "id": "code-chartjudgebench",
+      "url": "https://arxiv.org/abs/2609.24210",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.24210"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "A critic diagnostic, not a chart-generation performance benchmark."
+    },
+    {
+      "id": "eval-editscore",
+      "url": "https://arxiv.org/abs/2509.23909",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2509.23909"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "A critic is a component, not an autonomous image author; judge agreement is benchmark-specific."
+    },
+    {
+      "id": "eval-firm",
+      "url": "https://arxiv.org/abs/2603.12247",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.12247"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "benchmark",
+      "caveat": "Use to discuss critic validation; it is not a code-generation method."
+    },
+    {
+      "id": "eval-imagereward",
+      "url": "https://arxiv.org/abs/2304.05977",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2304.05977"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "A preference score does not certify exact count, text transcription, factuality or source preservation."
+    },
+    {
+      "id": "code-sketch2code",
+      "url": "https://arxiv.org/abs/2410.16232",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2410.16232"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "Simulated user interaction is a distinct evidence condition from an autonomous visual critic."
+    },
+    {
+      "id": "code-web2code",
+      "url": "https://arxiv.org/abs/2406.20098",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2406.20098"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "HTML renderer is shared with graphic design, but this work studies webpages rather than image-art agents."
+    },
+    {
+      "id": "code-amace",
+      "url": "https://aclanthology.org/2025.emnlp-main.1089/",
+      "checked_source_urls": [
+        "https://aclanthology.org/2025.emnlp-main.1089/"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Reported improvement depends on backbone, task and iteration; automatic chart question answering or caption metrics do not alone establish factual chart accuracy."
+    },
+    {
+      "id": "code-autopp",
+      "url": "https://arxiv.org/abs/2512.21921",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2512.21921"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "The inspected source does not establish executable graphic-code authoring; include as an adjacent design and outcome-optimization comparison. Online optimization is not evidence of an interactive coding-agent loop."
+    },
+    {
+      "id": "code-chartcoder",
+      "url": "https://arxiv.org/abs/2501.06598",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2501.06598"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Stepwise supervised generation is not an execution-feedback agent; pixel similarity does not prove original data recovery."
+    },
+    {
+      "id": "code-datawink",
+      "url": "https://arxiv.org/abs/2507.17734",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2507.17734",
+        "https://arxiv.org/html/2507.17734v1"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Requires SVG examples; no general raster-to-code capability is established. Shared-state human authoring is distinct from autonomous visual self-correction."
+    },
+    {
+      "id": "code-plotgen",
+      "url": "https://arxiv.org/abs/2502.00988",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2502.00988"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Keep numeric accuracy distinct from label or appearance judgments."
+    },
+    {
+      "id": "code-tikzero",
+      "url": "https://arxiv.org/abs/2503.11509",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2503.11509",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Belouadi_TikZero_Zero-Shot_Text-Guided_Graphics_Program_Synthesis_ICCV_2025_paper.pdf"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "The zero-shot designation concerns absence of aligned caption-program examples in TikZero training; TikZero+ is explicitly not zero-shot in that sense. A trained generator is not by itself an inference-time agent."
+    },
+    {
+      "id": "code-viscoder2",
+      "url": "https://arxiv.org/abs/2510.23642",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2510.23642"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Training-language coverage and benchmark-language coverage differ; avoid treating executability as complete visual success."
+    },
+    {
+      "id": "code-code2uml",
+      "url": "https://arxiv.org/abs/2605.24453",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.24453"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Source-code documentation is a specialized visual authoring domain; syntactic validity is separate from entity recall."
+    },
+    {
+      "id": "code-drawio",
+      "url": "https://arxiv.org/abs/2601.05162",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.05162"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Prototype and simulated evidence are weaker than a broad independent agent benchmark; no visual repair loop is established by the abstract."
+    },
+    {
+      "id": "code-editikz",
+      "url": "https://arxiv.org/abs/2609.01409",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.01409"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "component",
+      "caveat": "Training on revisions does not mean inference repeatedly inspects and repairs a figure."
+    },
+    {
+      "id": "code-mtweb2code",
+      "url": "https://arxiv.org/abs/2608.03474",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2608.03474"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "related agent / context",
+      "caveat": "Use as a preservation-under-editing precedent; general frontend capability is outside image scope."
+    },
+    {
+      "id": "code-multivis",
+      "url": "https://arxiv.org/abs/2601.18320",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.18320",
+        "https://researchportal.hkust.edu.hk/en/publications/demonstration-of-multivis-agent-interactively-generating-reliable/"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Reliability/termination constraints are not a proof that chart semantics or data transformations are correct."
+    },
+    {
+      "id": "code-paper2figure",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Han_Paper2Figure_A_Multi-Agent_CVPR_2026_supplemental.pdf",
+      "checked_source_urls": [
+        "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Han_Paper2Figure_A_Multi-Agent_CVPR_2026_supplemental.pdf"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Main HTML returned 403. Supplement inspected; exact agent prompts are not released and native output targets structured pipeline diagrams, not arbitrary photos."
+    },
+    {
+      "id": "code-sage",
+      "url": "https://arxiv.org/abs/2607.01102",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2607.01102"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Case-study and unit-test evidence should not be presented as a large general diagram benchmark."
+    },
+    {
+      "id": "code-vizart",
+      "url": "https://educationaldatamining.org/edm2026/proceedings/2026.EDM.poster-demo-papers.446/index.html",
+      "checked_source_urls": [
+        "https://educationaldatamining.org/edm2026/proceedings/2026.EDM.poster-demo-papers.446/index.html"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "core coding / executable workflow",
+      "caveat": "Initial evaluation is limited; pedagogical correctness should not be inferred from the LLM judge alone."
+    },
+    {
+      "id": "gen-sld",
+      "url": "https://arxiv.org/abs/2311.16090",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2311.16090"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Do not repeat the abstract wording as a guarantee that every output is correct."
+    },
+    {
+      "id": "gen-compagent",
+      "url": "https://arxiv.org/abs/2401.15688",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2401.15688"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Do not confuse with the unrelated 2025 visual-compliance-verification paper also named CompAgent."
+    },
+    {
+      "id": "gen-diffusiongpt",
+      "url": "https://arxiv.org/abs/2401.10061",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2401.10061"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Selecting a generator is distinct from generating executable image programs."
+    },
+    {
+      "id": "gen-muses",
+      "url": "https://arxiv.org/abs/2408.10605",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2408.10605"
+      ],
+      "evidence_level": "full-text method and abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "The final task is a static image. Blender use does not alone prove the LLM writes arbitrary Blender Python."
+    },
+    {
+      "id": "gen-genpilot",
+      "url": "https://arxiv.org/abs/2510.07217",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2510.07217"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A model-agnostic prompt optimization baseline, not an image-program generator."
+    },
+    {
+      "id": "gen-iat2i",
+      "url": "https://arxiv.org/abs/2505.15779",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.15779"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Retrieval success, entity identity and rendered faithfulness must be measured separately."
+    },
+    {
+      "id": "gen-imagent",
+      "url": "https://arxiv.org/abs/2511.11483",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2511.11483"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Do not confuse ImAgent with similarly named multi-image-understanding systems; internal actions are not arbitrary code."
+    },
+    {
+      "id": "gen-layercraft",
+      "url": "https://arxiv.org/abs/2504.00010",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2504.00010"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "The integration network is not itself an LLM agent; procedural layout is not proof of arbitrary code generation."
+    },
+    {
+      "id": "gen-maestro",
+      "url": "https://arxiv.org/abs/2509.10704",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2509.10704"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Prompt evolution differs from persistent code repair; self-judging does not establish independent evaluation."
+    },
+    {
+      "id": "gen-mccd",
+      "url": "https://arxiv.org/abs/2505.02648",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2505.02648"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Multiple named agents should not be taken as evidence of code execution or independent visual verification."
+    },
+    {
+      "id": "gen-ape",
+      "url": "https://arxiv.org/abs/2606.00204",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.00204"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "The title agentic does not establish an execute-inspect-revise loop; the downstream visual model remains unchanged."
+    },
+    {
+      "id": "gen-codraw",
+      "url": "https://arxiv.org/abs/2603.12829",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.12829"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Distinguish pre-render layout checks from critique of a fully rendered final artifact."
+    },
+    {
+      "id": "gen-gems",
+      "url": "https://arxiv.org/abs/2603.28088",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.28088"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Inspired by coding-agent harnesses does not mean every generation action writes executable source."
+    },
+    {
+      "id": "gen-genevolve",
+      "url": "https://arxiv.org/abs/2605.21605",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.21605"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Prompt-reference program is the authors orchestration term; do not infer Python execution or a persistent editable visual program."
+    },
+    {
+      "id": "gen-gensearcher",
+      "url": "https://arxiv.org/abs/2603.28767",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.28767"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Separate agent retrieval correctness from generator image quality; benchmark results depend on the retrieval environment."
+    },
+    {
+      "id": "gen-memogen",
+      "url": "https://arxiv.org/abs/2606.03243",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.03243"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Memory evolution protocols require a clear split between experience acquisition and evaluation."
+    },
+    {
+      "id": "gen-metapoint",
+      "url": "https://arxiv.org/abs/2606.05031",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.05031"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "This is a control mechanism useful to agents; it does not itself show a full coding agent."
+    },
+    {
+      "id": "gen-mindbrush",
+      "url": "https://arxiv.org/abs/2602.01756",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.01756"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Search and reasoning support the generator; do not describe it as code-based canvas construction."
+    },
+    {
+      "id": "gen-navigator",
+      "url": "https://arxiv.org/abs/2605.17969",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2605.17969"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Reported improvements are task/model-specific; no code-generation capability follows from an action-policy interface."
+    },
+    {
+      "id": "gen-octot2i",
+      "url": "https://arxiv.org/abs/2606.01803",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.01803"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Efficiency comparisons depend on the particular model/tool pool and hardware; do not present them as general system guarantees."
+    },
+    {
+      "id": "gen-unifyagent",
+      "url": "https://arxiv.org/abs/2603.29620",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2603.29620"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "World-grounded image synthesis is not a video world model or persistent executable world simulator."
+    },
+    {
+      "id": "gen-vectorcontrol",
+      "url": "https://arxiv.org/abs/2602.14443",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2602.14443"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "component",
+      "caveat": "A controllable representation/generator component; the checked source does not establish an autonomous LLM coding agent."
+    },
+    {
+      "id": "gen-weagent",
+      "url": "https://arxiv.org/abs/2609.05171",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2609.05171"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Unlike frozen-backend harness studies, this recipe also trains the image backend; attribute gains to the full configuration."
+    },
+    {
+      "id": "edit-interleavethinker",
+      "url": "https://arxiv.org/abs/2606.13679",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2606.13679"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "Interleaved outputs are sequences of images and text, not video or persistent executable source."
+    },
+    {
+      "id": "edit-iterative-refinement",
+      "url": "https://arxiv.org/abs/2601.15286",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2601.15286"
+      ],
+      "evidence_level": "primary abstract",
+      "scope_tier": "related agent / context",
+      "caveat": "A critic-guided generation baseline; no claim of generated executable code."
+    },
+    {
+      "id": "code-dvworld",
+      "url": "https://arxiv.org/abs/2604.25914",
+      "checked_source_urls": [
+        "https://arxiv.org/abs/2604.25914",
+        "https://dv-world-project.github.io/"
+      ],
+      "evidence_level": "primary abstract/project or paper passage inspected",
+      "scope_tier": "benchmark",
+      "caveat": "The suite includes software workflows beyond a single still image; report task-specific evidence rather than treating overall score as image quality."
+    }
+  ],
+  "validation": {
+    "html_nesting": "passed",
+    "local_resources_and_fragment_targets": "passed",
+    "unique_html_ids": 444,
+    "catalog_records_and_references": 192,
+    "json_csv_consistency": "passed",
+    "javascript_syntax": "passed",
+    "editorial_review": "Three research reviewers checked their domain-specific narrative and supplied corrections; these were applied.",
+    "browser": {
+      "desktop_viewport": "1440 × 1000: no document overflow; figure loaded; sticky contents visible",
+      "narrow_viewport": "390 × 844: no document overflow; 980 px atlas scrolls within 335 px container",
+      "citations": "Reference 2 click navigated to the correct record and opened its collapsed group",
+      "console": "No warnings or errors observed",
+      "svg_review": "Input labels shortened after visual overlap was observed"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/* Journal-style hierarchy and vector figures, scoped to this survey. */
+.coding-video-survey .article-body h3 { margin-top: 30px; }
+.coding-video-survey .article-body h4 {
+  margin: 22px 0 8px;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+.coding-video-survey .survey-figure { margin: 26px 0; }
+.coding-video-survey .figure-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid rgba(25, 25, 112, .14);
+  background: #fff;
+}
+.coding-video-survey .figure-scroll img {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+}
+.coding-video-survey .figure-scroll:focus-visible,
+.coding-video-survey .table-wrap:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+.coding-video-survey .section-synthesis {
+  margin: 24px 0;
+  padding: 12px 16px;
+  border-left: 2px solid rgba(25, 25, 112, .3);
+  background: rgba(25, 25, 112, .025);
+}
+.coding-video-survey .section-synthesis p { margin: 0; }
+.coding-video-survey .figure-download { white-space: nowrap; }
+.coding-video-survey .article-body .workflow-matrix {
+  min-width: 960px;
+  table-layout: fixed;
+}
+.coding-video-survey .article-toc ol { list-style: none; padding-left: 0; }
+.coding-video-survey .article-toc .toc-guide {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(25, 25, 112, .15);
+  font-size: var(--fs-meta);
+}
+@media print {
+  .coding-video-survey .article-toc { display: none; }
+  .coding-video-survey .article-layout { display: block; margin: 0; }
+  .coding-video-survey .figure-scroll { overflow: visible; }
+  .coding-video-survey .figure-scroll img { min-width: 0; }
+  .coding-video-survey .survey-figure { break-inside: avoid; }
+}
+/* Numbered citations, matching the reward-model survey. */
+.coding-video-survey .citation {
+  margin-left: 2px;
+  font-size: 0.65em;
+  line-height: 0;
+  white-space: nowrap;
+}
+.coding-video-survey .reference-group ol { margin: 8px 0 0; }
+.coding-video-survey .reference-group [id]:target {
+  background: rgba(25, 25, 112, 0.06);
+}
+.coding-video-survey .article-toc .toc-sublist {
+  list-style: none;
+  margin: 6px 0 8px;
+  padding-left: 12px;
+  font-size: var(--fs-meta);
+}
+.coding-video-survey .article-toc .toc-sublist li { margin-bottom: 3px; }
+/* Avoid one- or two-word last lines in running text. */
+.coding-video-survey .article-body :is(p, li, figcaption, caption, td, h2, h3, h4) { text-wrap: pretty; }
+.coding-video-survey .table-note {
+  margin: -12px 0 22px;
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  color: var(--muted);
+}

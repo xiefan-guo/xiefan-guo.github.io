@@ -1,0 +1,288 @@
+{
+  "checked_on": "2026-10-31",
+  "entry_count": 27,
+  "note": "Selected verified evidence connections, not an exhaustive benchmark assignment or reproduced leaderboard.",
+  "entries": [
+    {
+      "method": "CoSTA* / FaSTA*",
+      "benchmarks": [
+        "CoSTA* author benchmark"
+      ],
+      "evidence": "FaSTA* §5.1 uses 121 image-prompt pairs with 550 operations and human subtask scoring; Appendix A MagicBrush evidence is qualitative.",
+      "source_url": "https://arxiv.org/html/2506.20911v1",
+      "caveat": "Do not label this the standard MagicBrush quantitative score."
+    },
+    {
+      "method": "AgenticIR",
+      "benchmarks": [
+        "MiO100-derived mixed-degradation suite"
+      ],
+      "evidence": "§4 constructs 16 degradation combinations and separates exploration images from testing; evaluates fidelity and no-reference quality.",
+      "source_url": "https://arxiv.org/html/2410.17809",
+      "caveat": "A constructed restoration test, not a general instruction-editing benchmark."
+    },
+    {
+      "method": "IMAGAgent",
+      "benchmarks": [
+        "MTEditBench",
+        "MagicBrush"
+      ],
+      "evidence": "Abstract and §IV explicitly identify both datasets.",
+      "source_url": "https://arxiv.org/html/2603.29602",
+      "caveat": "Record single/multi-turn settings and judge configuration when using scores."
+    },
+    {
+      "method": "EditThinker",
+      "benchmarks": [
+        "ImgEdit-Bench",
+        "GEdit-Bench",
+        "RISE-Bench",
+        "KRIS-Bench"
+      ],
+      "evidence": "Official README performance section names all four.",
+      "source_url": "https://github.com/appletea233/EditThinker",
+      "caveat": "Distinct editing backbones and thinker variants should not be collapsed."
+    },
+    {
+      "method": "VisionDirector",
+      "benchmarks": [
+        "LGBench",
+        "GenEval",
+        "ImgEdit-Bench"
+      ],
+      "evidence": "Abstract introduces LGBench and identifies GenEval and ImgEdit results.",
+      "source_url": "https://arxiv.org/abs/2512.19243",
+      "caveat": "Training-free supervisor and GRPO-trained planner are separate configurations."
+    },
+    {
+      "method": "Agent Banana",
+      "benchmarks": [
+        "HDD-Bench"
+      ],
+      "evidence": "Abstract establishes native high-definition dialogue evaluation and stepwise targets.",
+      "source_url": "https://arxiv.org/abs/2602.09084",
+      "caveat": "Native-resolution consistency is distinct from resized image quality."
+    },
+    {
+      "method": "RISE-Agent",
+      "benchmarks": [
+        "RISEBench++",
+        "KRIS-Bench"
+      ],
+      "evidence": "Main experiments and Appendix B report these respective evaluations.",
+      "source_url": "https://arxiv.org/html/2610.12343",
+      "caveat": "Declarative programs and generative tool calls coexist; disclose tool access and replanning budgets."
+    },
+    {
+      "method": "EditAgent",
+      "benchmarks": [
+        "EdiVal-Bench",
+        "Complex-Edit",
+        "ComplexBench-Edit"
+      ],
+      "evidence": "§5.1 names three benchmarks; Appendix G describes modified or reimplemented agent baselines.",
+      "source_url": "https://arxiv.org/html/2610.39664v1",
+      "caveat": "Avoid claiming universal superiority based on modified baseline configurations or changed judges."
+    },
+    {
+      "method": "JarvisIR",
+      "benchmarks": [
+        "CleanBench"
+      ],
+      "evidence": "Primary abstract identifies synthetic and real subsets with downstream perception evaluation.",
+      "source_url": "https://arxiv.org/abs/2504.04158",
+      "caveat": "Driving-perception restoration has a different objective from creative editing."
+    },
+    {
+      "method": "Iterative Refinement",
+      "benchmarks": [
+        "ConceptMix",
+        "T2I-CompBench",
+        "Visual Jenga"
+      ],
+      "evidence": "Abstract identifies compositional generation and scene decomposition compared with compute-matched parallel sampling.",
+      "source_url": "https://arxiv.org/abs/2601.15286",
+      "caveat": "Specify the measured categories; not all figures represent the entire benchmark."
+    },
+    {
+      "method": "MIRA",
+      "benchmarks": [
+        "MagicBrush-derived and CompBench-subset author test"
+      ],
+      "evidence": "§5.1 uses a combined 500-sample test, not either full benchmark, with standardized images and restricted instruction lengths.",
+      "source_url": "https://arxiv.org/html/2511.21087",
+      "caveat": "Do not report as the complete standard MagicBrush or CompBench protocol."
+    },
+    {
+      "method": "IntentEdit",
+      "benchmarks": [
+        "RISE-Bench",
+        "RISE-MIX Bench"
+      ],
+      "evidence": "Official proceedings abstract explicitly identifies both benchmarks.",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_IntentEdit_Multi-Agent_Reasoning_for_Intent-Driven_Complex_Image_Editing_CVPRF_2026_paper.html",
+      "caveat": "Do not substitute the later RISEBench++ protocol."
+    },
+    {
+      "method": "AgentDrawBench",
+      "record_id": "root-agentdraw",
+      "benchmarks": [
+        "AgentDrawBench"
+      ],
+      "evidence": "Paper §§3–5: 200-prompt AgentDrawBench; structural checklists, perceptual criteria and pairwise preference.",
+      "source_url": "https://arxiv.org/html/2610.19025v1",
+      "caveat": "Zero-shot permits multiple execution turns. Structural fidelity and perceptual quality differ; GUI is a comparison, not coding."
+    },
+    {
+      "method": "MaLiang-Harness",
+      "record_id": "root-maliang",
+      "benchmarks": [
+        "MaLiang-IBench"
+      ],
+      "evidence": "Introduces MaLiang-IBench and MaLiang-VBench; reports delivery, quality and cost.",
+      "source_url": "https://arxiv.org/html/2609.34309v1",
+      "caveat": "Only its image track is surveyed here; runnable output is distinct from satisfying visual requirements."
+    },
+    {
+      "method": "AutoRef",
+      "record_id": "root-autoref",
+      "benchmarks": [
+        "MultiBanana"
+      ],
+      "evidence": "Primary abstract separates proposal-feedback and candidate-selection tasks, then tests held-out MultiBanana tasks.",
+      "source_url": "https://arxiv.org/abs/2609.35530",
+      "caveat": "Cross-task harness search is distinct from revising one image; prevent selection/test leakage."
+    },
+    {
+      "method": "VIGA",
+      "record_id": "root-viga",
+      "benchmarks": [
+        "BlenderGym",
+        "SlideBench",
+        "BlenderBench"
+      ],
+      "evidence": "Primary abstract reports BlenderGym, SlideBench and introduced BlenderBench.",
+      "source_url": "https://arxiv.org/abs/2601.11109",
+      "caveat": "Only image/document reconstruction and the render-inspect mechanism are in scope."
+    },
+    {
+      "method": "LEGO-Anything",
+      "record_id": "root-lego",
+      "benchmarks": [
+        "LEGO-Bench"
+      ],
+      "evidence": "LEGO-Bench separates artifact validity, visible geometry and appearance.",
+      "source_url": "https://arxiv.org/abs/2609.36380",
+      "caveat": "Single-view reconstruction cannot establish correctness of hidden geometry; broader vision readouts are contextual."
+    },
+    {
+      "method": "ComfyBench / ComfyAgent",
+      "record_id": "gen-comfyagent",
+      "benchmarks": [
+        "ComfyBench"
+      ],
+      "evidence": "Primary abstract gives benchmark and agent together and separates workflow design from task resolution.",
+      "source_url": "https://arxiv.org/abs/2409.01392",
+      "caveat": "ComfyBench includes modalities beyond images; use its image-relevant tasks and do not interpret execution success as instruction satisfaction."
+    },
+    {
+      "method": "ComfyMind",
+      "record_id": "gen-comfymind",
+      "benchmarks": [
+        "ComfyBench",
+        "GenEval",
+        "Reason-Edit"
+      ],
+      "evidence": "Primary abstract identifies the module interface, hierarchical planning and evaluation on three public benchmarks.",
+      "source_url": "https://arxiv.org/abs/2505.17908",
+      "caveat": "General-purpose generation spans multiple tasks; the graph/module interface is more constrained than arbitrary source-code synthesis."
+    },
+    {
+      "method": "GenClaw",
+      "record_id": "gen-genclaw",
+      "benchmarks": [
+        "GenEval++",
+        "LongText-Bench",
+        "ImgEdit",
+        "Mind-Bench"
+      ],
+      "evidence": "Full-text §§3–4 identifies code backends and task-specific evaluations; physical-simulation examples are qualitative.",
+      "source_url": "https://arxiv.org/abs/2605.30248",
+      "caveat": "A correct draft does not guarantee neural final pixels preserve every relation; report generator and agent backbone separately."
+    },
+    {
+      "method": "COMFYCLAW",
+      "record_id": "gen-comfyclaw",
+      "benchmarks": [
+        "GenEval2",
+        "DPG-Bench",
+        "OneIG-EN",
+        "OneIG-ZH"
+      ],
+      "evidence": "Full-text §4 and appendices evaluate graph/workflow agents on compositional and multilingual prompt suites.",
+      "source_url": "https://arxiv.org/abs/2607.01709",
+      "caveat": "The paper uses a particular VLM judge implementation; prompt and sampler edits dominate many runs, so graph-editing availability is not identical to frequent structural edits."
+    },
+    {
+      "method": "MatPlotAgent",
+      "record_id": "code-matplotagent",
+      "benchmarks": [
+        "MatPlotBench"
+      ],
+      "evidence": "Primary abstract verifies these three modules and MatPlotBench.",
+      "source_url": "https://arxiv.org/abs/2402.11453",
+      "caveat": "Model-based visual ratings do not by themselves guarantee correct data transformation."
+    },
+    {
+      "method": "Paper2Poster / PosterAgent",
+      "record_id": "code-paper2poster",
+      "benchmarks": [
+        "Paper2Poster",
+        "PaperQuiz"
+      ],
+      "evidence": "Primary abstract verifies Parser, Planner and Painter–Commenter loop plus editable PPTX output.",
+      "source_url": "https://arxiv.org/abs/2505.21497",
+      "caveat": "Its PosterAgent is distinct from Yu et al. 2026 PosterAgent trained with SARL."
+    },
+    {
+      "method": "DrawAI / DrawAI-Flow",
+      "record_id": "code-drawai",
+      "benchmarks": [
+        "DrawAI-Bench"
+      ],
+      "evidence": "Primary abstract verifies the two agents and separate fidelity/editability evaluation across several artifact types.",
+      "source_url": "https://arxiv.org/abs/2608.00548",
+      "caveat": "Visual reconstruction and usable editability must be evaluated separately; they can trade off."
+    },
+    {
+      "method": "AutoFigure",
+      "record_id": "code-autofigure",
+      "benchmarks": [
+        "FigureBench"
+      ],
+      "evidence": "Primary full text sections 4 and Appendix M specify the code layout, critique/refinement and aesthetic-rendering stages.",
+      "source_url": "https://arxiv.org/html/2602.03828v1",
+      "caveat": "The original system does not make every synthesized icon editable; AutoFigure-Edit is a distinct extension."
+    },
+    {
+      "method": "PosterMELD",
+      "record_id": "code-postermeld",
+      "benchmarks": [
+        "PosterMELD evaluation protocol"
+      ],
+      "evidence": "Primary abstract separates request-level print-ready rate, native editability, and aesthetic scores conditioned on successful outputs; official repository confirms rendering and review stages.",
+      "source_url": "https://github.com/Shannon4Science/PosterMELD/blob/main/poster_generation/README.md",
+      "caveat": "Print-ready rate is defined by the paper-specific checks; conditional aesthetics must not conceal failed requests or establish universal production readiness."
+    },
+    {
+      "method": "Editable Visual Design",
+      "record_id": "gen-editable",
+      "benchmarks": [
+        "Qualitative case studies; no named quantitative benchmark verified"
+      ],
+      "evidence": "Full-text §2 describes DOM layers and real text; §3 supplies comparative cases, showcases and replay trajectories.",
+      "source_url": "https://arxiv.org/abs/2609.04034",
+      "caveat": "Evidence is qualitative case study/showcase; there is no named quantitative benchmark in §3. Do not assert universal production-grade success."
+    }
+  ]
+}

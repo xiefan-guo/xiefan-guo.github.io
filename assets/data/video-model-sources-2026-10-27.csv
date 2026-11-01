@@ -1,0 +1,196 @@
+section,resource_type,year,title,url,reviewed_on
+Leaderboards and evaluation,Leaderboard,2026,Artificial Analysis: Text-to-video,https://artificialanalysis.ai/video/leaderboard/text-to-video,2026-10-27
+Leaderboards and evaluation,Leaderboard,2026,Artificial Analysis: Image-to-video,https://artificialanalysis.ai/video/leaderboard/image-to-video,2026-10-27
+Leaderboards and evaluation,Leaderboard,2026,Artificial Analysis: Video editing,https://artificialanalysis.ai/video/leaderboard/video-editing,2026-10-27
+Leaderboards and evaluation,Methodology,2026,Artificial Analysis: Video benchmarking methodology,https://artificialanalysis.ai/methodology/video,2026-10-27
+Leaderboards and evaluation,Leaderboard,2026,Arena: Text-to-video,https://arena.ai/leaderboard/video/text-to-video,2026-10-27
+Leaderboards and evaluation,Leaderboard,2026,Arena: Image-to-video,https://arena.ai/leaderboard/video/image-to-video,2026-10-27
+Leaderboards and evaluation,Leaderboard,2026,Arena: Video editing,https://arena.ai/leaderboard/video/video-edit,2026-10-27
+Leaderboards and evaluation,Benchmark · code,2024,"VBench: Evaluation code, prompts, and results",https://github.com/Vchitect/VBench,2026-10-27
+Leaderboards and evaluation,Benchmark · code,2025,VBench 2.0: Intrinsic faithfulness evaluation,https://github.com/Vchitect/VBench/blob/master/VBench-2.0/README.md,2026-10-27
+Leaderboards and evaluation,Research paper,2023,VBench: Comprehensive Benchmark Suite for Video Generative Models,https://arxiv.org/abs/2311.17982,2026-10-27
+Leaderboards and evaluation,Research paper,2025,VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness,https://arxiv.org/abs/2503.21755,2026-10-27
+OpenAI: Sora,Model documentation,2026,Sora 2 model reference and shutdown notice,https://developers.openai.com/api/docs/models/sora-2,2026-10-27
+OpenAI: Sora,Historical API guide,2026,Video generation with Sora,https://developers.openai.com/api/docs/guides/video-generation,2026-10-27
+OpenAI: Sora,Prompting guide,2026,Sora 2 prompting guide,https://developers.openai.com/cookbook/examples/sora/sora2_prompting_guide,2026-10-27
+OpenAI: Sora,Lifecycle,2026,API deprecations: Sora 2 and Videos API,https://developers.openai.com/api/docs/deprecations,2026-10-27
+OpenAI: Sora,Technical report,2024,Video generation models as world simulators,https://openai.com/index/video-generation-models-as-world-simulators/,2026-10-27
+OpenAI: Sora,Release blog,2025,Sora 2 release and product-discontinuation notice,https://openai.com/index/sora-2/,2026-10-27
+OpenAI: Sora,System card,2025,Sora 2 System Card,https://openai.com/index/sora-2-system-card/,2026-10-27
+Google: Veo and Gemini Omni,Paper,2022,Imagen Video: high definition video generation with diffusion models,https://arxiv.org/abs/2210.02303,2026-10-27
+Google: Veo and Gemini Omni,Paper,2024,Lumiere: a Space-Time diffusion model for video generation,https://arxiv.org/abs/2401.12945,2026-10-27
+Google: Veo and Gemini Omni,Technical report,2025,Veo: a text-to-video generation system (Veo 3),https://storage.googleapis.com/deepmind-media/veo/Veo-3-Tech-Report.pdf,2026-10-27
+Google: Veo and Gemini Omni,Model overview,2026,Veo 3.1: model overview and demonstrations,https://deepmind.google/models/veo/,2026-10-27
+Google: Veo and Gemini Omni,Docs / lifecycle,2026,Veo 3.1 API guide and preview shutdown notice,https://ai.google.dev/gemini-api/docs/veo,2026-10-27
+Google: Veo and Gemini Omni,Model card,2026,Gemini Omni Flash and 1.1 Flash model card,https://deepmind.google/models/model-cards/gemini-omni-flash/,2026-10-27
+Google: Veo and Gemini Omni,Blog,2026,Build with Gemini Omni 1.1 Flash,https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/,2026-10-27
+Google: Veo and Gemini Omni,API docs,2026,Gemini Omni Flash: API model reference,https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash,2026-10-27
+ByteDance: Seedance,Report,2025,Seedance 1.0: Exploring the boundaries of video generation models,https://arxiv.org/abs/2506.09113,2026-10-27
+ByteDance: Seedance,Report,2025,Seedance 1.5 Pro: A native audio-visual joint generation foundation model,https://arxiv.org/abs/2512.13507,2026-10-27
+ByteDance: Seedance,Report,2026,Seedance 2.0: Advancing video generation for world complexity,https://arxiv.org/abs/2604.14148,2026-10-27
+ByteDance: Seedance,Release blog,2026,Introducing Seedance 2.5,https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5,2026-10-27
+ByteDance: Seedance,Model page,2026,Seedance 2.5 model overview,https://seed.bytedance.com/en/seedance2_5,2026-10-27
+ByteDance: Seedance,Provider API guide,2026,Seedance 2.5 API on Runway Dev,https://dev.runwayml.com/learn/seedance-2-5-api,2026-10-27
+Kuaishou: Kling,Docs,2026,Kling VIDEO 3.0 user guide,https://kling.ai/quickstart/klingai-video-3-model-user-guide,2026-10-27
+Kuaishou: Kling,Docs,2026,Kling VIDEO 3.0 Omni user guide,https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide,2026-10-27
+Kuaishou: Kling,Release blog,2026,Introducing Kling 4.0,https://kling.ai/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling,2026-10-27
+Kuaishou: Kling,Docs,2026,Kling 4.0 user guide,https://kling.ai/quickstart/kling-4-model-user-guide,2026-10-27
+Tencent: HunyuanVideo,Report,2024,HunyuanVideo: A Systematic Framework for Large Video Generative Models,https://arxiv.org/abs/2412.03603,2026-10-27
+Tencent: HunyuanVideo,Code,2026,HunyuanVideo: official code and release history,https://github.com/Tencent-Hunyuan/HunyuanVideo,2026-10-27
+Tencent: HunyuanVideo,Report,2025,HunyuanVideo 1.5 Technical Report,https://arxiv.org/abs/2511.18870,2026-10-27
+Tencent: HunyuanVideo,Code · release notes,2026,"HunyuanVideo 1.5: inference, training, and checkpoint guide",https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5,2026-10-27
+Tencent: HunyuanVideo,Weights · model card,2026,HunyuanVideo 1.5: model card and weights,https://huggingface.co/tencent/HunyuanVideo-1.5,2026-10-27
+Tencent: HunyuanVideo,Report,2025,HunyuanVideo-Avatar: audio-driven animation report,https://arxiv.org/abs/2505.20156,2026-10-27
+Tencent: HunyuanVideo,Code · weights,2026,HunyuanVideo-Avatar: official implementation,https://github.com/Tencent-Hunyuan/HunyuanVideo-Avatar,2026-10-27
+Alibaba: Wan,Report,2025,Wan: Open and Advanced Large-Scale Video Generative Models,https://arxiv.org/abs/2503.20314,2026-10-27
+Alibaba: Wan,Code · weights,2026,Wan 2.1: official implementation and weights,https://github.com/Wan-Video/Wan2.1,2026-10-27
+Alibaba: Wan,Code · weights,2026,"Wan 2.2: T2V, I2V, TI2V, S2V, and Animate",https://github.com/Wan-Video/Wan2.2,2026-10-27
+Alibaba: Wan,Weights · model card,2026,Wan 2.2 TI2V-5B: model card,https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B,2026-10-27
+Alibaba: Wan,Docs,2026,Wan hosted video-generation model overview,https://www.alibabacloud.com/help/en/model-studio/video-generate-edit-model/,2026-10-27
+Alibaba: Wan,API docs,2026,Wan 2.7 text-to-video API reference,https://www.alibabacloud.com/help/en/model-studio/text-to-video-api-reference,2026-10-27
+Alibaba: Wan,Release announcement,2026,Wan 3.0 officially launched,https://www.alibabacloud.com/en/news/product/video-generation-model-wan30-officially-launched-nsb?_p_lc=1,2026-10-27
+Alibaba: Wan,API docs,2026,"Wan 3.0 generation, editing, and extension guide",https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-guide,2026-10-27
+Alibaba: Wan,Docs,2026,Wan 3.0 prompt guide and task boundaries,https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-prompt-guide,2026-10-27
+Alibaba ATH: HappyHorse,Announcement,2026,Alibaba's 2026 model releases: HappyHorse and ATH,https://www.alibabacloud.com/en/press-room/alibaba-positions-for-accelerated-ai-growth-in-sec?_p_lc=1,2026-10-27
+Alibaba ATH: HappyHorse,Model docs,2026,Model Studio: video-generation and editing catalog,https://www.alibabacloud.com/help/en/model-studio/video-generate-edit-model/,2026-10-27
+Alibaba ATH: HappyHorse,API docs,2026,HappyHorse text-to-video API reference,https://www.alibabacloud.com/help/en/model-studio/happyhorse-text-to-video-api-reference,2026-10-27
+Alibaba ATH: HappyHorse,Model docs,2026,HappyHorse 1.1 T2V: model and service capabilities,https://www.alibabacloud.com/help/en/model-studio/happyhorse-1-1-t2v,2026-10-27
+Alibaba ATH: HappyHorse,Model docs,2026,HappyHorse 1.1 I2V: model and service capabilities,https://www.alibabacloud.com/help/en/model-studio/happyhorse-1-1-i2v,2026-10-27
+MiniMax: Hailuo and H3,Release blog,2025,MiniMax Hailuo 2.3 release,https://www.minimax.io/news/minimax-hailuo-23,2026-10-27
+MiniMax: Hailuo and H3,Technical blog,2026,Introducing MiniMax H3,https://www.minimax.io/blog/minimax-h3,2026-10-27
+MiniMax: Hailuo and H3,Code · technical overview,2026,MiniMax H3 repository and system overview,https://github.com/MiniMax-AI/MiniMax-H3,2026-10-27
+MiniMax: Hailuo and H3,Weights · model card,2026,MiniMax H3 model card and weights,https://huggingface.co/MiniMaxAI/MiniMax-H3,2026-10-27
+MiniMax: Hailuo and H3,API docs,2026,MiniMax API model directory,https://platform.minimax.io/docs/guides/models-intro,2026-10-27
+MiniMax: Hailuo and H3,Derived-model technical blog,2026,Introducing H3 Max by fal,https://fal.ai/learn/devs/introducing-h3-max-by-fal,2026-10-27
+ShengShu: Vidu,API docs,2026,Vidu Q3 text-to-video API,https://platform.vidu.com/docs/api-reference/video-models/vidu-q3/text-to-video,2026-10-27
+ShengShu: Vidu,API docs,2026,Vidu Q4 Preview image-to-video API,https://platform.vidu.com/docs/api-reference/video-models/vidu-q4-preview/image-to-video,2026-10-27
+ShengShu: Vidu,API docs,2026,Vidu Q4 Preview reference-to-video API,https://platform.vidu.com/docs/api-reference/video-models/vidu-q4-preview/reference-to-video,2026-10-27
+ShengShu: Vidu,Release notes,2026,Vidu API release history,https://platform.vidu.com/docs/api-reference/updates,2026-10-27
+ShengShu: Vidu,Technical paper,2026,"Vidu S2: Real-Time Interactive, Editable, and Spatial Video Generation",https://arxiv.org/abs/2609.11638,2026-10-27
+ShengShu: Vidu,Issuer-authored release,2026,Shengshu Technology Launches Vidu Q4 Preview,https://www.globenewswire.com/news-release/2026/10/07/3376813/0/en/Shengshu-Technology-Launches-Vidu-Q4-Preview-A-Next-Generation-AI-Video-Model-Built-for-Lifelike-Performances.html,2026-10-27
+ShengShu: Vidu,Official project page,2026,Vidu S2 official research/demo page,https://go.vidu.com/vidu-stream,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Docs,2026,Gen-4 and Gen-4 Turbo: model inputs and usage,https://help.runwayml.com/hc/en-us/articles/37327109429011-Creating-with-Gen-4-Video,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Research blog,2025,Introducing Runway Gen-4.5,https://runway.com/research/introducing-runway-gen-4.5,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Docs,2026,Creating with Gen-4.5,https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Docs,2026,Creating with Edit Studio: Aleph 2.0,https://help.runwayml.com/hc/en-us/articles/51683104370451-Creating-with-Edit-Studio,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Release notes,2026,Runway API changelog: Aleph 2.0 and output formats,https://docs.dev.runwayml.com/api-details/api_changelog/,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",Docs,2026,Performance capture with Act-Two,https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two,2026-10-27
+"Runway: Gen-4, Gen-4.5, Aleph, and Act-Two",API docs,2026,Runway API: model catalog and provider attribution,https://docs.dev.runwayml.com/guides/models/,2026-10-27
+Luma: Ray,Living model overview,2026,Ray3: model family and capabilities,https://lumalabs.ai/ray3,2026-10-27
+Luma: Ray,Blog,2026,Introducing Ray3.2 and its API,https://lumalabs.ai/news/introducing-ray-3-2,2026-10-27
+Luma: Ray,API docs,2026,Luma Agents: Ray3.2 model reference,https://docs.agents.lumalabs.ai/guides/model/,2026-10-27
+Luma: Ray,Migration guide,2026,Migrate legacy Ray models,https://docs.agents.lumalabs.ai/guides/videos/migration/,2026-10-27
+Luma: Ray,Training disclosure,2026,Public summary of training content: Ray models,https://lumalabs.ai/legal/training-content-summary-ray,2026-10-27
+Black Forest Labs: FLUX 3 Video,Technical blog,2026,FLUX 3: Real World Models,https://bfl.ai/blog/flux-3,2026-10-27
+Black Forest Labs: FLUX 3 Video,Model documentation,2026,"FLUX 3 Video: inputs, output formats, and rollout boundaries",https://bfl.ai/models/flux-3-video,2026-10-27
+Black Forest Labs: FLUX 3 Video,Release blog,2026,Introducing FLUX 3 Max by fal,https://fal.ai/blog/introducing-flux-3-max-by-fal,2026-10-27
+fal: H3 Max and FLUX 3 Max,Release blog,2026,Introducing H3 Max by fal,https://blog.fal.ai/introducing-h3-max-by-fal/,2026-10-27
+fal: H3 Max and FLUX 3 Max,Engineering,2026,H3 Max: Built with fal Inference and Training,https://fal.ai/blog/h3-max-built-with-fal-inference-and-training,2026-10-27
+fal: H3 Max and FLUX 3 Max,Release blog,2026,Introducing FLUX 3 Max by fal,https://fal.ai/blog/introducing-flux-3-max-by-fal,2026-10-27
+fal: H3 Max and FLUX 3 Max,Model documentation,2026,FLUX 3 Max model and access,https://fal.ai/flux-3-max,2026-10-27
+xAI: Grok Imagine Video,Release blog,2026,Grok Imagine 1.5 Preview announcement,https://x.ai/news/grok-imagine-1-5,2026-10-27
+xAI: Grok Imagine Video,Release notes,2026,xAI API release notes,https://docs.x.ai/developers/release-notes,2026-10-27
+xAI: Grok Imagine Video,API docs,2026,Grok Imagine video capability matrix,https://docs.x.ai/developers/model-capabilities/video/overview,2026-10-27
+xAI: Grok Imagine Video,API docs,2026,Grok Imagine video editing,https://docs.x.ai/developers/model-capabilities/video/editing,2026-10-27
+PixVerse: V6 and R2,Release blog,2026,PixVerse V6 release,https://pixverse.ai/en/blog/pixverse-launches-v6-advancing-ai-video-generation,2026-10-27
+PixVerse: V6 and R2,Model page,2026,PixVerse V6 model capabilities,https://pixverse.ai/en/model/pixverse-v6,2026-10-27
+PixVerse: V6 and R2,Technical overview,2026,PixVerse R2 interactive world model,https://pixverse.ai/en/model/pixverse-r2,2026-10-27
+PixVerse: V6 and R2,Technical blog,2026,PixVerse R2: Scaling Real-Time Omni World Models,https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Paper,2024,LTX-Video: Realtime Video Latent Diffusion,https://arxiv.org/abs/2501.00103,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Report,2026,LTX-2: Efficient Joint Audio-Visual Foundation Model,https://arxiv.org/abs/2601.03233,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Code,2026,LTX-2: official inference and LoRA training code,https://github.com/Lightricks/LTX-2,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Technical docs,2026,LTX-2.5: open-source model overview,https://docs.ltx.io/open-source-model/getting-started/overview,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Model card · weights,2026,LTX-2.5: development and distilled weights,https://huggingface.co/Lightricks/LTX-2.5,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,API docs,2026,LTX-2.5 Fast and Pro API support matrix,https://docs.ltx.io/models/ltx-2-5,2026-10-27
+Lightricks / LTX: LTX-Video and LTX-2,Release notes · lifecycle,2026,LTX API changelog and retirement notices,https://docs.ltx.io/api-changelog,2026-10-27
+Sand.ai: MAGI,Report,2025,MAGI-1: Autoregressive Video Generation at Scale,https://arxiv.org/abs/2505.13211,2026-10-27
+Sand.ai: MAGI,Code · weights,2025,MAGI-1 official implementation and checkpoints,https://github.com/SandAI-org/MAGI-1,2026-10-27
+Sand.ai: MAGI,Technical blog,2026,MAGI-2 Preview,https://sand.ai/blog/magi-2-preview,2026-10-27
+Sand.ai: MAGI,Code · checkpoint guide,2026,MAGI-2 Preview: official inference implementation,https://github.com/SandAI-org/MAGI-2-preview,2026-10-27
+Sand.ai: MAGI,Weights · model card,2026,MAGI-2 Preview: model card and base weights,https://huggingface.co/sand-ai/MAGI-2-preview,2026-10-27
+Sand.ai: MAGI,Model page,2026,Sand.ai model overview,https://sand.ai/,2026-10-27
+NVIDIA: Cosmos,Report,2026,Cosmos 3: Omnimodal World Models for Physical AI,https://arxiv.org/abs/2606.02800,2026-10-27
+NVIDIA: Cosmos,Docs · weights,2026,Cosmos 3 model reference and checkpoint links,https://docs.nvidia.com/cosmos/latest/cosmos3/model_reference.html,2026-10-27
+NVIDIA: Cosmos,Documentation,2026,Cosmos 3 model matrix,https://docs.nvidia.com/cosmos/latest/cosmos3/model_matrix.html,2026-10-27
+NVIDIA: Cosmos,Code,2026,Cosmos official repository,https://github.com/nvidia/cosmos,2026-10-27
+Skywork: SkyReels,Code · weights,2025,SkyReels V2 repository,https://github.com/SkyworkAI/SkyReels-V2,2026-10-27
+Skywork: SkyReels,Code,2026,SkyReels V3 repository,https://github.com/SkyworkAI/SkyReels-V3,2026-10-27
+Skywork: SkyReels,Weights,2026,SkyReels V3 official model collection,https://huggingface.co/collections/Skywork/skyreels-v3,2026-10-27
+Skywork: SkyReels,Report,2026,"SkyReels V4: Multi-modal video-audio generation, inpainting and editing",https://arxiv.org/abs/2602.21818,2026-10-27
+Skywork: SkyReels,API overview,2026,SkyReels API platform,https://www.skyreels.ai/api-platform,2026-10-27
+Skywork: SkyReels,Technical paper,2025,SkyReels-V2: Infinite-length Film Generative Model,https://arxiv.org/abs/2504.13074,2026-10-27
+Skywork: SkyReels,Technical report,2026,SkyReels-V3 Technique Report,https://arxiv.org/abs/2601.17323,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Paper,2024,CogVideoX: Text-to-Video Diffusion Models with an Expert Transformer,https://arxiv.org/abs/2408.06072,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Code · release notes,2026,CogVideo and CogVideoX: official implementation,https://github.com/zai-org/CogVideo,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Model card · weights,2026,CogVideoX1.5-5B: text-to-video weights,https://huggingface.co/zai-org/CogVideoX1.5-5B,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Model card · weights,2026,CogVideoX1.5-5B-I2V: image-to-video weights,https://huggingface.co/zai-org/CogVideoX1.5-5B-I2V,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Weights · captioning model,2026,CogVideo: official model collection,https://huggingface.co/collections/zai-org/cogvideo,2026-10-27
+Z.ai / THUDM: CogVideo and CogVideoX,Paper,2022,CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers,https://arxiv.org/abs/2205.15868,2026-10-27
+StepFun: Step-Video,Report,2025,Step-Video-T2V Technical Report,https://arxiv.org/abs/2502.10248,2026-10-27
+StepFun: Step-Video,Code · benchmark,2026,Step-Video-T2V: implementation and evaluation,https://github.com/stepfun-ai/Step-Video-T2V,2026-10-27
+StepFun: Step-Video,Weights,2026,Step-Video-T2V: model card and weights,https://huggingface.co/stepfun-ai/stepvideo-t2v,2026-10-27
+StepFun: Step-Video,Report,2025,Step-Video-TI2V Technical Report,https://arxiv.org/abs/2503.11251,2026-10-27
+StepFun: Step-Video,Code · benchmark,2026,Step-Video-TI2V: implementation and evaluation,https://github.com/stepfun-ai/Step-Video-TI2V,2026-10-27
+StepFun: Step-Video,Weights,2026,Step-Video-TI2V: model card and weights,https://huggingface.co/stepfun-ai/stepvideo-ti2v,2026-10-27
+Meituan: LongCat-Video,Report,2025,LongCat-Video Technical Report,https://arxiv.org/abs/2510.22200,2026-10-27
+Meituan: LongCat-Video,Code · release notes,2026,"LongCat-Video: generation, continuation, and avatar code",https://github.com/meituan-longcat/LongCat-Video,2026-10-27
+Meituan: LongCat-Video,Weights,2026,LongCat-Video: base weights and model card,https://huggingface.co/meituan-longcat/LongCat-Video,2026-10-27
+Meituan: LongCat-Video,Report,2026,LongCat-Video-Avatar 1.5 Technical Report,https://arxiv.org/abs/2605.26486,2026-10-27
+Meituan: LongCat-Video,Model card · weights,2026,LongCat-Video-Avatar 1.5: weights and usage,https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.5,2026-10-27
+Adobe: Firefly Video,Blog,2025,Meet Firefly Video Model,https://blog.adobe.com/en/publish/2025/02/12/meet-firefly-video-model-ai-powered-creation-with-unparalleled-creative-control,2026-10-27
+Adobe: Firefly Video,Release blog,2025,Firefly Video general availability and generation controls,https://blog.adobe.com/en/publish/2025/04/24/adobe-firefly-next-evolution-creative-ai-is-here,2026-10-27
+Adobe: Firefly Video,Docs,2026,Generate videos using text prompts,https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/generate-videos-using-text-prompts.html,2026-10-27
+Adobe: Firefly Video,Official guide,2026,Adobe Firefly Video: prompting and controls guide,https://community.adobe.com/p/firefly-video-guide,2026-10-27
+Adobe: Firefly Video,Docs,2026,Generate videos using partner models,https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/generate-videos-using-non-adobe-models.html,2026-10-27
+Amazon: Nova Reel,Blog,2025,Nova Reel 1.1: up to two-minute multi-shot videos,https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/,2026-10-27
+Amazon: Nova Reel,Historical API docs,2026,Generating videos with Amazon Nova Reel,https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html,2026-10-27
+Amazon: Nova Reel,Service card,2026,Amazon Nova Reel AI service card,https://docs.aws.amazon.com/pdfs/ai/responsible-ai/nova-reel/nova-reel.pdf,2026-10-27
+Amazon: Nova Reel,Lifecycle notice,2026,Bedrock model lifecycle: Nova Reel 1.0 and 1.1 end of life,https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html,2026-10-27
+Amazon: Nova Reel,Announcement,2025,Nova 2 Omni preview: input and output modalities,https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-nova-2-omni-preview/,2026-10-27
+Pika: Pika 2.5 and editing tools,Model guide,2026,"Pika 2.5: inputs, duration, resolution, and silent output",https://create.pika.art/apps/pika-2-5,2026-10-27
+Pika: Pika 2.5 and editing tools,Guide,2026,Pikaframes: ordered-keyframe generation,https://create.pika.art/apps/pikaframes,2026-10-27
+Pika: Pika 2.5 and editing tools,Docs,2026,"Pika help center: apps, models, and editing workflows",https://pika.art/faq,2026-10-27
+Pika: Pika 2.5 and editing tools,API docs,2026,Pika API: native and third-party model catalog,https://dev.pika.art/,2026-10-27
+Pika: Pika 2.5 and editing tools,API docs,2026,Pika API task and model matrix,https://dev.pika.art/pricing,2026-10-27
+Pika: Pika 2.5 and editing tools,Technical / release blog,2026,Introducing Pika Soundtrack,https://pika.art/blog/pika-soundtrack,2026-10-27
+Pika: Pika 2.5 and editing tools,Release blog,2026,Welcome to the New Pika,https://pika.art/blog/welcome-to-the-new-pika,2026-10-27
+Midjourney: Video V1,Release blog,2025,Introducing our V1 Video Model,https://updates.midjourney.com/introducing-our-v1-video-model/,2026-10-27
+Midjourney: Video V1,Docs,2026,Midjourney Video: current usage and controls,https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video,2026-10-27
+Midjourney: Video V1,Release notes,2025,HD mode for video,https://updates.midjourney.com/hd-mode-for-video/,2026-10-27
+Midjourney: Video V1,Docs,2026,Midjourney image versions: distinct from Video V1,https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version,2026-10-27
+HeyGen: Video and avatar models,Model guide,2026,Introducing HeyGen Video,https://help.heygen.com/en/articles/17272995-introducing-heygen-video-generate-cinematic-clips-from-a-prompt,2026-10-27
+HeyGen: Video and avatar models,Release notes,2026,July 2026 product updates: long-form avatars and Video Agent,https://www.heygen.com/blog/heygen-july-2026-release,2026-10-27
+HeyGen: Video and avatar models,Technical report,2026,Avatar Real-time: Streaming Long-Form AI Video,https://www.heygen.com/research/avatar-inference-at-scale,2026-10-27
+Higgsfield: DoP and video tools,Docs,2026,Higgsfield DoP model and usage guide,https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-dop,2026-10-27
+Higgsfield: DoP and video tools,API catalog,2026,Higgsfield API model catalog,https://open.higgsfield.ai/explore,2026-10-27
+Higgsfield: DoP and video tools,Code · interface schemas,2026,Higgsfield official CLI model schemas,https://raw.githubusercontent.com/higgsfield-ai/cli/main/MODELS.md,2026-10-27
+Higgsfield: DoP and video tools,Versioned API endpoint,2026,Genjutsu Light Motion Transfer v1.0,https://open.higgsfield.ai/models/higgsfield/genjutsu-light/motion-transfer/v1.0/playground,2026-10-27
+Higgsfield: DoP and video tools,Versioned API endpoint,2026,Genjutsu Motion Transfer v1.0,https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/playground,2026-10-27
+Higgsfield: DoP and video tools,Official product guide,2026,How do I use Higgsfield Genjutsu?,https://higgsfield.ai/creator-hub/help-center/tools/how-do-i-use-genjutsu,2026-10-27
+Utopai Studios: Utopai X,Release blog,2026,Introducing the all-new PAI and Utopai X,https://www.utopaistudios.com/en/blog/introducing-the-all-new-pai-and-utopai-x,2026-10-27
+Utopai Studios: Utopai X,Model discussion,2026,Utopai X: A Video Model Built for Filmmaking,https://www.utopaistudios.com/en/blog/utopai-x-ai-video-model-filmmaking,2026-10-27
+Utopai Studios: Utopai X,Product documentation,2026,Utopai Studios FAQ,https://www.utopaistudios.com/en/faq,2026-10-27
+Sapiens AI: Agnes Video,API documentation,2026,Agnes Video 2.5,https://wiki.agnes-ai.com/en/docs/agnes-video-25,2026-10-27
+Sapiens AI: Agnes Video,Model reference,2026,Official Agnes AI model catalog,https://github.com/AgnesAI-Labs/skills/blob/main/agnes-ai-models/references/model_catalog.md,2026-10-27
+Creatify: Boreal and Aurora,Model page,2026,Boreal: post-trained text- and image-to-video,https://labs.creatify.ai/models/boreal,2026-10-27
+Creatify: Boreal and Aurora,Technical blog,2026,Introducing Boreal-H3: The Next Frontier in Video Is Post-Training,https://labs.creatify.ai/research/boreal-h3-technical-report,2026-10-27
+Creatify: Boreal and Aurora,Model documentation,2026,Aurora 2.0: photo- and audio-driven video,https://labs.creatify.ai/models/aurora-2,2026-10-27
+Video Rebirth: BACH,Release announcement,2026,BACH launch: company-issued announcement,https://www.prnewswire.com/news-releases/video-rebirth-launches-bach--an-ai-video-engine-turns-ideas-into-30-second-multi-shot-films-302765372.html,2026-10-27
+Video Rebirth: BACH,Official product overview,2026,Video Rebirth: BACH 1.0 Pro and enterprise capabilities,https://www.videorebirth.com/,2026-10-27
+Video Rebirth: BACH,Product,2026,BACH: official generation product,https://www.bach.art/,2026-10-27
+Vimoo: Vimoo 1.0,Report,2026,Vimoo 1.0 technical report,https://vimoo.ai/research,2026-10-27
+Vimoo: Vimoo 1.0,Model documentation,2026,Vimoo 1.0 model overview,https://vimoo.ai/vimoo-docs/models,2026-10-27
+Vimoo: Vimoo 1.0,API documentation,2026,Vimoo API documentation,https://vimoo.ai/vimoo-docs/api,2026-10-27
+Vimoo: Vimoo 1.0,Project page,2026,Vimoo release and artifact entry points,https://vimoo.ai/,2026-10-27
+Meta: Movie Gen,Research publication,2024,Movie Gen: A Cast of Media Foundation Models,https://ai.meta.com/research/publications/movie-gen-a-cast-of-media-foundation-models/,2026-10-27
+Meta: Movie Gen,Technical report,2024,Movie Gen: A Cast of Media Foundation Models — full paper,https://arxiv.org/abs/2410.13720,2026-10-27
+Stability AI: Stable Video Diffusion,Official research summary,2023,Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,https://stability.ai/research/stable-video-diffusion-scaling-latent-video-diffusion-models-to-large-datasets,2026-10-27
+Stability AI: Stable Video Diffusion,Model card · weights,2023,Stable Video Diffusion SVD-XT model card and weights,https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt,2026-10-27
+Stability AI: Stable Video Diffusion,Code,2023,Stability AI generative models,https://github.com/Stability-AI/generative-models,2026-10-27
+Stability AI: Stable Video Diffusion,Research paper,2023,Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets — full paper,https://arxiv.org/abs/2311.15127,2026-10-27
+Genmo: Mochi,Code · technical overview,2024,"Mochi official implementation, architecture, and fine-tuning",https://github.com/genmoai/mochi,2026-10-27
+Genmo: Mochi,Model card · weights,2024,Mochi 1 Preview,https://huggingface.co/genmo/mochi-1-preview,2026-10-27
+Genmo: Mochi,Original technical blog,2024,Mochi 1: A new SOTA in open text-to-video,https://www.genmo.ai/blog/mochi-1-a-new-sota-in-open-text-to-video,2026-10-27
+HPC-AI Tech: Open-Sora,Code · weights,2025,Open-Sora official repository and release branches,https://github.com/hpcaitech/Open-Sora,2026-10-27
+HPC-AI Tech: Open-Sora,Report,2025,Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k,https://arxiv.org/abs/2503.09642,2026-10-27
+HPC-AI Tech: Open-Sora,Report,2024,Open-Sora: Democratizing Efficient Video Production for All,https://arxiv.org/abs/2412.20404,2026-10-27

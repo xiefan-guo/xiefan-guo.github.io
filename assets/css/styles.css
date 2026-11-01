@@ -6,7 +6,7 @@
      · Two-column hero — left photo + side links, right intro
      · Content column offset to align under the intro
      · Body & headings → EB Garamond (hierarchy by size, not typeface)
-     · Cormorant Garamond → date / label small-caps accents only
+     · Cormorant Garamond → dates, labels and table headings
      · Link color → #191970 (midnight blue)
    Fonts are self-hosted (assets/fonts/) so the page never depends
    on any external font service being reachable.
@@ -28,10 +28,6 @@
   font-weight: 400; font-style: italic; font-display: block;
   src: url("../fonts/EBGaramond12-Italic.woff") format("woff");
 }
-/* Medium (500) is what `b, strong` asks for. Before it was registered, that
-   request had no 500 face to match and CSS font matching resolved it down to
-   Regular — bold text rendered identical to body copy. Real face, not a
-   synthesised one, so the cupped foot serifs stay intact. */
 @font-face {
   font-family: "EB Garamond";
   font-weight: 500; font-style: normal; font-display: block;
@@ -52,10 +48,7 @@
   font-weight: 600; font-style: italic; font-display: block;
   src: url("../fonts/EBGaramond12-SemiboldItalic.woff") format("woff");
 }
-/* 700/800 complete the specimen's 400–800 range. Nothing requests them today,
-   so the browser never downloads them — an unmatched @font-face costs no
-   bytes. They exist so any future `font-weight: bold` resolves to a drawn
-   face instead of a synthetic smear. */
+/* Full weight range is available for article emphasis. */
 @font-face {
   font-family: "EB Garamond";
   font-weight: 700; font-style: normal; font-display: block;
@@ -83,7 +76,6 @@
   --text: #1a1a1a;
   --muted: #2f2b28;
   --link: #191970;
-  --accent: #191970;
   --link-hover: #333399;
 
   --body-font: "EB Garamond", Georgia, Garamond, serif;
@@ -94,20 +86,15 @@
   --hero-gap: 70px;
   --content-width: 800px;
 
-  /* Type scale — tuned for EB Garamond, larger & tighter (specimen feel).
-     Names are historical; the comment on each line is the authoritative
-     list of what actually consumes it. */
+  /* Type scale; mobile overrides are in the responsive section. */
   --fs-h1: 33px;        /* .wordmark                                   */
   --fs-h2: 29px;        /* .section-title                              */
-  --fs-lead: 19px;      /* body default, .callout                      */
-  --fs-intro: 19.5px;   /* .intro p, .opp-list li, .opt-callout        */
-  --fs-paper: 19.5px;   /* .paper entries (title, authors, venue, link)*/
+  --fs-lead: 19px;      /* Body default                               */
+  --fs-intro: 19px;     /* Introduction                               */
+  --fs-paper: 19px;     /* Paper titles, authors and resource links    */
   --fs-body-lg: 19px;   /* .article-body — blog post body              */
-  --fs-body: 17px;      /* .side-links, .linkrow, .tbody, .paper .venue,
-                           .post-list-summary                          */
-  --fs-meta: 15.5px;    /* .nav, .tdate, .article-meta, .article-foot,
-                           .section-title .note, .more                 */
-  --fs-micro: 13.5px;   /* .callout-label, .opt-callout .tag           */
+  --fs-body: 17px;      /* .side-links, .tbody, .paper .venue           */
+  --fs-meta: 15.5px;    /* Dates, article metadata, notes and controls */
 }
 
 * { box-sizing: border-box; }
@@ -129,15 +116,7 @@ body {
   font-size: var(--fs-lead);
   line-height: 1.4;
   font-weight: 400;
-  /* Rendering matched to googlefonts.github.io/ebgaramond-specimen, which
-     serves the byte-identical EBGaramond12 woffs. It sets only grayscale
-     smoothing — no text-shadow, no text-rendering, no feature overrides.
-     EB Garamond 12's foot serifs are cupped by design (the `n` foot runs
-     y=-3 at the tips to y=+2 at the stem, ~5/1000 em). At 19px that arch is
-     sub-pixel, so it only ever surfaces as antialiasing at the baseline —
-     a blur-radius text-shadow spread it into a visible bowed edge, and
-     optimizeLegibility nudged the same pixels. Dropping both restores the
-     flat-looking baseline the specimen shows. */
+  /* Preserve the font's native shapes with grayscale antialiasing. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -205,7 +184,7 @@ b, strong { font-weight: 500; }
 }
 .hero-side { width: var(--hero-image); }
 .portrait {
-  width: var(--hero-image);
+  width: 98%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 28%;
@@ -222,10 +201,8 @@ b, strong { font-weight: 500; }
   gap: 3px;
 }
 .side-links a {
-  color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
   text-decoration-color: rgba(25, 25, 112, 0.5);
   white-space: nowrap;
 }
@@ -234,72 +211,14 @@ b, strong { font-weight: 500; }
 .intro { max-width: 680px; padding-top: 6px; }
 .intro p { margin: 0 0 16px; font-size: var(--fs-intro); font-weight: 400; }
 .intro p:last-child { margin-bottom: 0; }
-.intro .linkrow { margin-top: 26px; font-size: var(--fs-body); }
 
-/* Open-to-opportunities callout */
-.callout {
-  margin-top: 22px;
-  padding: 12px 16px 12px 17px;
-  border-left: 2px solid rgba(25, 25, 112, 0.34);
-  box-shadow: inset 0 0 0 1px rgba(25, 25, 112, 0.05);
-  font-size: var(--fs-lead);
-  font-weight: 400;
-  line-height: 1.5;
-}
-.callout-label {
-  font-variant: small-caps;
-  letter-spacing: 0.045em;
-  font-size: var(--fs-micro);
+/* Opportunity notice in the introduction. */
+.opportunity-label {
   color: red;
-  font-weight: 600;
-  margin-right: 4px;
+  font-size: 17px;
+  font-weight: 500;
+  font-variant: small-caps;
 }
-
-/* Open-to-opportunities list */
-.opp-list {
-  margin: 0;
-  padding-left: 1.15em;
-}
-.opp-list li {
-  font-size: var(--fs-intro);
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-.opp-list li:last-child { margin-bottom: 0; }
-.opp-list li::marker { color: var(--muted); }
-
-/* ===== TEMP: four Open-to-Opportunities style options (for comparison) ===== */
-.opt-callout {
-  margin-top: 24px;
-  padding: 7px 14px 7px 15px;
-  background: rgba(255, 255, 255, 0.32);
-  border-left: 2px solid rgba(25, 25, 112, 0.34);
-  box-shadow: inset 0 0 0 1px rgba(25, 25, 112, 0.05);
-  font-size: var(--fs-intro);
-  font-weight: 400;
-  line-height: 1.4;
-}
-.opt-callout .lbl {
-  font-variant: small-caps; letter-spacing: 0.045em;
-  font-size: var(--fs-micro); color: red; font-weight: 600; margin-right: 4px;
-}
-.opt-banner {
-  margin: 22px 0 0;
-  padding: 16px 20px;
-  background: rgba(25, 25, 112, 0.06);
-  border: 1px solid rgba(25, 25, 112, 0.18);
-  border-radius: 6px;
-}
-.opt-banner .head {
-  display: block;
-  font-family: var(--label-font);
-  font-variant: small-caps; letter-spacing: 0.05em;
-  font-size: 16px; font-weight: 600; color: red;
-  margin-bottom: 5px;
-}
-.opt-banner .body { font-size: var(--fs-intro); font-weight: 400; line-height: 1.5; }
-/* ===== END TEMP ===== */
 
 /* ---------- Content column: offset to align under intro ---------- */
 .content {
@@ -313,6 +232,7 @@ b, strong { font-weight: 500; }
    offset than home (which must clear the 258px portrait column). */
 .content.page {
   margin-left: 264px;
+  margin-top: 80px;
 }
 
 /* ---------- Section heading ---------- */
@@ -336,10 +256,23 @@ b, strong { font-weight: 500; }
   color: var(--muted);
   margin-left: 8px;
 }
-/* Larger page-level heading (Papers page), set apart from the list */
+/* Page-level headings, set apart from their lists. */
 .section-title.page-title {
   font-size: 36px;
   margin-bottom: 44px;
+}
+
+/* Shared date, label and table-heading typography. */
+.tdate,
+.paper .venue,
+.post-list-date,
+.article-meta,
+.article-body th,
+.activity-label {
+  font-family: var(--label-font);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--muted);
 }
 
 /* ---------- Timeline (date gutter + content) ---------- */
@@ -351,16 +284,11 @@ b, strong { font-weight: 500; }
   align-items: baseline;
 }
 .tdate {
-  font-family: var(--label-font);
   font-size: var(--fs-meta);
   line-height: 1.4;
-  color: var(--muted);
   white-space: nowrap;
-  font-weight: 600;
-  letter-spacing: 0.015em;
 }
 .tbody { min-width: 0; font-size: var(--fs-body); font-weight: 400; line-height: 1.4; }
-.tbody .sub { color: var(--muted); font-size: var(--fs-meta); }
 
 /* ---------- Papers page ---------- */
 .paper {
@@ -368,75 +296,139 @@ b, strong { font-weight: 500; }
   grid-template-columns: 104px minmax(0, 1fr);
   column-gap: 18px;
   align-items: start;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .paper .venue {
   padding-top: 4px;
-  font-family: var(--label-font);
   font-size: var(--fs-body);
   line-height: 1.3;
-  color: var(--muted);
   white-space: nowrap;
-  font-weight: 600;
-  letter-spacing: 0.015em;
   text-align: right;
   justify-self: end;
 }
 .paper-main { min-width: 0; display: grid; row-gap: 0; }
-.paper .ptitle {
+.paper .ptitle,
+.paper .authors,
+.paper .plink {
   font-size: var(--fs-paper);
   line-height: 1.3;
-  color: var(--link);
   font-weight: 400;
 }
-.paper .ptitle a { color: var(--link); text-decoration: none; }
-.paper .ptitle a:hover { color: var(--link-hover); opacity: 1; }
-.paper .authors { font-size: var(--fs-paper); line-height: 1.3; color: var(--text); font-weight: 400; }
-.paper .authors .me { font-weight: 600; }
-.paper .venue-full { font-size: var(--fs-paper); line-height: 1.3; color: var(--text); font-weight: 400; }
-.paper .venue-full em { font-style: italic; }
-.paper .plink { font-size: var(--fs-paper); line-height: 1.3; }
+.paper .ptitle { color: var(--link); }
+.paper .ptitle a,
 .paper .plink a { color: var(--link); text-decoration: none; }
+.paper .ptitle a:hover { color: var(--link-hover); opacity: 1; }
+.paper .authors { color: var(--text); }
+.paper .authors .me { font-weight: 600; }
 .paper .plink a:hover { text-decoration: underline; text-underline-offset: 2px; opacity: 1; }
 
 /* Small-caps method names in titles */
 .sc { font-variant: small-caps; }
 
-/* When a paper has no venue label, keep the main column aligned */
-.paper.no-venue { grid-template-columns: 78px minmax(0, 1fr); }
-
 /* ---------- Blog: table of contents (blog.html) ---------- */
-.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .post-list-item {
   display: grid;
-  grid-template-columns: 78px minmax(0, 1fr);
-  column-gap: 22px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 12px;
   align-items: baseline;
-  margin-bottom: 30px;
 }
 .post-list-date {
-  font-family: var(--label-font);
-  font-size: 15.5px;
-  font-weight: 600;
-  letter-spacing: 0.015em;
-  color: var(--muted);
+  font-size: var(--fs-body);
+  color: #69656a;
   white-space: nowrap;
 }
 .post-list-main { min-width: 0; }
 .post-list-title {
-  display: inline-block;
-  font-size: 21px;
-  line-height: 1.3;
+  font-size: var(--fs-paper);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
   color: var(--link);
   text-decoration: none;
 }
-.post-list-title:hover { color: var(--link-hover); opacity: 1; }
-.post-list-summary {
-  margin: 6px 0 0;
-  font-size: var(--fs-body);
-  font-weight: 400;
-  line-height: 1.5;
+.post-list-title:hover {
+  color: var(--link-hover);
+  opacity: 1;
+}
+
+/* Keep the heading and search in flow so narrow screens can wrap naturally. */
+.blog-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-bottom: 36px;
+}
+.blog-header .page-title { margin-bottom: 0; }
+.blog-index [hidden] { display: none !important; }
+.blog-controls { width: 200px; max-width: 100%; }
+.blog-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 4px 0;
   color: var(--muted);
+}
+.blog-search svg { width: 16px; height: 16px; flex: 0 0 16px; }
+.blog-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.blog-search input::placeholder { color: #69656a; opacity: 1; }
+.blog-search:focus-within { outline: 2px solid var(--link); outline-offset: 4px; }
+.blog-search input:focus { outline: none; }
+.blog-index :is(a, button):focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.blog-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.blog-pin {
+  margin-left: 8px;
+  color: #69656a;
+  font-family: var(--label-font);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  font-variant: small-caps;
+  white-space: nowrap;
+}
+.post-list-item:not([data-pinned="true"]) .blog-pin { display: none; }
+.blog-empty { margin: 20px 0 0; color: var(--muted); font-size: var(--fs-body); }
+.blog-empty button {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--link);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .post-list-item { grid-template-columns: 58px minmax(0, 1fr); column-gap: 10px; }
 }
 
 /* ---------- Blog: single article (posts/*.html) ---------- */
@@ -450,14 +442,24 @@ b, strong { font-weight: 500; }
   color: var(--text);
 }
 .article-meta {
-  font-family: var(--label-font);
   font-size: var(--fs-meta);
-  font-weight: 600;
-  letter-spacing: 0.015em;
-  color: var(--muted);
 }
 .article-body { font-size: var(--fs-body-lg); font-weight: 400; line-height: 1.35; }
 .article-body p { margin: 0 0 18px; }
+
+/* Chinese posts (<html lang="zh-CN">): EB Garamond has no CJK glyphs, so Latin
+   text keeps it and CJK falls through to a system serif; CJK also needs more
+   leading than Garamond's tight 1.35. */
+html:lang(zh-CN) body {
+  font-family: "EB Garamond", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif;
+}
+html:lang(zh-CN) .article-body { font-size: 18px; line-height: 1.8; text-align: justify; }
+html:lang(zh-CN) .article-body li { margin-bottom: 8px; }
+html:lang(zh-CN) .article-body table { line-height: 1.55; text-align: left; }
+/* CJK system serifs ship only Regular/Bold, so 500 would render as Regular;
+   and synthesised italic CJK reads poorly in headings. */
+html:lang(zh-CN) .article-body strong { font-weight: 600; }
+html:lang(zh-CN) .article-body h3 { font-style: normal; }
 
 /* MathJax — keep formulas in scale with the body text. mjx-container renders
    relative to the surrounding font-size, so these are body-relative; the
@@ -494,23 +496,241 @@ b, strong { font-weight: 500; }
   padding: 1px 5px;
   border-radius: 3px;
 }
+.article-body h3 {
+  font-size: 19.5px;
+  line-height: 1.25;
+  font-weight: 600;
+  font-style: italic;
+  margin: 24px 0 8px;
+  color: var(--text);
+}
+/* Reading-list tables: wide ones scroll inside their wrapper on narrow screens */
+.article-body .table-wrap { margin: 6px 0 22px; overflow-x: auto; }
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body);
+  line-height: 1.35;
+}
+.article-body th,
+.article-body td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 12px 6px 0;
+  border-bottom: 1px solid rgba(25, 25, 112, 0.12);
+}
+.article-body th {
+  border-bottom-color: rgba(25, 25, 112, 0.34);
+}
 .article-foot {
   margin-top: 40px;
   padding-top: 18px;
-  border-top: 1px solid var(--rule);
   font-size: var(--fs-meta);
 }
 
+/* A quiet, shared return control for long articles. */
+.back-to-top {
+  position: fixed;
+  right: calc(28px + env(safe-area-inset-right, 0px));
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(25, 25, 112, 0.18);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--link);
+  box-shadow: 0 3px 14px rgba(25, 25, 112, 0.08);
+  text-decoration: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 180ms ease, transform 180ms ease,
+    background-color 180ms ease, border-color 180ms ease, visibility 180ms;
+}
+.back-to-top svg { width: 21px; height: 21px; }
+@media (hover: hover) {
+  .back-to-top:hover {
+    opacity: 1;
+    background: #f5f5fa;
+    border-color: rgba(25, 25, 112, 0.4);
+    transform: translateY(-3px);
+  }
+}
+.back-to-top:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+.back-to-top.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .back-to-top { transition: none; }
+  .back-to-top:hover, .back-to-top.is-hidden { transform: none; }
+}
+@media print {
+  .back-to-top { display: none; }
+}
+
+/* Shared components for the long-form research surveys. */
+.article .article-body :is(h3, em, i, blockquote) { font-style: normal; }
+.article .article-body em { font-weight: 600; }
+.article .article-body { min-width: 0; }
+.article [id] { scroll-margin-top: 24px; }
+.article .article-note {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--muted);
+  border-left: 2px solid rgba(25, 25, 112, 0.25);
+  padding-left: 16px;
+}
+.article .article-toc {
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  background: rgba(25, 25, 112, 0.035);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+.article .article-toc ol { margin: 8px 0 0; padding-left: 1.3em; }
+.article .article-toc li { margin-bottom: 6px; }
+.article .article-toc a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+@media (min-width: 1081px) {
+  .article .article-layout {
+    display: grid;
+    grid-template-columns: 236px minmax(0, 1fr);
+    gap: 28px;
+    margin-left: -264px;
+  }
+  .article .article-toc {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scrollbar-color: transparent transparent;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.4;
+  }
+  .article .article-toc.is-scrolling {
+    scrollbar-color: auto;
+  }
+}
+.article .ir-diagram { margin: 24px 0; }
+.article .ir-pipeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.article .ir-pipeline > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(25, 25, 112, 0.22);
+}
+.article .ir-pipeline strong,
+.article .ir-pipeline span,
+.article .ir-pipeline small { display: block; }
+.article .ir-pipeline span { margin-top: 6px; font-size: var(--fs-body); }
+.article .ir-pipeline small { margin-top: 4px; color: var(--muted); font-size: var(--fs-meta); }
+.article figcaption,
+.article caption {
+  text-align: left;
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  color: var(--muted);
+}
+.article figcaption { margin-top: 10px; }
+.article caption { padding-bottom: 10px; }
+.article .table-wrap { overscroll-behavior-x: contain; }
+.article .table-wide { min-width: 540px; }
+.article .reference-group {
+  margin: 6px 0 12px;
+  padding: 0;
+  border: 0;
+  font-size: var(--fs-body);
+  line-height: 1.4;
+}
+.article .reference-group summary { cursor: pointer; color: var(--link); }
+.article .reference-group summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.article .reference-group ul { margin: 8px 0 0; }
+.article .reference-group ol { margin-top: 8px; }
+.article .reference-group li { margin-bottom: 4px; }
+.article .reference-group li:last-child { margin-bottom: 0; }
+.article .reference-id { color: var(--muted); white-space: nowrap; font-size: 0.88em; }
+:is(.image-survey, .video-survey, .reward-survey) .article-body .materials-label {
+  margin: 18px 0 6px;
+  font-size: calc(var(--fs-body) + 1px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+:is(.image-survey, .video-survey) .article-body code {
+  display: inline-block;
+  max-width: 100%;
+  font: inherit;
+  letter-spacing: inherit;
+  background: rgba(25, 25, 112, 0.05);
+  padding: 1px 5px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+/* Dense comparison tables and numbered citations in the reward-model survey. */
+.reward-survey .article-toc .toc-sublist {
+  list-style: none;
+  margin: 6px 0 8px;
+  padding-left: 12px;
+  font-size: var(--fs-meta);
+}
+.reward-survey .article-toc .toc-sublist li { margin-bottom: 3px; }
+.reward-survey .article-body h4 {
+  margin: 20px 0 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.reward-survey .method-scope {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+.reward-survey .citation {
+  margin-left: 2px;
+  font-size: 0.65em;
+  line-height: 0;
+  white-space: nowrap;
+}
+.reward-survey .table-wrap:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+.reward-survey .table-note { margin-bottom: 26px; }
+.reward-survey .method-matrix { min-width: 800px; }
+.reward-survey .reference-group ol { margin: 8px 0 0; }
+.reward-survey .reference-group [id]:target {
+  background: rgba(25, 25, 112, 0.06);
+}
+@media (max-width: 600px) {
+  .article .ir-pipeline { grid-template-columns: 1fr; gap: 8px; }
+}
+
 /* ---------- Professional activities ---------- */
-.activity-group p { margin: 0 0 12px; font-size: 17px; font-weight: 400; }
 .activity-label {
   display: block;
-  margin-bottom: 4px;
-  font-size: 15px;
-  line-height: 1.45;
+  margin: 0 0 4px;
+  font-family: var(--body-font);
+  font-size: 19px;
+  font-weight: 400;
   font-variant: small-caps;
-  letter-spacing: 0.05em;
-  color: var(--muted);
+  line-height: 1.3;
 }
 
 /* ---------- News "show earlier" toggle ---------- */
@@ -519,7 +739,7 @@ b, strong { font-weight: 500; }
   padding: 0;
   background: none;
   border: 0;
-  color: var(--accent);
+  color: var(--link);
   font: inherit;
   font-size: var(--fs-meta);
   cursor: pointer;
@@ -528,10 +748,12 @@ b, strong { font-weight: 500; }
 }
 .hidden { display: none; }
 
-/* ---------- Empty-page placeholder (Blog / Thoughts) ---------- */
-.placeholder { color: var(--muted); font-size: 17px; font-style: italic; }
-
 /* ---------- Responsive ---------- */
+@media (min-width: 781px) {
+  .hero-side { position: relative; left: 12px; }
+  .activity-group > p { font-size: 18px; }
+}
+
 @media (max-width: 1080px) {
   .wrap { padding: 40px 34px 84px; }
   .hero {
@@ -539,7 +761,7 @@ b, strong { font-weight: 500; }
     grid-template-columns: 222px minmax(0, 1fr);
     gap: 42px;
   }
-  .portrait, .hero-side { width: 222px; }
+  .hero-side { width: 222px; }
   .content { margin-left: calc(222px + 42px); max-width: none; }
   .content.page { margin-left: 0; }
 }
@@ -548,11 +770,15 @@ b, strong { font-weight: 500; }
   :root {
     --fs-h2: 25px;
     --fs-lead: 15.5px;
-    --fs-intro: 16.5px;
+    --fs-intro: 16px;
+    --fs-paper: 16px;
     --fs-body: 14.8px;
     --fs-meta: 13.75px;
-    /* Note: --fs-body-lg and --fs-paper are intentionally not scaled down
-       here, so blog body text and paper entries keep their desktop size. */
+    /* Blog body text keeps its desktop size via --fs-body-lg. */
+  }
+  .back-to-top {
+    right: calc(18px + env(safe-area-inset-right, 0px));
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   }
   body { line-height: 1.5; }
   .wrap { padding: 30px 20px 60px; }
@@ -563,7 +789,7 @@ b, strong { font-weight: 500; }
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .portrait, .hero-side { width: min(244px, 100%); }
+  .hero-side { width: min(244px, 100%); }
   .intro { max-width: none; padding-top: 0; }
   .content { margin-left: 0; margin-top: 50px; }
   .section { margin-top: 50px; }

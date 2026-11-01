@@ -1,0 +1,112 @@
+{
+  "title": "Verified backward-citation audit for the coding-video survey",
+  "reviewed_on": "2026-10-30",
+  "scope": "Selected primary-source backward citations within the current LLM video-agent scope; not an exhaustive graph.",
+  "edge_count": 9,
+  "records": [
+    {
+      "citing_title": "WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment",
+      "citing_url": "https://arxiv.org/html/2402.12275",
+      "cited_title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+      "cited_url": "https://doi.org/10.1145/3571249",
+      "evidence_url": "https://arxiv.org/html/2402.12275",
+      "locator": "§4, Programs as world models; reference [13]",
+      "note": "Explicitly identified as program-world-model predecessors.",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C021",
+      "citing_alias": "WorldCoder"
+    },
+    {
+      "citing_title": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "citing_url": "https://arxiv.org/html/2405.15383",
+      "cited_title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+      "cited_url": "https://doi.org/10.1145/3571249",
+      "evidence_url": "https://arxiv.org/html/2405.15383",
+      "locator": "§2, World models with code; Das et al. (2021)",
+      "note": "Earlier/final titles or years are consolidated in the catalog.",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C031",
+      "citing_alias": "GIF-MCTS / Code World Models"
+    },
+    {
+      "citing_title": "Synthesizing world models for bilevel planning",
+      "citing_url": "https://arxiv.org/html/2503.20124",
+      "cited_title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+      "cited_url": "https://doi.org/10.1145/3571249",
+      "evidence_url": "https://arxiv.org/html/2503.20124",
+      "locator": "§2.2.2, Das et al. (2023)",
+      "note": "",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C035",
+      "citing_alias": "TheoryCoder"
+    },
+    {
+      "citing_title": "PoE-World: Compositional World Modeling with Products of Programmatic Experts",
+      "citing_url": "https://arxiv.org/html/2505.10819",
+      "cited_title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+      "cited_url": "https://doi.org/10.1145/3571249",
+      "evidence_url": "https://arxiv.org/html/2505.10819",
+      "locator": "§5, Related Work; reference [38]",
+      "note": "",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C043",
+      "citing_alias": "PoE-World"
+    },
+    {
+      "citing_title": "Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback",
+      "citing_url": "https://arxiv.org/html/2512.22336",
+      "cited_title": "ByteSized32: A Corpus and Challenge Task for Generating Task-Specific World Models Expressed as Text Games",
+      "cited_url": "https://aclanthology.org/2023.emnlp-main.830/",
+      "evidence_url": "https://arxiv.org/html/2512.22336",
+      "locator": "§1, §4.2, §4.6; Wang et al. (2023)",
+      "note": "Explicit benchmark and reference-pipeline citation; not a new Agent2World benchmark.",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C049",
+      "citing_alias": "Agent2World"
+    },
+    {
+      "citing_title": "MoVer: Motion Verification for Motion Graphics Animations",
+      "citing_url": "https://doi.org/10.1145/3731209",
+      "cited_title": "Keyframer: Empowering Animation Design Using Large Language Models",
+      "cited_url": "https://arxiv.org/abs/2402.06071",
+      "evidence_url": "https://arxiv.org/html/2502.13372",
+      "locator": "Section 2 and reference Tseng et al. (2024)",
+      "note": "Direct related-work citation. Human-guided authoring is not an autonomous reconstruction or dynamics-induction result.",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C051"
+    },
+    {
+      "citing_title": "MoVer: Motion Verification for Motion Graphics Animations",
+      "citing_url": "https://doi.org/10.1145/3731209",
+      "cited_title": "LLMR: Real-time Prompting of Interactive Worlds using Large Language Models",
+      "cited_url": "https://arxiv.org/abs/2309.12276",
+      "evidence_url": "https://arxiv.org/html/2502.13372",
+      "locator": "Section 2 and reference De La Torre et al. (2024)",
+      "note": "Direct related-work citation. Human-guided authoring is not an autonomous reconstruction or dynamics-induction result.",
+      "reviewed_on": "2026-10-30",
+      "edge_id": "C052"
+    },
+    {
+      "citing_title": "RAPID: Robot Agentic Programming from Demonstrations",
+      "citing_url": "https://arxiv.org/abs/2609.30249",
+      "cited_title": "Chain-of-Modality: Learning Manipulation Programs from Multimodal Human Videos with Vision-Language-Models",
+      "cited_url": "https://arxiv.org/abs/2504.13351",
+      "evidence_url": "https://arxiv.org/html/2609.30249",
+      "locator": "Reference [20]",
+      "note": "Actual backward citation; identifies a missing video-to-code mechanism.",
+      "edge_id": "C053",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "citing_title": "Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning",
+      "citing_url": "https://arxiv.org/abs/2603.18495",
+      "cited_title": "Demo2Code: From Summarizing Demonstrations to Synthesizing Code via Extended Chain-of-Thought",
+      "cited_url": "https://arxiv.org/abs/2305.16744",
+      "evidence_url": "https://arxiv.org/html/2603.18495",
+      "locator": "Reference [59]; Appendix B.5",
+      "note": "Uses an adapted Demo2Code baseline; do not equate that VLM adaptation with the original annotated-state protocol.",
+      "edge_id": "C054",
+      "reviewed_on": "2026-10-30"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="450" viewBox="0 0 1120 450" role="img" aria-labelledby="title desc">
+  <title id="title">From a brief to a maintained visual artifact</title>
+  <desc id="desc">A model and harness maintain visual source and assets, execute a renderer or image workflow, inspect the resulting image, and revise the artifact. Independent evaluation checks the final deliverable.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#414178"/></marker></defs>
+  <rect width="1120" height="450" fill="#fff"/>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#252544">
+    <text x="36" y="42" font-size="24">One agent loop, three routes to pixels</text>
+    <text x="36" y="68" font-size="16" fill="#66667a">The maintained artifact determines what can be inspected, revised and delivered.</text>
+    <g fill="#f5f5fa" stroke="#c4c4d4">
+      <rect x="36" y="114" width="160" height="106" rx="4"/>
+      <rect x="236" y="114" width="220" height="106" rx="4"/>
+      <rect x="496" y="114" width="254" height="106" rx="4"/>
+      <rect x="790" y="114" width="294" height="106" rx="4"/>
+    </g>
+    <text x="50" y="140" font-size="17">Brief + constraints</text>
+    <text x="54" y="164" font-size="14">Intent · data</text>
+    <text x="54" y="184" font-size="14">References</text>
+    <text x="54" y="204" font-size="14">Protected content</text>
+    <text x="254" y="146" font-size="20">LLM + harness</text>
+    <text x="254" y="174" font-size="16">Plan · choose tools · write</text>
+    <text x="254" y="198" font-size="16">Context · state · budget</text>
+    <text x="514" y="146" font-size="20">Maintained artifact</text>
+    <text x="514" y="174" font-size="16">Code · layers · assets · graph</text>
+    <text x="514" y="198" font-size="16">Revision + execution history</text>
+    <text x="808" y="146" font-size="20">Execute → image</text>
+    <text x="808" y="174" font-size="16">Direct render / image workflow</text>
+    <text x="808" y="198" font-size="16">Hybrid code draft + generator</text>
+    <g stroke="#414178" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+      <path d="M196 164H228"/><path d="M456 164H488"/><path d="M750 164H782"/>
+      <path d="M937 220V270H354V228"/>
+    </g>
+    <rect x="505" y="252" width="360" height="35" fill="#fff"/>
+    <text x="516" y="275" font-size="17">Inspect → locate defects → revise (W3)</text>
+    <g stroke="#d7d7e1" fill="#fbfbfd"><rect x="36" y="324" width="682" height="88" rx="4"/><rect x="750" y="324" width="334" height="88" rx="4"/></g>
+    <text x="54" y="351" font-size="18">Revision-specific evidence</text>
+    <text x="54" y="378" font-size="16">Execution logs · geometry · data checks · rendered crops · human feedback</text>
+    <text x="768" y="351" font-size="18">Independent final evaluation</text>
+    <text x="768" y="378" font-size="16">Image + source + preservation + cost</text>
+  </g>
+</svg>
