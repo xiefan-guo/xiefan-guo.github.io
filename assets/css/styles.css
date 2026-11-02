@@ -1,12 +1,12 @@
 /* ============================================================
    Xiefan Guo — personal site
-   Shared stylesheet for: index / papers / activities / blog.
+   Shared stylesheet for: index / papers / activities / blog / posts.
 
    Layout & type scale:
      · Two-column hero — left photo + side links, right intro
      · Content column offset to align under the intro
-     · Body & headings → EB Garamond (hierarchy by size, not typeface)
-     · Cormorant Garamond → dates, labels and table headings
+     · Body & headings → EB Garamond (hierarchy by size and weight)
+     · Article metadata & pinned labels → Cormorant Garamond
      · Link color → #191970 (midnight blue)
    Fonts are self-hosted (assets/fonts/) so the page never depends
    on any external font service being reachable.
@@ -15,7 +15,7 @@
 /* ---------- Self-hosted fonts ---------- */
 @font-face {
   font-family: "Cormorant Garamond";
-  font-style: normal; font-weight: 500 600; font-display: block;
+  font-style: normal; font-weight: 300 700; font-display: block;
   src: url("../fonts/cormorant-garamond-latin-500-600.woff2") format("woff2");
 }
 @font-face {
@@ -79,7 +79,7 @@
   --link-hover: #333399;
 
   --body-font: "EB Garamond", Georgia, Garamond, serif;
-  --label-font: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", serif;
+  --label-font: var(--body-font);
 
   --page-width: 1380px;
   --hero-image: 258px;
@@ -91,10 +91,10 @@
   --fs-h2: 29px;        /* .section-title                              */
   --fs-lead: 19px;      /* Body default                               */
   --fs-intro: 19px;     /* Introduction                               */
-  --fs-paper: 19px;     /* Paper titles, authors and resource links    */
+  --fs-paper: 19px;     /* Paper and blog rows, including their labels */
   --fs-body-lg: 19px;   /* .article-body — blog post body              */
-  --fs-body: 17px;      /* .side-links, .tbody, .paper .venue           */
-  --fs-meta: 15.5px;    /* Dates, article metadata, notes and controls */
+  --fs-body: 17px;      /* Side links and news rows, including dates   */
+  --fs-meta: 15.5px;    /* Article metadata, notes and controls        */
 }
 
 * { box-sizing: border-box; }
@@ -262,7 +262,7 @@ b, strong { font-weight: 500; }
   margin-bottom: 44px;
 }
 
-/* Shared date, label and table-heading typography. */
+/* Shared date, label and table-heading typography uses the regular body weight. */
 .tdate,
 .paper .venue,
 .post-list-date,
@@ -270,22 +270,24 @@ b, strong { font-weight: 500; }
 .article-body th,
 .activity-label {
   font-family: var(--label-font);
-  font-weight: 600;
+  font-weight: inherit;
   letter-spacing: 0.015em;
   color: var(--muted);
 }
 
 /* ---------- Timeline (date gutter + content) ---------- */
 .timeline { display: grid; row-gap: 5px; }
+/* Top-align rows and give each label the same line height as the text beside it. */
 .trow {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-columns: calc(var(--fs-body) * 4) minmax(0, 1fr);
   column-gap: 12px;
-  align-items: baseline;
+  align-items: start;
 }
 .tdate {
-  font-size: var(--fs-meta);
-  line-height: 1.4;
+  font-size: calc(var(--fs-body) - 1px);
+  color: var(--text);
+  line-height: calc(var(--fs-body) * 1.4);
   white-space: nowrap;
 }
 .tbody { min-width: 0; font-size: var(--fs-body); font-weight: 400; line-height: 1.4; }
@@ -299,9 +301,9 @@ b, strong { font-weight: 500; }
   margin-bottom: 14px;
 }
 .paper .venue {
-  padding-top: 4px;
-  font-size: var(--fs-body);
-  line-height: 1.3;
+  font-size: calc(var(--fs-paper) - 2px);
+  color: var(--text);
+  line-height: calc(var(--fs-paper) * 1.3);
   white-space: nowrap;
   text-align: right;
   justify-self: end;
@@ -315,12 +317,12 @@ b, strong { font-weight: 500; }
   font-weight: 400;
 }
 .paper .ptitle { color: var(--link); }
-.paper .ptitle a,
-.paper .plink a { color: var(--link); text-decoration: none; }
+.paper .ptitle a { color: var(--link); text-decoration: none; }
 .paper .ptitle a:hover { color: var(--link-hover); opacity: 1; }
 .paper .authors { color: var(--text); }
 .paper .authors .me { font-weight: 600; }
-.paper .plink a:hover { text-decoration: underline; text-underline-offset: 2px; opacity: 1; }
+.paper .plink a { text-decoration: none; white-space: nowrap; }
+.paper .plink a:hover { opacity: 1; }
 
 /* Small-caps method names in titles */
 .sc { font-variant: small-caps; }
@@ -335,16 +337,17 @@ b, strong { font-weight: 500; }
 }
 .post-list-item {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: calc(var(--fs-paper) * 3.5) minmax(0, 1fr);
   column-gap: 12px;
-  align-items: baseline;
+  align-items: start;
 }
 .post-list-date {
-  font-size: var(--fs-body);
-  color: #69656a;
+  font-size: calc(var(--fs-paper) - 2px);
+  color: var(--text);
+  line-height: calc(var(--fs-paper) * 1.4);
   white-space: nowrap;
 }
-.post-list-main { min-width: 0; }
+.post-list-main { min-width: 0; font-size: var(--fs-paper); line-height: 1.4; }
 .post-list-title {
   font-size: var(--fs-paper);
   line-height: 1.4;
@@ -408,7 +411,7 @@ b, strong { font-weight: 500; }
 .blog-pin {
   margin-left: 8px;
   color: #69656a;
-  font-family: var(--label-font);
+  font-family: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", serif;
   font-size: var(--fs-meta);
   font-weight: 500;
   font-variant: small-caps;
@@ -428,7 +431,7 @@ b, strong { font-weight: 500; }
 }
 
 @media (max-width: 600px) {
-  .post-list-item { grid-template-columns: 58px minmax(0, 1fr); column-gap: 10px; }
+  .post-list-item { column-gap: 10px; }
 }
 
 /* ---------- Blog: single article (posts/*.html) ---------- */
@@ -442,7 +445,9 @@ b, strong { font-weight: 500; }
   color: var(--text);
 }
 .article-meta {
+  font-family: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", serif;
   font-size: var(--fs-meta);
+  font-weight: 600;
 }
 .article-body { font-size: var(--fs-body-lg); font-weight: 400; line-height: 1.35; }
 .article-body p { margin: 0 0 18px; }
@@ -490,7 +495,7 @@ html:lang(zh-CN) .article-body h3 { font-style: normal; }
 .article-body ol { margin: 0 0 18px; padding-left: 1.3em; }
 .article-body li { margin-bottom: 6px; }
 .article-body code {
-  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-family: inherit;
   font-size: 0.85em;
   background: rgba(25, 25, 112, 0.06);
   padding: 1px 5px;
@@ -727,8 +732,9 @@ html:lang(zh-CN) .article-body h3 { font-style: normal; }
   display: block;
   margin: 0 0 4px;
   font-family: var(--body-font);
-  font-size: 19px;
-  font-weight: 400;
+  font-size: calc(1em - 1px);
+  font-weight: inherit;
+  color: inherit;
   font-variant: small-caps;
   line-height: 1.3;
 }
@@ -793,6 +799,6 @@ html:lang(zh-CN) .article-body h3 { font-style: normal; }
   .intro { max-width: none; padding-top: 0; }
   .content { margin-left: 0; margin-top: 50px; }
   .section { margin-top: 50px; }
-  .trow { grid-template-columns: 58px minmax(0, 1fr); column-gap: 10px; }
+  .trow { column-gap: 10px; }
   .paper { grid-template-columns: 90px minmax(0, 1fr); column-gap: 10px; }
 }
