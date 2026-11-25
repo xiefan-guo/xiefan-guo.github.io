@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Field Guide to Long Surveys — Xiefan Guo</title>
+  <meta name="description" content="A long-form technical survey on test-time verification, calibration, and structured search in language models." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#article-content">Skip to article</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="../index.html">Xiefan Guo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../papers.html">Papers</a>
+      <a href="../activities.html">Activities</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="survey-grid">
+      <!-- Left Sticky Table of Contents -->
+      <aside class="survey-toc-col" aria-label="Table of contents">
+        <a class="back-link" href="../blog.html">← All writings</a>
+
+        <nav aria-label="Survey sections">
+          <div class="toc-title">Contents</div>
+          <div class="toc-list">
+            <a href="#sec-1">1. Scope &amp; motivation</a>
+            <a href="#sec-2">2. Verifier formulations</a>
+            <a href="#sec-2-1" class="toc-sub">2.1 Outcome vs. process</a>
+            <a href="#sec-2-2" class="toc-sub">2.2 Calibration under shift</a>
+            <a href="#sec-3">3. Taxonomy of search</a>
+            <a href="#sec-4">4. Open problems</a>
+            <a href="#sec-refs">5. References</a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Center Monograph Reading Column -->
+      <article id="article-content" class="survey-article">
+        <header class="survey-header">
+          <div class="survey-rubric-line">Long-form survey</div>
+          <h1 class="survey-title">
+            A Field Guide to Long Surveys: Test-Time Verification and Structured Search
+          </h1>
+          <div class="survey-meta">
+            <span>Xiefan Guo</span>
+            <span>·</span>
+            <span>Published Nov 12, 2026</span>
+            <span>·</span>
+            <span>Revised Nov 22, 2026</span>
+            <span>·</span>
+            <span>25 min read</span>
+          </div>
+        </header>
+
+        <div class="survey-abstract">
+          <span class="survey-abstract-label">Abstract</span>
+          Scaling inference-time computation has emerged as an orthogonal axis to pre-training scale
+          for complex reasoning tasks. This survey organizes recent literature along two coupled
+          dimensions: how partial reasoning states are scored (verification) and how compute budgets
+          are allocated across candidate trajectories (search), with particular attention to
+          horizon-dependent calibration drift.
+        </div>
+
+        <h2 id="sec-1"><span class="sec-index">1.</span>Scope &amp; Motivation</h2>
+        <p>
+          Standard autoregressive decoding commits irreversibly to every token it emits. For short
+          factual recall, this limitation rarely surfaces; for multi-step mathematical proofs,
+          program synthesis, or formal planning, a single unrecovered slip invalidates an otherwise
+          promising trajectory.<span class="sidenote-ref" aria-hidden="true">1</span>
+        </p>
+
+        <aside class="margin-note" role="note">
+          <span class="margin-note-num">1.</span>
+          On desktop viewports, tangential commentary and literature pointers sit in the right
+          margin so long surveys remain fluid without jumping to footnotes.
+        </aside>
+
+        <p>
+          Test-time search addresses this fragility by separating proposal generation from
+          selection. Given a fixed inference budget B, a policy proposes candidate partial
+          trajectories while a verifier estimates the probability that a prefix leads to a valid
+          solution. Understanding when this decomposition outperforms allocating the same budget to
+          a larger base model is the thread unifying the works surveyed here.
+        </p>
+
+        <h2 id="sec-2"><span class="sec-index">2.</span>Verifier Formulations</h2>
+        <p>
+          A verifier maps a problem specification x and a partial prefix y<sub>1:t</sub> to a scalar
+          score s<sub>t</sub> in [0, 1]. Despite wide architectural diversity across recent systems,
+          nearly all learned verifiers instantiate one of two supervision regimes.
+        </p>
+
+        <h3 id="sec-2-1"><span class="sec-index">2.1</span>Outcome vs. Process Supervision</h3>
+        <p>
+          Outcome Reward Models (<span class="sc">ORM</span>s) receive binary feedback only upon
+          observing a complete solution, whereas Process Reward Models (<span class="sc">PRM</span>s)
+          supervise intermediate steps directly or via Monte Carlo rollouts. While
+          <span class="sc">PRM</span>s offer sharper credit assignment, their labels inherit the
+          biases of the rollout policy used to estimate step-level value.
+        </p>
+
+        <div class="scholarly-block">
+          <div class="scholarly-block-title">Definition <span class="num">2.1</span> · Step-Level Value Consistency</div>
+          <p>
+            For a fixed proposal policy pi and problem x, a process verifier V is
+            <strong>martingale-consistent</strong> if, for every non-terminal prefix
+            y<sub>1:t</sub>, the score V(x, y<sub>1:t</sub>) equals the expected next-step score
+            E<sub>y<sub>t+1</sub> ~ pi</sub>[ V(x, y<sub>1:t+1</sub>) ].
+          </p>
+        </div>
+
+        <h3 id="sec-2-2"><span class="sec-index">2.2</span>Calibration Under Horizon Shift</h3>
+        <p>
+          During search, verifiers are routinely queried on prefixes deeper than those seen during
+          training. Empirically, discriminative verifiers exhibit over-confidence on long,
+          stylistically fluent yet logically invalid chains.<span class="sidenote-ref" aria-hidden="true">2</span>
+          We decompose total ranking regret into calibration error and local discrimination error:
+        </p>
+
+        <aside class="margin-note" role="note">
+          <span class="margin-note-num">2.</span>
+          See Section 3 of Xie et al. (2026) for controlled ablations isolating trajectory length
+          from semantic difficulty.
+        </aside>
+
+        <div class="equation-block" role="region" aria-label="Equation 1">
+          <div class="equation-expr">
+            L(V; pi) = E[ (V(x, y<sub>1:t</sub>) − V(x, y<sub>1:t+1</sub>))<sup>2</sup> ] + lambda · ECE<sub>depth</sub>(V)
+          </div>
+          <span class="equation-num">(1)</span>
+        </div>
+
+        <p>
+          Penalizing depth-conditioned expected calibration error prevents best-first search from
+          greedily expanding long dead-end branches solely because their scores drift upward with
+          token count.
+        </p>
+
+        <h2 id="sec-3"><span class="sec-index">3.</span>Taxonomy of Search Strategies</h2>
+        <p>
+          Table <span class="num">1</span> summarizes four representative families of test-time
+          search algorithms along verification granularity, compute scaling, and dominant failure
+          modes.
+        </p>
+
+        <div class="table-wrap">
+          <table class="booktabs">
+            <caption>
+              Table 1: Comparative taxonomy of test-time search families under fixed compute budgets.
+            </caption>
+            <thead>
+              <tr>
+                <th>Method Family</th>
+                <th>Verifier Signal</th>
+                <th>Compute Scaling</th>
+                <th>Primary Failure Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Best-of-N</strong></td>
+                <td>Outcome (terminal)</td>
+                <td>Linear, parallel</td>
+                <td>Reward hacking at large N</td>
+              </tr>
+              <tr>
+                <td><strong>Step Beam Search</strong></td>
+                <td>Process (prefix)</td>
+                <td>Width × Depth</td>
+                <td>Premature diversity collapse</td>
+              </tr>
+              <tr>
+                <td><strong>MCTS Variants</strong></td>
+                <td>Process + Rollouts</td>
+                <td>Adaptive tree expansion</td>
+                <td>High rollout latency</td>
+              </tr>
+              <tr>
+                <td><strong>Verifier-Gated Revision</strong></td>
+                <td>Critique + Scalar</td>
+                <td>Sequential refinement</td>
+                <td>Self-confirmation loops</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Two empirical patterns recur across independent evaluations:</p>
+        <ul class="prose-list">
+          <li>
+            <strong>Diversity dominates small budgets.</strong> Under <span class="num">16</span>
+            samples, independent parallel sampling with lightweight reranking is difficult to beat.
+          </li>
+          <li>
+            <strong>Adaptive search wins on hard tails.</strong> Where pass@1 falls below
+            <span class="num">5%</span>, calibrated step-level pruning reallocates compute away from
+            broken prefixes and yields substantial gains over Best-of-N.
+          </li>
+        </ul>
+
+        <h2 id="sec-4"><span class="sec-index">4.</span>Open Problems</h2>
+        <p>
+          Looking ahead, three bottlenecks appear especially fertile:
+          (i) <strong>hybrid symbolic-neural verification</strong> invoking deterministic checkers
+          whenever formal subgoals can be extracted;
+          (ii) <strong>amortizing search back into the policy</strong> without collapsing
+          exploration entropy; and
+          (iii) <strong>principled stopping rules</strong> that terminate early on easy instances so
+          compute is spent where genuine uncertainty resides.
+        </p>
+
+        <h2 id="sec-refs"><span class="sec-index">5.</span>References</h2>
+        <ol class="ref-list">
+          <li class="ref-item">
+            <span class="ref-key">[1]</span>
+            <span>
+              Lightman, H., Kosaraju, V., Burda, Y., et al. (2024). Let's Verify Step by Step.
+              <span class="sc">ICLR</span>.
+            </span>
+          </li>
+          <li class="ref-item">
+            <span class="ref-key">[2]</span>
+            <span>
+              Snell, C., Lee, J., Xu, K., &amp; Kumar, A. (2025). Scaling LLM Test-Time Compute
+              Optimally Can Be More Effective Than Scaling Model Parameters.
+              <span class="sc">ICLR</span>.
+            </span>
+          </li>
+          <li class="ref-item">
+            <span class="ref-key">[3]</span>
+            <span>
+              Xie, F., Vance, C., Holloway, D., &amp; Advisor, A. (2026). Calibrated Process
+              Verification for Long-Horizon Symbolic Reasoning.
+              <span class="sc">NeurIPS</span>.
+            </span>
+          </li>
+        </ol>
+      </article>
+    </div>
+
+    <footer class="site-footer">
+      <div class="colophon-inner">
+        <span>
+          End of Survey · <a href="../blog.html">Return to Blog</a> ·
+          <a href="../index.html">Home</a>
+        </span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
