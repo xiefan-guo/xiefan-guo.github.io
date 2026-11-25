@@ -1,92 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A survey of open-weight foundation models, proprietary image models, and commercial generation and editing products, with official reports, blogs, code, weights, and live leaderboards.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A survey of image models — Xiefan Guo</title>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Semibold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261102-article-meta-original-weight">
-  <script defer src="../assets/js/back-to-top.js?v=20261027-viewport-top"></script>
-  <script defer src="../assets/js/article-toc.js?v=20261101"></script>
+  <meta name="description" content="A survey of open-weight foundation models, proprietary image models, and commercial generation and editing products, with official reports, blogs, code, weights, and live leaderboards." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body id="top">
-  <div class="wrap">
-    <header class="topbar">
-      <a class="wordmark" href="../index.html">Xiefan Guo</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="../papers.html">Papers</a>
-        <a href="../activities.html">Activities</a>
-        <a class="active" href="../blog.html">Blog</a>
-      </nav>
-    </header>
-    <main>
-      <div class="content page">
-        <article class="article image-survey">
-          <header class="article-head">
-            <h1 class="article-title">A survey of image models</h1>
-            <div class="article-meta"><time datetime="2026-10-25">25 Oct 2026</time> · Xiefan Guo · Assisted by Codex, GPT-6 Astra, and Claude</div>
-          </header>
-          <div class="article-layout">
-            <nav class="article-toc" aria-label="Article contents">
-              <strong>Contents</strong>
-              <ol>
-                <li><a href="#model-map">A map of the model families</a></li>
-                <li><a href="#leaderboards">Leaderboards and evaluation entry points</a></li>
-                <li><a href="#openai-models">OpenAI: DALL·E and GPT Image</a></li>
-                <li><a href="#google-models">Google: Nano Banana and Imagen</a></li>
-                <li><a href="#mai-image">Microsoft: MAI-Image</a></li>
-                <li><a href="#reve">Reve</a></li>
-                <li><a href="#hunyuan">Tencent: HunyuanImage and SRPO</a></li>
-                <li><a href="#alibaba-models">Alibaba: Qwen-Image, Wan, and Z-Image</a></li>
-                <li><a href="#bytedance-models">ByteDance: Seedream, SeedEdit, and BAGEL</a></li>
-                <li><a href="#flux">Black Forest Labs: FLUX</a></li>
-                <li><a href="#fal">fal: FLUX and Ideogram acceleration</a></li>
-                <li><a href="#stable-diffusion">Stability AI: Stable Diffusion</a></li>
-                <li><a href="#midjourney">Midjourney</a></li>
-                <li><a href="#ideogram">Ideogram</a></li>
-                <li><a href="#recraft">Recraft</a></li>
-                <li><a href="#firefly">Adobe: Firefly</a></li>
-                <li><a href="#krea">Krea</a></li>
-                <li><a href="#fibo">Bria: FIBO</a></li>
-                <li><a href="#grok">xAI: Grok Imagine</a></li>
-                <li><a href="#muse-image">Meta: Muse Image</a></li>
-                <li><a href="#luma">Luma AI: Photon and UNI</a></li>
-                <li><a href="#runway-image">Runway: Gen-4 Image</a></li>
-                <li><a href="#canva">Canva: Craft, Design Model, and Leonardo</a></li>
-                <li><a href="#nova-canvas">Amazon: Nova</a></li>
-                <li><a href="#glm-image">Z.ai: GLM-Image and CogView</a></li>
-                <li><a href="#ernie-image">Baidu: ERNIE-Image</a></li>
-                <li><a href="#sensenova">SenseTime: SenseNova</a></li>
-                <li><a href="#hidream">HiDream.ai: HiDream</a></li>
-                <li><a href="#stepfun">StepFun: Step1X-Edit and ReasonEdit</a></li>
-                <li><a href="#meituan">Meituan: LongCat-Image and LongCat-Next</a></li>
-                <li><a href="#firered">Xiaohongshu: FireRed-Image-Edit</a></li>
-                <li><a href="#pixart">Huawei Noah’s Ark Lab: PixArt</a></li>
-                <li><a href="#sana">NVIDIA: SANA and Cosmos</a></li>
-                <li><a href="#lumina">Shanghai AI Lab: Lumina</a></li>
-                <li><a href="#kolors">Kuaishou: Kolors and Kling Image</a></li>
-                <li><a href="#janus">DeepSeek: Janus</a></li>
-                <li><a href="#baai-models">BAAI: OmniGen and Emu</a></li>
-                <li><a href="#ant">Ant Group: Ming-Image</a></li>
-                <li><a href="#pruna">Pruna: P-Image</a></li>
-                <li><a href="#newport">Newport AI: DreamImage</a></li>
-                <li><a href="#vidu">ShengShu: Vidu image models</a></li>
-                <li><a href="#sourceful">Sourceful: Riverflow</a></li>
-                <li><a href="#technical-themes">Model interfaces and release boundaries</a></li>
-              </ol>
-            </nav>
-            <div class="article-body">
-              <p>This article surveys image models for both generation and editing, covering open-weight foundation models, proprietary models, and commercial products. The catalog prioritizes families represented on Artificial Analysis and Arena, alongside other documented industrial releases such as Canva Craft. Each family is accompanied by its official release posts, model technical reports, system cards, code, weights, and documentation where available.</p>
+<body>
+  <a class="skip-link" href="#article-content">Skip to article</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="../index.html">Xiefan Guo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../papers.html">Papers</a>
+      <a href="../activities.html">Activities</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="survey-grid">
+      <aside class="survey-toc-col" aria-label="Table of contents">
+        <a class="back-link" href="../blog.html">← All writings</a>
+
+        <nav aria-label="Article contents">
+          <div class="toc-title">Contents</div>
+          <div class="toc-list">
+            <a href="#model-map">1. A map of the model families</a>
+            <a href="#leaderboards">2. Leaderboards and evaluation entry points</a>
+            <a href="#openai-models">3. OpenAI: DALL·E and GPT Image</a>
+            <a href="#google-models">4. Google: Nano Banana and Imagen</a>
+            <a href="#mai-image">5. Microsoft: MAI-Image</a>
+            <a href="#reve">6. Reve</a>
+            <a href="#hunyuan">7. Tencent: HunyuanImage and SRPO</a>
+            <a href="#alibaba-models">8. Alibaba: Qwen-Image, Wan, and Z-Image</a>
+            <a href="#bytedance-models">9. ByteDance: Seedream, SeedEdit, and BAGEL</a>
+            <a href="#flux">10. Black Forest Labs: FLUX</a>
+            <a href="#fal">11. fal: FLUX and Ideogram acceleration</a>
+            <a href="#stable-diffusion">12. Stability AI: Stable Diffusion</a>
+            <a href="#midjourney">13. Midjourney</a>
+            <a href="#ideogram">14. Ideogram</a>
+            <a href="#recraft">15. Recraft</a>
+            <a href="#firefly">16. Adobe: Firefly</a>
+            <a href="#krea">17. Krea</a>
+            <a href="#fibo">18. Bria: FIBO</a>
+            <a href="#grok">19. xAI: Grok Imagine</a>
+            <a href="#muse-image">20. Meta: Muse Image</a>
+            <a href="#luma">21. Luma AI: Photon and UNI</a>
+            <a href="#runway-image">22. Runway: Gen-4 Image</a>
+            <a href="#canva">23. Canva: Craft, Design Model, and Leonardo</a>
+            <a href="#nova-canvas">24. Amazon: Nova</a>
+            <a href="#glm-image">25. Z.ai: GLM-Image and CogView</a>
+            <a href="#ernie-image">26. Baidu: ERNIE-Image</a>
+            <a href="#sensenova">27. SenseTime: SenseNova</a>
+            <a href="#hidream">28. HiDream.ai: HiDream</a>
+            <a href="#stepfun">29. StepFun: Step1X-Edit and ReasonEdit</a>
+            <a href="#meituan">30. Meituan: LongCat-Image and LongCat-Next</a>
+            <a href="#firered">31. Xiaohongshu: FireRed-Image-Edit</a>
+            <a href="#pixart">32. Huawei Noah’s Ark Lab: PixArt</a>
+            <a href="#sana">33. NVIDIA: SANA and Cosmos</a>
+            <a href="#lumina">34. Shanghai AI Lab: Lumina</a>
+            <a href="#kolors">35. Kuaishou: Kolors and Kling Image</a>
+            <a href="#janus">36. DeepSeek: Janus</a>
+            <a href="#baai-models">37. BAAI: OmniGen and Emu</a>
+            <a href="#ant">38. Ant Group: Ming-Image</a>
+            <a href="#pruna">39. Pruna: P-Image</a>
+            <a href="#newport">40. Newport AI: DreamImage</a>
+            <a href="#vidu">41. ShengShu: Vidu image models</a>
+            <a href="#sourceful">42. Sourceful: Riverflow</a>
+            <a href="#technical-themes">43. Model interfaces and release boundaries</a>
+          </div>
+        </nav>
+      </aside>
+
+      <article id="article-content" class="survey-article">
+        <header class="survey-header">
+          <div class="survey-rubric-line">Survey</div>
+          <h1 class="survey-title">A survey of image models</h1>
+          <div class="survey-meta">
+            <span><time datetime="2026-10-25">25 Oct 2026</time></span>
+            <span>·</span>
+            <span>Xiefan Guo</span>
+            <span>·</span>
+            <span>Assisted by Codex, GPT-6 Astra, and Claude</span>
+          </div>
+        </header>
+
+        <div class="survey-abstract">
+          <span class="survey-abstract-label">Abstract</span>
+          A survey of open-weight foundation models, proprietary image models, and commercial generation and editing products, with official reports, blogs, code, weights, and live leaderboards.
+        </div>
+
+<p>This article surveys image models for both generation and editing, covering open-weight foundation models, proprietary models, and commercial products. The catalog prioritizes families represented on Artificial Analysis and Arena, alongside other documented industrial releases such as Canva Craft. Each family is accompanied by its official release posts, model technical reports, system cards, code, weights, and documentation where available.</p>
               <p>Start with the <a href="#model-map">model map</a> or the <a href="#leaderboards">live leaderboards</a>. Each organization’s materials follow its section. Sources were reviewed on 27 October 2026; years attached to living documentation indicate the version consulted. Historical releases remain included with their documented availability.</p>
               
-              <h2 id="model-map">1. A map of the model families</h2>
+              <h2 id="model-map"><span class="sec-index">1.</span>A map of the model families</h2>
               <p>Each row matches one organization’s chapter. The task column identifies the relevant version or checkpoint: a family may contain a generator, a separate editor, and a later unified model. The final column links to its official release materials.</p>
               <p><strong>Reading the task labels.</strong> Generation creates an image from a prompt. Instruction editing changes a source image according to a request; masked editing specifies a region for inpainting or extends the canvas through outpainting. Reference-conditioned generation uses an input image to guide a new composition. These capabilities are distinguished below, as are model checkpoints, hosted APIs, and editing tools built around them.</p>
-              <div class="table-wrap"><table class="table-wide model-map">
+              <div class="table-wrap"><table class="booktabs">
               <caption>One row per company or organization, in the same order as the chapters below. Selected releases are navigation aids, not a ranking; access differs by version.</caption>
               <thead><tr><th scope="col">Company / organization</th><th scope="col">Model families and releases covered</th><th scope="col">Generation and editing</th><th scope="col">Official materials</th></tr></thead>
               <tbody>
@@ -132,9 +146,9 @@
               <tr><td><a href="#sourceful">Sourceful</a></td><td>Riverflow 1 / Mini; Riverflow 2.0 Fast / Pro; Riverflow 2.5 Fast / Pro</td><td>Riverflow 1: editing; 2.0 / 2.5: generation + instruction editing through an agentic image system</td><td><a href="#sources-sourceful">Release blogs · product · API model cards</a></td></tr>
               </tbody></table></div>
 
-              <h2 id="leaderboards">2. Leaderboards and evaluation entry points</h2>
+              <h2 id="leaderboards"><span class="sec-index">2.</span>Leaderboards and evaluation entry points</h2>
               <p>Artificial Analysis and Arena provide separate generation and editing rankings. They are useful entry points for comparing released models and commercial APIs. Entries may distinguish output resolution, inference modes, provider implementations, and agent workflows; these labels do not necessarily identify separate foundation models.</p>
-              <div class="table-wrap"><table class="table-wide">
+              <div class="table-wrap"><table class="booktabs">
               <caption>Live image model and product leaderboards.</caption>
               <thead><tr><th scope="col">Entry point</th><th scope="col">Evaluation coverage</th><th scope="col">Protocol and materials</th></tr></thead>
               <tbody>
@@ -160,7 +174,7 @@
                 </ul>
               </details>
 
-              <h2 id="openai-models"><span id="gpt-image" aria-hidden="true"></span>3. OpenAI: DALL·E and GPT Image</h2>
+              <h2 id="openai-models"><span id="gpt-image" aria-hidden="true"></span><span class="sec-index">3.</span>OpenAI: DALL·E and GPT Image</h2>
               <p>The <a href="https://arxiv.org/abs/2102.12092">DALL·E paper</a> describes autoregressive generation over text and image tokens. <a href="https://arxiv.org/abs/2204.06125">DALL·E 2</a> adds a prior that predicts CLIP image embeddings and a diffusion decoder conditioned on those embeddings. The <a href="https://cdn.openai.com/papers/dall-e-3.pdf">DALL·E 3 report</a> studies training with descriptive synthetic captions and evaluates their effect on prompt following.</p>
               <p>The release history includes <a href="https://openai.com/index/introducing-4o-image-generation/">4o image generation</a> in March 2025, <a href="https://openai.com/index/image-generation-api/">GPT Image 1 in the API</a> in April, <a href="https://openai.com/index/new-chatgpt-images-is-here/">GPT Image 1.5</a> in December, <a href="https://openai.com/index/introducing-chatgpt-images-2-0/">ChatGPT Images 2.0</a> in April 2026, and <a href="https://openai.com/index/introducing-chatgpt-images-2-5/">ChatGPT Images 2.5</a> in September 2026. The <a href="https://deploymentsafety.openai.com/chatgpt-images-2-0/chatgpt-images-2-0.pdf">Images 2.0 system card</a> separately describes Thinking mode, which adds reasoning and tools, including web search, to the image-generation workflow.</p>
               <p><a href="https://developers.openai.com/api/docs/models/gpt-image-1-mini">GPT Image 1 mini</a>, released on <a href="https://developers.openai.com/api/docs/changelog">6 October 2025</a>, is a lower-cost generation and editing model with text and image inputs.</p>
@@ -195,7 +209,7 @@
                 </ul>
               </details>
 
-              <h2 id="google-models">4. Google: Nano Banana and Imagen</h2>
+              <h2 id="google-models"><span class="sec-index">4.</span>Google: Nano Banana and Imagen</h2>
               <h3 id="nano-banana">Nano Banana is the Gemini image family</h3>
               <p><a href="https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/">Gemini 2.5 Flash Image</a>, launched on 26 August 2025, introduced the original Nano Banana model after Google's earlier Gemini 2.0 native-image experiments. <a href="https://blog.google/innovation-and-ai/products/nano-banana-pro/">Nano Banana Pro</a> followed on 20 November 2025 as Gemini 3 Pro Image; <a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/">Nano Banana 2</a> followed on 26 February 2026 as Gemini 3.1 Flash Image.</p>
               <p>The family also includes Nano Banana 2 Lite, named Gemini 3.1 Flash Lite Image, and Nano Banana 2.1. Their <a href="https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/">Lite model card</a> and <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/">2.1 model card</a> were published on 30 June and 6 October 2026, respectively. The <a href="https://ai.google.dev/gemini-api/docs/image-generation">current API guide</a> identifies 2.1 as <code>gemini-nano-banana-2.1</code> and documents generation, conversational editing, and Google Search grounding at 1K, 2K, and 4K. The same guide limits Lite to 1K output, excludes Search grounding, and says it is not optimized for multiple references or sequential editing. These distinctions belong to the individual versions.</p>
@@ -236,7 +250,7 @@
                 </ul>
               </details>
 
-              <h2 id="mai-image"><span id="mai-reve" aria-hidden="true"></span>5. Microsoft: MAI-Image</h2>
+              <h2 id="mai-image"><span id="mai-reve" aria-hidden="true"></span><span class="sec-index">5.</span>Microsoft: MAI-Image</h2>
               <p>Microsoft introduced its first in-house image model, <a href="https://microsoft.ai/news/introducing-mai-image-1-debuting-in-the-top-10-on-lmarena/">MAI-Image-1</a>, in October 2025, followed by <a href="https://microsoft.ai/news/introducing-MAI-Image-2/">MAI-Image-2</a> in March 2026. Its <a href="https://microsoft.ai/pdf/MAI-Image-2e-Model-Card.pdf">MAI-Image-2e (Efficient) variant</a> followed in April. The <a href="https://microsoft.ai/news/introducing-mai-image-2-5-/">2 June 2026 announcement</a> released both MAI-Image-2.5 and MAI-Image-2.5-Flash for generation and editing. <a href="https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/">MAI-Image-2.5-Pro</a> entered public preview on 23 July. The <a href="https://microsoft.ai/pdf/MAI-Image-2.6-Model-Card.pdf">2.6 model card</a> records separate release dates: 14 August for MAI-Image-2.6 and 4 September for MAI-Image-2.6-Flash.</p>
               <p>That card describes a diffusion-based architecture trained with a flow-matching loss and lists <strong>20B non-embedding parameters</strong>. It supports text and image inputs and specifies a maximum output area of 2,359,296 pixels, equivalent to 1536 × 1536. Microsoft's <a href="https://microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/">September announcement</a> documents multi-image reference editing, web grounding, and dynamic aspect ratios for both 2.6 variants, with access through MAI Playground and a Microsoft Foundry public preview. The accompanying <a href="https://microsoft.ai/pdf/MAI-Image-2.6-Data-Summary.pdf">data summary</a> describes the training-data categories.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -259,7 +273,7 @@
                 </ul>
               </details>
 
-              <h2 id="reve">6. Reve</h2>
+              <h2 id="reve"><span class="sec-index">6.</span>Reve</h2>
               <p>The <a href="https://blog.reve.com/posts/the-new-reve/">September 2025 Reve release</a> combined image creation, natural-language editing of generated or uploaded images, and remixing with multiple references. Arena retains editing entries named <a href="https://arena.ai/leaderboard/image/image-edit/single-image">Reve v1, v1.1, v1.1 Fast, and Edit Fast</a>. These historical evaluation names are distinct from Reve Image 1.0; the available release materials do not establish an exact dated backend for every label.</p>
               <p><a href="https://blog.reve.com/posts/reve-1.5-is-here/">Reve v1.5</a> was released as an early version in February 2026; its announcement describes native-pixel-space generation at 4K. <a href="https://blog.reve.com/posts/announcing-reve-2.0/">Reve 2.0</a> followed on 3 June. In <a href="https://blog.reve.com/posts/the-layout-bet/">The layout bet</a>, the team describes an intermediate representation made of hierarchical regions, each with a location, size, local description, and optional image references or colors. Its model produces this layout before rendering pixels, and users can edit the structure or give natural-language instructions.</p>
               <p><a href="https://blog.reve.com/posts/launching-reve-2.1/">Reve 2.1</a> was announced on 9 July 2026. The <a href="https://blog.reve.com/posts/the-reve-api/">14 July API release</a> separated ready-to-use image generation and editing from endpoints for layout creation, editing, and rendering. These announcements describe historical releases: Reve's <a href="https://help.reve.com/hc/en-us/articles/53569023228180-Downloading-Your-Reve-Assets">service notice</a> says new image and video creation ended after 27 September 2026, with existing assets downloadable from the web and mobile apps until 31 October.</p>
@@ -279,7 +293,7 @@
                 </ul>
               </details>
 
-              <h2 id="hunyuan"><span id="chinese-frontier" aria-hidden="true"></span>7. Tencent: HunyuanImage and SRPO</h2>
+              <h2 id="hunyuan"><span id="chinese-frontier" aria-hidden="true"></span><span class="sec-index">7.</span>Tencent: HunyuanImage and SRPO</h2>
               <p>Tencent’s releases include <a href="https://arxiv.org/abs/2405.08748">Hunyuan-DiT</a> and <a href="https://github.com/Tencent-Hunyuan/HunyuanImage-2.1">HunyuanImage-2.1</a>. The 2.1 repository describes a 17B diffusion model supporting 2K output, with a multimodal text encoder, a character-aware encoder, and a separate refinement stage. It also provides prompt-enhancement and distilled inference components.</p>
               
               <p>The <a href="https://arxiv.org/abs/2509.23951">HunyuanImage 3.0 report</a> describes a mixture-of-experts backbone with over 80B total parameters and approximately 13B activated per token. It combines autoregressive text prediction with diffusion over VAE image features. The <a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0">January 2026 Instruct release</a> adds image-conditioned generation and editing; the accompanying Instruct-Distil checkpoint recommends eight inference steps.</p>
@@ -313,7 +327,7 @@
                 </ul>
               </details>
 
-              <h2 id="alibaba-models">8. Alibaba: Qwen-Image, Wan, and Z-Image</h2>
+              <h2 id="alibaba-models"><span class="sec-index">8.</span>Alibaba: Qwen-Image, Wan, and Z-Image</h2>
               <h3 id="qwen">Qwen-Image: Generation, editing, and layers</h3>
               <p>The original <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image release</a> uses a 20B multimodal diffusion transformer (MMDiT). The <a href="https://huggingface.co/Qwen/Qwen-Image-Edit">initial editing checkpoint</a> conditions on both Qwen2.5-VL image features and VAE image latents. <a href="https://qwen.ai/blog?from=research.research-list&amp;id=1675c295dc29dd31073e5b3f72876e9d684e41c6">Edit-2509</a> adds multi-image editing and conditioning on depth, edge, and keypoint maps. <a href="https://qwen.ai/blog?id=qwen-image-edit-2511">Edit-2511</a> and the generation checkpoint <a href="https://qwen.ai/blog?id=qwen-image-2512">Qwen-Image-2512</a> followed in December 2025.</p>
               <p><a href="https://arxiv.org/abs/2512.15603">Qwen-Image-Layered</a> decomposes an RGB image into a variable number of RGBA layers using an RGBA-VAE and a variable-layer MMDiT. Its <a href="https://qwen.ai/blog?id=qwen-image-layered">release post</a> demonstrates editing individual layers; the <a href="https://github.com/QwenLM/Qwen-Image-Layered">repository</a> specifies that the released weights are fine-tuned for image-to-multiple-layer decomposition and have limited text-to-multiple-layer generation capability.</p>
@@ -431,7 +445,7 @@
                 </ul>
               </details>
 
-              <h2 id="bytedance-models">9. ByteDance: Seedream, SeedEdit, and BAGEL</h2>
+              <h2 id="bytedance-models"><span class="sec-index">9.</span>ByteDance: Seedream, SeedEdit, and BAGEL</h2>
               <h3 id="seedream">Seedream and SeedEdit: Generation and editing</h3>
               <p>The original <a href="https://arxiv.org/abs/2411.06686">SeedEdit paper</a> frames instruction-based editing as balancing image reconstruction and image re-generation. It precedes the later SeedEdit 3.0 release.</p>
               <p><a href="https://arxiv.org/abs/2503.07703">Seedream 2.0</a> is a Chinese-English bilingual image generation model. The <a href="https://arxiv.org/abs/2504.11346">Seedream 3.0 report</a> describes representation alignment, VLM-based reward post-training, and inference acceleration; its <a href="https://seed.bytedance.com/en/blog/seedream-3-0-text-to-image-model-technical-report-released">release post</a> specifies native 2K output. <a href="https://arxiv.org/abs/2506.05083">SeedEdit 3.0</a> is the accompanying image-editing model. The <a href="https://arxiv.org/abs/2509.20427">Seedream 4.0 report</a> describes unified generation, editing, and multi-image composition, including a VAE that reduces the number of image tokens.</p>
@@ -475,7 +489,7 @@
                 </ul>
               </details>
 
-              <h2 id="flux"><span id="flux-stability" aria-hidden="true"></span>10. Black Forest Labs: FLUX</h2>
+              <h2 id="flux"><span id="flux-stability" aria-hidden="true"></span><span class="sec-index">10.</span>Black Forest Labs: FLUX</h2>
               <p><a href="https://bfl.ai/blog/24-08-01-bfl">FLUX.1</a> launched in August 2024 with pro, dev, and schnell variants. Black Forest Labs describes the family as 12B flow-matching models combining multimodal and parallel diffusion-transformer blocks. <a href="https://bfl.ai/blog/24-10-02-flux">FLUX1.1 [pro]</a> followed in October. The <a href="https://bfl.ai/blog/24-11-06-ultra">November 2024 Ultra release</a> adds output up to four megapixels and a Raw mode for photographic generation. The <a href="https://arxiv.org/abs/2506.15742">FLUX.1 Kontext report</a> documents a shared generation-and-editing architecture that incorporates text and image context through sequence concatenation.</p>
               <p><a href="https://bfl.ai/blog/flux-2">FLUX.2</a> launched in November 2025. Its <a href="https://bfl.ai/techblog/representation-comparison/index.html">technical report</a> describes a revised autoencoder latent space and a latent flow-matching architecture. The <a href="https://huggingface.co/black-forest-labs/FLUX.2-dev">dev model card</a> identifies a 32B rectified-flow transformer; the <a href="https://bfl.ai/blog/flux2-klein-towards-interactive-visual-intelligence">January 2026 Klein release</a> adds 4B and 9B variants, each with base and distilled checkpoints. The 4B weights use Apache 2.0, while the 9B weights use the FLUX Non-Commercial License.</p>
               <p>The <a href="https://bfl.ai/blog/flux-3">July 2026 FLUX 3 announcement</a> describes joint training across images, video, and audio; it previewed the image model while image early access was still planned. The <a href="https://bfl.ai/blog/flux-3-image-klein">15 October FLUX 3 Image Klein release</a> provides a 5.6B generator, excluding text encoders, with base and distilled weights under the FLUX Kommunity License. Its <a href="https://github.com/black-forest-labs/flux-3-image-klein">reference implementation</a> supports up to ten image references and bounding-box controls and includes a separate prompt upsampler enabled by default.</p>
@@ -521,7 +535,7 @@
                 </ul>
               </details>
 
-              <h2 id="fal">11. fal: FLUX and Ideogram acceleration</h2>
+              <h2 id="fal"><span class="sec-index">11.</span>fal: FLUX and Ideogram acceleration</h2>
               <p>fal develops accelerated derivatives of models released by Black Forest Labs and Ideogram. Their leaderboard entries identify fal as the developer of the adaptation, while the underlying foundation families remain <a href="#flux">FLUX</a> and <a href="#ideogram">Ideogram</a>.</p>
               <p><a href="https://huggingface.co/fal/FLUX.2-dev-Turbo">FLUX.2 dev Turbo</a> is an eight-step distilled LoRA for FLUX.2-dev, with released adapter weights and inference examples. It supports generation and editing. The separate <a href="https://fal.ai/learn/devs/flux-2-flash-developer-guide">FLUX.2 Flash service</a> also exposes generation and <a href="https://fal.ai/models/fal-ai/flux-2/flash/edit">editing</a>. The Turbo adapter is the verified public release; the Flash service documentation does not identify a separate downloadable Flash checkpoint.</p>
               <p>fal publishes <a href="https://huggingface.co/fal/ideogram-v4-fast">Ideogram 4 Fast</a> and <a href="https://huggingface.co/fal/ideogram-v4-instant">Instant</a> as distilled derivatives of Ideogram 4. Both remove the unconditional classifier-free-guidance branch; their documented schedules use 20 and eight denoising steps, respectively. Fast targets FP4 inference. Instant’s public BF16 weights precede the quantization-aware distillation used by its hosted FP4 service, so the released and hosted checkpoints are distinct. The <a href="https://fal.ai/models/ideogram/v4/fast/api">Fast API</a> also exposes a Quality rendering setting, corresponding to a separate leaderboard configuration.</p>
@@ -540,7 +554,7 @@
                 </ul>
               </details>
 
-              <h2 id="stable-diffusion">12. Stability AI: Stable Diffusion</h2>
+              <h2 id="stable-diffusion"><span class="sec-index">12.</span>Stability AI: Stable Diffusion</h2>
               <p>The <a href="https://arxiv.org/abs/2112.10752">latent diffusion paper</a> describes diffusion in the compressed space of a pretrained autoencoder, with cross-attention for conditioning inputs such as text. <a href="https://arxiv.org/abs/2307.01952">SDXL</a> develops this approach with a larger U-Net, a second text encoder, additional conditioning, and a separate refinement model. <a href="https://arxiv.org/abs/2311.17042">Adversarial diffusion distillation</a>, used for SDXL Turbo, combines a diffusion-teacher signal with an adversarial loss to train a model for one to four sampling steps.</p>
               <p>The <a href="https://arxiv.org/abs/2403.03206">SD3 report</a> studies rectified-flow training and a transformer with separate text and image weights and attention that exchanges information between the two modalities. <a href="https://stability.ai/news-updates/introducing-stable-diffusion-3-5">Stable Diffusion 3.5</a> includes Large, Large Turbo, and Medium. Stability AI lists 8.1B parameters for Large and 2.5B for Medium; Large Turbo is distilled for four-step generation. The release provides downloadable weights and inference code under the version's stated licensing terms.</p>
               <p>The separate <a href="https://arxiv.org/abs/2403.12015">latent adversarial diffusion distillation (LADD) report</a> studies SD3-Turbo, distilling the 8B Stable Diffusion 3 model into four unguided sampling steps. This complements the earlier ADD paper for SDXL Turbo.</p>
@@ -565,7 +579,7 @@
                 </ul>
               </details>
 
-              <h2 id="midjourney"><span id="creative-models" aria-hidden="true"></span>13. Midjourney</h2>
+              <h2 id="midjourney"><span id="creative-models" aria-hidden="true"></span><span class="sec-index">13.</span>Midjourney</h2>
               <p>Midjourney's official release notes document <a href="https://updates.midjourney.com/v8-alpha/">V8 alpha</a> on 17 March 2026, <a href="https://updates.midjourney.com/v8-1-alpha/">V8.1 alpha</a> on 14 April, and <a href="https://updates.midjourney.com/version-8-2/">V8.2</a> on 24 July. V8.1 became the <a href="https://updates.midjourney.com/v8-1-is-now-the-default-model/">default model on 11 June</a>. The V8 release supports personalization, style references, moodboards, and a native 2K HD mode.</p>
               <p>The <a href="https://updates.midjourney.com/edit-model-for-v8/">27 August V8.2 edit-model test</a> adds instruction-based editing, up to four image references, inpainting, and outpainting. The <a href="https://updates.midjourney.com/testing-thinking-mode/">8 October Thinking Mode announcement</a> describes a separate experiment on the alpha website, invoked by rerunning an image with Thinking. Midjourney reports improvements in prompt accuracy, text rendering, and coherence in its tests of this experiment.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -582,7 +596,7 @@
                 </ul>
               </details>
 
-              <h2 id="ideogram">14. Ideogram</h2>
+              <h2 id="ideogram"><span class="sec-index">14.</span>Ideogram</h2>
               <p><a href="https://developer.ideogram.ai/v1/api-reference/legacy-endpoints/generate">Ideogram 2.0</a> is documented in the provider’s legacy text-to-image API with the <code>V_2</code> model identifier. It remains a distinct historical model in the leaderboard record.</p>
               <p><a href="https://ideogram.ai/models/3.0/">Ideogram 3.0</a> is documented as a text-to-image model. For <a href="https://ideogram.ai/blog/ideogram-4.0/">Ideogram 4.0</a>, the technical blog specifies a <strong>9.3B single-stream diffusion transformer</strong> trained with flow matching. That count covers the DiT; the pipeline also includes a frozen Qwen3-VL-8B-Instruct encoder and a frozen autoencoder. The DiT uses hidden states from 13 encoder layers and is trained on structured JSON captions with optional bounding boxes and color palettes. The <a href="https://github.com/ideogram-oss/ideogram4">reference implementation</a> is Apache 2.0, while the released 4.0 weights use the Ideogram 4 Non-Commercial License.</p>
               <p>The <a href="https://ideogram.ai/models/4.5/">Ideogram 4.5 model page</a> documents separate Generate and Precise Edit API endpoints. Generate accepts a prompt and up to five optional reference images. The page also demonstrates style-reference generation, sketch-to-image, reframing, and edits to selected image regions. These are documented 4.5 interfaces; the architectural details and weight release above are specifically those of 4.0. The <a href="https://docs.ideogram.ai/edit/studio#change-part-of-a-layer-with-select-area">Studio editor</a> replaces the earlier Canvas and Magic Fill tools; Select area provides masked local editing.</p>
@@ -605,7 +619,7 @@
                 </ul>
               </details>
 
-              <h2 id="recraft">15. Recraft</h2>
+              <h2 id="recraft"><span class="sec-index">15.</span>Recraft</h2>
               <p>Recraft's <a href="https://www.recraft.ai/blog/introducing-recraft-v4-design-taste-meets-image-generation">V4 announcement</a> describes image generation and vector-generation variants. <a href="https://www.recraft.ai/docs/recraft-models/recraft-v4-1">V4.1</a>, released on 14 May 2026, now has nine documented variants: the main model, Pro, Utility, Utility Pro, Vector, Vector Pro, Utility Vector, Utility Pro Vector, and Flash. Recraft describes Pro as the higher-resolution option and Utility as oriented toward simple scenes and product mockups. A separate <a href="https://www.recraft.ai/blog/meet-recraft-v4-1-flash">Flash announcement</a> documents the faster generation variant.</p>
               <p>The output format is explicit in the <a href="https://www.recraft.ai/docs/api-reference/getting-started">API documentation</a>: models with the <code>_vector</code> suffix return editable SVG. The <a href="https://www.recraft.ai/docs/recraft-models/recraft-v4-1">V4.1 documentation</a> describes vector outputs that can be reshaped and recolored. These are vector assets, rather than a description of a raster image's visual style.</p>
               <p>Recraft’s editing coverage is version-specific. The <a href="https://www.recraft.ai/docs/api-reference/models/recraft-v3">V3 API documentation</a> identifies V3 as the line supporting inpainting, outpainting, and background operations. Its <a href="https://www.recraft.ai/docs/api-reference/tools/inpainting">inpainting endpoint</a> takes an image, mask, and prompt. The separate <a href="https://www.recraft.ai/docs/api-reference/tools/image-to-image">image-to-image operation</a> supports V3, V4, and V4.1 and uses a strength control to vary departure from the source. Recraft Studio separately offers natural-language editing: its <a href="https://www.recraft.ai/blog/introducing-prompt-based-editing-the-ingenious-shortcut-for-your-ai-images">June 2025 announcement</a> explicitly attributes that workflow to external models including GPT-4o and FLUX Kontext. These product capabilities should be distinguished from Recraft’s own version-specific model APIs.</p>
@@ -626,7 +640,7 @@
                 </ul>
               </details>
 
-              <h2 id="firefly">16. Adobe: Firefly</h2>
+              <h2 id="firefly"><span class="sec-index">16.</span>Adobe: Firefly</h2>
               <p>Adobe announced Firefly Image Model 5 in <a href="https://news.adobe.com/news/downloads/pdfs/2025/10/102825-adobe-max.pdf">public beta on October 28, 2025</a>, describing native 4MP output and prompt-based editing. Its <a href="https://blog.adobe.com/en/publish/2026/03/19/adobe-firefly-expands-video-image-creation-with-new-ai-capabilities-custom-models">March 19, 2026 announcement</a> confirmed general availability. That announcement also lists partner models available inside Firefly, so the application name alone does not identify the image model used.</p>
               <p>Adobe publishes a <a href="https://www.adobe.com/cc-shared/assets/pdf/trust-center/ungated/whitepapers/creative-cloud/adobe-firefly-image-model-5-training-set.pdf">training-content summary for Image Model 5</a> covering the categories of data used. The <a href="https://helpx.adobe.com/firefly/web/work-with-images/generate-images/generate-images-from-text-descriptions.html">image-generation guide</a> documents the application controls and model selection.</p>
               <p>Firefly Image 5 supports both generation and editing through the <a href="https://developer.adobe.com/firefly-services/docs/firefly-api/guides/how-tos/cm-generate-image/feature-guide">Generate Image API</a>: an empty reference-image list selects text-to-image generation, while supplied reference images enable image-to-image instruct edits. Adobe also documents <a href="https://helpx.adobe.com/photoshop/desktop/make-selections/refine-modify-selections/use-selections-for-generative-editing.html">native mask support for Firefly Image 5 in Photoshop</a>, where a selection and prompt specify a local generative change.</p>
@@ -643,7 +657,7 @@
                 </ul>
               </details>
 
-              <h2 id="krea">17. Krea</h2>
+              <h2 id="krea"><span class="sec-index">17.</span>Krea</h2>
               <p>Black Forest Labs identifies <a href="https://bfl.ai/blog/flux-1-krea-dev">FLUX.1 Krea [dev]</a> as the open-weight version of Krea 1, developed with Krea. Krea 2 is a separate text-to-image model: its <a href="https://www.krea.ai/blog/krea-2-technical-report">technical report</a> describes training from scratch, a single-stream transformer, Qwen3-VL conditioning, rectified-flow training, and successive supervised and preference-based training stages.</p>
               <p>The <a href="https://huggingface.co/krea/Krea-2-Raw">Krea 2 model card</a> specifies a 12-billion-parameter diffusion transformer released under the Krea 2 Community License. Raw is the checkpoint before additional post-training; Turbo adds fine-tuning and distillation. The card recommends Raw as a base for adaptation rather than direct inference.</p>
               <p>The hosted Krea 2 lineup also includes <a href="https://www.krea.ai/blog/krea-2-api-launch">Medium and Large</a>, with different model sizes and post-training, and the faster <a href="https://www.krea.ai/blog/krea-2-turbo">Medium Turbo service</a> listed by Artificial Analysis. These generation services support style references, moodboards, and LoRAs. The <a href="https://www.krea.ai/docs/developers/krea-2/overview">hosted API variants</a> have their own endpoint names; the public Raw and Turbo cards document the downloadable releases.</p>
@@ -674,7 +688,7 @@
                 </ul>
               </details>
 
-              <h2 id="fibo">18. Bria: FIBO</h2>
+              <h2 id="fibo"><span class="sec-index">18.</span>Bria: FIBO</h2>
               <p>The <a href="https://arxiv.org/abs/2511.06876">FIBO paper</a> studies long, structured captions and introduces DimFusion to incorporate their information without increasing the diffusion transformer's input sequence length. Bria's <a href="https://bria.ai/fibo">FIBO interface</a> expands a short request into a structured JSON description that can be inspected and edited alongside the generated image.</p>
               <p><a href="https://huggingface.co/briaai/Fibo-lite">FIBO Lite</a> is a distilled text-to-image variant of the original FIBO. Its model card describes classifier-free-guidance distillation followed by Shortcutting Flow Matching, with an eight-step inference example. Bria releases its weights alongside the <a href="https://huggingface.co/briaai/FIBO">original FIBO checkpoint</a> and <a href="https://github.com/Bria-AI/FIBO">generation code</a>; these are separate from the FIBO Edit releases.</p>
               <p>The <a href="https://docs.bria.ai/whats-new/fibo-2">Fibo 2 release notes</a> describe generation, editing, and composition from up to four reference images, with a Visual Generation Language (VGL) representation returned with the output. Bria publishes generation and editing checkpoints and describes its training data as fully licensed. The <a href="https://docs.bria.ai/self-hosted/fibo-2">licensed self-hosting guide</a> requires a Bria license and API key. Structured VGL prompts need no language model; free-form prompts and edit instructions can be expanded by a configured LLM provider, with Gemini through AI Studio or Vertex AI as the default options.</p>
@@ -703,7 +717,7 @@
                 </ul>
               </details>
 
-              <h2 id="grok"><span id="multimodal-products" aria-hidden="true"></span>19. xAI: Grok Imagine</h2>
+              <h2 id="grok"><span id="multimodal-products" aria-hidden="true"></span><span class="sec-index">19.</span>xAI: Grok Imagine</h2>
               <p>The earlier <a href="https://docs.x.ai/developers/models/grok-imagine-image">Grok Imagine Image</a> supports generation and editing. The <a href="https://x.ai/news/grok-imagine-quality-mode">May 2026 Quality Mode release</a> introduced <code>grok-imagine-image-quality</code> for the same two tasks. The older <a href="https://docs.x.ai/developers/models/grok-imagine-image-pro">Pro identifier</a> now resolves to Quality; these historical names still occur as separate evaluation entries.</p>
               <p>The <a href="https://x.ai/news/grok-imagine-image-2">August 7, 2026 announcement of Imagine Image 2.0</a> describes image generation and editing, with typography, layout, and preservation of unedited regions among the provider's stated improvements. The <a href="https://docs.x.ai/developers/models/grok-imagine-image-2.0">model catalog</a> lists <code>grok-imagine-image-2.0</code> with text and image inputs and image output.</p>
               <p>The <a href="https://docs.x.ai/developers/model-capabilities/images/prompting-guide">prompting guide</a> provides separate generation and editing requests and documents aspect ratio, resolution, and quality settings.</p>
@@ -723,7 +737,7 @@
                 </ul>
               </details>
 
-              <h2 id="muse-image">20. Meta: Muse Image</h2>
+              <h2 id="muse-image"><span class="sec-index">20.</span>Meta: Muse Image</h2>
               <p>Meta <a href="https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/">launched Muse Image on July 7, 2026</a> for image generation, editing, and composition from multiple references. Meta describes an agent that can invoke search and coding tools and refine its outputs. Its examples include executing code to render plots and QR codes, then conditioning image generation on those rendered figures.</p>
               <p>The <a href="https://dev.meta.ai/docs/image-generation">Muse Image API guide</a> documents interleaved text and image inputs, multi-turn generation and editing through the Responses API, and one-off generation/editing endpoints. The documented model identifier is <code>muse-image-1.0</code>.</p>
               
@@ -736,7 +750,7 @@
                 </ul>
               </details>
 
-              <h2 id="luma">21. Luma AI: Photon and UNI</h2>
+              <h2 id="luma"><span class="sec-index">21.</span>Luma AI: Photon and UNI</h2>
               <p>Luma’s earlier <a href="https://lumalabs.ai/photon">Photon family</a> includes Photon and Photon Flash, exposed as <code>photon-1</code> and <code>photon-flash-1</code>. The <a href="https://docs.lumalabs.ai/docs/image-generation">API guide</a> documents text-to-image generation, image/style/character references, and Modify Image, which combines a source image with a requested change. The separate <a href="https://docs.lumalabs.ai/docs/reframe-video-image">Reframe interface</a> supports both variants and extends images to a target aspect ratio, with prompts guiding newly generated regions.</p>
               <p>Luma's <a href="https://lumalabs.ai/uni-1/tech-specs">UNI-1 technical overview</a> describes a decoder-only autoregressive transformer that processes text and images in one interleaved sequence. Luma describes reasoning before and during image synthesis. The <a href="https://lumalabs.ai/news/uni-1-1-api">Uni-1.1 API announcement</a> documents text-to-image generation and natural-language editing with reference-image inputs.</p>
               <p>The <a href="https://docs.agents.lumalabs.ai/guides/model/">API model guide</a> lists <code>uni-1</code> and <code>uni-1-max</code> for image generation and editing. Luma's <a href="https://lumalabs.ai/legal/training-content-summary-uni">October 2026 training-content summary</a> specifies that Uni-1.1 has been served under <code>uni-1</code> since May 11, 2026; it separately identifies Uni-1 Max. The same disclosure states that the family incorporates a component initialized from a third-party open-weight model and subsequently trained by Luma.</p>
@@ -758,7 +772,7 @@
                 </ul>
               </details>
 
-              <h2 id="runway-image">22. Runway: Gen-4 Image</h2>
+              <h2 id="runway-image"><span class="sec-index">22.</span>Runway: Gen-4 Image</h2>
               <p>Runway's <a href="https://help.runwayml.com/hc/en-us/articles/37053594806419-Creating-with-Gen-4-Image">image-generation guide</a> lists Gen-4 Image and Gen-4 Image Turbo and documents text prompts, aspect ratios, and 720p or 1080p output. <a href="https://help.runwayml.com/hc/en-us/articles/40042718905875-Creating-with-Gen-4-Image-References">Gen-4 Image References</a> accepts up to three reference images for a generation.</p>
               <p>The <a href="https://help.runwayml.com/hc/en-us/articles/41170686463635-Advanced-References-Use-Cases">advanced References guide</a> demonstrates sketches, annotations, and bounding boxes for composition and gaze control. The family announcement covers both image and video creation; the image guides below document the image-specific controls.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -773,7 +787,7 @@
                 </ul>
               </details>
 
-              <h2 id="canva"><span id="leonardo" aria-hidden="true"></span>23. Canva: Craft, Design Model, and Leonardo</h2>
+              <h2 id="canva"><span id="leonardo" aria-hidden="true"></span><span class="sec-index">23.</span>Canva: Craft, Design Model, and Leonardo</h2>
               <h3>Craft: image generation</h3>
               <p><a href="https://www.canva.com/newsroom/news/canva-craft/">Canva Craft</a> is Canva Research’s image foundation model, launched on <a href="https://community.canva.dev/t/connect-api-canva-craft-is-now-available-for-image-generation/8999">22 October 2026</a> in Dream Lab and through an API. Its two-stage architecture first plans the composition, including element placement and text, then renders an image at up to 2K. Canva describes training on design templates and post-training with feedback from professional designers.</p>
               <p>The <a href="https://www.canva.dev/docs/apps/rest-apis/reference/generations/create-image-generation-job/">image-generation API</a>, currently in preview, exposes Craft as <code>craft_v1_2k</code>. Craft’s launch post lists advanced editing and reference-image capabilities, along with Craft-fast and Craft-ultrafast variants, as future releases. Its reported evaluation is on <a href="https://www.designarena.ai/leaderboard?section=image&amp;tab=image">DesignArena</a>, a separate service from Arena.ai.</p>
@@ -813,7 +827,7 @@
                 </ul>
               </details>
 
-              <h2 id="nova-canvas">24. Amazon: Nova</h2>
+              <h2 id="nova-canvas"><span class="sec-index">24.</span>Amazon: Nova</h2>
               <p>Amazon <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/">introduced Nova Canvas in December 2024</a>. Its <a href="https://docs.aws.amazon.com/nova/latest/userguide/image-generation.html">user guide</a> documents text-to-image generation, reference-image conditioning, variations, color-palette guidance, inpainting, and outpainting. A <a href="https://aws.amazon.com/blogs/aws/amazon-nova-canvas-update-virtual-try-on-and-style-options-now-available/">July 2, 2025 update</a> added virtual try-on and eight preset styles.</p>
               <p>The <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-canvas.html">Bedrock model details page</a> lists September 30, 2026 as Canvas's end-of-life date. Canvas is therefore retained here for its historical model and service documentation. Separately, Amazon's <a href="https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-nova-2-omni-preview/">December 2, 2025 Nova 2 Omni announcement</a> introduced a preview with multimodal inputs and text/image outputs, including image generation and natural-language editing; that source describes preview access through Nova Forge.</p>
               <p>The <a href="https://arxiv.org/abs/2506.12103">Nova family technical report</a> describes Canvas as a latent diffusion model with a transformer backbone, text conditioning, and a VAE. The <a href="https://www.amazon.science/publications/amazon-nova-2-multimodal-reasoning-and-generation-models">Nova 2 report</a> separately documents Omni’s image generation and editing evaluations, including a human study with 1,000 prompts. Amazon releases the <a href="https://huggingface.co/datasets/amazon-agi/Amazon-Nova-2-Omni-Image-Gen-Evals">image-generation evaluation prompts</a> alongside that report.</p>
@@ -833,7 +847,7 @@
                 </ul>
               </details>
 
-              <h2 id="glm-image"><span id="open-research" aria-hidden="true"></span>25. Z.ai: GLM-Image and CogView</h2>
+              <h2 id="glm-image"><span id="open-research" aria-hidden="true"></span><span class="sec-index">25.</span>Z.ai: GLM-Image and CogView</h2>
               <p>The earlier family papers trace three approaches: <a href="https://arxiv.org/abs/2105.13290">CogView</a> autoregressively generates VQ-VAE image tokens; <a href="https://arxiv.org/abs/2204.14217">CogView2</a> adds hierarchical generation and local parallel decoding; and <a href="https://arxiv.org/abs/2403.05121">CogView3</a> uses relay diffusion to connect low-resolution generation with super-resolution.</p>
               <p><a href="https://z.ai/blog/glm-image">GLM-Image</a> combines a 9B autoregressive module, initialized from GLM-4-9B-0414, with a 7B single-stream diffusion transformer decoder. The <a href="https://github.com/zai-org/GLM-Image">repository</a> describes visual-token prediction, a glyph encoder for text conditioning, and separate reinforcement-learning objectives for the autoregressive and diffusion components. It provides text-to-image and image-to-image inference. The earlier <a href="https://github.com/zai-org/CogView4">CogView4 release</a> provides a 6B bilingual diffusion model with a separate GLM text encoder.</p>
               <p>The <a href="https://huggingface.co/zai-org/GLM-Image">GLM-Image checkpoint</a> supports text-to-image generation and image-to-image tasks within one model. Its documented image-conditioned tasks include instruction editing, style transfer, identity-preserving generation, and multi-subject consistency. The repository provides an editing example that changes a supplied image’s background through the same model pipeline. These editing capabilities are documented for the open-weight implementation; the linked <a href="https://docs.z.ai/guides/image/glm-image">hosted API guide</a> currently describes text input and image output.</p>
@@ -853,7 +867,7 @@
                 </ul>
               </details>
 
-              <h2 id="ernie-image">26. Baidu: ERNIE-Image</h2>
+              <h2 id="ernie-image"><span class="sec-index">26.</span>Baidu: ERNIE-Image</h2>
               <p>The <a href="https://arxiv.org/abs/2605.25347">ERNIE-Image report</a> describes an 8B single-stream diffusion transformer and a separate 3B prompt enhancer that expands user input into structured descriptions. Its post-training includes stabilized direct preference optimization. The Turbo variant uses multi-teacher distribution-matching distillation and targets eight function evaluations (8 NFE) during sampling. Baidu provides <a href="https://github.com/baidu/ERNIE-Image">inference code</a> and model cards for both <a href="https://huggingface.co/baidu/ERNIE-Image">ERNIE-Image</a> and <a href="https://huggingface.co/baidu/ERNIE-Image-Turbo">ERNIE-Image-Turbo</a>.</p>
               <h3 class="materials-label">Materials and further reading</h3>
               <details class="reference-group" id="sources-ernie-image">
@@ -867,7 +881,7 @@
                 </ul>
               </details>
 
-              <h2 id="sensenova">27. SenseTime: SenseNova</h2>
+              <h2 id="sensenova"><span class="sec-index">27.</span>SenseTime: SenseNova</h2>
               <p>SenseTime’s earlier image-generation line included SenseMirage V4 and SenseMirage-Turbo V4, documented in the <a href="https://www.sensetime.com/cn/news/51167488">SenseNova 4.0 announcement</a>. The newer SenseNova-U series brings image generation, editing, and interleaved text–image output into a native unified model.</p>
               <p>The <a href="https://arxiv.org/abs/2605.12500">SenseNova-U1 report</a> builds on <a href="https://huggingface.co/blog/sensenova/neo-unify">NEO-unify</a>: a mixture-of-transformers architecture combines autoregressive text modeling with pixel-space flow matching, using a shared visual interface without an external vision encoder or VAE. U1 provides <a href="https://huggingface.co/sensenova/SenseNova-U1-8B-MoT">8B-MoT</a> and <a href="https://huggingface.co/sensenova/SenseNova-U1-A3B-MoT">A3B-MoT</a> variants. The dense 8B-MoT variant has roughly 8B parameters in each of its understanding and generation branches, with additional shared parameters documented in the <a href="https://github.com/OpenSenseNova/SenseNova-U1/blob/main/docs/parameter_breakdown.md">parameter breakdown</a>. The release also includes specialist <a href="https://github.com/OpenSenseNova/SenseNova-U1/blob/main/docs/u1_infographic_model.md">infographic models</a> and an <a href="https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-Interleaved">interleaved-generation checkpoint</a>.</p>
               <p><a href="https://arxiv.org/abs/2609.11929">SenseNova-U1.5</a> replaces independent patch reconstruction with a spatial decoder using convolutions and Pixel Shuffle, allowing neighboring regions to interact before pixel reconstruction. Its report documents training at resolutions up to 4096 × 4096, multi-reference image editing, and interleaved generation. Post-training first optimizes four specialists for aesthetics, bilingual text rendering, infographics, and image editing, then combines their capabilities through multi-expert on-policy distillation.</p>
@@ -904,7 +918,7 @@
                 </ul>
               </details>
 
-              <h2 id="hidream"><span id="research-models" aria-hidden="true"></span>28. HiDream.ai: HiDream</h2>
+              <h2 id="hidream"><span id="research-models" aria-hidden="true"></span><span class="sec-index">28.</span>HiDream.ai: HiDream</h2>
               <p>The <a href="https://arxiv.org/abs/2505.22705">HiDream-I1 report</a> describes a 17B sparse diffusion transformer with mixture-of-experts modules.</p>
               <p><a href="https://arxiv.org/abs/2605.11061">HiDream-O1-Image</a> uses a pixel-space unified transformer that processes raw image pixels, text tokens, and task conditions without a separate VAE or pretrained text encoder. The report studies 8B and 200B+ Pro variants. The <a href="https://github.com/HiDream-ai/HiDream-O1-Image">public release</a> includes a full 8B checkpoint and an initial distilled Dev checkpoint; the repository recommends the full model for editing. The later Dev-2604 release is tailored to text-to-image generation and includes a separate prompt refiner. It also provides a separate prompt-rewriting agent that can use a local Gemma model or an API backend. That agent is additional to the image generator described by the 8B parameter count.</p>
               <p><a href="https://github.com/HiDream-ai/HiDream-E1">HiDream-E1</a> is an instruction-editing model built on I1. The original E1-Full release takes an editing instruction together with a target-image description; <a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">E1.1</a>, released in July 2025, accepts direct instructions and supports dynamic image sizes around one million pixels. The reference pipeline can use I1-Full during the final denoising stages for image-to-image refinement, with an adjustable refinement fraction.</p>
@@ -930,7 +944,7 @@
                 </ul>
               </details>
 
-              <h2 id="stepfun">29. StepFun: Step1X-Edit and ReasonEdit</h2>
+              <h2 id="stepfun"><span class="sec-index">29.</span>StepFun: Step1X-Edit and ReasonEdit</h2>
               <p><a href="https://arxiv.org/abs/2504.17761">Step1X-Edit</a> combines a multimodal-language-model encoder with a diffusion image decoder: the encoder interprets the source image and requested change, and the decoder produces the edited result. The release includes code, checkpoints, and GEdit-Bench, an evaluation set built around user editing instructions. <a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p1-diffusers">Version 1.1</a>, released in July 2025, additionally supports text-to-image generation.</p>
               <p><a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p2">Step1X-Edit-v1p2</a> is the ReasonEdit-S model in the <a href="https://arxiv.org/abs/2511.22625">ReasonEdit report</a>. It adds a thinking–editing–reflection loop: reasoning interprets abstract instructions, and reflection examines outputs, requests corrections, and determines when to stop. The paper also studies a Qwen-Image-Edit-based ReasonEdit-Q variant. The <a href="https://github.com/stepfun-ai/Step1X-Edit">release index</a> separately announces Step Image Edit 2 as a hosted generation-and-editing model in April 2026. The <a href="https://platform.stepfun.com/docs/zh/announcements/image-model-retirement">official retirement notice</a> records the shutdown of its generation and editing APIs on 10 October 2026. The public Step1X-Edit checkpoints remain separate downloadable releases.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -950,7 +964,7 @@
                 </ul>
               </details>
 
-              <h2 id="meituan">30. Meituan: LongCat-Image and LongCat-Next</h2>
+              <h2 id="meituan"><span class="sec-index">30.</span>Meituan: LongCat-Image and LongCat-Next</h2>
               <p><a href="https://arxiv.org/abs/2512.07584">LongCat-Image</a> is Meituan’s Chinese–English image family with a 6B core diffusion model. The <a href="https://github.com/meituan-longcat/LongCat-Image">release matrix</a> separates LongCat-Image and its mid-training Dev checkpoint for text-to-image generation from LongCat-Image-Edit for instruction editing. The <a href="https://tech.meituan.com/2025/12/09/LongCat-Image-Model.html">technical launch post</a> describes initializing the editor from the mid-training generator and jointly training generation and editing tasks.</p>
               <p><a href="https://huggingface.co/meituan-longcat/LongCat-Image-Edit-Turbo">LongCat-Image-Edit-Turbo</a>, released in February 2026, distills the editing checkpoint to eight function evaluations. The shared inference documentation specifies quotation marks around text to be rendered, enabling the model’s character-level encoding path.</p>
               <p>The separate <a href="https://arxiv.org/abs/2603.27538">LongCat-Next report</a> studies autoregressive image understanding and generation through a common discrete-token representation. Its dNaViT tokenizer supports variable image resolutions; the <a href="https://github.com/meituan-longcat/LongCat-Next">public implementation</a> includes image generation and understanding examples. This is a different architecture and checkpoint family from LongCat-Image-Edit.</p>
@@ -972,7 +986,7 @@
                 </ul>
               </details>
 
-              <h2 id="firered">31. Xiaohongshu: FireRed-Image-Edit</h2>
+              <h2 id="firered"><span class="sec-index">31.</span>Xiaohongshu: FireRed-Image-Edit</h2>
               <p><a href="https://arxiv.org/abs/2602.13344">FireRed-Image-Edit</a> is a dedicated instruction editor built from a text-to-image backbone through pretraining, supervised fine-tuning, and reinforcement learning. Its report covers semantic alignment, identity preservation, and multi-image editing, and introduces REDEdit-Bench.</p>
               <p>The <a href="https://github.com/FireRedTeam/FireRed-Image-Edit">official repository</a> identifies the Xiaohongshu Intelligent Creation Core Technology Team and releases the 1.0 and 1.1 editing checkpoints. The <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1">1.1 model card</a> documents portrait, text-style, makeup, and multi-image editing. The model accepts one to three source images; the optional agent handles additional images through cropping, stitching, and instruction rewriting. The separate FireRed-Image text-to-image model remains marked as awaiting release in the repository.</p>
               <p><a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0-Lightning">FireRed-Image-Edit-1.0-Lightning</a> is an eight-step distillation LoRA loaded on the 1.0 base model. The later <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-LoRA-Zoo">LoRA Zoo</a> supplies adapters for the 1.1 base: CoverCraft for typography, Makeup for cosmetic edits, and Lightning for eight-step inference. These adapter releases require their corresponding base checkpoints.</p>
@@ -991,7 +1005,7 @@
                 </ul>
               </details>
 
-              <h2 id="pixart">32. Huawei Noah’s Ark Lab: PixArt</h2>
+              <h2 id="pixart"><span class="sec-index">32.</span>Huawei Noah’s Ark Lab: PixArt</h2>
               <p><a href="https://arxiv.org/abs/2310.00426">PixArt-α</a> uses a diffusion transformer with cross-attention for text conditioning. Its report separates training into learning pixel dependencies, text–image alignment, and aesthetic quality, and describes generating dense image captions for the alignment stage. The <a href="https://pixart-alpha.github.io/">project page</a> lists authors from Huawei Noah’s Ark Lab, Dalian University of Technology, the University of Hong Kong, and the Hong Kong University of Science and Technology.</p>
               <p><a href="https://arxiv.org/abs/2403.04692">PixArt-Σ</a> develops weak-to-strong training from PixArt-α with higher-quality training data and captions, and reports generation at up to 4K resolution. Separate repositories provide <a href="https://github.com/PixArt-alpha/PixArt-alpha">PixArt-α</a> and <a href="https://github.com/PixArt-alpha/PixArt-sigma">PixArt-Σ</a> code and checkpoint links.</p>
               <p><a href="https://arxiv.org/abs/2401.05252">PixArt-δ</a> adds latent consistency distillation and a ControlNet-Transformer to PixArt-α, covering two-to-four-step sampling and spatially conditioned generation.</p>
@@ -1009,7 +1023,7 @@
                 </ul>
               </details>
 
-              <h2 id="sana">33. NVIDIA: SANA and Cosmos</h2>
+              <h2 id="sana"><span class="sec-index">33.</span>NVIDIA: SANA and Cosmos</h2>
               <p>The <a href="https://arxiv.org/abs/2410.10629">SANA report</a> describes a deep-compression autoencoder, a linear diffusion transformer, and generation at up to 4096 × 4096 resolution. The <a href="https://nvlabs.github.io/Sana/">project page</a> lists NVIDIA, MIT, and Tsinghua University affiliations.</p>
               <p><a href="https://arxiv.org/abs/2501.18427">SANA 1.5</a> studies scaling both model training and inference-time computation. <a href="https://arxiv.org/abs/2503.09641">SANA-Sprint</a> combines continuous-time consistency distillation with latent adversarial distillation to produce images in one to four sampling steps. The <a href="https://github.com/NVlabs/Sana">repository</a> and <a href="https://nvlabs.github.io/Sana/docs/">documentation</a> provide release-specific checkpoints and inference instructions.</p>
 
@@ -1040,7 +1054,7 @@
                 </ul>
               </details>
 
-              <h2 id="lumina">34. Shanghai AI Lab: Lumina</h2>
+              <h2 id="lumina"><span class="sec-index">34.</span>Shanghai AI Lab: Lumina</h2>
               <p>The family’s earlier reports include <a href="https://arxiv.org/abs/2405.05945">Lumina-T2X</a>, which introduces Flag-DiT, and <a href="https://arxiv.org/abs/2406.18583">Lumina-Next</a>, which develops Next-DiT and resolution extrapolation. The original <a href="https://arxiv.org/abs/2408.02657">Lumina-mGPT</a> establishes the autoregressive branch through multimodal generative pretraining and progressive fine-tuning.</p>
               <p>Shanghai AI Lab’s <a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Alpha-VLLM group</a> releases both diffusion and autoregressive image models. <a href="https://arxiv.org/abs/2503.21758">Lumina-Image 2.0</a> uses Unified Next-DiT to process text and image tokens jointly. Its <a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">code</a> and <a href="https://huggingface.co/Alpha-VLLM/Lumina-Image-2.0">model card</a> document the released generation pipeline and weights.</p>
               <p><a href="https://arxiv.org/abs/2507.17801">Lumina-mGPT 2.0</a> is a decoder-only autoregressive model trained from scratch. The report covers text-to-image generation, subject-driven generation, editing, controllable synthesis, and dense prediction, and describes speculative Jacobi sampling for faster decoding.</p>
@@ -1071,7 +1085,7 @@
                 </ul>
               </details>
 
-              <h2 id="kolors">35. Kuaishou: Kolors and Kling Image</h2>
+              <h2 id="kolors"><span class="sec-index">35.</span>Kuaishou: Kolors and Kling Image</h2>
               <p><a href="https://huggingface.co/Kwai-Kolors/Kolors">Kolors</a> is Kuaishou’s latent-diffusion text-to-image model supporting Chinese and English prompts. The <a href="https://github.com/Kwai-Kolors/Kolors">official repository</a> provides inference code and weights, together with inpainting, ControlNet, IP-Adapter, FaceID, and LoRA training and inference materials.</p>
               <p>Kolors’ machine assessment uses the <a href="https://arxiv.org/abs/2405.14705">Multi-dimensional Preference Score (MPS)</a>. Its separate evaluation-method paper models aesthetics, semantic alignment, detail quality, and overall human preference.</p>
               <p><a href="https://github.com/Kwai-Kolors/Kolors/tree/master/inpainting">Kolors-Inpainting</a> is a separate checkpoint initialized from Kolors, with additional U-Net inputs for the masked image and mask. It performs prompt-guided replacement within selected regions. ControlNet and IP-Adapter/FaceID provide structural or reference-image conditioning; they describe different interfaces from the unconstrained instruction editing used by newer unified models.</p>
@@ -1094,7 +1108,7 @@
                 </ul>
               </details>
 
-              <h2 id="janus">36. DeepSeek: Janus</h2>
+              <h2 id="janus"><span class="sec-index">36.</span>DeepSeek: Janus</h2>
               <p>The original <a href="https://arxiv.org/abs/2410.13848">Janus paper</a> introduces the decoupled visual encoders. <a href="https://arxiv.org/abs/2411.07975">JanusFlow</a> extends the family with rectified-flow image generation and alignment between understanding and generation representations.</p>
               <p>The <a href="https://github.com/deepseek-ai/Janus">Janus family repository</a> describes separate visual encoding paths for understanding and generation, connected to a shared transformer. <a href="https://arxiv.org/abs/2501.17811">Janus-Pro</a> retains that design while changing the training strategy, expanding training data, and scaling the model. The repository links the family’s reports, inference code, and checkpoints.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -1108,7 +1122,7 @@
                 </ul>
               </details>
 
-              <h2 id="baai-models">37. BAAI: OmniGen and Emu</h2>
+              <h2 id="baai-models"><span class="sec-index">37.</span>BAAI: OmniGen and Emu</h2>
               <h3 id="omnigen">OmniGen and OmniGen2: Instruction-aligned multimodal generation</h3>
               <p>The original <a href="https://arxiv.org/abs/2409.11340">OmniGen</a> unifies text-to-image generation, editing, subject-driven synthesis, and other visual conditions within one diffusion model and instruction interface.</p>
               <p><a href="https://arxiv.org/abs/2506.18871">OmniGen2</a> uses distinct decoding pathways with unshared parameters for text and images, and a decoupled visual tokenizer. Its report covers text-to-image generation, image editing, and in-context generation, as well as a reflection mechanism for refining outputs. The <a href="https://github.com/VectorSpaceLab/OmniGen2">repository</a> provides inference and training code, checkpoint links, and released training-data resources.</p>
@@ -1142,7 +1156,7 @@
                 </ul>
               </details>
 
-              <h2 id="ant">38. Ant Group: Ming-Image</h2>
+              <h2 id="ant"><span class="sec-index">38.</span>Ant Group: Ming-Image</h2>
               <p><a href="https://github.com/inclusionAI/Ming-Image">Ant Group’s inclusionAI releases</a> Ming-Image-0.1-Design as a pair of 6B models for visual design. The Design model generates layouts such as interfaces, infographics, posters, and other text-rich compositions, including RGBA output with transparent backgrounds. The <a href="https://huggingface.co/inclusionAI/Ming-Image-0.1-Design-Layer">Design-Layer model</a> takes a flattened design image and a layer plan and produces separate RGBA layers. Both checkpoints and their inference code are released under MIT licensing.</p>
               <h3 class="materials-label">Materials and further reading</h3>
               <details class="reference-group" id="sources-ant">
@@ -1155,7 +1169,7 @@
                 </ul>
               </details>
 
-              <h2 id="pruna">39. Pruna: P-Image</h2>
+              <h2 id="pruna"><span class="sec-index">39.</span>Pruna: P-Image</h2>
               <p><a href="https://docs.api.pruna.ai/guides/models">Pruna provides</a> separate generation and editing models through its API. P-Image is the text-to-image model; <a href="https://www.pruna.ai/p-image-edit">P-Image-Edit</a> accepts one to five input images together with editing instructions. <a href="https://www.pruna.ai/p-image-ideogram">P-Image-Ideogram</a>, developed with Ideogram, is a further text-to-image offering with five thinking levels, 1K and 2K output, and support for structured JSON prompts.</p>
               <h3 class="materials-label">Materials and further reading</h3>
               <details class="reference-group" id="sources-pruna">
@@ -1170,7 +1184,7 @@
                 </ul>
               </details>
 
-              <h2 id="newport">40. Newport AI: DreamImage</h2>
+              <h2 id="newport"><span class="sec-index">40.</span>Newport AI: DreamImage</h2>
               <p><a href="https://api.newportai.com/api-docs/dreamimage-2.0">DreamImage 2.0</a> is Newport AI's image-editing offering in DreamAPI. Its documented interface requires an input image and a natural-language edit prompt, and returns the edited image through an asynchronous task. <a href="https://artificialanalysis.ai/image/leaderboard/editing">Artificial Analysis</a> evaluates it on the image-editing leaderboard.</p>
               <h3 class="materials-label">Materials and further reading</h3>
               <details class="reference-group" id="sources-newport">
@@ -1181,7 +1195,7 @@
                 </ul>
               </details>
 
-              <h2 id="vidu">41. ShengShu: Vidu image models</h2>
+              <h2 id="vidu"><span class="sec-index">41.</span>ShengShu: Vidu image models</h2>
               <p>ShengShu’s <a href="https://www.prnewswire.com/news-releases/vidu-launches-q2-image-generation-with-unlimited-free-access-challenging-top-global-image-models-302629015.html">Vidu Q2 Image release</a> extends the earlier Q1 reference-to-image model with text-to-image generation and instruction-based editing. The official <a href="https://platform.vidu.com/docs/api-reference/image-generation">image API</a> accepts zero to seven reference images for Q2: text alone produces a new image, while image inputs support reference-conditioned creation and editing. Documented edits include adding or removing objects, changing outfits and props, and adjusting lighting and composition. Q2 offers 1080p, 2K, and 4K output. The same API lists Q1 as a reference-to-image model requiring one to seven images and producing 1080p output.</p>
               <h3 class="materials-label">Materials and further reading</h3>
               <details class="reference-group" id="sources-vidu">
@@ -1193,7 +1207,7 @@
                 </ul>
               </details>
 
-              <h2 id="sourceful">42. Sourceful: Riverflow</h2>
+              <h2 id="sourceful"><span class="sec-index">42.</span>Sourceful: Riverflow</h2>
               <p>The original <a href="https://www.riverflow.ai/research/introducing-sourceful-riverflow-1">Riverflow 1 release</a> provides standard and Mini image-editing services built around a reasoning model and diffusion components.</p>
               <p>Sourceful’s <a href="https://www.riverflow.ai/research/introducing-riverflow-2-0">Riverflow 2.0</a> combines diffusion models with reasoning that reviews and corrects generated candidates. Its commercial Fast and Pro offerings support both generation and instruction-based editing. <a href="https://www.riverflow.ai/research/introducing-riverflow-2-5">Riverflow 2.5</a> adds adjustable thinking and user-defined scoring criteria for iterative refinement. The <a href="https://replicate.com/sourceful/riverflow-v2.5-fast">2.5 Fast API</a> accepts up to four images and outputs 1K or 2K; <a href="https://replicate.com/sourceful/riverflow-v2.5-pro">2.5 Pro</a> accepts up to ten images and also supports 4K. Sourceful describes Riverflow as an agentic image system combining open, closed, and in-house diffusion models with its reasoning and judging components.</p>
               <h3 class="materials-label">Materials and further reading</h3>
@@ -1212,23 +1226,23 @@
                 </ul>
               </details>
 
-              <h2 id="technical-themes">43. Model interfaces and release boundaries</h2>
+              <h2 id="technical-themes"><span class="sec-index">43.</span>Model interfaces and release boundaries</h2>
               <p><strong>Generation and editing are version-specific.</strong> Early Qwen releases use separate generation and Edit checkpoints, while <a href="https://github.com/QwenLM/Qwen-Image-2.1">Qwen-Image-2.1</a> supports both. <a href="https://bfl.ai/blog/24-11-21-tools">FLUX.1 Fill</a> is a masked editor; Kontext uses image context and instructions. The model map identifies these interfaces separately.</p>
               <p><strong>Product features can combine several models.</strong> Recraft’s <a href="https://www.recraft.ai/blog/introducing-prompt-based-editing-the-ingenious-shortcut-for-your-ai-images">natural-language editing workflow</a> uses external editing models. Canva’s <a href="#canva">Craft and Magic Layers</a> handle generation and design reconstruction respectively. A product’s editing controls therefore need to be read alongside its model documentation.</p>
               <p><strong>Weights, adapters, and inference modes are different releases.</strong> <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0-Lightning">FireRed Lightning</a> is a LoRA loaded onto a base editor. <a href="https://www.krea.ai/docs/developers/krea-3/overview">Krea 3 Fast, High, and Ultra</a> are API modes, and Ultra requires an image input. NVIDIA’s <a href="#sources-cosmos">Cosmos image checkpoints and agentic configuration</a> likewise have separate release and evaluation documentation.</p>
-            </div>
-          </div>
-          <footer class="article-foot">
-            <a href="../blog.html">← Back to Blog</a>
-          </footer>
-        </article>
+      </article>
+    </div>
+
+    <footer class="site-footer">
+      <div class="colophon-inner">
+        <span>
+          End of Survey · <a href="../blog.html">Return to Blog</a> ·
+          <a href="../index.html">Home</a>
+        </span>
       </div>
-    </main>
-  </div>
-  <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
-    </svg>
-  </a>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

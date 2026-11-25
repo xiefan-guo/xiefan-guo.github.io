@@ -1,84 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A survey of video generation and editing models, from open-weight research systems to proprietary audio-video models, with official reports, code, weights, APIs, and live leaderboards.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A survey of video models — Xiefan Guo</title>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Semibold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261102-article-meta-original-weight">
-  <script defer src="../assets/js/back-to-top.js?v=20261027-viewport-top"></script>
-  <script defer src="../assets/js/article-toc.js?v=20261101"></script>
+  <meta name="description" content="A survey of video generation and editing models, from open-weight research systems to proprietary audio-video models, with official reports, code, weights, APIs, and live leaderboards." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body id="top">
-  <div class="wrap">
-    <header class="topbar">
-      <a class="wordmark" href="../index.html">Xiefan Guo</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="../papers.html">Papers</a>
-        <a href="../activities.html">Activities</a>
-        <a class="active" href="../blog.html">Blog</a>
-      </nav>
-    </header>
-    <main>
-      <div class="content page">
-        <article class="article video-survey">
-<header class="article-head">
-<h1 class="article-title">A survey of video models</h1>
-<div class="article-meta"><time datetime="2026-10-27">27 Oct 2026</time> · Xiefan Guo · Assisted by Codex, GPT-6 Astra, and Claude</div>
-</header>
-<div class="article-layout">
-<nav class="article-toc" aria-label="Article contents"><strong>Contents</strong>
-<ol><li><a href="#model-map">A map of the model families</a></li>
-<li><a href="#leaderboards">Leaderboards and evaluation entry points</a></li>
-<li><a href="#openai">OpenAI: Sora</a></li>
-<li><a href="#google-video">Google: Veo and Gemini Omni</a></li>
-<li><a href="#seedance">ByteDance: Seedance</a></li>
-<li><a href="#kling">Kuaishou: Kling</a></li>
-<li><a href="#hunyuan-video">Tencent: HunyuanVideo</a></li>
-<li><a href="#wan-video">Alibaba: Wan</a></li>
-<li><a href="#happyhorse">Alibaba ATH: HappyHorse</a></li>
-<li><a href="#minimax">MiniMax: Hailuo and H3</a></li>
-<li><a href="#vidu">ShengShu: Vidu</a></li>
-<li><a href="#runway-video">Runway: Gen-4, Gen-4.5, Aleph, and Act-Two</a></li>
-<li><a href="#luma-video">Luma: Ray</a></li>
-<li><a href="#flux">Black Forest Labs: FLUX 3 Video</a></li>
-<li><a href="#fal">fal: H3 Max and FLUX 3 Max</a></li>
-<li><a href="#grok-video">xAI: Grok Imagine Video</a></li>
-<li><a href="#pixverse">PixVerse: V6 and R2</a></li>
-<li><a href="#ltx">Lightricks / LTX: LTX-Video and LTX-2</a></li>
-<li><a href="#sand">Sand.ai: MAGI</a></li>
-<li><a href="#cosmos">NVIDIA: Cosmos</a></li>
-<li><a href="#skyreels">Skywork: SkyReels</a></li>
-<li><a href="#cogvideo">Z.ai / THUDM: CogVideo and CogVideoX</a></li>
-<li><a href="#step-video">StepFun: Step-Video</a></li>
-<li><a href="#longcat-video">Meituan: LongCat-Video</a></li>
-<li><a href="#firefly-video">Adobe: Firefly Video</a></li>
-<li><a href="#nova-reel">Amazon: Nova Reel</a></li>
-<li><a href="#pika">Pika: Pika 2.5 and editing tools</a></li>
-<li><a href="#midjourney-video">Midjourney: Video V1</a></li>
-<li><a href="#heygen">HeyGen: Video and avatar models</a></li>
-<li><a href="#higgsfield">Higgsfield: DoP and video tools</a></li>
-<li><a href="#utopai">Utopai Studios: Utopai X</a></li>
-<li><a href="#agnes">Sapiens AI: Agnes Video</a></li>
-<li><a href="#creatify">Creatify: Boreal and Aurora</a></li>
-<li><a href="#bach">Video Rebirth: BACH</a></li>
-<li><a href="#vimoo">Vimoo: Vimoo 1.0</a></li>
-<li><a href="#movie-gen">Meta: Movie Gen</a></li>
-<li><a href="#stable-video">Stability AI: Stable Video Diffusion</a></li>
-<li><a href="#mochi">Genmo: Mochi</a></li>
-<li><a href="#open-sora">HPC-AI Tech: Open-Sora</a></li>
-<li><a href="#technical-themes">Temporal modeling, control, and release boundaries</a></li></ol></nav>
-<div class="article-body">
+<body>
+  <a class="skip-link" href="#article-content">Skip to article</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="../index.html">Xiefan Guo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../papers.html">Papers</a>
+      <a href="../activities.html">Activities</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="survey-grid">
+      <aside class="survey-toc-col" aria-label="Table of contents">
+        <a class="back-link" href="../blog.html">← All writings</a>
+
+        <nav aria-label="Article contents">
+          <div class="toc-title">Contents</div>
+          <div class="toc-list">
+            <a href="#model-map">1. A map of the model families</a>
+            <a href="#leaderboards">2. Leaderboards and evaluation entry points</a>
+            <a href="#openai">3. OpenAI: Sora</a>
+            <a href="#google-video">4. Google: Veo and Gemini Omni</a>
+            <a href="#seedance">5. ByteDance: Seedance</a>
+            <a href="#kling">6. Kuaishou: Kling</a>
+            <a href="#hunyuan-video">7. Tencent: HunyuanVideo</a>
+            <a href="#wan-video">8. Alibaba: Wan</a>
+            <a href="#happyhorse">9. Alibaba ATH: HappyHorse</a>
+            <a href="#minimax">10. MiniMax: Hailuo and H3</a>
+            <a href="#vidu">11. ShengShu: Vidu</a>
+            <a href="#runway-video">12. Runway: Gen-4, Gen-4.5, Aleph, and Act-Two</a>
+            <a href="#luma-video">13. Luma: Ray</a>
+            <a href="#flux">14. Black Forest Labs: FLUX 3 Video</a>
+            <a href="#fal">15. fal: H3 Max and FLUX 3 Max</a>
+            <a href="#grok-video">16. xAI: Grok Imagine Video</a>
+            <a href="#pixverse">17. PixVerse: V6 and R2</a>
+            <a href="#ltx">18. Lightricks / LTX: LTX-Video and LTX-2</a>
+            <a href="#sand">19. Sand.ai: MAGI</a>
+            <a href="#cosmos">20. NVIDIA: Cosmos</a>
+            <a href="#skyreels">21. Skywork: SkyReels</a>
+            <a href="#cogvideo">22. Z.ai / THUDM: CogVideo and CogVideoX</a>
+            <a href="#step-video">23. StepFun: Step-Video</a>
+            <a href="#longcat-video">24. Meituan: LongCat-Video</a>
+            <a href="#firefly-video">25. Adobe: Firefly Video</a>
+            <a href="#nova-reel">26. Amazon: Nova Reel</a>
+            <a href="#pika">27. Pika: Pika 2.5 and editing tools</a>
+            <a href="#midjourney-video">28. Midjourney: Video V1</a>
+            <a href="#heygen">29. HeyGen: Video and avatar models</a>
+            <a href="#higgsfield">30. Higgsfield: DoP and video tools</a>
+            <a href="#utopai">31. Utopai Studios: Utopai X</a>
+            <a href="#agnes">32. Sapiens AI: Agnes Video</a>
+            <a href="#creatify">33. Creatify: Boreal and Aurora</a>
+            <a href="#bach">34. Video Rebirth: BACH</a>
+            <a href="#vimoo">35. Vimoo: Vimoo 1.0</a>
+            <a href="#movie-gen">36. Meta: Movie Gen</a>
+            <a href="#stable-video">37. Stability AI: Stable Video Diffusion</a>
+            <a href="#mochi">38. Genmo: Mochi</a>
+            <a href="#open-sora">39. HPC-AI Tech: Open-Sora</a>
+            <a href="#technical-themes">40. Temporal modeling, control, and release boundaries</a>
+          </div>
+        </nav>
+      </aside>
+
+      <article id="article-content" class="survey-article">
+        <header class="survey-header">
+          <div class="survey-rubric-line">Survey</div>
+          <h1 class="survey-title">A survey of video models</h1>
+          <div class="survey-meta">
+            <span><time datetime="2026-10-27">27 Oct 2026</time></span>
+            <span>·</span>
+            <span>Xiefan Guo</span>
+            <span>·</span>
+            <span>Assisted by Codex, GPT-6 Astra, and Claude</span>
+          </div>
+        </header>
+
+        <div class="survey-abstract">
+          <span class="survey-abstract-label">Abstract</span>
+          A survey of video generation and editing models, from open-weight research systems to proprietary audio-video models, with official reports, code, weights, APIs, and live leaderboards.
+        </div>
+
 <p>This article surveys video models for generation and editing, covering open-weight research systems, proprietary foundation models, and commercial releases. The scope includes text-to-video, image animation, reference-conditioned generation, source-video editing, and audio-video synthesis. Selected avatar and interactive-world models are included where they clarify a different temporal or conditioning interface. Each organization’s chapter links to its official reports, release posts, code, weights, and documentation where available.</p>
 <p>Start with the <a href="#model-map">model map</a> or the <a href="#leaderboards">live leaderboards</a>. This is a companion to <a href="image-models.html">A survey of image models</a>, with the same organization-based structure. Sources were reviewed on 27 October 2026; years attached to living documentation identify the version consulted. Historical releases remain included with their documented availability. Architecture and training claims use original papers, reports, or technical blogs; product controls use official documentation. Where only vendor descriptions are public, they establish what the developer reports rather than an independently reproduced result. The catalog is a selection of documented families, not an exhaustive inventory or a fixed ranking.</p>
-<h2 id="model-map">1. A map of the model families</h2>
+<h2 id="model-map"><span class="sec-index">1.</span>A map of the model families</h2>
 <p>Each row links to a chapter and its materials. A family can contain different generation, editing, audio, or acceleration releases; the task column describes those boundaries rather than assigning every capability to every version.</p>
 <p><strong>Reading the task labels.</strong> T2V creates video from text; I2V uses an image as a starting frame. Reference-to-video uses images, clips, or audio to guide a new shot without necessarily reproducing the first frame. Video-to-video (V2V) covers source-conditioned transformation, while instruction editing requests a particular change to existing footage. Keyframes constrain visual states at selected times. Native audio-video generation synthesizes a soundtrack with the picture; audio-driven animation instead receives its speech or sound as input.</p>
-<div class="table-wrap"><table class="table-wide model-map">
+<div class="table-wrap"><table class="booktabs">
 <caption>Selected releases, in chapter order. Access, duration, audio, and editing support are version- and endpoint-specific.</caption>
 <thead><tr><th scope="col">Company / organization</th><th scope="col">Model families and releases covered</th><th scope="col">Generation, editing, and access</th><th scope="col">Official materials</th></tr></thead><tbody>
 <tr><td><a href="#openai">OpenAI</a></td><td>Sora 2 / Sora 2 Pro (historical API)</td><td>T2V / I2V + synchronized audio; historical editing and extension; product and API retired</td><td><a href="#sources-openai">Reports · Blogs · Docs</a></td></tr>
@@ -118,9 +136,9 @@
 <tr><td><a href="#stable-video">Stability AI</a></td><td>SVD / SVD-XT</td><td>Open-weight image-to-video research checkpoints; no text control in the released SVD-XT interface</td><td><a href="#sources-stable-video">Reports · Weights · Code</a></td></tr>
 <tr><td><a href="#mochi">Genmo</a></td><td>Mochi 1 Preview; AsymmDiT / AsymmVAE</td><td>Open-weight T2V; inference and LoRA training</td><td><a href="#sources-mochi">Blogs · Code · Weights</a></td></tr>
 <tr><td><a href="#open-sora">HPC-AI Tech</a></td><td>Open-Sora 1.x / 2.0</td><td>Open training pipeline, video generation, and released checkpoints</td><td><a href="#sources-open-sora">Code · Weights · Reports</a></td></tr></tbody></table></div>
-<h2 id="leaderboards">2. Leaderboards and evaluation entry points</h2>
+<h2 id="leaderboards"><span class="sec-index">2.</span>Leaderboards and evaluation entry points</h2>
 <p>A preference score answers a question about a particular prompt distribution, generation configuration, and judging setup. Video adds several dimensions that a single image does not expose: identity through time, action completion, motion and camera behavior, temporal editing consistency, and the alignment of sound with visible events.</p>
-<div class="table-wrap"><table class="table-wide">
+<div class="table-wrap"><table class="booktabs">
 <caption>Live comparisons and reproducible evaluation code serve complementary purposes.</caption>
 <thead><tr><th scope="col">Evaluation</th><th scope="col">Task / entry point</th><th scope="col">How to read it</th></tr></thead><tbody>
 <tr><td>Artificial Analysis</td><td><a href="https://artificialanalysis.ai/video/leaderboard/text-to-video">Text-to-video</a> · <a href="https://artificialanalysis.ai/video/leaderboard/image-to-video">Image-to-video</a> · <a href="https://artificialanalysis.ai/video/leaderboard/video-editing">Video editing</a></td><td>Separate audio-enabled and silent comparisons; check benchmark version, exact model label, resolution, and preview or derived status.</td></tr>
@@ -148,7 +166,7 @@
 <li><a href="https://arxiv.org/abs/2503.21755">VBench-2.0: Advancing video generation benchmark suite for intrinsic faithfulness</a> <span class="reference-id">Research paper · 2025</span></li>
 </ul>
 </details>
-<h2 id="openai">3. OpenAI: Sora</h2>
+<h2 id="openai"><span class="sec-index">3.</span>OpenAI: Sora</h2>
 <p>The <a href="https://openai.com/index/video-generation-models-as-world-simulators/">original Sora technical report</a> (February 2024) describes a diffusion transformer operating on spacetime patches of compressed video and image latents. This is the documented architecture of the original research model, not a full specification of Sora 2. The <a href="https://openai.com/index/sora-2/">Sora 2 release</a> and <a href="https://openai.com/index/sora-2-system-card/">system card</a> describe synchronized dialogue, sound effects, and improved control. Its historical API offered <code>sora-2</code> and <code>sora-2-pro</code> as hosted variants; the <a href="https://developers.openai.com/api/docs/models/sora-2">model reference</a> records text/image inputs and video/audio outputs, without downloadable weights.</p>
 <p>The historical <a href="https://developers.openai.com/api/docs/guides/video-generation">video generation guide</a> documents asynchronous rendering, image conditioning, reusable characters, extensions, and targeted video editing. Its later <code>/v1/videos/edits</code> interface superseded remixing for new integrations and accepted either an existing generation ID or an uploaded video; uploaded-video editing was restricted to eligible customers. The <a href="https://developers.openai.com/cookbook/examples/sora/sora2_prompting_guide">prompting guide</a> provides examples of shots, timed actions, dialogue, and sound.</p>
 <p>Availability has changed: the <a href="https://openai.com/index/sora-2/">release page</a> states that the Sora product was no longer available as of 26 April 2026. Separately, OpenAI’s <a href="https://developers.openai.com/api/docs/deprecations">deprecation schedule</a> and current model page state that Sora 2, Sora 2 Pro, their listed snapshots, and the Videos API shut down on 24 September 2026, with no one-to-one replacement API. The remaining guides document the earlier interface.</p>
@@ -166,7 +184,7 @@
 </ul>
 </details>
 
-<h2 id="google-video">4. Google: Veo and Gemini Omni</h2>
+<h2 id="google-video"><span class="sec-index">4.</span>Google: Veo and Gemini Omni</h2>
 <p>Google’s research history includes <a href="https://arxiv.org/abs/2210.02303">Imagen Video</a>, which uses cascaded video diffusion and spatial–temporal super-resolution, and <a href="https://arxiv.org/abs/2401.12945">Lumiere</a>, whose Space-Time U-Net processes the full temporal extent at multiple scales. These research systems should be distinguished from the hosted Veo and Gemini Omni releases.</p>
 <p>The <a href="https://storage.googleapis.com/deepmind-media/veo/Veo-3-Tech-Report.pdf">Veo 3 report</a> describes joint latent diffusion over audio and video, with separate autoencoders and a transformer denoiser. <a href="https://deepmind.google/models/veo/">Veo 3.1</a> extends the family’s cinematic generation and audio controls. Its <a href="https://ai.google.dev/gemini-api/docs/veo">API guide</a> documents reference-image conditioning, first-and-last-frame generation, and extension. Availability is endpoint-specific: the same guide records the shutdown of Veo 3.1, Fast, and Lite preview endpoints in the Gemini API on 22 October 2026, and points to Gemini Omni or GA models on the enterprise platform.</p>
 <p><a href="https://deepmind.google/models/model-cards/gemini-omni-flash/">Gemini Omni Flash</a> is separately documented as a multimodal transformer for video generation and conversational editing. Its model card covers text, image, audio, and video inputs and video-with-audio output. The <a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/">1.1 release</a> adds scene extension, first/last-frame interpolation, 360p drafts, and 4K upscaling; extension builds a sequence in increments, up to 40 seconds. The current <a href="https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash">Gemini API model reference</a> lists <code>gemini-omni-1.1-flash</code>, 3–10-second outputs, and text/image/video inputs. Model-card modalities, API inputs, and cumulative extension length describe different boundaries; 4K delivery should also be distinguished from native generation resolution.</p>
@@ -185,7 +203,7 @@
 </ul>
 </details>
 
-<h2 id="seedance">5. ByteDance: Seedance</h2>
+<h2 id="seedance"><span class="sec-index">5.</span>ByteDance: Seedance</h2>
 <p>The <a href="https://arxiv.org/abs/2506.09113">Seedance 1.0 report</a> combines joint text-to-video and image-to-video training with native multi-shot generation, video-specific preference optimization, and inference distillation. <a href="https://arxiv.org/abs/2512.13507">Seedance 1.5 Pro</a> introduces joint audio-video generation through a dual-branch diffusion transformer and cross-modal interaction. The <a href="https://arxiv.org/abs/2604.14148">Seedance 2.0 report</a> extends the family to a unified architecture conditioned on text, images, audio, and video.</p>
 <p><a href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5">Seedance 2.5, announced on 31 July 2026</a>, expands a single generation to 30 seconds and adds timestamp-level audio and video editing. Its announcement allows up to 30 images, 10 video clips, and 10 audio clips as references. The <a href="https://seed.bytedance.com/en/seedance2_5">model page</a> additionally describes two rounds of extension, camera-reference control, clay-render guidance, and green-screen editing.</p>
 <p>These are hosted model releases with technical reports; the cited materials do not establish downloadable Seedance weights. The July announcement describes the initial Jimeng and Doubao rollout and forthcoming API access. For an explicit later deployment record, <a href="https://dev.runwayml.com/learn/seedance-2-5-api">Runway’s October integration guide</a> documents its official Seedance 2.5 API, including generation, editing, and extension. Provider-specific limits should accompany any comparison of those interfaces.</p>
@@ -202,7 +220,7 @@
 </ul>
 </details>
 
-<h2 id="kling">6. Kuaishou: Kling</h2>
+<h2 id="kling"><span class="sec-index">6.</span>Kuaishou: Kling</h2>
 <p>Kling’s <a href="https://kling.ai/quickstart/klingai-video-3-model-user-guide">VIDEO 3.0 guide</a> traces its generation line from VIDEO 2.6, while <a href="https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide">3.0 Omni</a> follows VIDEO O1. Both support native audio and multi-shot generation up to 15 seconds, as well as reusable subject elements with bound voices. Omni provides an all-in-one reference interface for images, videos, and elements; its documented native-audio availability depends on the selected input mode. These release names identify distinct capability sets within the same product.</p>
 <p>The <a href="https://kling.ai/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling">September 2026 announcement</a> introduces Kling 4.0 and its faster Flash mode. The <a href="https://kling.ai/quickstart/kling-4-model-user-guide">26 October user guide</a> documents standard Kling 4.0 with 3–30-second output, stereo audio, up to 15 combined reference assets, targeted video editing, and up to 10 keyframes. Omni Reference supplies appearance, motion, camera, and voice guidance; Keyframes specifies visual states along the timeline. The guide says these two entry points cannot be combined in one task. Flash has a separate 20-second, 720p limit and does not support start/end-frame or multiple-keyframe control.</p>
 <p>Release boundaries still matter: the standard 4.0 guide lists output resolutions through 4K, while its introductory section marks 10-bit HDR and repeated extension to two minutes as coming soon. Those roadmap features should not be treated as generally available endpoint guarantees. The official materials here primarily document hosted capabilities and workflows, rather than reproducible training recipes or released model checkpoints.</p>
@@ -217,7 +235,7 @@
 </ul>
 </details>
 
-<h2 id="hunyuan-video">7. Tencent: HunyuanVideo</h2>
+<h2 id="hunyuan-video"><span class="sec-index">7.</span>Tencent: HunyuanVideo</h2>
 <p>The original <a href="https://arxiv.org/abs/2412.03603">HunyuanVideo report</a> describes a large video-generation framework built around a spatiotemporal latent representation and a diffusion transformer. Its <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">official repository</a> preserves the original release and the subsequent image-to-video branch. These releases established a reproducible foundation for research on motion, conditioning, and inference efficiency, with model weights published separately from the paper.</p>
 <p><a href="https://arxiv.org/abs/2511.18870">HunyuanVideo 1.5</a> reduces the model to 8.3 billion parameters and combines selective and sliding tile attention, glyph-aware bilingual text encoding, progressive training, and a video super-resolution network. The <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5">release repository</a> lists distinct 480P and 720P T2V/I2V checkpoints, classifier-free-guidance-distilled variants, and a 480P I2V step-distilled checkpoint. Training and LoRA-tuning code accompany inference code. A reported memory requirement or speed belongs to its particular offloading, precision, resolution, and sampling configuration; the existence of a small backbone alone does not determine end-to-end deployment cost.</p>
 <p><a href="https://arxiv.org/abs/2505.20156">HunyuanVideo-Avatar</a> is a separate audio-driven human-animation model. Its emotion and face-aware audio modules target expressive motion and multi-character conditioning. This is an input-audio animation task: it should be distinguished from jointly synthesizing a new soundtrack and video from text. The <a href="https://huggingface.co/tencent/HunyuanVideo-1.5">1.5 model card</a> identifies the Tencent Hunyuan community license, so access to weights should be recorded separately from the terms of a hosted video product.</p>
@@ -235,7 +253,7 @@
 </ul>
 </details>
 
-<h2 id="wan-video">8. Alibaba: Wan</h2>
+<h2 id="wan-video"><span class="sec-index">8.</span>Alibaba: Wan</h2>
 <p>The <a href="https://arxiv.org/abs/2503.20314">Wan report</a> documents a diffusion-transformer family with a video VAE, large-scale data curation, and progressive training. <a href="https://github.com/Wan-Video/Wan2.1">Wan 2.1</a> and <a href="https://github.com/Wan-Video/Wan2.2">Wan 2.2</a> provide downloadable code and weights. In 2.2, T2V-A14B and I2V-A14B use experts specialized for different denoising stages; TI2V-5B instead provides a compact combined text/image-to-video model. Separate S2V and Animate releases address supplied-audio-driven generation and character animation/replacement. The <a href="https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B">TI2V-5B model card</a> records its Apache 2.0 license and 720P generation interface.</p>
 <p>The hosted line has a different release boundary. Alibaba Cloud's <a href="https://www.alibabacloud.com/help/en/model-studio/video-generate-edit-model/">video-generation documentation</a> distinguishes Wan 2.5 audio-video generation from 2.6 multi-shot and reference-to-video services, and 2.7 generation, continuation, and reference interfaces. The <a href="https://www.alibabacloud.com/help/en/model-studio/text-to-video-api-reference">2.7 API reference</a> explicitly identifies <code>wan2.7-t2v-2026-06-12</code>, with 2–15-second output and optional input audio. A numbered hosted endpoint is not evidence that a corresponding open checkpoint exists.</p>
 <p><a href="https://www.alibabacloud.com/en/news/product/video-generation-model-wan30-officially-launched-nsb?_p_lc=1">Wan 3.0's August 2026 release</a> introduced an API for up to 30 seconds of native audio-video generation at up to 1080P. The <a href="https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-guide">current guide</a> documents text, first/last frames, image/video/audio references, documents, and web pages, alongside video editing and extension. These are distinct request modes: first/last-frame inputs cannot simply be mixed with every reference type. <code>wan3.0-video-prime</code> provides a faster hosted variant. The 3.0 product/API materials should therefore be read alongside, rather than substituted for, the earlier open-model reports and repositories.</p>
@@ -255,7 +273,7 @@
 </ul>
 </details>
 
-<h2 id="happyhorse">9. Alibaba ATH: HappyHorse</h2>
+<h2 id="happyhorse"><span class="sec-index">9.</span>Alibaba ATH: HappyHorse</h2>
 <p>HappyHorse is a separate Alibaba video-model family from Wan. Alibaba's <a href="https://www.alibabacloud.com/en/press-room/alibaba-positions-for-accelerated-ai-growth-in-sec?_p_lc=1">2026 corporate release</a> records HappyHorse 1.0's April debut and the 1.1 update in June, alongside the consolidation of its AI businesses under Alibaba Token Hub. Model Studio's <a href="https://www.alibabacloud.com/help/en/model-studio/video-generate-edit-model/">video-model catalog</a> lists the two families independently; their version numbers should not be interpreted as successive checkpoints of a single architecture.</p>
 <p>The current hosted interfaces include <code>happyhorse-1.1-t2v</code>, <code>happyhorse-1.1-i2v</code>, and <code>happyhorse-1.1-r2v</code>. They respectively generate from text, animate a supplied first frame, and use reference images. The official catalog specifies audio-bearing output at 24 fps, with 480P, 720P, and 1080P tiers and 3–15-second durations. The <a href="https://www.alibabacloud.com/help/en/model-studio/happyhorse-text-to-video-api-reference">text-to-video reference</a> documents an asynchronous job interface and separate choices for resolution, aspect ratio, duration, and seed.</p>
 <p>Editing has its own release identity: <code>happyhorse-1.0-video-edit</code> remains the catalog's instruction-editing endpoint. A generation model's newer version therefore does not establish a corresponding 1.1 editor. These materials document hosted models and service capabilities; they do not provide the architecture, training recipe, or downloadable weights needed to reproduce the model. In particular, the <a href="https://www.alibabacloud.com/help/en/model-studio/happyhorse-1-1-t2v">1.1 T2V model page</a> marks service fine-tuning as unsupported.</p>
@@ -271,7 +289,7 @@
 </ul>
 </details>
 
-<h2 id="minimax">10. MiniMax: Hailuo and H3</h2>
+<h2 id="minimax"><span class="sec-index">10.</span>MiniMax: Hailuo and H3</h2>
 <p><a href="https://www.minimax.io/news/minimax-hailuo-23">Hailuo 2.3</a> follows Hailuo 02 with improvements to motion, stylization, and facial performance; its Fast variant provides a separate accelerated option. <a href="https://www.minimax.io/blog/minimax-h3">MiniMax H3</a>, announced in July 2026, shifts to general multimodal conditioning and joint video generation with stereo audio.</p>
 <p>The released <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">H3 model card</a> distinguishes FL2VA, which accepts text and optional first/last frames, from Ref2VA, which takes image, video, and audio references. Both belong to an open-weight base-model release. The <a href="https://github.com/MiniMax-AI/MiniMax-H3">repository</a> explains that H3-Base produces 768p output; hosted H3-Context-IR interprets and rewrites multimodal instructions, and H3-Regenerate-2K regenerates a base result with its original context at 2K. Reproducing the complete hosted workflow therefore involves more than downloading the base weights.</p>
 <p>The weights use the MiniMax H3 Community License, whose deployment terms should be read with the model card. <a href="https://fal.ai/learn/devs/introducing-h3-max-by-fal">H3 Max and H3 Max Turbo</a> are fal’s post-trained derivatives, developed together with fal’s serving stack. They are separate releases from the official H3 base checkpoints; performance measurements should identify the derivative, output settings, and endpoint.</p>
@@ -288,7 +306,7 @@
 </ul>
 </details>
 
-<h2 id="vidu">11. ShengShu: Vidu</h2>
+<h2 id="vidu"><span class="sec-index">11.</span>ShengShu: Vidu</h2>
 <p>Vidu’s current API separates the Q-series clip generators from its S-series streaming models. <a href="https://platform.vidu.com/docs/api-reference/video-models/vidu-q3/text-to-video">Q3 Pro and Turbo</a> expose text-to-video alongside image, start/end-frame, and reference interfaces. Q3 Pro supports 1–16-second clips through 1080p, with an explicit option for synchronized dialogue and sound effects. A family name therefore needs the selected variant and task endpoint to specify what is being evaluated.</p>
 <p>The <a href="https://platform.vidu.com/docs/api-reference/updates">7 October 2026 release entry</a> introduces Q4 Preview, including reference voices and additional reference images, also described in <a href="https://www.globenewswire.com/news-release/2026/10/07/3376813/0/en/Shengshu-Technology-Launches-Vidu-Q4-Preview-A-Next-Generation-AI-Video-Model-Built-for-Lifelike-Performances.html">ShengShu’s launch announcement</a>. Its <a href="https://platform.vidu.com/docs/api-reference/video-models/vidu-q4-preview/image-to-video">image-to-video API</a> uses <code>viduq4-preview</code>, supports 3–16 seconds, and lists output resolutions through 4K. The separate <a href="https://platform.vidu.com/docs/api-reference/video-models/vidu-q4-preview/reference-to-video">reference-to-video interface</a> supplies the appropriate route when reference assets should guide a new scene rather than fix its opening frame.</p>
 <p>The <a href="https://arxiv.org/abs/2609.11638">Vidu S2 paper</a> describes S2 Avatar and S2 Editing, also recorded in the platform’s September 2026 release log: the former targets live voice interaction and controlled character motion; the latter edits an incoming video stream using appearance and scene references. These interactive interfaces should be distinguished from offline Q-series clip generation when interpreting latency, duration, or editing claims.</p>
@@ -306,7 +324,7 @@
 </ul>
 </details>
 
-<h2 id="runway-video">12. Runway: Gen-4, Gen-4.5, Aleph, and Act-Two</h2>
+<h2 id="runway-video"><span class="sec-index">12.</span>Runway: Gen-4, Gen-4.5, Aleph, and Act-Two</h2>
 <p>Runway’s video models expose different conditioning interfaces. <a href="https://help.runwayml.com/hc/en-us/articles/37327109429011-Creating-with-Gen-4-Video">Gen-4 and Gen-4 Turbo</a> require a starting image and generate five- or ten-second clips. <a href="https://runway.com/research/introducing-runway-gen-4.5">Gen-4.5</a> expands generation quality and prompt following; its <a href="https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5">current usage guide</a> documents both text-to-video and image-to-video, with durations from two to ten seconds. Reference-based scene construction and source-video editing should therefore be attributed to the corresponding model or workflow.</p>
 <p><a href="https://help.runwayml.com/hc/en-us/articles/51683104370451-Creating-with-Edit-Studio">Aleph 2.0</a> powers Edit Studio. It transforms existing footage through keyframe-guided edits, including replacements, relighting, background changes, and effects. The <a href="https://docs.dev.runwayml.com/api-details/api_changelog/">API release notes</a> document two-to-thirty-second source videos and up to five timed keyframe images under <code>aleph2</code>. This is an editing interface with an input clip, separate from generating a new shot with Gen-4.5.</p>
 <p><a href="https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two">Act-Two</a> instead takes a driving performance video and a character image or video. It transfers facial performance and speech; gesture control is available with character-image inputs. Runway’s <a href="https://docs.dev.runwayml.com/guides/models/">API model catalog</a> labels each provider explicitly, so third-party models available inside Runway remain releases of their original organizations. Likewise, the platform’s audio and delivery-format tools do not establish native audio generation for every Runway video model.</p>
@@ -324,7 +342,7 @@
 </ul>
 </details>
 
-<h2 id="luma-video">13. Luma: Ray</h2>
+<h2 id="luma-video"><span class="sec-index">13.</span>Luma: Ray</h2>
 <p>Luma’s <a href="https://lumalabs.ai/ray3">Ray3 family overview</a> combines text-to-video, image-conditioned creation, video modification, reference controls, and HDR workflows. <a href="https://lumalabs.ai/news/introducing-ray-3-2">Ray3.2</a>, announced in June 2026, emphasizes multi-keyframe direction and Modify Video V2. The launch describes up to sixteen keyframes and twenty-second, 1080p creative workflows. These product-level limits should not be substituted for the limits of a particular API operation.</p>
 <p>The current <a href="https://docs.agents.lumalabs.ai/guides/model/">Luma Agents model reference</a> uses <code>ray-3.2</code> with separate <code>video</code>, <code>video_edit</code>, and <code>video_reframe</code> request types. It documents text/image generation, multi-keyframe conditioning, extension from a prior generation, and source-video transformation. Its generation table lists five- and ten-second outputs; reframing has its own constraints and is SDR-only. The <a href="https://docs.agents.lumalabs.ai/guides/videos/migration/">migration guide</a> maps older Ray2, Flash, Relaxed, Ray3 Reference, and Refiner interfaces onto these primitives, with retirement dates supplied to individual customers.</p>
 <p>Luma’s <a href="https://lumalabs.ai/legal/training-content-summary-ray">training-content disclosure</a> says Ray3 was initialized from a third party’s publicly released open-weight model and then further trained by Luma; Ray3.14 and Ray3.2 derive from Ray3. The disclosure does not identify that base model. This documented dependency does not make the hosted Ray checkpoints an open-weight release, and the vendor’s reasoning terminology alone does not disclose its complete inference architecture.</p>
@@ -340,7 +358,7 @@
 </ul>
 </details>
 
-<h2 id="flux">14. Black Forest Labs: FLUX 3 Video</h2>
+<h2 id="flux"><span class="sec-index">14.</span>Black Forest Labs: FLUX 3 Video</h2>
 <p><a href="https://bfl.ai/blog/flux-3">FLUX 3</a>, announced in July 2026, extends Black Forest Labs’ image-model lineage into a multimodal flow model trained across images, video, and audio. The release presents these modalities as a shared learning problem: appearance, motion, and sound constrain different aspects of the same event. This is a different scope from applying an image model independently to successive frames.</p>
 <p>The current <a href="https://bfl.ai/models/flux-3-video">FLUX 3 Video model page</a> documents text-, image-, and video-conditioned workflows, clips up to 20 seconds, and optional native dialogue, sound effects, and ambience. The page also documents instruction-based video editing, keyframes, and continuation. Its Draft mode produces a cheaper HD preview; enhancement is a subsequent operation. The same page separates the hosted video service from the FLUX 3 Image releases and says open-weight access to the multimodal Dev backbone is still forthcoming. Open image weights therefore do not establish an open video checkpoint.</p>
 <p><a href="#fal">FLUX 3 Max</a> is the collaboration with fal Research described in the following chapter. Keep its post-training, inference settings, and benchmark label separate from the base FLUX 3 Video service.</p>
@@ -354,7 +372,7 @@
 </ul>
 </details>
 
-<h2 id="fal">15. fal: H3 Max and FLUX 3 Max</h2>
+<h2 id="fal"><span class="sec-index">15.</span>fal: H3 Max and FLUX 3 Max</h2>
 <p>fal publishes derived models as well as hosting other developers’ checkpoints. Its <a href="https://blog.fal.ai/introducing-h3-max-by-fal/">H3 Max release</a> explicitly identifies the base as the open-weight MiniMax H3 model and describes additional post-training data aimed at prompt adherence and visual quality. H3 Max should consequently have its own release entry rather than inheriting every property of the original H3 checkpoint.</p>
 <p>The <a href="https://fal.ai/blog/h3-max-built-with-fal-inference-and-training">engineering account</a> connects post-training and reinforcement-learning infrastructure with sampling, kernels, and serving optimizations. The account distinguishes inference execution from end-to-end waiting time, which also includes queueing and cold starts. A latency claim needs that measurement boundary as well as the host, GPU, resolution, and sampling schedule.</p>
 <p><a href="https://fal.ai/blog/introducing-flux-3-max-by-fal">FLUX 3 Max</a> follows a similar pattern in collaboration with Black Forest Labs: BFL supplies the foundation model, while fal contributes post-training and inference optimization. The <a href="https://fal.ai/flux-3-max">model page</a> documents text- and image-to-video access. Both Max families illustrate why a leaderboard needs the exact provider and variant: shared ancestry does not imply identical generated output, license, or execution cost.</p>
@@ -369,7 +387,7 @@
 </ul>
 </details>
 
-<h2 id="grok-video">16. xAI: Grok Imagine Video</h2>
+<h2 id="grok-video"><span class="sec-index">16.</span>xAI: Grok Imagine Video</h2>
 <p>The <a href="https://x.ai/news/grok-imagine-1-5">June 2026 preview</a> introduced Grok Imagine Video 1.5 as an image-to-video model. Later <a href="https://docs.x.ai/developers/release-notes">release notes</a> add text-to-video and reference-to-video to the non-preview model. They explicitly state that its text-to-video route first produces an image and then animates it, an example of why an API task label alone does not identify the underlying generation pipeline.</p>
 <p>The <a href="https://docs.x.ai/developers/model-capabilities/video/overview">current capability matrix</a> distinguishes three model IDs. <code>grok-imagine-video-1.5</code> supports native 1080p for text/image generation, reference images, preset voices, and pinned frames. <code>grok-imagine-video-1.5-lite</code> supports text/image generation with synchronized speech, but its 1080p output is upscaled from 720p and it lacks the same reference controls. Reference-conditioned 1.5 generation has its own 720p limit, separate from native 1080p text/image generation.</p>
 <p><a href="https://docs.x.ai/developers/model-capabilities/video/editing">Video editing</a> remains attached to <code>grok-imagine-video</code>, rather than either 1.5 variant. The overview likewise assigns extension to that model. A comparison labeled only “Grok Imagine” can consequently mix generation, editing, preview, and upscaled configurations that offer different capabilities.</p>
@@ -384,7 +402,7 @@
 </ul>
 </details>
 
-<h2 id="pixverse">17. PixVerse: V6 and R2</h2>
+<h2 id="pixverse"><span class="sec-index">17.</span>PixVerse: V6 and R2</h2>
 <p><a href="https://pixverse.ai/en/blog/pixverse-launches-v6-advancing-ai-video-generation">PixVerse V6</a>, released in March 2026, targets clip generation with native audio, multi-shot structure, camera motion, and character performance. The official <a href="https://pixverse.ai/en/model/pixverse-v6">model page</a> documents both text-to-video and image-to-video, with clips up to 15 seconds at 1080p. Its audio output includes dialogue, sound effects, and ambience; this is distinct from adding a soundtrack after rendering silent frames.</p>
 <p>The release post also documents access through PixVerse’s CLI. That integration exposes generation to applications and agents, while the surrounding Canvas and marketing tools organize a broader production workflow. A product’s access to additional companies’ models should be recorded separately from the capabilities of the V6 model itself.</p>
 <p><a href="https://pixverse.ai/en/model/pixverse-r2">PixVerse R2</a> belongs to a different line: an interactive audiovisual world model whose next segment responds to history and new controls. Its public experience centers on movement and prompt-based interaction, with references and audio included in the broader model interface. Its <a href="https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models">R2 technical blog</a> discusses causal state updates and memory. PixVerse describes the public experience as a demonstration of continuously generated worlds, with managed access, rather than a completed general game engine. Offline V6 clip benchmarks and R2 interactive demonstrations therefore measure different tasks.</p>
@@ -399,7 +417,7 @@
 </ul>
 </details>
 
-<h2 id="ltx">18. Lightricks / LTX: LTX-Video and LTX-2</h2>
+<h2 id="ltx"><span class="sec-index">18.</span>Lightricks / LTX: LTX-Video and LTX-2</h2>
 <p>The <a href="https://arxiv.org/abs/2501.00103">LTX-Video paper</a> studies efficient latent video diffusion, coupling a highly compressed video representation with a decoder that also performs final denoising. <a href="https://arxiv.org/abs/2601.03233">LTX-2</a> adds joint sound generation through coupled video and audio transformer streams. Its report describes a 14B video stream and a 5B audio stream with bidirectional cross-attention, so native synchronized audio is part of the model design rather than solely a downstream soundtrack tool.</p>
 <p>The <a href="https://docs.ltx.io/open-source-model/getting-started/overview">LTX-2.5 documentation</a> describes native multi-shot generation, a diffusion video decoder, and duration prediction. Its <a href="https://huggingface.co/Lightricks/LTX-2.5">released weights</a> include separate 22B development and distilled transformers, text-encoder and VAE components, and optional adapters. The package distinguishes full/trainable weights from fixed-schedule distilled inference and from format-specific quantized files. The <a href="https://github.com/Lightricks/LTX-2">official implementation</a> also supplies inference and LoRA training. These open artifacts are governed by the LTX community license.</p>
 <p>The commercial <a href="https://docs.ltx.io/models/ltx-2-5">2.5 API</a> exposes Fast and Pro variants for text-, image-, and audio-to-video, with output up to 4K. Duration and frame-rate combinations differ by variant and resolution; Retake and Extend are explicitly absent from the 2.5 support table. Their appearance elsewhere in the service should not be assigned to every model. The <a href="https://docs.ltx.io/api-changelog">API changelog</a> records removal of the original LTX-2 hosted IDs in August 2026 and retirement of V1 generation endpoints after 26 October 2026 at 23:59 UTC. Downloadable historical weights and retired API names thus have different lifecycles.</p>
@@ -417,7 +435,7 @@
 </ul>
 </details>
 
-<h2 id="sand">19. Sand.ai: MAGI</h2>
+<h2 id="sand"><span class="sec-index">19.</span>Sand.ai: MAGI</h2>
 <p>The <a href="https://arxiv.org/abs/2505.13211">MAGI-1 report</a> describes an autoregressive video model that predicts successive chunks, each containing multiple frames. Diffusion within a chunk and autoregression across chunks serve different roles: the former models visual content, while the latter makes continuation explicit. The <a href="https://github.com/SandAI-org/MAGI-1">official repository</a> provides implementation and checkpoint links for this research line.</p>
 <p><a href="https://sand.ai/blog/magi-2-preview">MAGI-2 Preview</a> is a later unified audio-video model with 114B total parameters and approximately 6B activated per token. Sand.ai explains its multi-head mixture-of-experts design, head-parallel communication, and kernels for many small expert operations. Its data discussion emphasizes retaining complicated motion, interactions, shot changes, and sound relationships instead of filtering training material down to only easy scenes.</p>
 <p>MAGI-2 Preview also has an <a href="https://github.com/SandAI-org/MAGI-2-preview">official inference repository</a> and <a href="https://huggingface.co/sand-ai/MAGI-2-preview">Apache-2.0 model weights</a>. The released pipeline generates ten-second clips from text or a prompt plus an image, synthesizes audio alongside video, and runs a low-resolution generation stage followed by a 1080P refiner. The repository specifies eight NVIDIA Hopper GPUs and distinguishes the released base model from a step-distilled version still marked as forthcoming. “Preview” therefore describes the research release stage; it does not mean that weights are unavailable. The separate MAGI-1 and MAGI-2 implementations should be used to establish each version’s generation procedure.</p>
@@ -434,7 +452,7 @@
 </ul>
 </details>
 
-<h2 id="cosmos">20. NVIDIA: Cosmos</h2>
+<h2 id="cosmos"><span class="sec-index">20.</span>NVIDIA: Cosmos</h2>
 <p>Cosmos connects video generation with physical-AI development. The <a href="https://arxiv.org/abs/2606.02800">Cosmos 3 report</a> describes a mixture-of-transformers framework spanning text, images, video, sound, and action. This places visual prediction alongside reasoning and action modeling, while individual released artifacts still have specific input and output contracts.</p>
 <p>The <a href="https://docs.nvidia.com/cosmos/latest/cosmos3/model_reference.html">model reference</a> lists Super, Nano, and Edge scales alongside specialized <code>Cosmos3-Super-Image2Video</code> and four-step variants. Those task-specific checkpoints are the relevant entries for image-to-video comparisons; a family-level claim about action output does not establish that every I2V checkpoint exposes an action interface. The <a href="https://docs.nvidia.com/cosmos/latest/cosmos3/model_matrix.html">model matrix</a> is the appropriate companion for deployment requirements.</p>
 <p>The documentation also retains the earlier Predict and Transfer families. Prediction generates future visual states, whereas controlled transformation uses structured conditions to change the appearance of a scenario. For physical-AI applications, the practical question extends beyond whether a clip looks convincing: the generated state must preserve the task-relevant geometry, controls, and action consequences. Human video preference alone does not test that requirement.</p>
@@ -449,7 +467,7 @@
 </ul>
 </details>
 
-<h2 id="skyreels">21. Skywork: SkyReels</h2>
+<h2 id="skyreels"><span class="sec-index">21.</span>Skywork: SkyReels</h2>
 <p>SkyReels spans several release boundaries. The <a href="https://arxiv.org/abs/2504.13074">V2 paper</a> and <a href="https://github.com/SkyworkAI/SkyReels-V2">repository</a> describe diffusion-forcing models for autoregressive continuation alongside dedicated image-to-video variants. Its long-video interface repeatedly generates new content from a rolling context; the length of a completed sequence should be distinguished from the temporal window synthesized in one step.</p>
 <p>The <a href="https://arxiv.org/abs/2601.17323">V3 technical report</a> accompanies a <a href="https://github.com/SkyworkAI/SkyReels-V3">release</a> with inference code and separate downloadable models for reference-to-video, video extension, and talking avatars. Its model table lists 14B reference and extension models and a 19B avatar model. Reference-to-video accepts one to four images, while the avatar task has an audio-conditioned interface. The <a href="https://huggingface.co/collections/Skywork/skyreels-v3">official weight collection</a> makes these task-specific checkpoints explicit.</p>
 <p>The <a href="https://arxiv.org/abs/2602.21818">V4 technical report</a> describes a dual-stream multimodal diffusion transformer for aligned video and audio, with text, images, clips, masks, and audio references. It unifies generation, inpainting, and editing through conditioning channels, and combines low-resolution full sequences with high-resolution keyframes before super-resolution and interpolation. The report documents output up to 1080p, 32 fps, and 15 seconds. <a href="https://www.skyreels.ai/api-platform">V4’s API offering</a> is a separate access path; the V2/V3 weight releases do not establish open weights for V4.</p>
@@ -467,7 +485,7 @@
 </ul>
 </details>
 
-<h2 id="cogvideo">22. Z.ai / THUDM: CogVideo and CogVideoX</h2>
+<h2 id="cogvideo"><span class="sec-index">22.</span>Z.ai / THUDM: CogVideo and CogVideoX</h2>
 <p><a href="https://arxiv.org/abs/2408.06072">CogVideoX</a> combines a 3D causal VAE with a diffusion transformer that uses modality-specific adaptive normalization to align text and video. Its report also studies progressive training, multi-resolution frame packing, and detailed video captioning. This provides a technical account of how temporal compression, conditioning, and training data interact, beyond comparisons of a few generated clips.</p>
 <p>The <a href="https://github.com/zai-org/CogVideo">official repository</a> preserves the earlier <a href="https://arxiv.org/abs/2205.15868">CogVideo research release</a> and documents the 2B, 5B, 5B-I2V, and CogVideoX1.5 lines. The 1.5 family includes separate T2V and I2V checkpoints and supports videos up to ten seconds. Its I2V model permits multiple aspect ratios within the dimensions specified in the <a href="https://huggingface.co/zai-org/CogVideoX1.5-5B-I2V">model card</a>; the release announcement's broad resolution language should not be interpreted as unrestricted dimensions. SAT and Diffusers paths, prompt rewriting, LoRA tuning, and inversion tools are documented separately.</p>
 <p>Availability also varies within this family. The repository specifies Apache 2.0 for its code and the 2B model, while 5B-family weights use a distinct CogVideoX license. The <a href="https://huggingface.co/zai-org/CogVideoX1.5-5B">1.5 T2V card</a> likewise links that model license. QingYing's consumer or commercial service is a related deployment surface, but its product updates do not establish that the public 1.5 weights have changed. Reproducible comparisons should name the checkpoint, inference library, frame count, and whether prompt rewriting was enabled.</p>
@@ -484,7 +502,7 @@
 </ul>
 </details>
 
-<h2 id="step-video">23. StepFun: Step-Video</h2>
+<h2 id="step-video"><span class="sec-index">23.</span>StepFun: Step-Video</h2>
 <p><a href="https://arxiv.org/abs/2502.10248">Step-Video-T2V</a> is a 30B-parameter text-to-video model whose report describes generation up to 204 frames. Its video VAE compresses space by 16 × 16 and time by a factor of eight, while two bilingual text encoders provide Chinese and English conditioning. The report makes the video representation, training system, and evaluation protocol part of the release, alongside the <a href="https://github.com/stepfun-ai/Step-Video-T2V">inference implementation</a> and weights.</p>
 <p><a href="https://arxiv.org/abs/2503.11251">Step-Video-TI2V</a> is a separate 30B model initialized from T2V and designed for text-driven image animation, with up to 102 generated frames. Its <a href="https://github.com/stepfun-ai/Step-Video-TI2V">implementation</a> encodes the conditioning image with the video VAE and incorporates it along the latent channel dimension. A motion-score condition lets users vary the strength of movement. This is first-frame conditioning, with its own generation limit and controls, rather than evidence of general video instruction editing.</p>
 <p>Both releases provide task-specific evaluation materials, Step-Video-T2V-Eval and Step-Video-TI2V-Eval. Those comparisons should be read with their prompt or source-image distributions and judged criteria; results across the two tasks are not directly interchangeable. The <a href="https://huggingface.co/stepfun-ai/stepvideo-t2v">T2V</a> and <a href="https://huggingface.co/stepfun-ai/stepvideo-ti2v">TI2V model cards</a> publish downloadable MIT-licensed weights. Their substantial backbone size and documented distributed-inference examples make them useful research baselines, while practical hardware requirements depend on the complete pipeline.</p>
@@ -501,7 +519,7 @@
 </ul>
 </details>
 
-<h2 id="longcat-video">24. Meituan: LongCat-Video</h2>
+<h2 id="longcat-video"><span class="sec-index">24.</span>Meituan: LongCat-Video</h2>
 <p>The <a href="https://arxiv.org/abs/2510.22200">LongCat-Video report</a> describes a 13.6B diffusion transformer trained for text-to-video, image-to-video, and video continuation within one model. Continuation is part of pretraining, which makes the family particularly relevant to research on extending clips over minutes. A coarse-to-fine temporal and spatial generation pipeline and block-sparse attention address inference cost, while multi-reward preference training targets output quality. The report's long-video examples should be understood as sequential continuation, with continuity assessed across segment boundaries.</p>
 <p>The <a href="https://github.com/meituan-longcat/LongCat-Video">official code</a> exposes separate demos for text generation, image animation, continuation, and long-video workflows. The <a href="https://huggingface.co/meituan-longcat/LongCat-Video">base model card</a> supplies MIT-licensed weights. These artifacts allow the continuation schedule and generation settings to be inspected, rather than treating a displayed final duration as the duration of a single independent generation.</p>
 <p>LongCat-Video-Avatar adds audio-driven character animation. Its <a href="https://arxiv.org/abs/2605.26486">1.5 report</a>, published in May 2026, describes a Whisper Large audio encoder, expanded data curation and preference training, and step distillation to eight function evaluations. The <a href="https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.5">Avatar 1.5 release</a> supports single- and multiple-audio-stream workflows. Because speech is supplied as conditioning, comparisons with native text-to-audio-video systems must distinguish lip synchronization and identity preservation from the separate problem of generating the soundtrack itself.</p>
@@ -517,7 +535,7 @@
 </ul>
 </details>
 
-<h2 id="firefly-video">25. Adobe: Firefly Video</h2>
+<h2 id="firefly-video"><span class="sec-index">25.</span>Adobe: Firefly Video</h2>
 <p>Adobe introduced the <a href="https://blog.adobe.com/en/publish/2025/02/12/meet-firefly-video-model-ai-powered-creation-with-unparalleled-creative-control">Firefly Video Model</a> as part of its creative workflow, with text- and image-conditioned generation and camera controls. The <a href="https://blog.adobe.com/en/publish/2025/04/24/adobe-firefly-next-evolution-creative-ai-is-here">April 2025 general-availability release</a> documents five-second clips, first/last-frame guidance, multiple aspect ratios, and resolutions up to 1080p. These are capabilities of Adobe’s video model, whereas the broader Firefly application also supplies editing, audio, and partner-model workflows.</p>
 <p>The <a href="https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/generate-videos-using-text-prompts.html">generation guide</a> includes composition-reference video and camera controls. Adobe’s <a href="https://community.adobe.com/p/firefly-video-guide">model-specific prompting guide</a> says each Firefly Video generation starts from a fresh prompt rather than carrying a conversation’s edits forward. It describes training on licensed material, Adobe Stock, and public-domain content; Adobe’s commercial-use positioning is a statement about its release and training policy, not a reported benchmark score.</p>
 <p>Firefly’s <a href="https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/generate-videos-using-non-adobe-models.html">partner-model documentation</a> separately lists Veo, Gemini Omni, Kling, Ray, and Runway options. Controls and supported settings vary by the chosen model. A conversational clip editor, native audio option, or third-party video generated in Firefly should therefore be named with its actual model rather than automatically attributed to Firefly Video.</p>
@@ -533,7 +551,7 @@
 </ul>
 </details>
 
-<h2 id="nova-reel">26. Amazon: Nova Reel</h2>
+<h2 id="nova-reel"><span class="sec-index">26.</span>Amazon: Nova Reel</h2>
 <p><a href="https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/">Nova Reel 1.1</a> extended the original six-second generator to multi-shot videos of up to two minutes. Automated mode expands one prompt into successive shots; manual mode lets the caller specify each shot. The <a href="https://docs.aws.amazon.com/nova/latest/userguide/video-generation.html">generation guide</a> describes 1280 × 720 output at 24 fps, with duration in six-second increments. In image-conditioned generation, the reference image supplies the starting frame.</p>
 <p>The <a href="https://docs.aws.amazon.com/pdfs/ai/responsible-ai/nova-reel/nova-reel.pdf">service card</a> distinguishes a stitched multi-shot output from its individual six-second shots and documents intended use, limitations, and evaluations. The two-minute duration should be read as a multi-shot workflow, not a demonstrated two-minute continuous take. Its API used asynchronous invocation with results written to customer storage.</p>
 <p>Availability is now historical. AWS’s <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html">lifecycle table</a> records 30 September 2026 as the end-of-life date for both <code>amazon.nova-reel-v1:0</code> and <code>amazon.nova-reel-v1:1</code> in their listed regions. Retained generation examples do not override that notice. The separately announced <a href="https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-nova-2-omni-preview/">Nova 2 Omni</a> accepts video for understanding but its preview announcement specifies text and image output; it should not be counted as a replacement video generator on that evidence.</p>
@@ -549,7 +567,7 @@
 </ul>
 </details>
 
-<h2 id="pika">27. Pika: Pika 2.5 and editing tools</h2>
+<h2 id="pika"><span class="sec-index">27.</span>Pika: Pika 2.5 and editing tools</h2>
 <p><a href="https://create.pika.art/apps/pika-2-5">Pika 2.5</a> is the company’s current branded video model. Its dedicated page separates a single-shot path from Frames: text alone produces a five-second clip, a starting image supports five or ten seconds, and ordered images define transitions between keyframes. The model returns silent video. <a href="https://pika.art/blog/pika-soundtrack">Pika Soundtrack</a> is a separate tool for adding audio to a completed cut; its presence in the same workspace does not establish joint audio–video generation in Pika 2.5.</p>
 <p>The <a href="https://create.pika.art/apps/pikaframes">Pikaframes guide</a> accepts two to five images in order, with a shared optional motion prompt. Resolution and duration depend on the number of anchors and each transition’s length. This is keyframe-conditioned generation, distinct from editing a source video. Pika’s <a href="https://dev.pika.art/pricing">API catalog</a> lists Pikadditions and Pikaswaps as separate video-to-video operations, alongside effect and audio tools.</p>
 <p>Pika’s <a href="https://pika.art/blog/welcome-to-the-new-pika">platform release</a> and <a href="https://pika.art/faq">help center</a> distinguish task-specific apps from the models that produce their output. The current <a href="https://dev.pika.art/">developer catalog</a> includes many third-party models as well as Pika’s own releases. For reproducibility, record the selected model and task endpoint: a Seedance, Kling, or Gemini clip made inside Pika is not evidence about the Pika 2.5 checkpoint.</p>
@@ -567,7 +585,7 @@
 </ul>
 </details>
 
-<h2 id="midjourney-video">28. Midjourney: Video V1</h2>
+<h2 id="midjourney-video"><span class="sec-index">28.</span>Midjourney: Video V1</h2>
 <p>Midjourney’s <a href="https://updates.midjourney.com/introducing-our-v1-video-model/">Video V1</a>, released in June 2025, starts from an image rather than offering a standalone text-only video interface. Users can animate a generated or uploaded image, either with an automatic motion prompt or with their own instructions. The launch introduces low- and high-motion settings and four successive extensions of roughly four seconds each beyond the initial five-second clip.</p>
 <p>The current <a href="https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video">video documentation</a> adds operational details for end frames, looping, batch size, and Raw mode. These controls steer motion and transitions; they do not describe instruction-based editing of an arbitrary source video. The <a href="https://updates.midjourney.com/hd-mode-for-video/">HD release</a> documents native 720p generation. Access and GPU-time requirements differ by mode and plan, so the living usage guide is the appropriate place to check current availability.</p>
 <p>The numbering of Midjourney’s image and video models is separate. The <a href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version">image version guide</a> discusses V8.2 and its image-editing model, whereas the video launch and video-specific guide describe the animation workflow. A current image version should therefore not be relabeled as a correspondingly numbered video model. The cited video materials disclose user controls and outputs, without providing downloadable model weights or a detailed architecture report.</p>
@@ -582,7 +600,7 @@
 </ul>
 </details>
 
-<h2 id="heygen">29. HeyGen: Video and avatar models</h2>
+<h2 id="heygen"><span class="sec-index">29.</span>HeyGen: Video and avatar models</h2>
 <p><a href="https://help.heygen.com/en/articles/17272995-introducing-heygen-video-generate-cinematic-clips-from-a-prompt">HeyGen Video</a> is the company’s general-purpose video model, separate from its established avatar and voice products. The official guide describes text-to-video with synchronized audio, image-to-video, and reference-video conditioning for motion, composition, or style. Access is documented through the API and Creative Studio.</p>
 <p>The avatar line solves a more constrained problem. HeyGen’s <a href="https://www.heygen.com/blog/heygen-july-2026-release">July 2026 update</a> describes long-form talking-video generation for Avatar III, IV, and V, with identity consistency over extended speech. Its linked <a href="https://www.heygen.com/research/avatar-inference-at-scale">streaming inference report</a> describes audio-driven generation, identity-aware super-resolution, and chunked decoding for the Avatar IV/V families. The same product update discusses Video Agent and HyperFrames, which organize scripts, presenters, graphics, and other media. Video Agent and HyperFrames’ assembled output length should not be read as the single-clip duration of HeyGen Video.</p>
 <p>For comparisons, distinguish general scene synthesis, an audio-driven presenter, and an agent that assembles a complete video. The conditioning, failure modes, and evaluation sets differ even when all three are accessible within the same product.</p>
@@ -596,7 +614,7 @@
 </ul>
 </details>
 
-<h2 id="higgsfield">30. Higgsfield: DoP and video tools</h2>
+<h2 id="higgsfield"><span class="sec-index">30.</span>Higgsfield: DoP and video tools</h2>
 <p>Higgsfield publishes both its own video tools and a platform that hosts other vendors’ models. Its <a href="https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-dop">DoP guide</a> explicitly identifies DoP as a proprietary image-to-video model: a starting image, text prompt, and camera or effects preset determine a short directed shot. The documented interface uses the name Higgsfield Standard and supports three- or five-second generations.</p>
 <p>The versioned API pages document <a href="https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/playground">Genjutsu</a> and <a href="https://open.higgsfield.ai/models/higgsfield/genjutsu-light/motion-transfer/v1.0/playground">Genjutsu Light</a> for transforming source footage while retaining motion. The <code>higgsfield/genjutsu-light/motion-transfer/v1.0</code> endpoint trims the source to 15 seconds and preserves its audio. The <a href="https://higgsfield.ai/creator-hub/help-center/tools/how-do-i-use-genjutsu">website guide</a> separately documents Genjutsu Lite for 4–30-second clips; these product limits should not be substituted for the versioned endpoint contract. These source-conditioned transformations differ from generating an unconstrained scene from text.</p>
 <p>The <a href="https://raw.githubusercontent.com/higgsfield-ai/cli/main/MODELS.md">official CLI catalog</a> also lists Cinematic Studio video interfaces alongside external models such as Veo, Seedance, and Wan. A workflow name or preset should therefore be kept distinct from a documented foundation-model release. The materials below establish product interfaces and their supported controls; they do not provide model weights or a complete training report for the current studio system.</p>
@@ -613,7 +631,7 @@
 </ul>
 </details>
 
-<h2 id="utopai">31. Utopai Studios: Utopai X</h2>
+<h2 id="utopai"><span class="sec-index">31.</span>Utopai Studios: Utopai X</h2>
 <p>The <a href="https://www.utopaistudios.com/en/blog/introducing-the-all-new-pai-and-utopai-x">September 2026 release</a> introduces Utopai X as a proprietary text-to-video model <a href="https://www.utopaistudios.com/en/blog/utopai-x-ai-video-model-filmmaking">post-trained from MiniMax H3</a>. The same announcement introduces PAI, a workspace that retains scripts, assets, shot plans, takes, and revisions. The generation model and the surrounding production system have different responsibilities.</p>
 <p>The <a href="https://www.utopaistudios.com/en/faq">official FAQ</a> locates Utopai X inside PAI. Its editing and version-management workflow should not automatically be interpreted as evidence that the underlying model performs arbitrary instruction-based video editing. The <a href="https://www.utopaistudios.com/en/blog/utopai-x-ai-video-model-filmmaking">capability discussion</a> emphasizes camera control, materials, lighting, and matching sound, drawing on a dated external evaluation. Those findings describe a specific tested release rather than a permanent ranking.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -626,7 +644,7 @@
 </ul>
 </details>
 
-<h2 id="agnes">32. Sapiens AI: Agnes Video</h2>
+<h2 id="agnes"><span class="sec-index">32.</span>Sapiens AI: Agnes Video</h2>
 <p>The <a href="https://wiki.agnes-ai.com/en/docs/agnes-video-25">Agnes Video 2.5 documentation</a> defines three useful conditioning modes: text, keyframes, and multimodal references. Keyframes specify the first frame, last frame, or both; reference media guide content, timing, style, or motion. The service exposes asynchronous video jobs through an OpenAI Videos-compatible request format, which is an interface choice rather than evidence of OpenAI model ancestry.</p>
 <p>The <a href="https://github.com/AgnesAI-Labs/skills/blob/main/agnes-ai-models/references/model_catalog.md">official model catalog</a> distinguishes <code>agnes-video-2.5</code> from <code>agnes-video-2.5-flash</code>. The base release accepts image, audio, and video references at multiple resolution tiers; Flash is restricted to 720p and excludes video references. Audio as an input reference does not, by itself, establish a particular joint audio-video training architecture. The public materials consulted provide an API contract, not a detailed architecture report or downloadable video weights.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -638,7 +656,7 @@
 </ul>
 </details>
 
-<h2 id="creatify">33. Creatify: Boreal and Aurora</h2>
+<h2 id="creatify"><span class="sec-index">33.</span>Creatify: Boreal and Aurora</h2>
 <p>Creatify’s <a href="https://labs.creatify.ai/models/boreal">Boreal page</a> describes post-training a 22B-parameter open-weight base model that generates audio and video jointly. It positions Boreal around efficient text- and image-to-video generation, with short clips and simple scenes as its stated strengths. The current page does not name that base checkpoint, so the parameter count alone should not be used to assign a specific model lineage.</p>
 <p><a href="https://labs.creatify.ai/research/boreal-h3-technical-report">Boreal-H3</a> is a separate release explicitly post-trained from MiniMax H3, centered on advertising workflows and reference consistency. Its technical discussion reports an advertising quality index and reference-fidelity measurements with explicit pass thresholds. These vendor-run evaluations measure a particular production objective and should be read alongside broader preference benchmarks.</p>
 <p>The <a href="https://labs.creatify.ai/models/aurora-2">Aurora 2.0 model page</a> separately documents talking video from a photograph and a supplied audio track. Aurora’s audio-driven performance, Boreal’s general generation, and Boreal-H3’s reference-guided advertising capabilities are therefore separate entries, even though they share the Creatify application.</p>
@@ -652,7 +670,7 @@
 </ul>
 </details>
 
-<h2 id="bach">34. Video Rebirth: BACH</h2>
+<h2 id="bach"><span class="sec-index">34.</span>Video Rebirth: BACH</h2>
 <p>Video Rebirth’s <a href="https://www.prnewswire.com/news-releases/video-rebirth-launches-bach--an-ai-video-engine-turns-ideas-into-30-second-multi-shot-films-302765372.html">May 2026 launch announcement</a> introduced BACH as a production-oriented video engine with a Montage workflow for generating multi-shot sequences up to thirty seconds from references and shot descriptions. The company describes native 1080P output and sound effects, voiceover, and music generated within the same workflow. It names Dual Diffusion Transformer and Physics-Native Attention as proprietary designs; these are the developer’s architectural descriptions, without the reproducible implementation detail of an open technical report.</p>
 <p>The <a href="https://www.videorebirth.com/">current official enterprise site</a> identifies BACH 1.0 Pro and describes conditioning with up to twelve image, video, and audio references. It separately offers private model customization, studio collaboration, and production services. Those engagements should be distinguished from the public generation product at <a href="https://www.bach.art/">bach.art</a>. These are product-level capability descriptions: a leaderboard entry, enterprise offering, and a particular public API endpoint may expose different configurations. The linked materials establish a proprietary model and hosted product, rather than a downloadable-weight release.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -665,7 +683,7 @@
 </ul>
 </details>
 
-<h2 id="vimoo">35. Vimoo: Vimoo 1.0</h2>
+<h2 id="vimoo"><span class="sec-index">35.</span>Vimoo: Vimoo 1.0</h2>
 <p>The <a href="https://vimoo.ai/research">Vimoo 1.0 technical report</a> describes an approximately 11.7B-parameter dual-stream multimodal diffusion transformer, a pretrained text encoder, and a compressed video VAE. It separates 720p generation from a learned Enhancer that raises resolution to 1080p. Lite introduces a more efficient representation through spatial patchification; efficiency claims therefore belong to a particular model and inference configuration.</p>
 <p>The <a href="https://vimoo.ai/vimoo-docs/models">model overview</a> and <a href="https://vimoo.ai/vimoo-docs/api">API documentation</a> enumerate text-to-video, image-to-video, a unified Lite path, and a dedicated e-commerce mode. They also illustrate why report and service specifications must remain separate: the report discusses ten-second generation, while the current model overview lists five-second standard outputs and a twenty-second product-video mode.</p>
 <p>The project describes the family as open source, but its <a href="https://vimoo.ai/">release page</a> marks local-running access as coming soon and does not supply a public checkpoint or code download in the material reviewed. It also notes separate licenses for code, weights, acceleration adapters, and third-party components. This article therefore does not count Vimoo as a verified downloadable-weight release.</p>
@@ -680,7 +698,7 @@
 </ul>
 </details>
 
-<h2 id="movie-gen">36. Meta: Movie Gen</h2>
+<h2 id="movie-gen"><span class="sec-index">36.</span>Meta: Movie Gen</h2>
 <p>The <a href="https://arxiv.org/abs/2410.13720">Movie Gen report</a> presents a family covering video generation, personalization, instruction-based editing, and audio generation. Its largest video transformer has 30B parameters; the reported context corresponds to 16 seconds at 16 frames per second. The family is useful as a research reference because it studies several media tasks under a common development program.</p>
 <p>The distinction between family and model is especially important here. Video-to-audio and text-to-audio are separate tasks in the report, so synchronized audiovisual output does not imply that every Movie Gen component jointly generates sound and pixels in one network. Personalization from a subject image is also different from using an image as the literal first frame. This chapter refers to the documented research release; it does not equate that release with every subsequent Meta consumer video feature.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -692,7 +710,7 @@
 </ul>
 </details>
 
-<h2 id="stable-video">37. Stability AI: Stable Video Diffusion</h2>
+<h2 id="stable-video"><span class="sec-index">37.</span>Stability AI: Stable Video Diffusion</h2>
 <p>The <a href="https://arxiv.org/abs/2311.15127">Stable Video Diffusion paper</a> studies a staged recipe: image pretraining, video pretraining, and high-quality video fine-tuning. It examines data curation as well as the extension of latent image diffusion into a temporal model. The research includes text-to-video experiments, but this does not make every released checkpoint text-conditioned.</p>
 <p>The <a href="https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt">SVD-XT model card</a> documents image-to-video generation and explicitly states that the released model cannot be controlled through text. It also records limited duration and possible weak motion. The <a href="https://github.com/Stability-AI/generative-models">official implementation</a> and model card remain useful baselines for studying temporal adaptation, with the checkpoint’s license and conditioning interface kept distinct from later commercial video services.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -706,7 +724,7 @@
 </ul>
 </details>
 
-<h2 id="mochi">38. Genmo: Mochi</h2>
+<h2 id="mochi"><span class="sec-index">38.</span>Genmo: Mochi</h2>
 <p>The <a href="https://www.genmo.ai/blog/mochi-1-a-new-sota-in-open-text-to-video">Mochi 1 release blog</a> and <a href="https://github.com/genmoai/mochi">official implementation</a> describe a 10B-parameter video diffusion model built around an asymmetric diffusion transformer. Its visual and text streams receive different representational capacity, with shared multimodal attention connecting them. The associated AsymmVAE compresses space and time before the generative model operates, making the latent representation part of the efficiency design.</p>
 <p>The <a href="https://huggingface.co/genmo/mochi-1-preview">official model card</a> identifies the downloadable release as Mochi 1 Preview under Apache 2.0. The repository includes inference and LoRA fine-tuning support. This makes Mochi useful for inspecting and adapting an actual generation pipeline, while the Preview checkpoint’s documented task remains text-to-video. A community workflow adding other controls should be distinguished from the original released interface.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -719,7 +737,7 @@
 </ul>
 </details>
 
-<h2 id="open-sora">39. HPC-AI Tech: Open-Sora</h2>
+<h2 id="open-sora"><span class="sec-index">39.</span>HPC-AI Tech: Open-Sora</h2>
 <p><a href="https://github.com/hpcaitech/Open-Sora">Open-Sora</a> is an independent open research project, with versioned implementations of data processing, video compression, training, and sampling. The 2.0 release contains an 11B video model and training code; earlier branches preserve the different architectures and conditioning interfaces of 1.0 through 1.3, with the 1.x research documented in its <a href="https://arxiv.org/abs/2412.20404">original technical report</a>. The 2.0 repository identifies one checkpoint for T2V and I2V, but recommends a FLUX-assisted text-to-image-to-video pipeline for higher-quality text-prompt results; that auxiliary image model is part of the demonstrated system configuration.</p>
 <p>The <a href="https://arxiv.org/abs/2503.09642">Open-Sora 2.0 report</a> focuses on the cost of building a capable video generator and the training choices behind that result. Its published budget is a claim about a specific experiment and accounting scope, not a general estimate for reproducing every commercial system. The project’s value for research lies in the inspectable pipeline and released checkpoints. Despite its name, it is not an OpenAI Sora implementation or an official release of Sora weights.</p>
 <h3 class="materials-label">Materials and further reading</h3>
@@ -731,24 +749,26 @@
 <li><a href="https://arxiv.org/abs/2412.20404">Open-Sora: Democratizing efficient video production for all</a> <span class="reference-id">Report · 2024</span></li>
 </ul>
 </details>
-<h2 id="technical-themes">40. Temporal modeling, control, and release boundaries</h2>
+<h2 id="technical-themes"><span class="sec-index">40.</span>Temporal modeling, control, and release boundaries</h2>
 <p><strong>The temporal representation sets the modeling problem.</strong> A video VAE compresses space and time before generation, as documented in <a href="#hunyuan-video">HunyuanVideo</a>, <a href="#wan-video">Wan</a>, and <a href="#cogvideo">CogVideoX</a>. A model that denoises a complete latent clip and one that predicts successive chunks face different context and continuation problems. <a href="#sand">MAGI-1</a> and <a href="#skyreels">SkyReels V2</a> make chunking or rolling continuation explicit. Neither design, by itself, guarantees long-range identity or physical correctness.</p>
 <p><strong>Generation length has several meanings.</strong> A single clip, an extended sequence, a multi-shot assembly, and a streaming avatar are different outputs. <a href="#nova-reel">Nova Reel 1.1</a> assembles shots; <a href="#longcat-video">LongCat-Video</a> supports repeated continuation; <a href="#vidu">Vidu S2</a> targets an interactive stream. Report the elementary generation window, total delivered duration, and any stitching or extension procedure. The same principle applies to native resolution, upscaling, interpolation, and exported frame rate.</p>
 <p><strong>Conditioning is a contract.</strong> A first-frame image fixes an opening state, reference assets guide a new composition, a driving performance transfers movement, and source-video editing preserves parts of existing footage. <a href="#runway-video">Gen-4.5, Aleph, and Act-Two</a> demonstrate these separate interfaces. Compare models on the control actually supplied, including whether a prompt rewriter or intermediate image generator contributes to the result.</p>
 <p><strong>Sound can enter at different stages.</strong> <a href="#google-video">Veo 3</a> models audio and video jointly; <a href="#hunyuan-video">HunyuanVideo-Avatar</a> and <a href="#longcat-video">LongCat-Video-Avatar</a> animate from supplied speech; <a href="#pika">Pika Soundtrack</a> adds sound after silent video generation. These pipelines require different tests. Audio quality alone does not measure lip synchronization, and a synchronized face does not establish that the system generated the words or voice.</p>
 <p><strong>Checkpoint identity survives the product wrapper.</strong> <a href="#minimax">MiniMax H3 Base</a>, <a href="#fal">fal’s H3 Max</a>, and a hosted workflow with additional processing are separate systems for measurement. An open repository, downloadable weights, a license, and a public API are also separate release artifacts. A product may host several companies’ models, while a research family may expose only selected checkpoints.</p>
 <p><strong>Evaluation should match the intended use.</strong> For a short creative shot, prompt following and perceptual preference may be central. For editing, preservation and temporal consistency become essential; for a talking avatar, identity and speech alignment matter; for an interactive world, response latency and state consistency matter. The relevant comparison is the specified model, controls, and pipeline on that task, with its evaluation date and configuration recorded.</p>
-</div></div>
-<footer class="article-foot"><a href="../blog.html">← Back to Blog</a></footer>
-</article>
+      </article>
+    </div>
 
+    <footer class="site-footer">
+      <div class="colophon-inner">
+        <span>
+          End of Survey · <a href="../blog.html">Return to Blog</a> ·
+          <a href="../index.html">Home</a>
+        </span>
       </div>
-    </main>
-  </div>
-  <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
-    </svg>
-  </a>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

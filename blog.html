@@ -1,83 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog — Xiefan Guo</title>
-  <link rel="preload" href="assets/fonts/EBGaramond12-Regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261102-compact-date-spacing-v2">
-  <script src="assets/js/blog.js" defer></script>
+  <meta name="description" content="Long-form technical surveys and research notes by Xiefan Guo." />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="wordmark" href="index.html">Xiefan Guo</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="papers.html">Papers</a>
-        <a href="activities.html">Activities</a>
-        <a class="active" href="blog.html">Blog</a>
-      </nav>
-    </header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <main>
-      <div class="content page">
-        <section class="section blog-index">
-          <div class="blog-header">
-            <h2 class="section-title page-title">Blog</h2>
-            <div class="blog-controls" id="blogControls" hidden>
-              <label class="blog-search" for="blogSearch">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-                <span class="blog-sr-only">Search articles</span>
-                <input id="blogSearch" type="search" placeholder="Search articles…" autocomplete="off" aria-controls="blogPosts">
-              </label>
-            </div>
-          </div>
-          <p class="blog-sr-only" id="blogResults" role="status" aria-live="polite" aria-atomic="true"></p>
+  <header class="site-header">
+    <a class="site-brand" href="index.html">Xiefan Guo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="papers.html">Papers</a>
+      <a href="activities.html">Activities</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+    </nav>
+  </header>
 
-          <ul class="post-list" id="blogPosts">
-            <li class="post-list-item" data-pinned="true">
-              <time class="post-list-date" datetime="2026-10">2026.10</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/coding-video-models.html">Frontier LLMs powering coding agents for video creation and video world models</a> <span class="blog-pin">Pinned</span>
-              </div>
-            </li>
-            <li class="post-list-item" data-pinned="true">
-              <time class="post-list-date" datetime="2026-10">2026.10</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/image-models.html">A survey of image models</a> <span class="blog-pin">Pinned</span>
-              </div>
-            </li>
-            <!-- <li class="post-list-item">
-              <time class="post-list-date" datetime="2026-10">2026.10</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/coding-image-models.html">Frontier LLMs powering coding agents for image creation and editing</a>
-              </div>
-            </li> -->
-            <li class="post-list-item">
-              <time class="post-list-date" datetime="2026-10">2026.10</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/video-models.html">A survey of video models</a>
-              </div>
-            </li>
-            <!-- <li class="post-list-item">
-              <time class="post-list-date" datetime="2026-10">2026.10</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/code-for-generation.html">Code as an intermediate representation for visual generation</a>
-              </div>
-            </li> -->
-            <li class="post-list-item">
-              <time class="post-list-date" datetime="2026-09">2026.09</time>
-              <div class="post-list-main">
-                <a class="post-list-title" href="posts/reward-models.html">A survey of reward models for visual generation</a>
-              </div>
-            </li>
-          </ul>
-          <p class="blog-empty" id="blogEmpty" hidden>No matching articles. <button id="blogReset" type="button">Clear search</button></p>
-        </section>
+  <main id="main-content" class="page-shell">
+    <!-- Page Header Band -->
+    <section class="book-band" aria-labelledby="blog-heading">
+      <div class="band-main">
+        <h1 id="blog-heading" class="subpage-title">Blog</h1>
+        <p class="subpage-lead">
+          Long-form technical surveys and shorter research notes.
+        </p>
+
+        <div class="filter-strip" role="group" aria-label="Filter writings">
+          <button type="button" class="filter-btn" data-blog-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-blog-filter="survey" aria-pressed="false">Surveys</button>
+          <button type="button" class="filter-btn" data-blog-filter="note" aria-pressed="false">Notes</button>
+        </div>
       </div>
-    </main>
-  </div>
+
+      <!-- <aside class="band-aside">
+        <p class="sidenote">
+          Long surveys are typeset with a sticky table of contents in the left margin and
+          commentary in the right margin for unhurried reading.
+        </p>
+      </aside> -->
+    </section>
+
+    <!-- Long-Form Surveys -->
+    <section class="book-band" data-blog-band="survey" aria-labelledby="surveys-heading">
+      <h2 id="surveys-heading" class="margin-heading">Surveys</h2>
+
+      <div class="band-main">
+        <div class="survey-list">
+          <article class="survey-card">
+            <div class="survey-kicker">
+              <span class="survey-badge">Survey</span>
+              <span>·</span>
+              <span>2026.10</span>
+            </div>
+            <h3 class="survey-card-title">
+              <a href="posts/image-models.html">
+                A Survey of Image Models
+              </a>
+            </h3>
+            <p class="survey-excerpt">
+              A structured overview of open-weight foundation models, proprietary image models, and
+              commercial generation and editing products, with official reports, code, weights, and
+              live leaderboards.
+            </p>
+          </article>
+
+          <!--
+          <article class="survey-card">
+            <div class="survey-kicker">
+              <span class="survey-badge">Survey</span>
+              <span>·</span>
+              <span>2026.10</span>
+            </div>
+            <h3 class="survey-card-title">
+              <a href="posts/coding-image-models.html">
+                Frontier LLMs Powering Coding Agents for Image Creation and Editing
+              </a>
+            </h3>
+            <p class="survey-excerpt">
+              A source-checked survey of LLM coding agents for image creation, generation workflows,
+              and editing.
+            </p>
+          </article>
+          -->
+
+          <article class="survey-card">
+            <div class="survey-kicker">
+              <span class="survey-badge">Survey</span>
+              <span>·</span>
+              <span>2026.10</span>
+            </div>
+            <h3 class="survey-card-title">
+              <a href="posts/video-models.html">
+                A Survey of Video Models
+              </a>
+            </h3>
+            <p class="survey-excerpt">
+              A survey of video generation and editing models, from open-weight research systems to
+              proprietary audio-video models, with official reports, code, weights, APIs, and live
+              leaderboards.
+            </p>
+          </article>
+
+          <!--
+          <article class="survey-card">
+            <div class="survey-kicker">
+              <span class="survey-badge">Survey</span>
+              <span>·</span>
+              <span>2026.10</span>
+            </div>
+            <h3 class="survey-card-title">
+              <a href="posts/code-for-generation.html">
+                Code as an Intermediate Representation for Visual Generation
+              </a>
+            </h3>
+            <p class="survey-excerpt">
+              A research survey of executable representations for visual generation across images,
+              video, and editing.
+            </p>
+          </article>
+          -->
+
+          <article class="survey-card">
+            <div class="survey-kicker">
+              <span class="survey-badge">Survey</span>
+              <span>·</span>
+              <span>2026.09</span>
+            </div>
+            <h3 class="survey-card-title">
+              <a href="posts/reward-models.html">
+                A Survey of Reward Models for Visual Generation
+              </a>
+            </h3>
+            <p class="survey-excerpt">
+              A guide to visual reward models across construction, supervision and objectives,
+              learning workflows, feedback granularity, rubric construction, and image, video, and
+              world-model evaluation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shorter Notes -->
+    <section class="book-band" data-blog-band="note" aria-labelledby="notes-heading">
+      <h2 id="notes-heading" class="margin-heading">Notes</h2>
+
+      <div class="band-main">
+        <ol class="note-list">
+          <li class="note-item is-latest">
+            <span class="note-date">2026.10</span>
+            <div>
+              <h3 class="note-title">
+                <a href="posts/coding-video-models.html">Frontier LLMs Powering Coding Agents for Video Creation and Video World Models</a>
+              </h3>
+              <p class="note-summary">
+                Frontier LLM video agents spanning code-rendered video, video-model-driven
+                generation including film-grade production, editing and post-production, and video
+                world models, organized by task and workflow.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

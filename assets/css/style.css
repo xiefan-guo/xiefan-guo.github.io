@@ -1,0 +1,1833 @@
+/* ==========================================================================
+   Xiefan Guo — Personal Academic Homepage
+   Primary Typeface : EB Garamond (Local WOFF, Upright-First, All Body & Data)
+   Display Typeface : Cormorant Garamond (Local WOFF2, Headings & Rubrics Only — Never Data)
+   Palette          : Crisp White Canvas, Scholarly Ink Black, Midnight Blue Links,
+                      Subtle Rubric Crimson Accents (#8b2635)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Local Font Declarations
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond12-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-latin-500-600.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-latin-600-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: block;
+}
+
+/* --------------------------------------------------------------------------
+   2. Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Core Palette */
+  --bg: #ffffff;
+  --surface-tint: #f8f9fc;
+  --ink: #1a1a1c;
+  --ink-secondary: #4a4a52;
+  --ink-muted: #76767e;
+  --rubric: #8b2635;
+  --dot-leader: rgba(26, 26, 28, 0.34);
+
+  /* Required Hyperlink Palette */
+  --link: #191970;
+  --link-hover: #3a3aa6;
+  --link-underline: rgba(25, 25, 112, 0.32);
+  --link-underline-hover: rgba(58, 58, 166, 0.72);
+
+  /* Typefaces */
+  --font-body: "EB Garamond", "Songti SC", "Noto Serif SC", "STSong", Georgia, serif;
+  --font-display: "Cormorant Garamond", "EB Garamond", "Songti SC", Georgia, serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  /* Balanced 3-Column Classical Book Proportions (Wider Center Main Column) */
+  --page-max: 1220px;
+  --page-pad-x: clamp(1.4rem, 3.4vw, 2.5rem);
+  --col-left: 146px;
+  --col-right: 210px;
+  --col-gap: clamp(1.9rem, 3.2vw, 2.75rem);
+  --band-space: clamp(3rem, 5vw, 4rem);
+}
+
+/* --------------------------------------------------------------------------
+   3. Base Reset & Upright-First Typography
+      Desktop body: 18.5px (<= 19px), line-height: 1.48 (<= 1.5)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18.5px;
+  font-weight: 400;
+  line-height: 1.48;
+  color: var(--ink);
+  background-color: var(--bg);
+  /* Preserve the font's native shapes with grayscale antialiasing. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Minimize italics across EB Garamond */
+em,
+cite,
+dfn,
+address,
+blockquote {
+  font-style: normal;
+}
+
+em {
+  font-weight: 500;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+p {
+  margin: 0 0 0.9rem 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Hyperlinks — Midnight Blue Directly, Hover to Link-Hover, No Underline */
+a,
+a:visited {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: var(--bg);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  color: var(--bg);
+}
+
+/* Small-caps for upright acronyms (e.g. NEURIPS, CVPR, ICLR) — strictly EB Garamond */
+.sc {
+  font-family: var(--font-body);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* Method names (EruDiff, CTCal …): capitals stay, lowercase become small caps.
+   Set in EB Garamond, which has true small caps; Cormorant would fake them. */
+.method {
+  font-family: var(--font-body);
+  font-variant-caps: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* All numeric/data tokens strictly locked to EB Garamond */
+.num {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   4. Redesigned Classical Folio Header
+      Aligned flush with the 3-column page frame; personal F·X seal on left,
+      EB Garamond true small-caps navigation with ink-stroke underline on right.
+   -------------------------------------------------------------------------- */
+.site-header {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 2rem var(--page-pad-x) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-brand,
+.site-brand:visited {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.site-brand:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 2.1rem;
+  font-family: var(--font-body);
+  font-size: 18.5px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.site-nav a,
+.site-nav a:visited {
+  position: relative;
+  display: inline-block;
+  padding: 0.2rem 0;
+  color: var(--ink);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--ink);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.site-nav a[aria-current="page"]::after {
+  background-color: var(--ink);
+  transform: scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   5. Three-Column Classical Book Layout
+      Col 1: Right-aligned left-margin heading (Cormorant Garamond for text;
+             EB Garamond for numeric years)
+      Col 2: Primary reading column (EB Garamond, 18.5px / 1.48)
+      Col 3: Portrait plate, Contact rubric, & Marginalia sidenotes
+   -------------------------------------------------------------------------- */
+.page-shell {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(2.85rem, 5.5vw, 4.35rem) var(--page-pad-x) 4.75rem;
+}
+
+.book-band {
+  display: grid;
+  grid-template-columns: var(--col-left) minmax(0, 1fr) var(--col-right);
+  column-gap: var(--col-gap);
+  align-items: start;
+  margin-top: var(--band-space);
+}
+
+.book-band:first-child {
+  margin-top: 0;
+}
+
+.book-band.is-empty {
+  display: none;
+}
+
+/* Left Margin Label — Right-Aligned Classical Heading (Text Only: Cormorant) */
+.margin-heading {
+  grid-column: 1;
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: 1.52rem;
+  font-weight: 500;
+  line-height: 1.28;
+  color: var(--ink);
+  padding-top: 0.04rem;
+}
+
+/* Left Margin Numeric Year Label — Strictly EB Garamond (NO Cormorant for Data) */
+.margin-year {
+  grid-column: 1;
+  text-align: right;
+  font-family: var(--font-body);
+  font-size: 1.24rem;
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.38;
+  color: var(--ink-muted);
+  padding-top: 0.1rem;
+  position: sticky;
+  top: 2.5rem;
+}
+
+.band-main {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.band-aside {
+  grid-column: 3;
+  min-width: 0;
+}
+
+/* A long aside (e.g. the Sections list) should not push the next band down:
+   in the three-column layout it takes no height and spills into the empty
+   right column below. */
+@media (min-width: 861px) {
+  .band-aside.aside-float {
+    align-self: start;
+    height: 0;
+    overflow: visible;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Homepage Hero & About Band (Unified Right Column: Portrait + Contact)
+   -------------------------------------------------------------------------- */
+.home-opening {
+  display: grid;
+  grid-template-columns: var(--col-left) minmax(0, 1fr) var(--col-right);
+  column-gap: var(--col-gap);
+  align-items: start;
+}
+
+.hero-identity {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 0.1rem;
+}
+
+.display-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 3.3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.72rem;
+}
+
+.hero-affiliation {
+  font-family: var(--font-body);
+  font-size: 18.5px;
+  line-height: 1.44;
+  color: var(--ink-secondary);
+  margin-bottom: 0.42rem;
+}
+
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.52rem;
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  line-height: 1.44;
+}
+
+.inline-links .sep {
+  color: var(--ink-muted);
+  opacity: 0.55;
+  user-select: none;
+}
+
+.about-label {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 2.75rem;
+}
+
+.about-body {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 2.75rem;
+}
+
+.about-body p {
+  line-height: 1.48;
+}
+
+/* Right Column Spanning Hero + About: Matted Portrait Plate & Contact */
+.opening-aside {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.65rem;
+}
+
+.portrait-card {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  max-width: 210px;
+}
+
+.portrait-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.aside-rubric {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 500;
+  color: var(--rubric);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.opening-aside .aside-rubric {
+  color: var(--ink);
+}
+
+.contact-lines {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.46;
+  color: var(--ink-secondary);
+}
+
+.contact-lines a {
+  display: inline-block;
+  margin-top: 0.1rem;
+}
+
+/* Quiet Right-Margin Sidenote (Homepage & Other Pages) */
+.sidenote {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.46;
+  color: var(--ink-muted);
+  padding-top: 0.18rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Opportunities Section (Manicule + Classical Dotted Leaders)
+   -------------------------------------------------------------------------- */
+.manicule {
+  color: var(--rubric);
+  font-size: 1.15em;
+  margin-right: 0.35rem;
+  vertical-align: -0.04em;
+  user-select: none;
+}
+
+.opportunity-intro {
+  margin-bottom: 1.05rem;
+  line-height: 1.48;
+}
+
+.leader-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leader-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.46;
+}
+
+.leader-key {
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.leader-dots {
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  height: 1px;
+  border-bottom: 1.5px dotted var(--dot-leader);
+  transform: translateY(-0.22em);
+}
+
+.leader-val {
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   8. News Chronicle (Rubric Latest Date + Clean Alignment, Zero Rules)
+   -------------------------------------------------------------------------- */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.news-item.is-hidden {
+  display: none;
+}
+
+.news-date {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.news-item.is-latest .news-date {
+  color: var(--rubric);
+}
+
+.news-text {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.48;
+  color: var(--ink);
+}
+
+.news-toggle-wrap {
+  margin-top: 1.05rem;
+  padding-left: calc(4.5rem + 1rem);
+}
+
+.text-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.text-btn:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   9. Secondary Page Headers & Filter Strip (Papers, Activities, Blog)
+   -------------------------------------------------------------------------- */
+.subpage-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.55rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+
+.subpage-lead {
+  font-family: var(--font-body);
+  font-size: 18.5px;
+  line-height: 1.48;
+  color: var(--ink-secondary);
+}
+
+.filter-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.55rem;
+  margin-top: 1.25rem;
+}
+
+.filter-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0.15rem 0;
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  font-weight: 400;
+  color: var(--ink-muted);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.filter-btn:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.filter-btn[aria-pressed="true"] {
+  color: var(--ink);
+  font-weight: 400;
+  border-bottom-color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   10. Papers Page — Unordered Single-Entry Scholarly Bibliography
+   -------------------------------------------------------------------------- */
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+/* Papers without year grouping: add class "papers-flat" to <main> in papers.html.
+   The year bands stay in the HTML; this hides the year labels and closes the
+   gaps so the bands read as one continuous list. Remove the class to bring
+   the years back. */
+.papers-flat .margin-year {
+  display: none;
+}
+
+.papers-flat .book-band[data-year-band]:not(.is-empty) ~ .book-band[data-year-band] {
+  margin-top: 0.95rem;
+}
+
+.pub-list .paper-item {
+  position: relative;
+  padding-left: 1.35rem;
+  font-family: var(--font-body);
+  font-size: 18.5px;
+  line-height: 1.48;
+  color: var(--ink);
+}
+
+.pub-list .paper-item::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink-muted);
+  user-select: none;
+}
+
+.paper-item.is-hidden {
+  display: none;
+}
+
+.author-self {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.pub-title-quote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.04em;
+  letter-spacing: 0.005em;
+}
+
+.pub-title {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.pub-venue {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.04em;
+}
+
+.paper-award {
+  color: var(--rubric);
+  font-weight: 500;
+}
+
+.pub-links {
+  display: inline;
+  margin-left: 0.32rem;
+  font-size: 16.5px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.pub-links a,
+.pub-links button {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.pub-links a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Activities Page — Service, Organization, Talks, Teaching, Honors
+   -------------------------------------------------------------------------- */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 9.4rem minmax(0, 1fr);
+  column-gap: 1.3rem;
+  align-items: baseline;
+}
+
+.service-role {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.service-venues {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.48;
+  color: var(--ink);
+}
+
+.service-venue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.service-cat {
+  color: var(--ink-secondary);
+  margin-right: 0.25rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.activity-item {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.activity-period {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.activity-item.is-latest .activity-period {
+  color: var(--rubric);
+}
+
+.activity-title {
+  font-family: var(--font-display);
+  font-size: 1.03em;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.38;
+}
+
+.activity-title .num {
+  font-weight: 400;
+}
+
+.activity-meta {
+  display: block;
+  font-size: 17px;
+  color: var(--ink-secondary);
+  margin-top: 0.1rem;
+  line-height: 1.46;
+}
+
+/* Quiet Jump List in Right Margin */
+.aside-jump {
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Blog Index — Long-Form Surveys & Shorter Notes
+   -------------------------------------------------------------------------- */
+.survey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.survey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.survey-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.65rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+}
+
+.survey-badge {
+  color: var(--rubric);
+  font-weight: 400;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.survey-card-title {
+  font-family: var(--font-display);
+  font-size: 1.66rem;
+  font-weight: 500;
+  line-height: 1.24;
+}
+
+.survey-card-title a {
+  color: var(--link);
+}
+
+.survey-card-title a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+.survey-excerpt {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.48;
+  color: var(--ink-secondary);
+  margin-top: 0.1rem;
+}
+
+/* Shorter Notes Ledger (Matching News Rhythm) */
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.note-item {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.note-date {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.note-item.is-latest .note-date {
+  color: var(--rubric);
+}
+
+.note-title {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 0.18rem;
+}
+
+.note-title a {
+  color: var(--link);
+}
+
+.note-title a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+.note-summary {
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  line-height: 1.48;
+  color: var(--ink-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   13. Long-Form Survey Reader (posts/survey-example.html)
+       Same 3-Column Book Grid: Left Sticky TOC | Center Monograph | Right Margin Notes
+   -------------------------------------------------------------------------- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--link);
+  z-index: 900;
+  transition: width 0.08s linear;
+}
+
+.survey-grid {
+  display: grid;
+  grid-template-columns: var(--col-left) minmax(0, 1fr) var(--col-right);
+  column-gap: var(--col-gap);
+  align-items: start;
+}
+
+.survey-toc-col {
+  grid-column: 1;
+  position: sticky;
+  top: 2.75rem;
+  max-height: calc(100vh - 4.25rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.35rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(26, 26, 28, 0.2) transparent;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.survey-toc-col::-webkit-scrollbar {
+  width: 6px;
+}
+
+.survey-toc-col::-webkit-scrollbar-thumb {
+  background-color: rgba(26, 26, 28, 0.18);
+  border-radius: 3px;
+}
+
+.back-link {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  color: var(--link);
+}
+
+.toc-title {
+  font-family: var(--font-display);
+  font-size: 1.36rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.42rem;
+}
+
+.toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.34rem;
+}
+
+.toc-list a {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.38;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.toc-list a.toc-sub {
+  font-size: 15px;
+  opacity: 0.92;
+}
+
+.toc-list a:hover {
+  color: var(--link-hover);
+}
+
+.toc-list a.is-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.toc-list a.is-active::after {
+  content: "";
+  display: inline-block;
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background-color: var(--rubric);
+  vertical-align: middle;
+  margin-left: 0.45rem;
+}
+
+.survey-article {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.survey-header {
+  margin-bottom: 2.15rem;
+}
+
+.survey-rubric-line {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--rubric);
+  margin-bottom: 0.42rem;
+}
+
+.survey-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+.survey-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.95rem;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+}
+
+.survey-abstract {
+  margin: 1.75rem 0 2.5rem;
+  padding: 1.1rem 1.4rem;
+  background-color: var(--surface-tint);
+  border-left: 2px solid var(--link);
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  line-height: 1.48;
+  color: var(--ink-secondary);
+}
+
+.survey-abstract-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--rubric);
+  margin-bottom: 0.28rem;
+}
+
+.survey-article h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-display);
+  font-size: 1.76rem;
+  font-weight: 500;
+  line-height: 1.24;
+  scroll-margin-top: 2rem;
+}
+
+/* Keep section numbers strictly in EB Garamond, never Cormorant Garamond */
+.survey-article h2 .sec-index,
+.survey-article h3 .sec-index {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: 0.88em;
+  color: var(--ink-muted);
+  margin-right: 0.45rem;
+  font-weight: 400;
+}
+
+.survey-article h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.58rem;
+  font-family: var(--font-body);
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.34;
+  scroll-margin-top: 2rem;
+}
+
+.survey-article p {
+  font-family: var(--font-body);
+  margin-bottom: 0.95rem;
+  line-height: 1.48;
+}
+
+.survey-article ul.prose-list {
+  margin: 0.5rem 0 1.15rem 1.25rem;
+  list-style: disc;
+}
+
+.survey-article ul.prose-list li {
+  margin-bottom: 0.42rem;
+  padding-left: 0.25rem;
+  line-height: 1.48;
+}
+
+/* True Margin Sidenotes Flowing Into the Right Column on Desktop */
+.sidenote-ref {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--rubric);
+  font-weight: 600;
+  margin-left: 0.08rem;
+}
+
+.margin-note {
+  float: right;
+  clear: right;
+  width: var(--col-right);
+  margin-right: calc(-1 * var(--col-right) - var(--col-gap));
+  margin-top: 0.16rem;
+  margin-bottom: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 15.2px;
+  line-height: 1.46;
+  color: var(--ink-muted);
+}
+
+.margin-note-num {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
+  color: var(--rubric);
+  font-weight: 600;
+  margin-right: 0.28rem;
+}
+
+/* Definition / Key Insight Block */
+.scholarly-block {
+  margin: 1.45rem 0 1.65rem;
+  padding: 1rem 1.3rem;
+  background-color: var(--surface-tint);
+  border-left: 2px solid var(--rubric);
+}
+
+.scholarly-block-title {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+/* Equation Block (All Math & Indices in EB Garamond) */
+.equation-block {
+  margin: 1.35rem 0;
+  padding: 0.85rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fbfbfd;
+  overflow-x: auto;
+  font-family: var(--font-body);
+}
+
+.equation-expr {
+  margin: 0 auto;
+  font-size: 18.5px;
+  white-space: nowrap;
+}
+
+.equation-num {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: lining-nums;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+
+/* Classical LaTeX Booktabs Table (100% EB Garamond for All Data) */
+.table-wrap {
+  margin: 1.65rem 0 1.85rem;
+  overflow-x: auto;
+}
+
+.booktabs {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.44;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.booktabs caption {
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 0.55rem;
+  font-size: 15.2px;
+  color: var(--ink-muted);
+}
+
+.booktabs thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem 0.5rem 0;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.booktabs tbody td {
+  padding: 0.52rem 0.75rem 0.52rem 0;
+  vertical-align: top;
+  color: var(--ink-secondary);
+}
+
+.booktabs tbody tr:last-child td {
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 0.65rem;
+}
+
+/* References */
+.ref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+  margin-top: 0.75rem;
+}
+
+.ref-item {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.46;
+  color: var(--ink-secondary);
+}
+
+.ref-key {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13b. Shared Long-Form Content Components
+   Components used by the longer surveys, harmonized with the survey reader.
+   -------------------------------------------------------------------------- */
+
+/* Prose lists (plain lists in article bodies) */
+.survey-article ul:not([class]),
+.survey-article ol:not([class]) {
+  margin: 0.55rem 0 1.15rem 1.35rem;
+  list-style-position: outside;
+}
+
+.survey-article ul:not([class]) {
+  list-style: disc;
+}
+
+.survey-article ol:not([class]) {
+  list-style: decimal;
+}
+
+.survey-article ul:not([class]) > li,
+.survey-article ol:not([class]) > li {
+  margin-bottom: 0.42rem;
+  padding-left: 0.2rem;
+  line-height: 1.48;
+}
+
+/* Fourth-level headings in the longer surveys */
+.survey-article h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+  scroll-margin-top: 2rem;
+}
+
+.survey-article h4 .sec-index {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: 0.88em;
+  color: var(--ink-muted);
+  margin-right: 0.45rem;
+  font-weight: 400;
+}
+
+/* Row headers in booktabs tables */
+.booktabs tbody th {
+  padding: 0.52rem 0.75rem 0.52rem 0;
+  vertical-align: top;
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Collapsible reference and method-atlas groups */
+.survey-article details.reference-group {
+  margin: 0.55rem 0 0.9rem;
+}
+
+.survey-article details.reference-group > summary {
+  padding: 0.4rem 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(26, 26, 28, 0.18);
+  cursor: pointer;
+  list-style: none;
+}
+
+.survey-article details.reference-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.survey-article details.reference-group > summary:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.survey-article details.reference-group > summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 1.1em;
+  color: var(--link);
+}
+
+.survey-article details.reference-group[open] > summary::before {
+  content: "▾";
+}
+
+.survey-article details.reference-group ul {
+  margin: 0.45rem 0 0 1.35rem;
+  padding: 0;
+  list-style: disc outside;
+  display: block;
+}
+
+.survey-article details.reference-group li {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.46;
+  color: var(--ink-secondary);
+}
+
+.survey-article details.reference-group ul > li {
+  margin: 0 0 0.42rem;
+  padding-left: 0.2rem;
+}
+
+.survey-article details.reference-group ul > li::marker {
+  color: var(--ink-muted);
+}
+
+.survey-article details.reference-group [id]:target {
+  background-color: rgba(25, 25, 112, 0.06);
+}
+
+.reference-id {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-variant-numeric: lining-nums;
+  color: var(--ink-muted);
+}
+
+/* In-text citation markers */
+.citation {
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 0.05rem;
+}
+
+.citation a {
+  color: var(--link);
+}
+
+/* Inline model IDs and code tokens use the body typeface */
+.survey-article code {
+  font-family: var(--font-body);
+  font-size: 1em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border: 0;
+}
+
+/* Materials headings and small caveat notes */
+.survey-article h3.materials-label {
+  margin-top: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 1.16rem;
+  font-weight: 500;
+  color: var(--link);
+}
+
+.survey-article p.article-note {
+  font-size: 16.5px;
+  line-height: 1.46;
+  color: var(--ink-muted);
+}
+
+/* Section synthesis callout */
+.survey-article .section-synthesis {
+  margin: 1.45rem 0 1.65rem;
+  padding: 1rem 1.3rem;
+  background-color: var(--surface-tint);
+  border-left: 2px solid var(--rubric);
+}
+
+.survey-article .section-synthesis p {
+  margin-bottom: 0;
+  font-size: 17.5px;
+  color: var(--ink-secondary);
+}
+
+/* Figures */
+.survey-article .survey-figure {
+  margin: 1.6rem 0 1.8rem;
+}
+
+.survey-article .figure-scroll {
+  overflow-x: auto;
+}
+
+.survey-article .survey-figure figcaption,
+.survey-article .ir-diagram figcaption {
+  margin-top: 0.55rem;
+  font-size: 15.2px;
+  line-height: 1.46;
+  color: var(--ink-muted);
+}
+
+.survey-article .figure-download {
+  margin-top: 0.35rem;
+  font-size: 15px;
+}
+
+/* Display-math fallback blocks */
+.survey-article .math-block {
+  margin: 1.3rem 0;
+  padding: 0.75rem 1rem;
+  background-color: #fbfbfd;
+  overflow-x: auto;
+  text-align: center;
+}
+
+/* Author-drawn IR pipeline */
+.survey-article .ir-diagram {
+  margin: 1.6rem 0 1.8rem;
+}
+
+.survey-article .ir-pipeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.survey-article .ir-pipeline > div {
+  padding: 0.72rem 0.85rem;
+  background-color: var(--surface-tint);
+  border-top: 1.5px solid var(--ink);
+}
+
+.survey-article .ir-pipeline strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 17px;
+}
+
+.survey-article .ir-pipeline span {
+  display: block;
+  font-size: 16px;
+  color: var(--ink-secondary);
+}
+
+.survey-article .ir-pipeline small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+.survey-article .method-scope {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 860px) {
+  .survey-article .ir-pipeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. Quiet Colophon Footer (No Horizontal Bar)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: clamp(4rem, 7.5vw, 5.5rem);
+  display: grid;
+  grid-template-columns: var(--col-left) minmax(0, 1fr) var(--col-right);
+  column-gap: var(--col-gap);
+  align-items: baseline;
+}
+
+.colophon-inner {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   15. Responsive Behavior
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  :root {
+    --col-left: 128px;
+    --col-right: 176px;
+    --col-gap: 1.85rem;
+  }
+}
+
+@media (max-width: 860px) {
+  body {
+    font-size: 17.5px;
+  }
+
+  .page-shell {
+    padding-top: 2.35rem;
+  }
+
+  .home-opening {
+    grid-template-columns: minmax(0, 1fr) 178px;
+    column-gap: 2rem;
+    row-gap: 0.3rem;
+  }
+
+  .hero-identity {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .opening-aside {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .about-label {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: left;
+    margin-top: 2.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .about-body {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0;
+  }
+
+  .book-band,
+  .survey-grid,
+  .site-footer {
+    grid-template-columns: 1fr;
+    row-gap: 0.7rem;
+  }
+
+  .margin-heading,
+  .margin-year {
+    grid-column: 1;
+    text-align: left;
+    position: static;
+  }
+
+  .band-main,
+  .band-aside,
+  .survey-toc-col,
+  .survey-article,
+  .colophon-inner {
+    grid-column: 1;
+  }
+
+  .survey-toc-col {
+    position: static;
+    text-align: left;
+    margin-bottom: 1.2rem;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.15rem;
+  }
+
+  .toc-list a.is-active::after {
+    display: none;
+  }
+
+  .margin-note {
+    float: none;
+    width: auto;
+    margin: 0.6rem 0 1.1rem;
+    padding: 0.55rem 0.95rem;
+    border-left: 2px solid rgba(139, 38, 53, 0.35);
+    background-color: var(--surface-tint);
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 1.45rem;
+  }
+
+  .site-nav {
+    gap: 0.35rem 1.45rem;
+    font-size: 1.05rem;
+  }
+
+  .home-opening {
+    grid-template-columns: 1fr;
+  }
+
+  .opening-aside {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 1.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .portrait-card {
+    max-width: 132px;
+    flex-shrink: 0;
+  }
+
+  .about-label {
+    grid-row: 3;
+    margin-top: 2rem;
+  }
+
+  .about-body {
+    grid-row: 4;
+  }
+
+  .news-item,
+  .service-row,
+  .activity-item,
+  .note-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.12rem;
+  }
+
+  .news-toggle-wrap {
+    padding-left: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Print Stylesheet
+   -------------------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .filter-strip,
+  .pub-links,
+  .reading-progress,
+  .news-toggle-wrap,
+  .survey-toc-col {
+    display: none !important;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+}

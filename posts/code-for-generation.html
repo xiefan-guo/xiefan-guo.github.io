@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A research survey of executable representations for visual generation: images, video, editable graphics, and persistent worlds, with analysis of verification, learning, and program-to-pixel fidelity.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Code as an intermediate representation for visual generation — Xiefan Guo</title>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/EBGaramond12-Semibold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261102-article-meta-original-weight">
-  <script defer src="../assets/js/back-to-top.js?v=20261027-viewport-top"></script>
-  <script defer src="../assets/js/article-toc.js?v=20261101"></script>
+  <meta name="description" content="A research survey of executable representations for visual generation: images, video, editable graphics, and persistent worlds, with analysis of verification, learning, and program-to-pixel fidelity." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
   <script>
     window.MathJax = {
       tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
@@ -20,49 +15,67 @@
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body id="top">
-  <div class="wrap">
-    <header class="topbar">
-      <a class="wordmark" href="../index.html">Xiefan Guo</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="../papers.html">Papers</a>
-        <a href="../activities.html">Activities</a>
-        <a class="active" href="../blog.html">Blog</a>
-      </nav>
-    </header>
+<body>
+  <a class="skip-link" href="#article-content">Skip to article</a>
+  <div class="reading-progress" aria-hidden="true"></div>
 
-    <main>
-      <div class="content page">
-        <article class="article code-generation">
-          <header class="article-head">
-            <h1 class="article-title">Code as an intermediate representation for visual generation</h1>
-            <div class="article-meta">Oct 2026 · Xiefan Guo · Assisted by Codex, GPT-6 Astra, and Claude · Updated <time datetime="2026-10-24">24 Oct 2026</time></div>
-          </header>
+  <header class="site-header">
+    <a class="site-brand" href="../index.html">Xiefan Guo</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../papers.html">Papers</a>
+      <a href="../activities.html">Activities</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+    </nav>
+  </header>
 
-          <div class="article-layout">
-            <nav class="article-toc" aria-label="Article contents">
-              <strong>Contents</strong>
-              <ol>
-                <li><a href="#contract">What execution actually guarantees</a></li>
-                <li><a href="#lineages">The lineages and the roles of code</a></li>
-                <li><a href="#images">Images: drafts or layered composition?</a></li>
-                <li><a href="#video">Video: specifying and checking a process</a></li>
-                <li><a href="#worlds">Worlds: persistent state and faithful observations</a></li>
-                <li><a href="#editing">Inverse graphics and editing</a></li>
-                <li><a href="#learning">Learning from execution</a></li>
-                <li><a href="#evaluation">What a convincing evaluation needs</a></li>
-                <li><a href="#agenda">Research directions with testable hypotheses</a></li>
-                <li><a href="#reading">Reading paths and reference index</a></li>
-              </ol>
-            </nav>
+  <main class="page-shell">
+    <div class="survey-grid">
+      <aside class="survey-toc-col" aria-label="Table of contents">
+        <a class="back-link" href="../blog.html">← All writings</a>
 
-          <div class="article-body">
-            <p>A chart with exactly four bars, a diagram whose arrows connect the right nodes, and a ball that hits the floor before bouncing all require more than plausible appearance. They require a representation of what exists, how its parts relate, and what changes over time. A program can make those commitments explicit. A visual generator can supply the appearance that would be expensive to author procedurally. The research question is how to connect these two capabilities without losing the commitments in translation.</p>
+        <nav aria-label="Article contents">
+          <div class="toc-title">Contents</div>
+          <div class="toc-list">
+            <a href="#contract">1. What execution actually guarantees</a>
+            <a href="#lineages">2. The lineages and the roles of code</a>
+            <a href="#images">3. Images: drafts or layered composition?</a>
+            <a href="#video">4. Video: specifying and checking a process</a>
+            <a href="#worlds">5. Worlds: persistent state and faithful observations</a>
+            <a href="#editing">6. Inverse graphics and editing</a>
+            <a href="#learning">7. Learning from execution</a>
+            <a href="#evaluation">8. What a convincing evaluation needs</a>
+            <a href="#agenda">9. Research directions with testable hypotheses</a>
+            <a href="#reading">10. Reading paths and reference index</a>
+          </div>
+        </nav>
+      </aside>
+
+      <article id="article-content" class="survey-article">
+        <header class="survey-header">
+          <div class="survey-rubric-line">Survey</div>
+          <h1 class="survey-title">Code as an intermediate representation for visual generation</h1>
+          <div class="survey-meta">
+            <span>Oct 2026</span>
+            <span>·</span>
+            <span>Xiefan Guo</span>
+            <span>·</span>
+            <span>Assisted by Codex, GPT-6 Astra, and Claude</span>
+            <span>·</span>
+            <span>Updated <time datetime="2026-10-24">24 Oct 2026</time></span>
+          </div>
+        </header>
+
+        <div class="survey-abstract">
+          <span class="survey-abstract-label">Abstract</span>
+          A research survey of executable representations for visual generation: images, video, editable graphics, and persistent worlds, with analysis of verification, learning, and program-to-pixel fidelity.
+        </div>
+
+<p>A chart with exactly four bars, a diagram whose arrows connect the right nodes, and a ball that hits the floor before bouncing all require more than plausible appearance. They require a representation of what exists, how its parts relate, and what changes over time. A program can make those commitments explicit. A visual generator can supply the appearance that would be expensive to author procedurally. The research question is how to connect these two capabilities without losing the commitments in translation.</p>
 
             <p>This post surveys that connection across images, video, editable graphics, 3D scenes, and interactive worlds. <strong>My central argument is that the useful unit of study is the contract between execution and visual realization.</strong> Writing code is one way to construct the contract; rendering a correct program is only an intermediate success. The final image or video still has to depict what the program specifies.</p>
 
-            <h2 id="contract">1. What execution actually guarantees</h2>
+            <h2 id="contract"><span class="sec-index">1.</span>What execution actually guarantees</h2>
             <p>Let $x$ denote a request, $c$ a program, $e$ its execution environment, $d$ the rendered controls, and $y$ the delivered visual result. A common factorization is</p>
             <p>$$ c \sim \pi_\phi(\cdot\mid x),\qquad d=\mathcal{R}(c;e),\qquad y\sim G_\theta(\cdot\mid x,d). $$</p>
             <p>The coder chooses a concrete construction; the executor computes its consequences; the realizer translates those consequences into an image or video. The executor can also export object IDs, depth, masks, trajectories, or event logs. Calling all of these a “draft” hides substantial differences in the information the realizer receives.</p>
@@ -88,7 +101,7 @@
 
             <h3>Choose a language for the constraints it exposes</h3>
             <div class="table-wrap">
-              <table class="table-wide">
+              <table class="booktabs">
                 <caption>Representation choices are separate from the pipeline roles listed below. The checks are capabilities to implement, not automatic guarantees.</caption>
                 <thead><tr><th scope="col">Representation</th><th scope="col">Useful when</th><th scope="col">What can be checked</th><th scope="col">Main limitation</th></tr></thead>
                 <tbody>
@@ -101,14 +114,14 @@
             </div>
             <p>Serialization alone is a weak distinction: a JSON graph may be executable through an interpreter, while an SVG can contain thousands of unrelated paths with no useful object structure. A practical choice is the smallest language that expresses the required interventions. Extending its vocabulary should be justified by held-out tasks, since a shorter program can merely move complexity into an undocumented library.</p>
 
-            <h2 id="lineages">2. The lineages and the roles of code</h2>
+            <h2 id="lineages"><span class="sec-index">2.</span>The lineages and the roles of code</h2>
             <p>The foundations include program induction, learned drawing policies, and procedural modeling. <a href="https://arxiv.org/abs/1707.09627">Ellis et al.</a> inferred programs with loops and shared structure from hand drawings; <a href="https://arxiv.org/abs/1712.08290">CSGNet</a> recovered constructive-solid-geometry programs and learned without program annotations through policy gradients; <a href="https://arxiv.org/abs/1804.01118">SPIRAL</a> trained a drawing agent through an external graphics engine using adversarial rewards. <a href="https://arxiv.org/abs/2009.08026">ShapeAssembly</a> encoded hierarchical part attachments in a domain-specific language. These works already studied executable structure and learning through rendering, before modern language-model orchestration.</p>
             <p>The vocabulary itself can be learned. <a href="https://arxiv.org/abs/2006.08381">DreamCoder</a> alternates program search, abstraction discovery, and recognition-model training; <a href="https://arxiv.org/abs/2305.05661">ShapeCoder</a> discovers reusable functions and parametric relationships from collections of shape primitives. Their relevance is not unrestricted photorealistic generation. It is the possibility of learning a representation whose editable degrees of freedom match recurring structure, instead of always generating a long sequence of low-level coordinates.</p>
             <p>The modern layout-to-image branch adds a learned appearance generator. <a href="https://arxiv.org/abs/2305.15328">VPGen</a> decomposed generation into objects/counts, layouts, and images; <a href="https://arxiv.org/abs/2305.15393">LayoutGPT</a> used stylesheet-like visual plans; <a href="https://arxiv.org/abs/2305.13655">LLM-grounded Diffusion</a> used captioned boxes; and <a href="https://arxiv.org/abs/2401.11708">RPG</a> planned regional generation. These works establish the value of explicit structure, although a layout specification is a narrower intermediate than a general scene program.</p>
             <p><a href="https://arxiv.org/abs/2305.18583">Control-GPT</a> already executed GPT-4-written TikZ sketches and used them to condition diffusion in 2023. <a href="https://arxiv.org/abs/2311.12631">GPT4Motion</a> used generated Blender scripts and simulated scene components for video. <a href="https://arxiv.org/abs/2408.02231">REVISION</a> supplied rendered 3D spatial guidance. In parallel, <a href="https://arxiv.org/abs/2403.01248">SceneCraft</a> developed code–render–inspect refinement for Blender scenes, while <a href="https://arxiv.org/abs/2410.16770">The Scene Language</a> combined hierarchical programs, semantic words, and identity embeddings with traditional, neural, or hybrid renderers. These are related lineages, rather than evidence that every later system directly descends from one predecessor.</p>
 
             <div class="table-wrap">
-              <table class="table-wide">
+              <table class="booktabs">
                 <caption>Classify a system by what the program controls and what the user receives.</caption>
                 <thead><tr><th scope="col">Role</th><th scope="col">Delivered representation</th><th scope="col">Examples</th><th scope="col">Principal question</th></tr></thead>
                 <tbody>
@@ -123,11 +136,11 @@
             </div>
             <p>These roles can coexist. A verifier need not generate the image, and a program-derived dataset need not leave code in the inference pipeline. A further adjacent category, <a href="https://arxiv.org/abs/2609.31780">PSP-DiT</a>, jointly denoises scene-program and image latents. That is a learned structured representation, not an externally executed draft. Its preprint reports experiments but explicitly lists no public code or checkpoints in its reproducibility checklist; it should not be treated as equivalent evidence for an executable system.</p>
 
-            <h2 id="images">3. Images: drafts or layered composition?</h2>
+            <h2 id="images"><span class="sec-index">3.</span>Images: drafts or layered composition?</h2>
             <h3>CoCo: a useful result with a specific domain</h3>
             <p><a href="https://arxiv.org/abs/2603.08652">CoCo</a> uses a <a href="https://arxiv.org/abs/2505.14683">BAGEL</a>-based unified model to write drawing code and refine its executed draft. CoCo-10K supplies text–code pairs and text–draft–final triplets; training combines code supervision with image-generation supervision. It demonstrates large gains on structured and text-intensive images.</p>
             <div class="table-wrap">
-              <table>
+              <table class="booktabs">
                 <caption>CoCo paper, Tables 1–2. Higher is better; retain the paper’s numerical scales.</caption>
                 <thead><tr><th scope="col">Evaluation</th><th scope="col">BAGEL</th><th scope="col">CoCo</th></tr></thead>
                 <tbody>
@@ -149,12 +162,12 @@
             <p><a href="https://arxiv.org/abs/2601.03993">PosterVerse</a> uses HTML-based scalable typography in a poster workflow. <a href="https://arxiv.org/abs/2608.16284">TransAnyText</a> generates renderable HTML patches for translated image text, combines them with diffusion-based background processing, and uses deterministic rendering for final synthesis. The order matters: having a generator repaint a text layer introduces a different failure surface from compositing that text after background generation.</p>
             <p>My practical rule is to assign a precise requirement to the latest stage that can enforce it. For a poster with a date, price, and product photograph, the photograph can be generated while the strings and their placement remain browser-rendered. A full-frame neural rewrite may still be appropriate when letters must interact with scene geometry or lighting, but it should earn its extra flexibility through final-output checks.</p>
 
-            <h2 id="video">4. Video: specifying and checking a process</h2>
+            <h2 id="video"><span class="sec-index">4.</span>Video: specifying and checking a process</h2>
             <p>For a sequence, a program specifies more than a frame layout. It can represent initial conditions, contact, forces, event order, and camera motion. The central distinction is between <em>animating a desired trajectory</em> and <em>simulating a causal mechanism</em>. A keyframed bounce may satisfy a director’s request without validating the physical explanation of that bounce.</p>
             <h3>VideoCoCo: draft construction and editor adaptation both matter</h3>
             <p><a href="https://arxiv.org/abs/2607.27380">VideoCoCo</a> constructs a low-fidelity Blender simulation, generates an appearance-focused editing instruction, and adapts a video editor using VideoCoCo-3K draft–instruction–target triplets. The paper reports PhyGenBench improving from 0.475 to 0.558 and VBench-2.0 from 52.18 to 77.88.</p>
             <div class="table-wrap">
-              <table>
+              <table class="booktabs">
                 <caption>VideoCoCo paper, Table 3: editor adaptation ablation on PhyGenBench.</caption>
                 <thead><tr><th scope="col">Setting</th><th scope="col">Average</th></tr></thead>
                 <tbody>
@@ -169,7 +182,7 @@
 
             <h3>The simulator–generator interface is a design variable</h3>
             <div class="table-wrap">
-              <table class="table-wide">
+              <table class="booktabs">
                 <caption>Representative interfaces. Several methods use more than one signal; simulation guidance does not always involve synthesized code.</caption>
                 <thead><tr><th scope="col">Work</th><th scope="col">What crosses the interface</th><th scope="col">What it helps expose</th></tr></thead>
                 <tbody>
@@ -190,7 +203,7 @@
             <p>The distinction between outcome and mechanism remains essential. If the prompt says “the ball lands in the bucket,” a position constraint can verify the outcome. If it says “after rolling down the ramp,” the event trace must also check support, release, contact, and ordering. A visually plausible ending can conceal the wrong process.</p>
             <p>For explanations and motion graphics, direct code rendering is often sufficient. <a href="https://arxiv.org/abs/2502.19400">TheoremExplainAgent</a>, <a href="https://arxiv.org/abs/2510.01174">Code2Video</a>, and <a href="https://arxiv.org/abs/2604.18364">ManimTrainer / ManimAgent</a> study executable animation workflows. <a href="https://arxiv.org/abs/2502.13372">MoVer</a> verifies spatial and temporal predicates of SVG animation; <a href="https://arxiv.org/abs/2604.11792">LottieGPT</a> models vector animation tokens; <a href="https://arxiv.org/abs/2605.01517">VAnim</a> models sparse updates to a persistent SVG DOM. Their editability and verification techniques are relevant even when the target application ultimately needs neural appearance.</p>
 
-            <h2 id="worlds">5. Worlds: persistent state and faithful observations</h2>
+            <h2 id="worlds"><span class="sec-index">5.</span>Worlds: persistent state and faithful observations</h2>
             <p>One-shot generation ends with an artifact. An interactive world must keep evolving after the camera turns away. Action-conditioned video models such as <a href="https://arxiv.org/abs/2506.18701">Matrix-Game</a> and <a href="https://arxiv.org/abs/2506.17201">Hunyuan-GameCraft</a> provide a useful adjacent baseline: explicit executable state is an architectural alternative to retaining world information through visual history.</p>
             <p>In a program-driven world, let $s_t$ be persistent state, $a_t$ an action, $v_t$ the camera, and $m_t$ appearance memory. A useful abstraction is</p>
             <p>$$ s_{t+1}=T_c(s_t,a_t),\qquad d_{t+1}=P(s_{t+1},v_{t+1}), $$</p>
@@ -199,7 +212,7 @@
             <h3>From an architectural proposal to interaction and memory</h3>
             <p><a href="https://arxiv.org/abs/2608.25927">Code World Model</a> combines a coding agent, persistent executable state, and proxy-conditioned MiniMax-H3 rendering. Its proxies encode geometry and semantic information. The paper’s results are qualitative, and its limitations explicitly include small training scale, the absence of autoregressive real-time generation, and difficulty constructing complex mechanisms from scratch. It demonstrates a promising decomposition rather than a quantitatively established replacement for a game engine.</p>
             <div class="table-wrap">
-              <table class="table-wide">
+              <table class="booktabs">
                 <caption>Recent systems address different missing pieces. The rows are not a common leaderboard.</caption>
                 <thead><tr><th scope="col">Work / first posted</th><th scope="col">Contribution to the interface</th><th scope="col">Evidence to examine</th></tr></thead>
                 <tbody>
@@ -217,7 +230,7 @@
             <p>There is also a less discussed boundary: generated observations can introduce objects or details absent from state. If an agent promotes such an object into the executable world, it needs an identity, geometry, affordances, and consistency checks. Otherwise the renderer can silently expand the action space, or two views can disagree about what exists. I would treat this as a controlled state-commit operation, not an automatic consequence of plausible rendering.</p>
             <p>The naming has older meanings too. <a href="https://arxiv.org/abs/2402.12275">WorldCoder</a>, <a href="https://arxiv.org/abs/2405.15383">GIF-MCTS</a>, and <a href="https://arxiv.org/abs/2510.04542">Code world models for general game playing</a> synthesize executable dynamics for planning. Meta’s <a href="https://arxiv.org/abs/2510.02387">CWM</a> is a code language model trained with execution-related experience. Neither label alone implies a proxy-to-video renderer.</p>
 
-            <h2 id="editing">6. Inverse graphics and editing: source should remain useful</h2>
+            <h2 id="editing"><span class="sec-index">6.</span>Inverse graphics and editing: source should remain useful</h2>
             <p>Generation from text and reconstruction from an image have different ambiguities. An image can be reproduced by a meaningful scene program, a pile of view-specific polygons, or a single textured plane. Similarity in one view does not establish usable geometry or semantics. A good program representation should support a requested intervention after reconstruction.</p>
             <p>More formally, two programs can be observationally equivalent under the training camera while responding differently to an edit or a new viewpoint. Reconstruction therefore identifies an equivalence class, not necessarily the original source. Evaluate a recovered program on withheld cameras, parameter changes, and object-level edits; where observations cannot determine hidden structure, retain alternatives or report uncertainty. Exact source matching would incorrectly reject many valid constructions, while pixel matching alone would accept a view-specific shortcut.</p>
             <p>For vectors, <a href="https://arxiv.org/abs/2312.11556">StarVector</a> models SVG code with semantic primitives, while <a href="https://arxiv.org/abs/2504.06263">OmniSVG</a> uses discrete command and coordinate tokens. <a href="https://arxiv.org/abs/2411.16602">Chat2SVG</a> combines LLM-generated templates with diffusion-guided path optimization, providing a hybrid of semantic construction and continuous refinement. These methods help distinguish a useful vector description from a visually similar but unwieldy tracing.</p>
@@ -228,7 +241,7 @@
             <p>Editing makes this distinction measurable. <a href="https://arxiv.org/abs/2609.01409">EdiTikZ</a> learns from revision-derived scientific figure edits rather than only synthesized edit instructions. <a href="https://arxiv.org/abs/2602.15758">ChartEditBench</a> evaluates sustained multi-turn chart modification; <a href="https://arxiv.org/abs/2608.10408">VisEditBench</a> tests feedback-guided repair and reference-guided restyling. Each asks more than “can the model produce a similar picture?”: it must change the requested content while retaining the rest.</p>
             <p>The GUI branch exposes a related question about reachable next states. <a href="https://arxiv.org/abs/2602.09856">Code2World</a> and <a href="https://arxiv.org/abs/2602.01576">gWorld</a> predict screens through renderable code; <a href="https://arxiv.org/abs/2608.05891">AppDeltaWorld</a> predicts transition-grounded code updates. A screenshot can look right while representing an impossible action outcome. Evaluation therefore needs transition validity as well as visual fidelity.</p>
 
-            <h2 id="learning">7. Learning from execution</h2>
+            <h2 id="learning"><span class="sec-index">7.</span>Learning from execution</h2>
             <h3>Supervised code is a starting point</h3>
             <p>There are many valid programs for the same image. Token-level imitation can penalize an alternative correct construction while overlooking a small numerical change that radically alters a render. Useful data must align requests, source, rendered outputs, and execution context. <a href="https://arxiv.org/abs/2310.00367">AutomaTikZ</a> and <a href="https://arxiv.org/abs/2405.15306">DeTikZify</a> develop TikZ data and synthesis; <a href="https://arxiv.org/abs/2506.03930">VisCoder / VisCode-200K</a> includes validated plotting and correction experience. <a href="https://arxiv.org/abs/2604.06079">SciTikZer</a> adds execution-centric scientific graphics data and round-trip verification in its dual self-consistency RL framework.</p>
             <p>Generated code can also supply visual supervision. <a href="https://arxiv.org/abs/2510.05091">Factuality Matters</a> constructs 1.3 million structured image pairs from executable programs and introduces StructBench. <a href="https://arxiv.org/abs/2306.09310">Infinigen</a> provides a broader procedural-generation precedent. Programs can produce labels and controlled variations that would be costly to annotate manually, but renderer and template diversity remain limits on the distribution learned.</p>
@@ -256,7 +269,7 @@
             <p><a href="https://arxiv.org/abs/2610.03002">RSI</a> closes a cross-capability loop: diagnose generated images, write programs targeting weaknesses, verify rendered examples, and train generation, understanding, and program writing. On BasicChartBench L0, the paper reports 45.7% to 60.2% after four rounds, versus 46.3% for continued training. Its human audit also finds that readers still accept roughly a third of requirements judged absent from native generations. Verified construction improves the supervision source; it does not remove every downstream perceptual error. <a href="https://arxiv.org/html/2610.03002v1">[Tables 1–2]</a></p>
             <p>The remaining training question should be stated narrowly. Execution-feedback RL already exists, and an external renderer is compatible with policy gradients. What is less established by this literature is joint optimization of <em>program construction and a separate stochastic visual realizer</em>, evaluated on final constraint survival at practical cost. A reward on the draft alone can prefer a precise but difficult-to-realize proxy; a reward on appearance alone can prefer a beautiful violation.</p>
 
-            <h2 id="evaluation">8. What a convincing evaluation needs</h2>
+            <h2 id="evaluation"><span class="sec-index">8.</span>What a convincing evaluation needs</h2>
             <h3>Make constraint survival measurable</h3>
             <p>For each observable requirement–sample pair $i$, let $b_i$ indicate satisfaction in the executed draft and $f_i$ satisfaction in the final output, using explicit, aligned tests. My proposed diagnostics are the survival rate $\widehat S$ and the repair rate $\widehat R$:</p>
             <p>$$ \widehat S=\frac{\sum_i b_i f_i}{\sum_i b_i},\qquad \widehat R=\frac{\sum_i(1-b_i)f_i}{\sum_i(1-b_i)}. $$</p>
@@ -269,7 +282,7 @@
 
             <h3>Use complementary benchmarks</h3>
             <div class="table-wrap">
-              <table class="table-wide">
+              <table class="booktabs">
                 <caption>A benchmark portfolio, organized by the failure it can reveal.</caption>
                 <thead><tr><th scope="col">Question</th><th scope="col">Useful benchmarks</th><th scope="col">What remains unmeasured</th></tr></thead>
                 <tbody>
@@ -293,7 +306,7 @@
               <li><strong>Use held-out constructions.</strong> Split by templates, scene families, and program structure where possible. Include portraits, textures, and other tasks with little expected code advantage to measure routing overhead and quality regressions.</li>
             </ol>
 
-            <h2 id="agenda">9. Research directions with testable hypotheses</h2>
+            <h2 id="agenda"><span class="sec-index">9.</span>Research directions with testable hypotheses</h2>
             <p>The most useful next step is to turn architectural intuitions into falsifiable comparisons. These are six experiments I would prioritize.</p>
             <h3>Constraint-aware routing</h3>
             <p><strong>Hypothesis:</strong> the best pipeline depends on which requirements need exact enforcement, not simply on whether the prompt is an “image” or a “chart.” Compare a fixed code-first pipeline with a router choosing direct generation, a spatial proxy, or layered composition. Supervise route choice with measured quality–cost trade-offs. The experiment fails to support routing if its decision overhead or misclassification erases the gain. Include unfamiliar task mixtures, not only the categories used to design the router.</p>
@@ -309,7 +322,7 @@
             <p><strong>Hypothesis:</strong> explicit entity registration and state-compatible appearance memory improve long-horizon interaction. Construct episodes where an object is discovered, acted on, occluded, and revisited by a second camera. Compare fixed executable state, unverified observation-to-state updates, and verified commits with stable IDs. Ablate texture memory separately from semantic state. Score impossible interactions and conflicting observations, not just the visual similarity of returning objects.</p>
             <p>Across these experiments, I would preserve a simple division of responsibility: executable representations make commitments inspectable; the visual model makes them visible. Progress means improving the measured agreement between the two while retaining the appearance, flexibility, and cost needed by the application.</p>
 
-            <h2 id="reading">10. Reading paths and reference index</h2>
+            <h2 id="reading"><span class="sec-index">10.</span>Reading paths and reference index</h2>
             <p>For the foundations, read <a href="https://arxiv.org/abs/1707.09627">graphics-program induction</a> → <a href="https://arxiv.org/abs/2009.08026">ShapeAssembly</a> → <a href="https://arxiv.org/abs/2305.05661">ShapeCoder</a>: they progress from recovering structure to choosing operations and learning reusable abstractions. Compare <a href="https://arxiv.org/abs/2604.20730">Render-in-the-Loop</a> with intermediate-render rewards to distinguish feedback as an observation from feedback as supervision; use <a href="https://arxiv.org/abs/2602.19171v4">HistCAD</a> to make editability an operational test.</p>
             <p>For the core idea, read <a href="https://arxiv.org/abs/2305.18583">Control-GPT</a> → <a href="https://arxiv.org/abs/2603.08652">CoCo</a> → <a href="https://arxiv.org/abs/2609.04034">Editable visual design</a>: the sequence contrasts a draft with a structured final deliverable. For motion, read <a href="https://arxiv.org/abs/2311.12631">GPT4Motion</a> → <a href="https://arxiv.org/abs/2607.27380">VideoCoCo</a> → <a href="https://arxiv.org/abs/2607.16355">PhysAgent</a>. For interactive worlds, read <a href="https://arxiv.org/abs/2608.25927">Code World Model</a> alongside <a href="https://arxiv.org/abs/2610.02205">PROWBench</a>, then examine Oneira, AgentGarten, and Mallea for different extensions.</p>
             <p>For learning, start with <a href="https://arxiv.org/abs/2505.20793">RLRF</a>, then compare <a href="https://arxiv.org/abs/2605.25447">GeoSVG-RL</a>, <a href="https://arxiv.org/abs/2609.34587">Intermediate renders</a>, and <a href="https://arxiv.org/abs/2610.03002">RSI</a>: they change the verification signal, the granularity of credit, and the source of training data, respectively. The index below retains the broader related work, including methods discussed only as adjacent controls or background.</p>
@@ -467,21 +480,19 @@
                 <li id="ref-2610.19025"><a href="https://arxiv.org/abs/2610.19025">How far can coding agents go in visual generation?</a> <span class="reference-id">arXiv:2610.19025</span></li>
               </ul>
             </details>
+      </article>
+    </div>
 
-          </div>
-          </div>
-
-          <footer class="article-foot">
-            <a href="../blog.html">← Back to Blog</a>
-          </footer>
-        </article>
+    <footer class="site-footer">
+      <div class="colophon-inner">
+        <span>
+          End of Survey · <a href="../blog.html">Return to Blog</a> ·
+          <a href="../index.html">Home</a>
+        </span>
       </div>
-    </main>
-  </div>
-  <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" />
-    </svg>
-  </a>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
